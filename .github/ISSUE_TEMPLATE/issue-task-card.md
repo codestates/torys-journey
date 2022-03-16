@@ -14,7 +14,7 @@ assignees: ''
 
 ##TODO
 1. [ ] Job1
-2.[ ] Job2
+2. [ ] Job2
 3. [ ] Job3
 
 ## Estimated time
@@ -26,6 +26,7 @@ assignees: ''
 `2h`
 `2.5h`
 `3h`
+`1d`
 
 ## Labels
 * Estimated time: `E: 1h`
