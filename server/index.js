@@ -22,7 +22,6 @@ app.get('/', test.get)
 // app.use('/user', userRouter)
 // app.use('/rest', restaurantRouter)
 
-
 const PORT = process.env.PORT || 4000;
 
 
