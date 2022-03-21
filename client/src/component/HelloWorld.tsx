@@ -5,8 +5,8 @@ import { useState } from "react";
 const HelloWorld = () => {
   const [a, setA] = useState("")
   axios
-    .get("http://localhost:4000", {
-      headers: { "Content-Type": "application/json" }
+    .get("http://ec2-13-125-241-113.ap-northeast-2.compute.amazonaws.com", {
+      headers: { "Content-Type": "application/json" } ,withCredentials:true
     })
     .then((res) => setA(res.data) 
     )
