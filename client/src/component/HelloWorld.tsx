@@ -1,13 +1,18 @@
 import React from "react";
 import axios from "axios";
+import { useState } from "react";
 
 const HelloWorld = () => {
-  axios.get(
-    "http://ec2-13-125-241-113.ap-northeast-2.compute.amazonaws.com"
-  )
-  .then((res)=>console.log(res))
+  const [a, setA] = useState("")
+  axios
+    .get("http://localhost:4000", {
+      headers: { "Content-Type": "application/json" }
+    })
+    .then((res) => setA(res.data) 
+    )
 
-  return <div>Hello World!</div>;
+
+  return <div>{a}</div>;
 };
 
 export default HelloWorld;
