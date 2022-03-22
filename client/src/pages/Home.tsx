@@ -10,7 +10,7 @@ const Home = () => {
     })
     .then((res) => setA(res.data));
 
-  return <div>123123, {a}</div>;
+  return <div>{a}</div>;
 };
 
 export default Home;
