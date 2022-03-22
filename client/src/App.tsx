@@ -12,7 +12,7 @@ import Writing from "./pages/Writing";
 //지도 API로 식당들만, 호텔들만, 병원들만 이런식으로 검색이 가능하게 그 정보만 따로 가지고 올 수 있는지.
 //만약 없다면 검색창을 어떤 식으로 하는 것이 좋을지.
 //새로고침 로그인 유지
-
+//물어보기
 function App() {
   return (
     <div>
