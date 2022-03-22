@@ -5,14 +5,15 @@ import { useState } from "react";
 const HelloWorld = () => {
   const [a, setA] = useState("")
   axios
-    .get("http://ec2-13-125-241-113.ap-northeast-2.compute.amazonaws.com", {
-      headers: { "Content-Type": "application/json" } ,withCredentials:true
+    .get(`${process.env.REACT_APP_API_URL}`, {
+      headers: { "Content-Type": "application/json"}
     })
     .then((res) => setA(res.data) 
     )
-
-
   return <div>{a}</div>;
 };
 
 export default HelloWorld;
+
+
+
