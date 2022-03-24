@@ -37,4 +37,26 @@ export const changeLoginStatus = (
   } else {
     return state;
   }
+}; //아이디 유지하는 isLogin 관리
+
+const initialModalState = {
+  requestSignOut: false,
 };
+
+type ModalAction = { type: "modal"; payload: { requestSignOut: boolean } };
+
+export const changeModalStatus = (
+  state = initialModalState,
+  action: ModalAction
+) => {
+  console.log(action.payload);
+  if (action.type === "modal") {
+    // console.log(state.accessToken);
+    return {
+      ...state,
+      requestSignOut: action.payload.requestSignOut,
+    };
+  } else {
+    return state;
+  }
+}; //아이디 유지하는 isLogin 관리
