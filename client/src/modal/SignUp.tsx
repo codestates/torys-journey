@@ -10,9 +10,9 @@ const SignUp = () => {
 
   const [passwordValidError, setPasswordValidError] = useState(""); //비밀번호 유효성검사용
   const handleInputValue =
-    (key: any) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
       setUserinfo({ ...userinfo, [key]: e.target.value });
-      console.log(e.target.value);
+      // console.log(e.target.value);
       const passwordRegex =
         /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/; //숫자+영문자+특수문자 조합으로 8자리 이상
       let password = e.target.value;
@@ -42,7 +42,7 @@ const SignUp = () => {
       setError(false); //모든항목필수입니다는 없어짐
     } else {
       setPasswordError(false); //비밀번호 일치하면 비밀번호 에러 메세지 없음
-      setError(false); //모든항목 필수입니다 도 없음 
+      setError(false); //모든항목 필수입니다 도 없음
     }
   };
   return (
@@ -69,8 +69,8 @@ const SignUp = () => {
           placeholder="비밀번호를 입력하세요"
           onChange={handleInputValue("password")}
         />
-     
-        {userinfo.password&& !userinfo.passwordcheck ? passwordValidError: ""}
+
+        {userinfo.password && !userinfo.passwordcheck ? passwordValidError : ""}
         <br />
         <label htmlFor="passwordcheck"> 비밀번호 확인 </label>
         <input
@@ -81,7 +81,7 @@ const SignUp = () => {
 
         <br />
         {passwordError ? "비밀번호가 일치하지 않습니다." : ""}
-        
+
         <button onClick={handleSignUp}>회원가입하기</button>
         <div>{error ? "모든 항목을 입력하세요" : ""}</div>
       </form>
