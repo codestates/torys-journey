@@ -1,15 +1,13 @@
 import React from "react";
 import MyPageMenu from "../component/MyPageMenu";
 
-const MyPage = () => {
+const MyReview = () => {
   return (
     <div>
-      <div>MyPage</div>
-      <div>
-        <MyPageMenu />
-      </div>
+      <MyPageMenu />
+      리뷰 관리
     </div>
   );
 };
 
-export default MyPage;
+export default MyReview;

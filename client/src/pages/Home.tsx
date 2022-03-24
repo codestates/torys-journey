@@ -8,9 +8,13 @@ const Home = () => {
     .get(`${process.env.REACT_APP_API_URL}`, {
       headers: { "Content-Type": "application/json" },
     })
-    .then((res) => setA(res.data));
+    .then((res) => setA(res.data)); //헬로월드 배포 테스트
 
-  return <div>{a}</div>;
+  return (
+    <>
+      <div>{a}</div>
+    </>
+  );
 };
 
 export default Home;

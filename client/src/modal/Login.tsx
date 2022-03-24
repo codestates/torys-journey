@@ -58,15 +58,18 @@ const Login = () => {
           }
         ) //로그인 요청
         .then((res) => {
-          if (res.data.data.id && res.data.data.accessToken) {
+          if (res.data.data.userId && res.data.data.accessToken) {
             dispatch({
               type: "accessToken",
               payload: {
-                id: res.data.data.id,
+                id: String(res.data.data.userId),
                 accessToken: res.data.data.accessToken,
               },
             }); //! 토큰과 id를 redux state에 저장하는 것.(id 나중에 사용)
-            localStorage.setItem(res.data.data.id, res.data.data.accessToken);
+            localStorage.setItem(
+              String(res.data.data.userId),
+              res.data.data.accessToken
+            );
           }
           //로컬스토리지에 저장하는 법. 첫 번째 인자가 Key, 두 번째 인자가 토큰
         })
@@ -84,7 +87,7 @@ const Login = () => {
         <SignUp />
       ) : (
         <div>
-          <form>
+          <form onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
               placeholder="E-mail을 입력하세요"
@@ -95,9 +98,10 @@ const Login = () => {
               placeholder="password를 입력하세요"
               onChange={handleInputValue("password")}
             />
+
+            <button onClick={handleLogin}>로그인</button>
+            <button onClick={handleMadal}>회원가입</button>
           </form>
-          <button onClick={handleLogin}>로그인</button>
-          <button onClick={handleMadal}>회원가입</button>
           <div>{errorMessage}</div>
         </div>
       )}

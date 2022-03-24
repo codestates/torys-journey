@@ -1,19 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const Main = () => {
   return (
     <div>
+      <Link to="/mypage/bookmark">MyPage</Link>
+      {/* 고정 */}
+      <button>LogIn</button>
+      {/* 고정 */}
       메인입니다.
       <br />
-      <Link to="/login">로그인</Link>
+      <Link to="/restaurant">Restaurant</Link>
       <br></br>
-      <Link to="/restaurant">레스토랑</Link>
+      <Link to="/hotel">Hotel</Link>
       <br></br>
-      <Link to="/restaurant">병원</Link>
+      <Link to="/hospital">Hospital</Link>
       <br />
-      <Link to="/restaurant">공원</Link>
+      <Link to="/park">Park</Link>
       <br />
-      <Link to="/restaurant">ㅁㄴㅇ리ㅓㅁㄴ이ㅏㄹ</Link>
+      <Link to="/info">Info</Link>
     </div>
   );
 };

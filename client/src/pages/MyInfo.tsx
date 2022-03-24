@@ -1,15 +1,13 @@
 import React from "react";
 import MyPageMenu from "../component/MyPageMenu";
 
-const MyPage = () => {
+const MyInfo = () => {
   return (
     <div>
-      <div>MyPage</div>
-      <div>
-        <MyPageMenu />
-      </div>
+      <MyPageMenu />
+      정보수정
     </div>
   );
 };
 
-export default MyPage;
+export default MyInfo;
