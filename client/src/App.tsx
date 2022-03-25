@@ -35,8 +35,6 @@ function App() {
         <Route path="/hospital" element={<Hospital />} />
         <Route path="/restaurantinfo" element={<RestaurantInfo />} />
         <Route path="/writing" element={<Writing />} />
-        <Route path="/login" element={<Login />} />{" "}
-        {/*모달임. 확인용으로 둔 것. 나중에 삭제 */}
         <Route path="/signup" element={<SignUp />} />{" "}
         {/*모달임. 확인용으로 둔 것. 나중에 삭제*/}
       </Routes>

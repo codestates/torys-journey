@@ -5,13 +5,18 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import store from "../redux/Store";
 
+import NaverOauth from "../Oauth/NaverOauth";
+
+// Client ID: 7IxLOwtePiMM2_x0nQgw
+// Client Secret : OKVYfUlNMF
+
 export type RootState = ReturnType<typeof store.getState>; //reducer까지 보려면 typescript에서는 여기에서 사용하여야 한다.
 type loginInfo = {
   email: string;
   password: string;
 }; // tsc type
 
-const Login = () => {
+const Login: React.FC<any> = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -43,6 +48,7 @@ const Login = () => {
     }
   }, [dispatch, localStorageTokenCheck]); // useEffect 초기값 정하는 것인데 헷갈림.
   //! 여기까지 토큰 저장하고 받아오는 것. 동길이한테 id 같이 보내달라고 하기.
+
   const handleLogin = () => {
     if (loginInfo.email && loginInfo.password) {
       let { email, password } = loginInfo;
@@ -105,6 +111,9 @@ const Login = () => {
           <div>{errorMessage}</div>
         </div>
       )}
+      <div>
+        <NaverOauth />
+      </div>
     </div>
   );
 };

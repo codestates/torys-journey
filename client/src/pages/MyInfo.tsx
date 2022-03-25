@@ -118,7 +118,7 @@ const MyInfo = () => {
       </div>
       <button onClick={changePassword}>확인</button>
       <button onClick={signOutRequest}>회원탈퇴</button>
-      {requestSignOut ? <SignOut signOutRequest={signOutRequest} /> : ""}{" "}
+      {requestSignOut ? <SignOut signOutRequest={signOutRequest} /> : ""}
       {/*가라임, 수정해야함*/}
     </div>
   );

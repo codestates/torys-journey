@@ -1,12 +1,12 @@
 import React from "react";
-import RestaurantSearch from "../component/RestaurantSearch";
+import Search from "../component/Search";
 
 const Restaurant = () => {
   return (
     <div>
       <div>Restaurant</div>
       <div>
-        <RestaurantSearch />
+        <Search />
       </div>
     </div>
   );
