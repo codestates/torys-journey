@@ -3,8 +3,11 @@ import { FaStar } from "react-icons/fa";
 
 const Star: React.FC = (): ReactElement => {
   const [clicked, setClicked] = useState([false, false, false, false, false]);
-  const [rating, setRating]= useState<number>(0)
-  const handleStarClick = (e:any, index:number) => {
+  const [rating, setRating] = useState<number>(0);
+  const handleStarClick = (
+    e: React.MouseEvent<SVGElement, MouseEvent>,
+    index: number
+  ) => {
     e.preventDefault();
     let clickStates = [...clicked];
     for (let i = 0; i < 5; i++) {
@@ -13,16 +16,14 @@ const Star: React.FC = (): ReactElement => {
     }
 
     setClicked(clickStates);
-    setRating(index+1)
-   
-  
+    setRating(index + 1);
   };
 
   return (
     <div>
       <FaStar
         onClick={(e) => handleStarClick(e, 0)}
-        color= {clicked[0] ? "gold": "gray"}
+        color={clicked[0] ? "gold" : "gray"}
       />
       <FaStar
         onClick={(e) => handleStarClick(e, 1)}
@@ -30,18 +31,17 @@ const Star: React.FC = (): ReactElement => {
       />
       <FaStar
         onClick={(e) => handleStarClick(e, 2)}
-        color={clicked[2] ? "gold": "gray"}
+        color={clicked[2] ? "gold" : "gray"}
       />
       <FaStar
         onClick={(e) => handleStarClick(e, 3)}
-        color={clicked[3] ? "gold": "gray"}
+        color={clicked[3] ? "gold" : "gray"}
       />
-       <FaStar
+      <FaStar
         onClick={(e) => handleStarClick(e, 4)}
-        color={clicked[4] ? "gold": "gray"}
+        color={clicked[4] ? "gold" : "gray"}
       />
       평점:{rating}
-
     </div>
   );
 };

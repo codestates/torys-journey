@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 const MyPageMenu = () => {
   return (
     <div>
-       <br />
       <br />
       <br />
-   
-      
+      <br />
+
       <Link to="/mypage/bookmark">북마크</Link>
       <br />
       <br />

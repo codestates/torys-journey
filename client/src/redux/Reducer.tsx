@@ -29,7 +29,7 @@ export const changeLoginStatus = (
   action: LoginAction
 ) => {
   if (action.type === "login") {
-    // console.log(state.accessToken);
+    console.log(state);
     return {
       ...state,
       isLogin: action.payload.isLogin,
@@ -49,7 +49,7 @@ export const changeModalStatus = (
   state = initialModalState,
   action: ModalAction
 ) => {
-  console.log(action.payload);
+  // console.log(action.payload);
   if (action.type === "modal") {
     // console.log(state.accessToken);
     return {
@@ -59,4 +59,4 @@ export const changeModalStatus = (
   } else {
     return state;
   }
-}; //아이디 유지하는 isLogin 관리
+};

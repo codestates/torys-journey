@@ -8,9 +8,7 @@ const Navbar = () => {
       <Link to="/restaurant">Restaurant</Link>&nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/hotel">Hotel</Link>&nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/park">Park</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-      <Link to="/hospital">Hospital</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-    
-      이건 navbar야
+      <Link to="/hospital">Hospital</Link>&nbsp;&nbsp;&nbsp;&nbsp; 이건 navbar야
     </>
   );
 };

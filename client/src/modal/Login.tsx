@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import SignUp from "./SignUp";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import store from "../redux/Store";
 
 import NaverOauth from "../Oauth/NaverOauth";
@@ -39,17 +39,6 @@ const Login: React.FC<any> = () => {
       setLoginInfo({ ...loginInfo, [key]: e.target.value });
     };
 
-  const localId = useSelector((localId: RootState) => localId.Reducer.id);
-  //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
-  const localStorageTokenCheck = localStorage.getItem(localId);
-  //로컬스토리지의 토큰을 받아온 것. localstorage에 있는 키값과 일치하는 것을 보내면 그 키의 값인 토큰을 받아오는 것이다.
-  useEffect(() => {
-    if (localStorageTokenCheck) {
-      dispatch({ type: "login", payload: { isLogin: true } });
-    }
-  }, [dispatch, localStorageTokenCheck]); // useEffect 초기값 정하는 것인데 헷갈림.
-  //! 여기까지 토큰 저장하고 받아오는 것. 동길이한테 id 같이 보내달라고 하기.
-
   const handleLogin = () => {
     if (loginInfo.email && loginInfo.password) {
       let { email, password } = loginInfo;
@@ -79,6 +68,9 @@ const Login: React.FC<any> = () => {
             );
           }
           //로컬스토리지에 저장하는 법. 첫 번째 인자가 Key, 두 번째 인자가 토큰
+        })
+        .then(() => {
+          dispatch({ type: "login", payload: { isLogin: true } });
         })
         // 서버로부터 토큰 받는 부분
         .then(() => navigate("/"))
