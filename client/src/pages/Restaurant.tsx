@@ -1,14 +1,14 @@
 import React from "react";
 import Search from "../component/Search";
 
+
 const Restaurant = () => {
   return (
     <div>
-      <div>Restaurant</div>
-      <div>
-        <Search />
+      <Search />
+     <button>식당 등록</button>
       </div>
-    </div>
+ 
   );
 };
 

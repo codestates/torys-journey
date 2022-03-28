@@ -10,7 +10,6 @@ import Main from "./pages/Main";
 import Hotel from "./pages/Hotel";
 import Park from "./pages/Park";
 import Hospital from "./pages/Hospital";
-import Login from "./modal/Login";
 import SignUp from "./modal/SignUp";
 import Navbar from "./component/Navbar";
 import WritingManage from "./pages/WritingManage";
@@ -33,7 +32,7 @@ function App() {
         <Route path="/hotel" element={<Hotel />} />
         <Route path="/park" element={<Park />} />
         <Route path="/hospital" element={<Hospital />} />
-        <Route path="/restaurantinfo" element={<RestaurantInfo />} />
+        <Route path="/restaurant/:id" element={<RestaurantInfo />} />
         <Route path="/writing" element={<Writing />} />
         <Route path="/signup" element={<SignUp />} />{" "}
         {/*모달임. 확인용으로 둔 것. 나중에 삭제*/}

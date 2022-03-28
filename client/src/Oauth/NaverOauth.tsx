@@ -24,16 +24,16 @@ const NaverOauth: React.FC = () => {
 
   useEffect(() => {
     initializeNaverLogin();
-    //   getNaverToken();
-  }, []);
+      getNaverToken();
+  }, );
 
   return (
     <div>
       <div
         id="naverIdLogin"
-        onClick={() => {
-          getNaverToken();
-        }}
+        // onClick={() => {
+        //   getNaverToken();
+        // }}
       />
       {/* id 꼭 입력해주어야 함 */}
     </div>

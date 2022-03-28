@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Star from "../component/Star";
+
 import Login from "../modal/Login";
 
 const Main = () => {
@@ -11,19 +13,31 @@ const Main = () => {
 
   return (
     <div>
+      <br />
       <Link to="/mypage/bookmark">MyPage</Link>
       {/* 고정 */}
       <button onClick={loginRequest}>LogIn</button>
       {/* 고정 */}
       메인입니다.
       <br />
+      <br />
+      <br />
+      <br />
+
       <Link to="/restaurant">Restaurant</Link>
+      <br />
       <br></br>
       <Link to="/hotel">Hotel</Link>
-      <br></br>
+      <br />
+      <br />
+      
       <Link to="/hospital">Hospital</Link>
       <br />
+      <br />
+  
       <Link to="/park">Park</Link>
+   
+      <br />
       <br />
       <Link to="/info">Info</Link>
       {login ? <Login loginRequest={loginRequest} /> : ""}

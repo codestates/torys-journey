@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import store from "../redux/Store";
 
 import NaverOauth from "../Oauth/NaverOauth";
+import KakaoOauth from "../Oauth/KakaoOauth";
 
 // Client ID: 7IxLOwtePiMM2_x0nQgw
 // Client Secret : OKVYfUlNMF
@@ -113,6 +114,7 @@ const Login: React.FC<any> = () => {
       )}
       <div>
         <NaverOauth />
+        <KakaoOauth />
       </div>
     </div>
   );

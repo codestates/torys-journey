@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <Link to="/">Home</Link>
-      <Link to="/restaurant">Restaurant</Link>
-      <Link to="/hotel">Hotel</Link>
-      <Link to="/park">Park</Link>
-      <Link to="/hospital">Hospital</Link>
-      <Link to="/info">Info</Link>
+      <Link to="/">Home</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/restaurant">Restaurant</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/hotel">Hotel</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/park">Park</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/hospital">Hospital</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+    
       이건 navbar야
     </>
   );
