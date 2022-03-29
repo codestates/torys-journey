@@ -1,14 +1,13 @@
 import React from "react";
 import MyPageMenu from "../component/MyPageMenu";
 
-const MyPage = () => {
+const WritingManage = () => {
   return (
     <div>
-      <div>
-        <MyPageMenu />
-      </div>
+      <MyPageMenu />
+      <div>작성글 관리</div>
     </div>
   );
 };
 
-export default MyPage;
+export default WritingManage;

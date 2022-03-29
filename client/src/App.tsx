@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import MyPage from "./pages/MyPage";
 import ProjectInfo from "./pages/ProjectInfo";
@@ -7,24 +7,39 @@ import Restaurant from "./pages/Restaurant";
 import RestaurantInfo from "./pages/RestaurantInfo";
 import Writing from "./pages/Writing";
 import Main from "./pages/Main";
+import Hotel from "./pages/Hotel";
+import Park from "./pages/Park";
+import Hospital from "./pages/Hospital";
+import SignUp from "./modal/SignUp";
+import Navbar from "./component/Navbar";
+import WritingManage from "./pages/WritingManage";
+import MyReview from "./pages/MyReview";
+import MyInfo from "./pages/MyInfo";
+import ShopEnroll from "./pages/ShopEnroll";
+import Header from "./component/Header";
 
-//내일 크루분께 배포자동화를 하였을 때, 만약에 팀원 아이디로 작업하고 다른 팀원이 작업을 하면서 실시간으로 이게 되는지 안되는지 확인을 하고싶을 때(서버와 잘 구동이 되는지) 일일이 확인할 때마다 마지를 해서 확인을 하여야 하는 부분인지.
-
-//지도 API로 식당들만, 호텔들만, 병원들만 이런식으로 검색이 가능하게 그 정보만 따로 가지고 올 수 있는지.
-//만약 없다면 검색창을 어떤 식으로 하는 것이 좋을지.
-//새로고침 로그인 유지
-//물어보기
 function App() {
   return (
     <div>
       <Home />
+      <Header />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/mypage/writingmanage" element={<WritingManage />} />
+        <Route path="/mypage/bookmark" element={<MyPage />} />
+        <Route path="/mypage/myreview" element={<MyReview />} />
+        <Route path="/mypage/myinfo" element={<MyInfo />} />
         <Route path="/info" element={<ProjectInfo />} />
         <Route path="/restaurant" element={<Restaurant />} />
-        <Route path="/restaurantinfo" element={<RestaurantInfo />} />
+        <Route path="/shopenroll" element={<ShopEnroll />} />
+        <Route path="/restaurantinfo/:id" element={<RestaurantInfo />} />
+        <Route path="/hotel" element={<Hotel />} />
+        <Route path="/park" element={<Park />} />
+        <Route path="/hospital" element={<Hospital />} />
         <Route path="/writing" element={<Writing />} />
+        <Route path="/signup" element={<SignUp />} />
+        {/*모달임. 확인용으로 둔 것. 나중에 삭제*/}
       </Routes>
     </div>
   );
