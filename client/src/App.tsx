@@ -16,13 +16,19 @@ import WritingManage from "./pages/WritingManage";
 import MyReview from "./pages/MyReview";
 import MyInfo from "./pages/MyInfo";
 import ShopEnroll from "./pages/ShopEnroll";
+<<<<<<< HEAD
 import Header from "./component/Header";
+=======
+>>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
 
 function App() {
   return (
     <div>
       <Home />
+<<<<<<< HEAD
       <Header />
+=======
+>>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
       <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
