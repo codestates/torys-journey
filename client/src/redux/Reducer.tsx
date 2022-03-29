@@ -16,7 +16,7 @@ export const Reducer = (state = initialState, action: Action) => {
   } else {
     return state;
   }
-}; //토큰과 id 담는 reducer
+}; //!토큰과 id 담는 reducer
 
 const initialLoginState = {
   isLogin: false,
@@ -37,7 +37,7 @@ export const changeLoginStatus = (
   } else {
     return state;
   }
-}; //아이디 유지하는 isLogin 관리
+}; //!아이디 유지하는 isLogin 관리
 
 const initialModalState = {
   requestSignOut: false,
@@ -59,4 +59,51 @@ export const changeModalStatus = (
   } else {
     return state;
   }
+}; //! 로그아웃
+
+const initialRestaurantState: any = {
+  id: 0,
+  name: "",
+  photo: [{}],
+  address: "",
+  number: "",
+  detailInfo: "",
+  officeHours: "",
 };
+
+type RestaurantAction = {
+  type: "restaurant";
+  payload: {
+    id: 0;
+    name: "";
+    photo: [{}];
+    address: "";
+    number: "";
+    detailInfo: "";
+    officeHours: "";
+  };
+};
+
+export const restaurantInformation = (
+  state = initialRestaurantState,
+  action: RestaurantAction
+) => {
+  // console.log(action.payload);
+  if (action.type === "restaurant") {
+    // console.log(state.accessToken);
+    return [
+      ...state,
+      {
+        id: action.payload.id,
+        name: action.payload.name,
+        photo: action.payload.photo,
+        address: action.payload.address,
+        number: action.payload.number,
+        detailInfo: action.payload.detailInfo,
+        officeHours: action.payload.officeHours,
+      },
+    ];
+  } else {
+    return state;
+  }
+}; //! 레스토랑 사진넘겨주기

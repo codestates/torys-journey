@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <Home />
-      <Navbar /> 고정
+      <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/mypage/writingmanage" element={<WritingManage />} />

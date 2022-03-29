@@ -1,9 +1,10 @@
 import React from "react";
 
-const Pictures = () => {
+const Pictures = (data: any): React.ReactElement => {
+  console.log(data);
   return (
     <div>
-      <h4>여기는 캐러셀 사진 자리 입니다.</h4>
+      <img src={data.data} alt="사진을 업로드해주세요" />
     </div>
   );
 };

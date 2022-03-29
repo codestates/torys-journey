@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import store from "../redux/Store";
-
+import LogOut from "../component/LogOut";
 import Login from "../modal/Login";
 
 export type RootState = ReturnType<typeof store.getState>; //reducer까지 보려면 typescript에서는 여기에서 사용하여야 한다.
@@ -13,9 +13,12 @@ const Main = () => {
   const [login, setLogin] = useState<boolean>(false); // 모달 useState
 
   const loginRequest = () => {
-    setLogin(!login); //탈퇴 요청 시 모달 띄우기
+    setLogin(!login);
   };
   const localId = useSelector((localId: RootState) => localId.Reducer.id);
+  const isLogin = useSelector(
+    (isLogin: RootState) => isLogin.changeLoginStatus.isLogin
+  );
   const localStorageTokenCheck = localStorage.getItem(localId);
 
   useEffect(() => {
@@ -30,10 +33,11 @@ const Main = () => {
     <div>
       <br />
       <Link to="/mypage/bookmark">MyPage</Link>
-      {/* 고정 */}
-      <button onClick={loginRequest}>LogIn</button>
-      {/* 고정 */}
-      메인입니다.
+      {isLogin === false ? (
+        <button onClick={loginRequest}>LogIn</button>
+      ) : (
+        <LogOut />
+      )}
       <br />
       <br />
       <br />

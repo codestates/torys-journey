@@ -1,6 +1,10 @@
 import React from "react";
 import { Data } from "../pages/Restaurant";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import store from "../redux/Store";
+
+export type RootState = ReturnType<typeof store.getState>;
 
 type dummyData = {
   data: Data;
@@ -8,9 +12,15 @@ type dummyData = {
 
 const ShopList = (data: dummyData): React.ReactElement => {
   console.log(data);
+
+  //   const shopList = useSelector(
+  //     (shopList: RootState) => shopList.restaurantInformation
+  //   );
+  //   console.log(shopList); //!useEffect로 작동해보기
+
   return (
     <div>
-      <Link to={`/restaurant/info/${data.data.id}`}>
+      <Link to={`/restaurantinfo/${data.data.id}`}>
         <img src={data.data.picture} alt="음식점 사진" />
         <div>{data.data.name}</div>
       </Link>
