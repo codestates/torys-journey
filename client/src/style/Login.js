@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const LoginTitle = styled.h2`
   color: gold;
-  fontsize: 2em;
+  font-size: 2em;
 `;
 
 export const LoginModal = styled.div`
@@ -47,7 +47,7 @@ export const LoginButton = styled.button`
   outline: none;
   border-radius: 30px;
   background: gold;
-  fontsize: 1.2rem;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   margin-top: 10px;
 `;

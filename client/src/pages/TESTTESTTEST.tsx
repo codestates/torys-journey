@@ -38,7 +38,7 @@ const dummyData = [
     officeHours: "09:00 ~ 23:00",
   },
   {
-    id: 6,
+    id: 5,
     picture: "http://img.segye.com/content/image/2021/01/07/20210107516500.jpg",
     name: "전주비빔밥집",
     address: "경기 화성시 동탄대로 636-14 비동 102호",
@@ -57,7 +57,7 @@ const dummyData = [
     detailInfo: "주차가능",
   },
   {
-    id: 6,
+    id: 7,
     picture:
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220305_170%2F1646454916671dsEPJ_JPEG%2Fupload_8b707007aaf7f49638c1aa85371bf52d.jpg",
     name: "파스타집",

@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import store from "../redux/Store";
 import NaverOauth from "../Oauth/NaverOauth";
 import KakaoOauth from "../Oauth/KakaoOauth";
-<<<<<<< HEAD
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -16,8 +15,6 @@ import {
   LoginButton,
   LoginTitle,
 } from "../style/Login";
-=======
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
 
 // Client ID: 7IxLOwtePiMM2_x0nQgw
 // Client Secret : OKVYfUlNMF
@@ -40,7 +37,7 @@ const Login: React.FC<any> = () => {
   });
   const [errorMessage, setErrorMessage] = useState<string>("");
   // console.log(accessToken);
-  const handleMadal = () => {
+  const handleModal = () => {
     //signup 띄우기 함수
     setSignup(true);
   };
@@ -92,7 +89,6 @@ const Login: React.FC<any> = () => {
   };
 
   return (
-<<<<<<< HEAD
     <LoginModal>
       {signup === true ? (
         <SignUp />
@@ -125,7 +121,7 @@ const Login: React.FC<any> = () => {
             <NaverOauth />
             <KakaoOauth />
           </div>
-          <button onClick={handleMadal}>회원가입</button>
+          <button onClick={handleModal}>회원가입</button>
         </InputModal>
       )}
       {/* <div>
@@ -133,36 +129,6 @@ const Login: React.FC<any> = () => {
         <KakaoOauth />
       </div> */}
     </LoginModal>
-=======
-    <div>
-      {signup === true ? (
-        <SignUp />
-      ) : (
-        <div>
-          <form onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder="E-mail을 입력하세요"
-              onChange={handleInputValue("email")}
-            />
-            <input
-              type="password"
-              placeholder="password를 입력하세요"
-              onChange={handleInputValue("password")}
-            />
-
-            <button onClick={handleLogin}>로그인</button>
-            <button onClick={handleMadal}>회원가입</button>
-          </form>
-          <div>{errorMessage}</div>
-        </div>
-      )}
-      <div>
-        <NaverOauth />
-        <KakaoOauth />
-      </div>
-    </div>
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
   );
 };
 

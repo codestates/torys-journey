@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const SignUpTitle = styled.h2`
   color: gold;
-  fontsize: 2em;
+  font-size: 2em;
 `;
 
 export const SignUpModal = styled.div`

@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import {
   SignUpModal,
   FormModal,
   SignUpTitle,
   SignUpInput,
 } from "../style/SignUp";
-=======
-
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
 const SignUp = () => {
   const navigate = useNavigate();
 
@@ -77,75 +73,38 @@ const SignUp = () => {
     }
   };
   return (
-<<<<<<< HEAD
     <SignUpModal>
       <FormModal onSubmit={(e: any) => e.preventDefault()}>
-        {/* <FormModal
-        onSubmit={(e: { preventDefault: () => any }) => e.preventDefault()}
-      > */}
         <SignUpTitle>회원가입</SignUpTitle>
         <h4>E-mail</h4>
-        {/* <label htmlFor="email"> 이메일 </label> */}
         <SignUpInput
-=======
-    <div>
-      회원가입
-      <form onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="email"> 이메일 </label>
-        <input
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
           type="email"
           placeholder="이메일을 입력하세요"
           onChange={handleInputValue("email")}
         />
-<<<<<<< HEAD
 
         <h4>Name</h4>
-        {/* <label htmlFor="name"> 이름 </label> */}
         <SignUpInput
-=======
-        <br />
-        <label htmlFor="name"> 이름 </label>
-        <input
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
           type="name"
           placeholder="이름를 입력하세요"
           onChange={handleInputValue("name")}
         />
-<<<<<<< HEAD
 
         <h4>Password</h4>
-        {/* <label htmlFor="password"> 비밀번호 </label> */}
         <SignUpInput
-=======
-        <br />
-        <label htmlFor="password"> 비밀번호 </label>
-        <input
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
           type="password"
           placeholder="비밀번호를 입력하세요"
           onChange={handleInputValue("password")}
         />
 
         {userinfo.password.length > 0 ? passwordValidError : ""}
-<<<<<<< HEAD
         <h4>Confirm Password</h4>
-        {/* <label htmlFor="passwordcheck"> 비밀번호 확인 </label> */}
         <SignUpInput
-=======
-        <br />
-        <label htmlFor="passwordcheck"> 비밀번호 확인 </label>
-        <input
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
           type="password"
           placeholder="비밀번호를 다시 한번 입력하세요"
           onChange={handleInputPasswordCheckValue("passwordcheck")}
         />
 
-<<<<<<< HEAD
-=======
-        <br />
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
         {userinfo.password.length > 0 && userinfo.passwordcheck.length > 0
           ? userinfo.password && userinfo.password !== userinfo.passwordcheck
             ? "비밀번호가 일치하지 않습니다."
@@ -154,13 +113,8 @@ const SignUp = () => {
 
         <button onClick={handleSignUp}>회원가입하기</button>
         <div>{error ? "모든 항목을 입력하세요" : ""}</div>
-<<<<<<< HEAD
       </FormModal>
     </SignUpModal>
-=======
-      </form>
-    </div>
->>>>>>> 369cbdda4cbaae394d84b31aaba8a7862774b58b
   );
 };
 

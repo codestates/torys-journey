@@ -24,8 +24,8 @@ export const MenuLink = styled(Link)`
   text-align: center;
   display: block;
   padding: 1em;
-  fontsize: 1.2rem;
-  fontweight: bold;
+  font-size: 1.2rem;
+  font-weight: bold;
   color: #555;
   &:hover {
     color: white;

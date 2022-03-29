@@ -23,7 +23,9 @@ const RestaurantInfo = () => {
         <Pictures key={el.address} data={el.picture} /> //같은 id 사진 띄우기. 더미데이터 사진 id 바꿔야함.
       ))}
       <Info />
-      <Map />
+      {pictureProps.map((el) => (
+        <Map key={el.address} address={el.address} name={el.name} /> //같은 id 사진 띄우기. 더미데이터 사진 id 바꿔야함.
+      ))}
     </div>
   );
 };

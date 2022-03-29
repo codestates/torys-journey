@@ -29,7 +29,7 @@ export const changeLoginStatus = (
   action: LoginAction
 ) => {
   if (action.type === "login") {
-    console.log(state);
+    // console.log(state);
     return {
       ...state,
       isLogin: action.payload.isLogin,
