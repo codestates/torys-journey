@@ -27,7 +27,7 @@ const Main = () => {
     } else {
       dispatch({ type: "login", payload: { isLogin: false } });
     }
-  }, []); //login 하면 토큰이 있느냐 없느냐로 로그인 유지
+  }); //login 하면 토큰이 있느냐 없느냐로 로그인 유지
 
   return (
     <div>

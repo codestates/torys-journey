@@ -18,8 +18,6 @@ export type Data = {
 }; // 자식컴포넌트로 넘겨주기위해 export해 줍시다.
 
 const Restaurant = () => {
-  const dispatch = useDispatch();
-
   console.log(dummyData);
 
   // const restaurantDisplay = () => {
