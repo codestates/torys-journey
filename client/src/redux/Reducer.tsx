@@ -107,3 +107,41 @@ export const restaurantInformation = (
     return state;
   }
 }; //! 레스토랑 사진넘겨주기
+
+const initialEnrollmentState = {
+  name: "",
+  address: "",
+  phoneNumber: "",
+  officeHours: "",
+  detailInfo: "",
+};
+
+type EnrollmentAction = {
+  type: "enrollment";
+  payload: {
+    name: "";
+    address: "";
+    phoneNumber: "";
+    officeHours: "";
+    detailInfo: "";
+  };
+};
+
+export const restaurantEnrollment = (
+  state = initialEnrollmentState,
+  action: EnrollmentAction
+) => {
+  if (action.type === "enrollment") {
+    // console.log(state.accessToken);
+    return {
+      ...state,
+      name: action.payload.name,
+      address: action.payload.address,
+      phoneNumber: action.payload.phoneNumber,
+      officeHours: action.payload.officeHours,
+      detailInfo: action.payload.detailInfo,
+    };
+  } else {
+    return state;
+  }
+}; //! 식당 등록 페이지 넘겨주기

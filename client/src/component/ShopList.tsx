@@ -11,7 +11,7 @@ type dummyData = {
 }; // 부모컴포넌트에서 import 해온 타입을 재사용 해 줍시다.
 
 const ShopList = (data: dummyData): React.ReactElement => {
-  console.log(data);
+  // console.log(data);
 
   //   const shopList = useSelector(
   //     (shopList: RootState) => shopList.restaurantInformation

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 const { kakao } = window as any;
 
 const Map = ({ address, name }: any) => {
-  const [area, setArea] = useState<any>({});
+  const [area, setArea] = useState<any>({}); // 좌표 따는 state
 
   useEffect(() => {
     const container = document.getElementById("map");
@@ -21,7 +21,7 @@ const Map = ({ address, name }: any) => {
     geocoder.addressSearch(`${address}`, function (result: any, status: any) {
       // 정상적으로 검색이 완료됐으면
       if (status === kakao.maps.services.Status.OK) {
-        const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+        const coords = new kakao.maps.LatLng(result[0].y, result[0].x); //좌표따는 것
         setArea(coords);
         // 결과값으로 받은 위치를 마커로 표시합니다
         const marker = new kakao.maps.Marker({
