@@ -61,53 +61,6 @@ export const changeModalStatus = (
   }
 }; //! 로그아웃
 
-const initialRestaurantState: any = {
-  id: 0,
-  name: "",
-  photo: [{}],
-  address: "",
-  number: "",
-  detailInfo: "",
-  officeHours: "",
-};
-
-type RestaurantAction = {
-  type: "restaurant";
-  payload: {
-    id: 0;
-    name: "";
-    photo: [{}];
-    address: "";
-    number: "";
-    detailInfo: "";
-    officeHours: "";
-  };
-};
-
-export const restaurantInformation = (
-  state = initialRestaurantState,
-  action: RestaurantAction
-) => {
-  // console.log(action.payload);
-  if (action.type === "restaurant") {
-    // console.log(state.accessToken);
-    return [
-      ...state,
-      {
-        id: action.payload.id,
-        name: action.payload.name,
-        photo: action.payload.photo,
-        address: action.payload.address,
-        number: action.payload.number,
-        detailInfo: action.payload.detailInfo,
-        officeHours: action.payload.officeHours,
-      },
-    ];
-  } else {
-    return state;
-  }
-}; //! 레스토랑 사진넘겨주기
-
 const initialEnrollmentState = {
   name: "",
   address: "",

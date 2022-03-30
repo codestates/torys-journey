@@ -19,9 +19,11 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-slick": "^0.28.1",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
-    "styled-components": "^5.3.3",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.0",
     "zustand": "^3.7.1"
   },
@@ -48,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.8",
+    "@types/styled-components": "^5.1.24"
   }
 }
