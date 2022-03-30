@@ -4,6 +4,7 @@ import {
   changeLoginStatus,
   changeModalStatus,
   restaurantInformation,
+  restaurantEnrollment,
 } from "./Reducer";
 
 // export type RootState = ReturnType<typeof rootReducer>;
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   changeLoginStatus,
   changeModalStatus,
   restaurantInformation,
+  restaurantEnrollment,
 });
 
 export default rootReducer;
