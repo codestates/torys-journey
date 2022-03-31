@@ -77,7 +77,6 @@ const SignUp = () => {
       <FormModal onSubmit={(e: any) => e.preventDefault()}>
         <SignUpTitle>회원가입</SignUpTitle>
         <h4>E-mail</h4>
-        {/* <label htmlFor="email"> 이메일 </label> */}
         <SignUpInput
           type="email"
           placeholder="이메일을 입력하세요"
@@ -85,7 +84,6 @@ const SignUp = () => {
         />
 
         <h4>Name</h4>
-        {/* <label htmlFor="name"> 이름 </label> */}
         <SignUpInput
           type="name"
           placeholder="이름를 입력하세요"
@@ -93,7 +91,6 @@ const SignUp = () => {
         />
 
         <h4>Password</h4>
-        {/* <label htmlFor="password"> 비밀번호 </label> */}
         <SignUpInput
           type="password"
           placeholder="비밀번호를 입력하세요"
@@ -102,7 +99,6 @@ const SignUp = () => {
 
         {userinfo.password.length > 0 ? passwordValidError : ""}
         <h4>Confirm Password</h4>
-        {/* <label htmlFor="passwordcheck"> 비밀번호 확인 </label> */}
         <SignUpInput
           type="password"
           placeholder="비밀번호를 다시 한번 입력하세요"

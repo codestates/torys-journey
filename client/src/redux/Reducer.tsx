@@ -29,7 +29,7 @@ export const changeLoginStatus = (
   action: LoginAction
 ) => {
   if (action.type === "login") {
-    console.log(state);
+    // console.log(state);
     return {
       ...state,
       isLogin: action.payload.isLogin,
@@ -61,49 +61,40 @@ export const changeModalStatus = (
   }
 }; //! 로그아웃
 
-const initialRestaurantState: any = {
-  id: 0,
+const initialEnrollmentState = {
   name: "",
-  photo: [{}],
   address: "",
-  number: "",
-  detailInfo: "",
+  phoneNumber: "",
   officeHours: "",
+  detailInfo: "",
 };
 
-type RestaurantAction = {
-  type: "restaurant";
+type EnrollmentAction = {
+  type: "enrollment";
   payload: {
-    id: 0;
     name: "";
-    photo: [{}];
     address: "";
-    number: "";
-    detailInfo: "";
+    phoneNumber: "";
     officeHours: "";
+    detailInfo: "";
   };
 };
 
-export const restaurantInformation = (
-  state = initialRestaurantState,
-  action: RestaurantAction
+export const restaurantEnrollment = (
+  state = initialEnrollmentState,
+  action: EnrollmentAction
 ) => {
-  // console.log(action.payload);
-  if (action.type === "restaurant") {
+  if (action.type === "enrollment") {
     // console.log(state.accessToken);
-    return [
+    return {
       ...state,
-      {
-        id: action.payload.id,
-        name: action.payload.name,
-        photo: action.payload.photo,
-        address: action.payload.address,
-        number: action.payload.number,
-        detailInfo: action.payload.detailInfo,
-        officeHours: action.payload.officeHours,
-      },
-    ];
+      name: action.payload.name,
+      address: action.payload.address,
+      phoneNumber: action.payload.phoneNumber,
+      officeHours: action.payload.officeHours,
+      detailInfo: action.payload.detailInfo,
+    };
   } else {
     return state;
   }
-}; //! 레스토랑 사진넘겨주기
+}; //! 식당 등록 페이지 넘겨주기

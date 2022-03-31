@@ -17,7 +17,7 @@ const Header = () => {
   const [login, setLogin] = useState<boolean>(false); // 모달 useState
 
   const loginRequest = () => {
-    setLogin(!login); //탈퇴 요청 시 모달 띄우기
+    setLogin(!login);
   };
   const localId = useSelector((localId: RootState) => localId.Reducer.id);
   const localStorageTokenCheck = localStorage.getItem(localId);
@@ -28,7 +28,7 @@ const Header = () => {
     } else {
       dispatch({ type: "login", payload: { isLogin: false } });
     }
-  }, []); //login 하면 토큰이 있느냐 없느냐로 로그인 유지
+  }); //login 하면 토큰이 있느냐 없느냐로 로그인 유지
 
   return (
     <HeaderTag>

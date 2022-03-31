@@ -5,7 +5,7 @@ import BookMarkCheck from "./BookMarkCheck";
 
 const DetailInfo = () => {
   const params = useParams<any>();
-  console.log(params);
+  // console.log(params);
 
   const [information, setInformation] = useState<any>({});
 

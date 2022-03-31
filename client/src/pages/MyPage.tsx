@@ -4,7 +4,12 @@ import { MyPageDiv } from "../style/Mypage";
 const MyPage = () => {
   return (
     <div>
-      <MyPageMenu />
+
+      <div>
+        <MyPageMenu />
+      </div>
+      <div>마이페이지 북마크</div>
+
     </div>
   );
 };
