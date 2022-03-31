@@ -15,12 +15,15 @@ import Navbar from "./component/Navbar";
 import WritingManage from "./pages/WritingManage";
 import MyReview from "./pages/MyReview";
 import MyInfo from "./pages/MyInfo";
+import ShopEnroll from "./pages/ShopEnroll";
+import Header from "./component/Header";
 
 function App() {
   return (
     <div>
       <Home />
-      <Navbar /> 고정
+      <Header />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/mypage/writingmanage" element={<WritingManage />} />
@@ -29,12 +32,13 @@ function App() {
         <Route path="/mypage/myinfo" element={<MyInfo />} />
         <Route path="/info" element={<ProjectInfo />} />
         <Route path="/restaurant" element={<Restaurant />} />
+        <Route path="/shopenroll" element={<ShopEnroll />} />
+        <Route path="/restaurantinfo/:id" element={<RestaurantInfo />} />
         <Route path="/hotel" element={<Hotel />} />
         <Route path="/park" element={<Park />} />
         <Route path="/hospital" element={<Hospital />} />
-        <Route path="/restaurant/:id" element={<RestaurantInfo />} />
         <Route path="/writing" element={<Writing />} />
-        <Route path="/signup" element={<SignUp />} />{" "}
+        <Route path="/signup" element={<SignUp />} />
         {/*모달임. 확인용으로 둔 것. 나중에 삭제*/}
       </Routes>
     </div>

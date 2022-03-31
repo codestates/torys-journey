@@ -19,13 +19,13 @@ const NaverOauth: React.FC = () => {
   const getNaverToken = () => {
     if (!location.hash) return;
     const token = location.hash.split("=")[1].split("&")[0];
-    console.log(token);
+    // console.log(token);
   }; //네이버 토큰 받아오는 코드.
 
   useEffect(() => {
     initializeNaverLogin();
-      getNaverToken();
-  }, );
+    getNaverToken();
+  });
 
   return (
     <div>

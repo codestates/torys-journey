@@ -16,7 +16,7 @@ export const Reducer = (state = initialState, action: Action) => {
   } else {
     return state;
   }
-}; //토큰과 id 담는 reducer
+}; //!토큰과 id 담는 reducer
 
 const initialLoginState = {
   isLogin: false,
@@ -29,7 +29,7 @@ export const changeLoginStatus = (
   action: LoginAction
 ) => {
   if (action.type === "login") {
-    // console.log(state.accessToken);
+    // console.log(state);
     return {
       ...state,
       isLogin: action.payload.isLogin,
@@ -37,7 +37,7 @@ export const changeLoginStatus = (
   } else {
     return state;
   }
-}; //아이디 유지하는 isLogin 관리
+}; //!아이디 유지하는 isLogin 관리
 
 const initialModalState = {
   requestSignOut: false,
@@ -49,7 +49,7 @@ export const changeModalStatus = (
   state = initialModalState,
   action: ModalAction
 ) => {
-  console.log(action.payload);
+  // console.log(action.payload);
   if (action.type === "modal") {
     // console.log(state.accessToken);
     return {
@@ -59,4 +59,42 @@ export const changeModalStatus = (
   } else {
     return state;
   }
-}; //아이디 유지하는 isLogin 관리
+}; //! 로그아웃
+
+const initialEnrollmentState = {
+  name: "",
+  address: "",
+  phoneNumber: "",
+  officeHours: "",
+  detailInfo: "",
+};
+
+type EnrollmentAction = {
+  type: "enrollment";
+  payload: {
+    name: "";
+    address: "";
+    phoneNumber: "";
+    officeHours: "";
+    detailInfo: "";
+  };
+};
+
+export const restaurantEnrollment = (
+  state = initialEnrollmentState,
+  action: EnrollmentAction
+) => {
+  if (action.type === "enrollment") {
+    // console.log(state.accessToken);
+    return {
+      ...state,
+      name: action.payload.name,
+      address: action.payload.address,
+      phoneNumber: action.payload.phoneNumber,
+      officeHours: action.payload.officeHours,
+      detailInfo: action.payload.detailInfo,
+    };
+  } else {
+    return state;
+  }
+}; //! 식당 등록 페이지 넘겨주기

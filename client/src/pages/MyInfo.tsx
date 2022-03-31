@@ -43,6 +43,14 @@ const MyInfo = () => {
           8자리 이상 입력해주세요.
           사용 가능한 특수문자는 !@#$%^*+=- 입니다.`);
           setPasswordValid(false);
+        } else if (
+          passwordRegex.test(passwordCurrent) &&
+          passwordCurrent === passwordInfo.oldPassword
+        ) {
+          setPasswordMessage(
+            "현재 비밀번호와 일치합니다. 다른 비밀번호를 입력해주세요."
+          );
+          setPasswordValid(false);
         } else {
           setPasswordMessage("안전한 비밀번호입니다");
           setPasswordValid(true);

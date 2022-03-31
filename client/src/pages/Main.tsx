@@ -1,46 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Star from "../component/Star";
+import store from "../redux/Store";
 
-import Login from "../modal/Login";
+export type RootState = ReturnType<typeof store.getState>; //reducer까지 보려면 typescript에서는 여기에서 사용하여야 한다.
 
 const Main = () => {
-  const [login, setLogin] = useState<boolean>(false); // 모달 useState
-
-  const loginRequest = () => {
-    setLogin(!login); //탈퇴 요청 시 모달 띄우기
-  };
-
   return (
     <div>
-      <br />
-      <Link to="/mypage/bookmark">MyPage</Link>
-      {/* 고정 */}
-      <button onClick={loginRequest}>LogIn</button>
-      {/* 고정 */}
-      메인입니다.
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <Link to="/restaurant">Restaurant</Link>
-      <br />
-      <br></br>
-      <Link to="/hotel">Hotel</Link>
-      <br />
-      <br />
-      
-      <Link to="/hospital">Hospital</Link>
-      <br />
-      <br />
-  
-      <Link to="/park">Park</Link>
-   
-      <br />
-      <br />
-      <Link to="/info">Info</Link>
-      {login ? <Login loginRequest={loginRequest} /> : ""}
+      <ul>
+        <li>
+          <Link to="/restaurant">Restaurant</Link>
+        </li>
+        <li>
+          <Link to="/hotel">Hotel</Link>
+        </li>
+        <li>
+          <Link to="/hospital">Hospital</Link>
+        </li>
+        <li>
+          <Link to="/park">Park</Link>
+        </li>
+        <li>
+          <Link to="/info">Info</Link>
+        </li>
+      </ul>
     </div>
   );
 };
