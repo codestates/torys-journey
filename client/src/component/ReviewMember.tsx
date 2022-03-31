@@ -10,8 +10,8 @@ export type RootState = ReturnType<typeof store.getState>;
 
 const ReviewMember = () => {
   const params = useParams();
-  const localId = useSelector((localId: RootState) => localId.Reducer.id);
-  const localStorageTokenCheck: any = localStorage.getItem(localId);
+  // const localId = useSelector((localId: RootState) => localId.Reducer.id);
+  const localStorageTokenCheck: any = localStorage.getItem("KEY");
 
   //! 평점-----------------------------------------------------------------------------
   const [clicked, setClicked] = useState([false, false, false, false, false]);

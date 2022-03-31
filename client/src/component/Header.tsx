@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import store from "../redux/Store";
+import React, { useState } from "react";
 import Login from "../modal/Login";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import {
   HeaderTag,
   HeaderTitle,
@@ -10,31 +10,44 @@ import {
   LoginButton,
 } from "../style/Header";
 
-export type RootState = ReturnType<typeof store.getState>; //reducer까지 보려면 typescript에서는 여기에서 사용하여야 한다.
-
 const Header = () => {
-  const dispatch = useDispatch();
+  // ! 로그인 모달창
   const [login, setLogin] = useState<boolean>(false); // 모달 useState
 
   const loginRequest = () => {
     setLogin(!login);
   };
-  const localId = useSelector((localId: RootState) => localId.Reducer.id);
-  const localStorageTokenCheck = localStorage.getItem(localId);
+  // ! 로그인 모달창
+  const navigate = useNavigate();
+  const localStorageTokenCheck: any = localStorage.getItem("KEY");
+  console.log(localStorageTokenCheck);
 
-  useEffect(() => {
-    if (localStorageTokenCheck) {
-      dispatch({ type: "login", payload: { isLogin: true } });
-    } else {
-      dispatch({ type: "login", payload: { isLogin: false } });
-    }
-  }); //login 하면 토큰이 있느냐 없느냐로 로그인 유지
+  const handleLogOut = () => {
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/user/logout`,
+        {},
+        {
+          headers: {
+            authorization: `Bearer ${localStorageTokenCheck}`,
+          },
+        }
+      )
+      .then(() => {
+        localStorage.clear();
+      })
+      .then(() => {
+        navigate("/");
+      })
+      .catch(() => alert("로그아웃에 실패하였습니다."));
+  };
 
   return (
     <HeaderTag>
       <HeaderTitle>Tory's-journey</HeaderTitle>
       <MypageLink to="/mypage/bookmark">MyPage</MypageLink>
       <LoginButton onClick={loginRequest}>LogIn</LoginButton>
+      <button onClick={handleLogOut}>LogOut</button>
       {login ? <Login loginRequest={loginRequest} /> : ""}
     </HeaderTag>
   );

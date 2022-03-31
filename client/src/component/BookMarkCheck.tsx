@@ -10,9 +10,9 @@ export type RootState = ReturnType<typeof store.getState>;
 const BookMarkCheck = () => {
   const [clicked, setClicked] = useState(false);
   const params = useParams<any>();
-  const localId = useSelector((localId: RootState) => localId.Reducer.id);
-  //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
-  const localStorageTokenCheck: any = localStorage.getItem(localId);
+  // const localId = useSelector((localId: RootState) => localId.Reducer.id);
+  // //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
+  const localStorageTokenCheck: any = localStorage.getItem("KEY");
 
   const check = () => {
     setClicked(!clicked);
@@ -29,7 +29,6 @@ const BookMarkCheck = () => {
               "Content-Type": `application/json`,
               authorization: localStorageTokenCheck,
             },
-            withCredentials: true,
           }
         )
         .then(() => check())

@@ -8,9 +8,9 @@ export type RootState = ReturnType<typeof store.getState>;
 
 const Post = (props: any) => {
   const navigate = useNavigate();
-  const localId = useSelector((localId: RootState) => localId.Reducer.id);
+  // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
-  const localStorageTokenCheck: any = localStorage.getItem(localId);
+  const localStorageTokenCheck: any = localStorage.getItem("KEY");
   const post = useSelector((data: RootState) => data.restaurantEnrollment);
   //   console.log(post.name);
 
