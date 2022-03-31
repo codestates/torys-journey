@@ -3,6 +3,7 @@ import Search from "../component/Search";
 import dummyData from "./TESTTESTTEST";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { RestaurantDiv } from "../style/RestaurantList";
 
 import ShopList from "../component/ShopList";
 import { useEffect } from "react";
@@ -50,9 +51,11 @@ const Restaurant = () => {
     <div>
       <Search />
       <button>식당 등록</button>
-      {dummyData.map((el) => (
-        <ShopList key={el.id} data={el} />
-      ))}
+      <RestaurantDiv>
+        {dummyData.map((el) => (
+          <ShopList key={el.id} data={el} />
+        ))}
+      </RestaurantDiv>
     </div>
   );
 };

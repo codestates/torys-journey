@@ -1,27 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MenuList, MenuItem, MenuLink } from "../style/MypageMenu";
 
 const MyPageMenu = () => {
   return (
-    <div>
-      <br />
-      <br />
-      <br />
+    <MenuList>
+      <MenuItem>
+        <MenuLink to="/mypage/bookmark">북마크</MenuLink>
+      </MenuItem>
 
-      <Link to="/mypage/bookmark">북마크</Link>
-      <br />
-      <br />
+      <MenuItem>
+        <MenuLink to="/mypage/writingmanage">작성글 관리</MenuLink>
+      </MenuItem>
 
-      <Link to="/mypage/writingmanage">작성글 관리</Link>
-      <br />
-      <br />
-      <Link to="/mypage/myreview">리뷰관리</Link>
-      <br />
-      <br />
-      <Link to="/mypage/myinfo">정보수정</Link>
-      <br />
-      <br />
-    </div>
+      <MenuItem>
+        <MenuLink to="/mypage/myreview">리뷰관리</MenuLink>
+      </MenuItem>
+
+      <MenuItem>
+        <MenuLink to="/mypage/myinfo">정보수정</MenuLink>
+      </MenuItem>
+    </MenuList>
   );
 };
 
