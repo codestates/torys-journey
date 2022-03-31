@@ -3,7 +3,6 @@ import {
   Reducer,
   changeLoginStatus,
   changeModalStatus,
-  restaurantInformation,
   restaurantEnrollment,
 } from "./Reducer";
 
@@ -14,7 +13,6 @@ const rootReducer = combineReducers({
   Reducer,
   changeLoginStatus,
   changeModalStatus,
-  restaurantInformation,
   restaurantEnrollment,
 });
 

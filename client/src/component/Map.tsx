@@ -5,7 +5,7 @@ const { kakao } = window as any;
 
 const Map = ({ address, name }: any) => {
   const [area, setArea] = useState<any>({}); // 좌표 따는 state
-
+  console.log(address);
   useEffect(() => {
     const container = document.getElementById("map");
     const options = {

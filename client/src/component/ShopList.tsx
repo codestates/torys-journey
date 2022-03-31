@@ -10,7 +10,7 @@ type dummyData = {
   data: Data;
 }; // 부모컴포넌트에서 import 해온 타입을 재사용 해 줍시다.
 
-const ShopList = (data: dummyData): React.ReactElement => {
+const ShopList = (data: dummyData): any => {
   // console.log(data);
 
   //   const shopList = useSelector(
@@ -21,7 +21,7 @@ const ShopList = (data: dummyData): React.ReactElement => {
   return (
     <div>
       <Link to={`/restaurantinfo/${data.data.id}`}>
-        <img src={data.data.picture} alt="음식점 사진" />
+        <img src={data.data.picture[0]} alt="음식점 사진" />
         <div>{data.data.name}</div>
       </Link>
     </div>

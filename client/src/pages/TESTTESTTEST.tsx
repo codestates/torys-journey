@@ -1,7 +1,15 @@
 const dummyData = [
   {
     id: 1,
-    picture: "https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg",
+    picture: [
+      "https://src.hidoc.co.kr/image/lib/2020/11/9/1604911318873_0.jpg",
+      "http://res.heraldm.com/phpwas/restmb_idxmake.php?idx=507&simg=/content/image/2019/09/27/20190927000594_0.jpg",
+      "https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg",
+      "https://health.chosun.com/site/data/img_dir/2022/02/08/2022020800704_0.jpg",
+      "http://img.segye.com/content/image/2021/01/07/20210107516500.jpg",
+      "https://cdn.mkhealth.co.kr/news/photo/201806/img_MKH180615003_0.jpg",
+      "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220305_170%2F1646454916671dsEPJ_JPEG%2Fupload_8b707007aaf7f49638c1aa85371bf52d.jpg",
+    ],
     name: "피자집",
     address: "경기 고양시 일산동구 중앙로 1286 아람마슬3층",
     number: "010-1234-1234",
@@ -10,8 +18,9 @@ const dummyData = [
   },
   {
     id: 2,
-    picture:
+    picture: [
       "http://res.heraldm.com/phpwas/restmb_idxmake.php?idx=507&simg=/content/image/2019/09/27/20190927000594_0.jpg",
+    ],
     name: "삼겹살집",
     address: "경기 고양시 일산동구 중앙로1261번길 79 1층 9라파부대찌개",
     number: "010-1234-1234",
@@ -20,7 +29,7 @@ const dummyData = [
   },
   {
     id: 3,
-    picture: "https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg",
+    picture: ["https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg"],
     name: "닭강정집",
     address: "서울 동대문구 회기로21길 8-6 1층 치맥파이브 경희대점",
     number: "010-1234-1234",
@@ -29,8 +38,9 @@ const dummyData = [
   },
   {
     id: 4,
-    picture:
+    picture: [
       "https://health.chosun.com/site/data/img_dir/2022/02/08/2022020800704_0.jpg",
+    ],
     name: "라면집",
     address: "서울 강남구 도산대로90길 3 상민빌딩",
     number: "010-1234-1234",
@@ -39,7 +49,9 @@ const dummyData = [
   },
   {
     id: 5,
-    picture: "http://img.segye.com/content/image/2021/01/07/20210107516500.jpg",
+    picture: [
+      "http://img.segye.com/content/image/2021/01/07/20210107516500.jpg",
+    ],
     name: "전주비빔밥집",
     address: "경기 화성시 동탄대로 636-14 비동 102호",
     number: "010-1234-1234",
@@ -48,8 +60,9 @@ const dummyData = [
   },
   {
     id: 6,
-    picture:
+    picture: [
       "https://cdn.mkhealth.co.kr/news/photo/201806/img_MKH180615003_0.jpg",
+    ],
     name: "족발집",
     number: "010-1234-1234",
     address: "경기 화성시 동탄치동천로3길 22",
@@ -58,8 +71,9 @@ const dummyData = [
   },
   {
     id: 7,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220305_170%2F1646454916671dsEPJ_JPEG%2Fupload_8b707007aaf7f49638c1aa85371bf52d.jpg",
+    ],
     name: "파스타집",
     address: "경기 화성시 동탄공원로3길 14-5 1층 101호",
     officeHours: "09:00 ~ 23:00",
@@ -68,8 +82,9 @@ const dummyData = [
   },
   {
     id: 8,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220219_187%2F1645255615296zj6Vu_JPEG%2Fupload_dee812f108ea578738c094b24be4e727.jpg",
+    ],
     name: "케이크집",
     address: "경기 파주시 심학산로 628 111호 카페희다 파주야당점",
     number: "010-1234-1234",
@@ -78,8 +93,9 @@ const dummyData = [
   },
   {
     id: 9,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20211119_17%2F1637288941507dOegA_JPEG%2Fupload_d6cebc69ef6edb9a6402e9c92f5c08ac.jpeg",
+    ],
     name: "브런치집",
     number: "010-1234-1234",
     officeHours: "09:00 ~ 23:00",
@@ -88,8 +104,9 @@ const dummyData = [
   },
   {
     id: 10,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220304_205%2F1646369841492F7DQR_JPEG%2Fupload_87736f4ebc56941b1dc5cb932035294c.jpg",
+    ],
     name: "도넛집",
     address: "인천 서구 청라커낼로288번길 10",
     number: "010-1234-1234",
@@ -98,8 +115,9 @@ const dummyData = [
   },
   {
     id: 11,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20211224_21%2F16403443976651FYkG_JPEG%2Fupload_b3f735ca51e0fdbdd3724e79c754a1f6.jpg",
+    ],
     name: "스테이크집",
     number: "010-1234-1234",
     address: "경기 부천시 상동로 87",

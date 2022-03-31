@@ -25,7 +25,7 @@ const Info = () => {
         <div onClick={onClick}>리뷰</div>
       </span>
       {selected === "리뷰" ? (
-        isLogin === true ? (
+        isLogin === false ? (
           <ReviewMember />
         ) : (
           <ReviewNonMember />

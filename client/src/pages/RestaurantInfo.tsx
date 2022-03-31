@@ -10,7 +10,7 @@ const RestaurantInfo = () => {
   // console.log(Number(params.id) - 1);
 
   const pictureProps = dummyData.filter((el) => el.id === Number(params.id));
-  // console.log(pictureProps);
+  console.log(pictureProps);
 
   return (
     <div>
@@ -19,13 +19,14 @@ const RestaurantInfo = () => {
         src={dummyData[Number(params.id) - 1].picture}
         alt="사진을 불러와야 합니다.."
       /> */}
-      {pictureProps.map((el) => (
-        <Pictures key={el.address} data={el.picture} /> //같은 id 사진 띄우기. 더미데이터 사진 id 바꿔야함.
-      ))}
+      <Pictures key={pictureProps[0].id} picture={pictureProps[0].picture} />
+      {/* 같은 id 사진 띄우기. 더미데이터 사진 id 바꿔야함. //! key 수정해야함. */}
       <Info />
-      {pictureProps.map((el) => (
-        <Map key={el.address} address={el.address} name={el.name} /> //같은 id 사진 띄우기. 더미데이터 사진 id 바꿔야함.
-      ))}
+      <Map
+        key={pictureProps[0].address}
+        address={pictureProps[0].address}
+        name={pictureProps[0].name}
+      />
     </div>
   );
 };
