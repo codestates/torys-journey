@@ -5,6 +5,7 @@ import axios from "axios";
 import store from "../redux/Store";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { MyPageDiv, MyPageInfo, MypageInput } from "../style/Mypage";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -94,39 +95,42 @@ const MyInfo = () => {
   };
 
   return (
-    <div>
+    <MyPageDiv>
       <MyPageMenu />
-      정보수정
-      <br />
-      현재 비밀번호
-      <input
-        type="password"
-        placeholder="현재 비밀번호를 입력하세요"
-        onChange={handleInputValue("oldPassword")}
-      />
-      새로운 비밀번호
-      <input
-        type="password"
-        placeholder="새로운 비밀번호를 입력하세요"
-        onChange={handleInputValue("newPassword")}
-      />
-      <div>{passwordInfo.newPassword.length > 0 ? passwordMessage : ""}</div>
-      새로운 비밀번호 확인
-      <input
-        type="password"
-        placeholder="새로운 비밀번호를 다시 입력하세요"
-        onChange={handleInputValue("newPasswordConfirm")}
-      />
-      <div>
-        {passwordInfo.newPasswordConfirm.length > 0
-          ? passwordConfirmMessage
-          : ""}
-      </div>
-      <button onClick={changePassword}>확인</button>
-      <button onClick={signOutRequest}>회원탈퇴</button>
-      {requestSignOut ? <SignOut signOutRequest={signOutRequest} /> : ""}
-      {/*가라임, 수정해야함*/}
-    </div>
+      <MyPageInfo>
+        <h2>정보수정</h2>
+        <h4>현재 비밀번호</h4>
+        <MypageInput
+          type="password"
+          placeholder="현재 비밀번호를 입력하세요"
+          onChange={handleInputValue("oldPassword")}
+        />
+        <h4>새로운 비밀번호</h4>
+
+        <MypageInput
+          type="password"
+          placeholder="새로운 비밀번호를 입력하세요"
+          onChange={handleInputValue("newPassword")}
+        />
+        <div>{passwordInfo.newPassword.length > 0 ? passwordMessage : ""}</div>
+        <h4>새로운 비밀번호 확인</h4>
+
+        <MypageInput
+          type="password"
+          placeholder="새로운 비밀번호를 다시 입력하세요"
+          onChange={handleInputValue("newPasswordConfirm")}
+        />
+        <div>
+          {passwordInfo.newPasswordConfirm.length > 0
+            ? passwordConfirmMessage
+            : ""}
+        </div>
+        <button onClick={changePassword}>확인</button>
+        <button onClick={signOutRequest}>회원탈퇴</button>
+        {requestSignOut ? <SignOut signOutRequest={signOutRequest} /> : ""}
+        {/*가라임, 수정해야함*/}
+      </MyPageInfo>
+    </MyPageDiv>
   );
 };
 
