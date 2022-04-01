@@ -11,9 +11,9 @@ export type RootState = ReturnType<typeof store.getState>;
 
 const MyInfo = () => {
   const navigate = useNavigate();
-  const localId = useSelector((localId: RootState) => localId.Reducer.id);
+  // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
-  const localStorageTokenCheck = localStorage.getItem(localId);
+  const localStorageTokenCheck = localStorage.getItem("KEY");
 
   const [requestSignOut, setRequestSignOut] = useState<boolean>(false); // 모달 useState
 
@@ -79,20 +79,18 @@ const MyInfo = () => {
         },
         {
           headers: {
-            "Content-Type": `application/json`,
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
-          withCredentials: true,
         }
       )
       .then(() => {
-        alert("비밀번호 변경이 성공하였습니다."); //모달 만들기
+        alert("비밀번호 변경이 성공하였습니다.");
       })
       .then(() => {
         navigate("/");
       })
       .catch(() => {
-        alert("기존 비밀번호가 일치하지 않습니다."); //모달 만들기
+        alert("기존 비밀번호가 일치하지 않습니다.");
       });
   };
 

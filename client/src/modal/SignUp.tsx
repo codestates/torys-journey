@@ -7,9 +7,13 @@ import {
   SignUpTitle,
   SignUpInput,
 } from "../style/SignUp";
-const SignUp = () => {
-  const navigate = useNavigate();
 
+type handleModalProps = {
+  handleModal: () => void;
+};
+
+const SignUp = ({ handleModal }: handleModalProps) => {
+  console.log(handleModal);
   const [userinfo, setUserinfo] = useState({
     email: "",
     name: "",
@@ -19,6 +23,7 @@ const SignUp = () => {
   const [error, setError] = useState<boolean>(false);
   // const [passwordError, setPasswordError] = useState<boolean>(false);
   const [passwordValidError, setPasswordValidError] = useState(""); //비밀번호 유효성검사용
+  const [passwordCorrect, setPasswordCorrect] = useState(false); //비밀번호 유효성 검사 통과
 
   const handleInputValue =
     (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,8 +36,10 @@ const SignUp = () => {
         setPasswordValidError(
           `숫자+영문자+특수문자 조합으로 8자리 이상 입력해주세요! 사용 가능한 특수문자는 !@#$%^*+=- 입니다.`
         );
+        setPasswordCorrect(false);
       } else {
         setPasswordValidError(`안전한 비밀번호입니다!`);
+        setPasswordCorrect(true);
       }
     };
 
@@ -54,22 +61,23 @@ const SignUp = () => {
       //비밀번호 일치하지 않으면 비밀번호 일치하지않는다고 메세지
 
       setError(false); //모든항목필수입니다는 없어짐
-    } else {
+    } else if (
+      userinfo.password === userinfo.passwordcheck &&
+      passwordCorrect === true
+    ) {
       //비밀번호 일치하면 비밀번호 에러 메세지 없음
       setError(false); //모든항목 필수입니다 도 없음
       axios
-        .post(
-          `${process.env.REACT_APP_API_URL}/user/signup`,
-          {
-            email: userinfo.email,
-            password: userinfo.password,
-            name: userinfo.name,
-          },
-          {
-            withCredentials: true,
-          }
-        )
-        .then(() => navigate("/"));
+        .post(`${process.env.REACT_APP_API_URL}/user/signup`, {
+          email: userinfo.email,
+          password: userinfo.password,
+          name: userinfo.name,
+        })
+        .then(handleModal) // test
+        .then(() => setPasswordCorrect(false))
+        .catch(() => alert("비밀번호가 맞지 않습니다."));
+    } else {
+      alert("비밀번호가 맞지 않습니다.");
     }
   };
   return (
@@ -86,7 +94,7 @@ const SignUp = () => {
         <h4>Name</h4>
         <SignUpInput
           type="name"
-          placeholder="이름를 입력하세요"
+          placeholder="이름을 입력하세요"
           onChange={handleInputValue("name")}
         />
 

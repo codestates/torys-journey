@@ -18,26 +18,40 @@ export const Reducer = (state = initialState, action: Action) => {
   }
 }; //!토큰과 id 담는 reducer
 
-const initialLoginState = {
-  isLogin: false,
+const LOGINCHECK = "logincheck";
+const LOGOUTCHECK = "logoutcheck";
+
+export const loginCheck = () => {
+  return {
+    type: LOGINCHECK,
+  };
 };
 
-type LoginAction = { type: "login"; payload: { isLogin: boolean } };
+export const logoutClickevent = () => {
+  console.log("logoutaction");
+  return {
+    type: LOGOUTCHECK,
+  };
+};
+
+const initialStore = { isLogin: false };
 
 export const changeLoginStatus = (
-  state = initialLoginState,
-  action: LoginAction
+  state = initialStore,
+  action: { type: any }
 ) => {
-  if (action.type === "login") {
-    // console.log(state);
-    return {
-      ...state,
-      isLogin: action.payload.isLogin,
-    };
-  } else {
-    return state;
+  switch (action.type) {
+    case LOGINCHECK:
+      return { ...state, isLogin: true };
+    case LOGOUTCHECK:
+      console.log("enter");
+      return { ...state, isLogin: false };
+    default:
+      return state;
   }
-}; //!아이디 유지하는 isLogin 관리
+};
+
+//!아이디 유지하는 isLogin 관리
 
 const initialModalState = {
   requestSignOut: false,
