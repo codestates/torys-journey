@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import MyPageMenu from "../component/MyPageMenu";
-import store from "../redux/Store";
-import { useSelector } from "react-redux";
 import axios from "axios";
-
-export type RootState = ReturnType<typeof store.getState>;
+import { useNavigate } from "react-router-dom";
+import dummyData from "./TESTTESTTEST";
+import WritingList from "../component/WritingList";
 
 const WritingManage = () => {
-  // const localId = useSelector((localId: RootState) => localId.Reducer.id);
-  // const localStorageTokenCheck: any = localStorage.getItem("KEY");
-  // const [writing, setWriting] = useState<any>([]); //북마크 정보 받아오기
+  const navigate = useNavigate();
 
+  // const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
+
+  // const [writing, setWriting] = useState([]);
   // const callUserWriting = () => {
   //   if (localStorageTokenCheck) {
   //     axios
@@ -19,18 +19,33 @@ const WritingManage = () => {
   //           authorization: `Bearer ${localStorageTokenCheck}`,
   //         },
   //       })
-  //       .then((res) => setBookMarkData(res.data)) //get data state에 저장
-  //       .catch(() => alert("북마크 불러오기를 실패하였습니다."));
+  //       .then((res) => setWriting(res.data)) //get data state에 저장
+  //       .catch(() => alert("작성하신 글을 불러오는 데 실패하였습니다."));
   //   } else {
   //     alert("로그인 후 이용해주세요");
   //     navigate("/");
   //   }
   // };
 
+  // useEffect(callUserWriting, [callUserWriting]); // 정보 불러오기 useEffect
+  console.log("랜더링확인");
   return (
     <div>
       <MyPageMenu />
-      <div>작성글 관리</div>
+      <div>작성글 리스트</div>
+      {dummyData.map(
+        //writing.map
+        (el: {
+          id: number;
+          name: string;
+          address: string;
+          number: string;
+          detailInfo: string;
+          officeHours: string;
+        }) => (
+          <WritingList writingList={el} />
+        )
+      )}
     </div>
   );
 };

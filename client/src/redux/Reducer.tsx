@@ -44,7 +44,6 @@ export const changeLoginStatus = (
     case LOGINCHECK:
       return { ...state, isLogin: true };
     case LOGOUTCHECK:
-      console.log("enter");
       return { ...state, isLogin: false };
     default:
       return state;
