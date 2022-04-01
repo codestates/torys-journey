@@ -21,10 +21,8 @@ const MyPage = () => {
       axios
         .get(`${process.env.REACT_APP_API_URL}/user/bookmark`, {
           headers: {
-            "Content-Type": `application/json`,
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
-          withCredentials: true,
         })
         .then((res) => setBookMarkData(res.data)) //get data state에 저장
         .catch(() => alert("북마크 불러오기를 실패하였습니다."));
