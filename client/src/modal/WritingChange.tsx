@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WritingChangeModalOnModal from "./WritingChangeModalOnModal";
-import WritingDleleteModalOnModal from "./WritingDleleteModalOnModal";
+import WritingDeleteModalOnModal from "./WritingDeleteModalOnModal";
 import { useNavigate } from "react-router-dom";
 
 type WritingChangeProps = {
   WritingChange: {
     id: number;
     name: string;
+    picture: string[]; //photo로 바꾸기
     address: string;
     number: string;
     detailInfo: string;
@@ -32,7 +33,7 @@ const WritingChange = ({
     number: WritingChange.number,
     detailInfo: WritingChange.detailInfo,
     officeHours: WritingChange.officeHours,
-  }); //수정한 글 관리하는 state
+  }); //수정하는 input value를 넣는 state
 
   const changeWriting = (target: string) => (e: { target: { value: any } }) => {
     setValue({ ...value, [target]: e.target.value });
@@ -48,25 +49,32 @@ const WritingChange = ({
   //! 서버에 수정 요청
   const patchWriting = () => {
     const { name, address, number, detailInfo, officeHours } = value;
-    axios
-      .patch(
-        `${process.env.REACT_APP_API_URL}/restaurant/${WritingChange.id}`,
-        {
-          name: name,
-          address: address,
-          number: number,
-          detailInfo: detailInfo,
-          officeHours: officeHours,
-        },
-        {
-          headers: {
-            authorization: `Bearer ${localStorageTokenCheck}`,
+    if (name && address) {
+      axios
+        .patch(
+          `${process.env.REACT_APP_API_URL}/restaurant/${WritingChange.id}`,
+          {
+            name: name,
+            address: address,
+            number: number,
+            detailInfo: detailInfo,
+            officeHours: officeHours,
           },
-        }
-      )
-      .then(() => alert("수정이 완료되었습니다."))
-      .then(() => navigate("/"))
-      .catch(() => console.log("실패다"));
+          {
+            headers: {
+              authorization: `Bearer ${localStorageTokenCheck}`,
+            },
+          }
+        )
+        .then(() => alert("수정이 완료되었습니다."))
+        .then(() => navigate("/"))
+        .catch((res) => {
+          if (res.response.status === 401)
+            alert("정보를 수정할 수 있는 권한이 없습니다."); //오류 status에 따른 alert
+        });
+    } else {
+      alert("상호명과 주소는 필수입니다.");
+    }
     // reponse 응답에 따라 다르게 반응하는 방법 찾아보고 구현하기
   };
   //! 서버에 삭제 요청
@@ -130,7 +138,7 @@ const WritingChange = ({
         ""
       )}
       {modalDelete ? (
-        <WritingDleleteModalOnModal
+        <WritingDeleteModalOnModal
           modalDeleteChange={modalDeleteChange}
           deleteWriting={deleteWriting}
         />

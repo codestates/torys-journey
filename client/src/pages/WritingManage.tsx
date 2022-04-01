@@ -21,7 +21,7 @@ const WritingManage = () => {
   //         },
   //       })
   //       .then((res) => setWriting(res.data)) //get data state에 저장
-  //       .catch(() => alert("작성하신 글을 불러오는 데 실패하였습니다."));
+  //       .catch(() => alert("작성하신 글을 불러오는데 실패하였습니다."));
   //   } else {
   //     alert("로그인 후 이용해주세요");
   //     navigate("/");
@@ -29,7 +29,7 @@ const WritingManage = () => {
   // };
 
   // useEffect(callUserWriting, [callUserWriting]); // 정보 불러오기 useEffect
-  console.log("랜더링확인");
+  // console.log("랜더링확인")
   return (
     <div>
       <MyPageMenu />
@@ -39,6 +39,7 @@ const WritingManage = () => {
         (el: {
           id: number;
           name: string;
+          picture: string[]; //photo로 바꾸기
           address: string;
           number: string;
           detailInfo: string;

@@ -29,7 +29,7 @@ function App(): any {
   const isLogin = useSelector(
     (state: RootState) => state.changeLoginStatus.isLogin
   );
-  console.log("isLogin", isLogin);
+  // console.log("isLogin", isLogin);
   const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
 
   useEffect(() => {

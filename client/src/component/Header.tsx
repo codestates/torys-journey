@@ -20,7 +20,7 @@ const Header = () => {
   // ! 로그인 모달창
   const navigate = useNavigate();
   const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
-  console.log(localStorageTokenCheck);
+  // console.log(localStorageTokenCheck);
 
   const handleLogOut = () => {
     axios
