@@ -11,7 +11,8 @@ const WritingManage = () => {
   // const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
 
   // const [writing, setWriting] = useState([]);
-  // const callUserWriting = () => {
+
+  // const callUserWriting = () => {  //본인이 쓴 글 목록 서버에서 받아오기
   //   if (localStorageTokenCheck) {
   //     axios
   //       .get(`${process.env.REACT_APP_API_URL}/user/restaurant`, {

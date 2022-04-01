@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WritingChangeModalOnModal from "./WritingChangeModalOnModal";
+import WritingDleleteModalOnModal from "./WritingDleleteModalOnModal";
 import { useNavigate } from "react-router-dom";
 
 type WritingChangeProps = {
@@ -23,6 +24,7 @@ const WritingChange = ({
 
   const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
   const [modal, setModal] = useState(false); // 포스트 등록 누를 시 나오는 모달 state
+  const [modalDelete, setModalDelete] = useState(false); // 포스트 삭제 누를 시 나오는 모달 state
 
   const [value, setValue] = useState({
     name: WritingChange.name,
@@ -30,16 +32,20 @@ const WritingChange = ({
     number: WritingChange.number,
     detailInfo: WritingChange.detailInfo,
     officeHours: WritingChange.officeHours,
-  });
+  }); //수정한 글 관리하는 state
 
   const changeWriting = (target: string) => (e: { target: { value: any } }) => {
     setValue({ ...value, [target]: e.target.value });
-  };
+  }; //포스트 수정 input value 관리 state
 
   const modalChange = () => {
     setModal(!modal);
-  };
+  }; //포스트 수정 모달 state
 
+  const modalDeleteChange = () => {
+    setModalDelete(!modalDelete); //포스트 삭제 모달 state
+  };
+  //! 서버에 수정 요청
   const patchWriting = () => {
     const { name, address, number, detailInfo, officeHours } = value;
     axios
@@ -62,6 +68,21 @@ const WritingChange = ({
       .then(() => navigate("/"))
       .catch(() => console.log("실패다"));
     // reponse 응답에 따라 다르게 반응하는 방법 찾아보고 구현하기
+  };
+  //! 서버에 삭제 요청
+  const deleteWriting = () => {
+    axios
+      .delete(
+        `${process.env.REACT_APP_API_URL}/restaurant/${WritingChange.id}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorageTokenCheck}`,
+          },
+        }
+      )
+      .then(() => alert("삭제가 완료되었습니다."))
+      .then(() => navigate("/"))
+      .catch(() => alert("삭제할 수 있는 권한이 없습니다."));
   };
 
   //input에 넣고
@@ -98,11 +119,20 @@ const WritingChange = ({
       />
 
       <button onClick={modalChange}>포스트 수정</button>
+      <button onClick={modalDeleteChange}>포스트 삭제</button>
       <button onClick={writingChangeModal}>취소</button>
       {modal ? (
         <WritingChangeModalOnModal
           modalChange={modalChange}
           patchWriting={patchWriting}
+        />
+      ) : (
+        ""
+      )}
+      {modalDelete ? (
+        <WritingDleleteModalOnModal
+          modalDeleteChange={modalDeleteChange}
+          deleteWriting={deleteWriting}
         />
       ) : (
         ""

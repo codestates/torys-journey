@@ -13,6 +13,7 @@ type WritingListProps = {
 };
 
 const WritingList = ({ writingList }: WritingListProps) => {
+  //본인이 썼던 글 객체로 하나씩 props로 받는 것
   const [writingChange, setWritingChange] = useState(false);
 
   const writingChangeModal = () => {
@@ -29,7 +30,8 @@ const WritingList = ({ writingList }: WritingListProps) => {
         {writingList.address}
         {writingList.detailInfo}
         {/* {writingList.officeHours} */}
-        <button onClick={writingChangeModal}>수정</button>
+        <button onClick={writingChangeModal}>수정 / 삭제</button>
+
         {writingChange ? (
           <WritingChange
             key={writingList.id}
