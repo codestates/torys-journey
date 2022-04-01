@@ -30,7 +30,7 @@ function App(): any {
     (state: RootState) => state.changeLoginStatus.isLogin
   );
   console.log("isLogin", isLogin);
-  const localStorageTokenCheck: any = localStorage.getItem("KEY");
+  const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
 
   useEffect(() => {
     if (localStorageTokenCheck) {

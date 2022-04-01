@@ -1,13 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import MyPageMenu from "../component/MyPageMenu";
-import { MyPageDiv } from "../style/Mypage";
-import { useSelector } from "react-redux";
-import store from "../redux/Store";
 import { useNavigate, Link } from "react-router-dom";
 import DeleteBookMark from "../modal/DeleteBookMark";
-export type RootState = ReturnType<typeof store.getState>;
-
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -22,10 +17,8 @@ const MyPage = () => {
       axios
         .get(`${process.env.REACT_APP_API_URL}/user/bookmark`, {
           headers: {
-            "Content-Type": `application/json`,
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
-          withCredentials: true,
         })
         .then((res) => setBookMarkData(res.data)) //get data state에 저장
         .catch(() => alert("북마크 불러오기를 실패하였습니다."));
@@ -43,13 +36,11 @@ const MyPage = () => {
 
   return (
     <div>
-
       <div>
         <MyPageMenu />
       </div>
       <div>마이페이지 북마크</div>
-
-      {bookMarkData.map((el: any) => (
+      {bookMarkData.map((el: { id: string; photo: [string]; name: string }) => (
         <Link to={`/restaurantinfo/${el.id}`}>
           <img src={el.photo[0]} alt="사진을 넣어주세요." />
           <div>{el.name}</div>
@@ -66,7 +57,6 @@ const MyPage = () => {
       ) : (
         ""
       )}
-
     </div>
   );
 };

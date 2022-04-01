@@ -19,7 +19,7 @@ const Header = () => {
   };
   // ! 로그인 모달창
   const navigate = useNavigate();
-  const localStorageTokenCheck: any = localStorage.getItem("KEY");
+  const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
   console.log(localStorageTokenCheck);
 
   const handleLogOut = () => {
