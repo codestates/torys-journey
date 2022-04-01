@@ -126,8 +126,9 @@ const dummyData = [
   },
   {
     id: 12,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220226_295%2F1645848665302ikVDJ_JPEG%2Fupload_b1341928e3a10526c677fbb2e59029c6.jpg",
+    ],
     name: "소시지집",
     address: "경기 김포시 양촌읍 석모로5번길 27",
     number: "010-1234-1234",
@@ -136,8 +137,9 @@ const dummyData = [
   },
   {
     id: 13,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220220_6%2F1645356198084ysw8l_JPEG%2Fupload_348df043df726855fa77600f999ac0df.jpg",
+    ],
     name: "고기집",
     address: "인천 연수구 송도과학로16번길 33-4 송도 트리플스트리트 D동 123b호",
     number: "010-1234-1234",
@@ -146,8 +148,9 @@ const dummyData = [
   },
   {
     id: 14,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20220222_29%2F1645497521299YeoSN_JPEG%2Fimage.jpg",
+    ],
     name: "한식집",
     address: "경기 용인시 수지구 동천로 635",
     officeHours: "09:00 ~ 23:00",
@@ -156,8 +159,9 @@ const dummyData = [
   },
   {
     id: 15,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20210831_45%2F16304195239363J0BM_JPEG%2Fupload_5d79df832dbeb7991be496b222695ad9.jpeg",
+    ],
     name: "샤브샤브집",
     address: "경기 수원시 영통구 광교중앙로 145",
     officeHours: "09:00 ~ 23:00",
@@ -166,8 +170,9 @@ const dummyData = [
   },
   {
     id: 16,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEyMDJfMTcx%2FMDAxNjM4NDM5NzM5Nzg2.rUjzTc-01rCaszDiqvaF2ZshmitoRVGzUrd_MfneFMgg.vKPl9bJRTcp8LlY-djFCRfrtZIvOuMqFM6K3grlEahMg.JPEG.hyi0503%2FIMG_6016.jpg",
+    ],
     name: "고스테이크집",
     address: "경기 수원시 영통구 센트럴파크로127번길 159",
     number: "010-1234-1234",
@@ -176,8 +181,9 @@ const dummyData = [
   },
   {
     id: 17,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20211231_25%2F1640914666310cp8qt_JPEG%2Fimage.jpg",
+    ],
     name: "사찰음식집",
     address:
       "경기 수원시 영통구 광교호수공원로 80 앨리웨이광교 어라운드 라이프 3층",
@@ -187,8 +193,9 @@ const dummyData = [
   },
   {
     id: 18,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20211115_83%2F1636985077233pwxjh_JPEG%2Fupload_62094eb0ddb7fa1c9aec5a6ee4ccd8a0.jpg",
+    ],
     name: "만두집",
     address: "경남 밀양시 산외면 밀양대로 2362 솔밭만두",
     number: "010-1234-1234",
@@ -197,8 +204,9 @@ const dummyData = [
   },
   {
     id: 19,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20211101_57%2F1635738823402cFClK_JPEG%2Fupload_1992f9fa2ed13045e785f22620741ac3.jpg",
+    ],
     name: "나물집",
     address: "경남 창원시 의창구 동읍 주남로184번길 33",
     detailInfo: "주차가능",
@@ -207,8 +215,9 @@ const dummyData = [
   },
   {
     id: 20,
-    picture:
+    picture: [
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA1MjFfNTEg%2FMDAxNTI2ODk4Mjk1MDIz.IwIkJnbQfQlkPX8LjO3-B3eOV4cfyAjuDamUa7WLRBAg.WxxHBvL4uefkxxZog0FLvHmPiqJO7ir1I6BXZN9lW4Ug.JPEG.boglebogle52%2F20180209_124056.jpg",
+    ],
     name: "장어집",
     address: "경남 밀양시 영남루2길 5",
     detailInfo: "주차가능",

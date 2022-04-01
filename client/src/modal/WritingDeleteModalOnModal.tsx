@@ -5,7 +5,7 @@ type valueDeleteProps = {
   deleteWriting: () => void;
 };
 
-const WritingDleleteModalOnModal = ({
+const WritingDeleteModalOnModal = ({
   modalDeleteChange,
   deleteWriting,
 }: valueDeleteProps) => {
@@ -18,4 +18,4 @@ const WritingDleleteModalOnModal = ({
   );
 };
 
-export default WritingDleleteModalOnModal;
+export default WritingDeleteModalOnModal;
