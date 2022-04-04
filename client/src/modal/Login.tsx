@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import SignUp from "./SignUp";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import store from "../redux/Store";
+import { loginCheck } from "../redux/Reducer";
 import NaverOauth from "../Oauth/NaverOauth";
 import KakaoOauth from "../Oauth/KakaoOauth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,9 +25,12 @@ type loginInfo = {
   password: string;
 }; // tsc type
 
-const Login: React.FC<any> = () => {
+type loginRequestProps = {
+  loginRequest: () => void;
+};
+
+const Login = ({ loginRequest }: loginRequestProps) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [signup, setSignup] = useState<boolean>(false); // 상태 변화에 따른 signup modal창 띄우는 state
   const [loginInfo, setLoginInfo] = useState<loginInfo>({
@@ -39,7 +42,7 @@ const Login: React.FC<any> = () => {
   // console.log(accessToken);
   const handleModal = () => {
     //signup 띄우기 함수
-    setSignup(true);
+    setSignup(!signup);
   };
 
   const handleInputValue =
@@ -51,37 +54,28 @@ const Login: React.FC<any> = () => {
     if (loginInfo.email && loginInfo.password) {
       let { email, password } = loginInfo;
       axios
-        .post(
-          `${process.env.REACT_APP_API_URL}/user/login`,
-          {
-            email,
-            password,
-          },
-          {
-            withCredentials: true,
-          }
-        ) //로그인 요청
+        .post(`${process.env.REACT_APP_API_URL}/user/login`, {
+          email,
+          password,
+        }) //로그인 요청
         .then((res) => {
           if (res.data.data.userId && res.data.data.accessToken) {
+            localStorage.setItem("KEY", res.data.data.accessToken);
             dispatch({
               type: "accessToken",
               payload: {
-                id: String(res.data.data.userId),
+                id: res.data.data.userId,
                 accessToken: res.data.data.accessToken,
               },
             }); //! 토큰과 id를 redux state에 저장하는 것.(id 나중에 사용)
-            localStorage.setItem(
-              String(res.data.data.userId),
-              res.data.data.accessToken
-            );
           }
           //로컬스토리지에 저장하는 법. 첫 번째 인자가 Key, 두 번째 인자가 토큰
         })
         .then(() => {
-          dispatch({ type: "login", payload: { isLogin: true } });
+          dispatch(loginCheck());
         })
         // 서버로부터 토큰 받는 부분
-        .then(() => navigate("/"))
+        .then(loginRequest) //로그인 모달창 띄우는 state 변경 함수
         .catch(() => alert("비밀번호가 일치하지 않습니다.")); //비밀번호 틀렸을 때 구현해야함
     } else {
       setErrorMessage("이메일과 비밀번호를 입력하세요");
@@ -91,7 +85,7 @@ const Login: React.FC<any> = () => {
   return (
     <LoginModal>
       {signup === true ? (
-        <SignUp />
+        <SignUp handleModal={handleModal} />
       ) : (
         <InputModal>
           <FontAwesomeIcon icon={faTimes} />

@@ -26,7 +26,7 @@ const Info = () => {
         <RestaurantTab onClick={onClick}>리뷰</RestaurantTab>
       </TabDiv>
       {selected === "리뷰" ? (
-        isLogin === false ? (
+        isLogin === true ? (
           <ReviewMember />
         ) : (
           <ReviewNonMember />
