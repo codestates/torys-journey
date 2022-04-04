@@ -6,20 +6,20 @@ import styled from "styled-components";
 import DetailCarousel from "./DetailCarousel";
 
 const CardImg = styled.img`
-  width: 300px;
-  height: 190px;
+  width: 100%;
+  height: 240px;
 `;
 
 const StyledSlider = styled(Slider)`
   .slick-prev:before,
   .slick-next:before {
     font-size: 50px;
-    color: blue;
+    color: #ffffff;
   }
 
   .slick-prev {
     left: 3%; /*위치*/
-    z-index: 999;
+    /* z-index: 999; */
   }
 
   .slick-next {

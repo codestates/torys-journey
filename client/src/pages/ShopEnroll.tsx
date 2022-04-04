@@ -3,7 +3,17 @@ import { useDispatch } from "react-redux";
 import store from "../redux/Store";
 import Post from "../modal/Post";
 import { Link } from "react-router-dom";
+
 import Upload from "../component/Upload";
+
+import {
+  WritingDiv,
+  WritingInput,
+  WritingButton,
+  WritingTitle,
+  WritingMainDiv,
+} from "../style/ShopEnroll";
+
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -46,44 +56,48 @@ const ShopEnroll = () => {
   
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="상호명을 입력하세요"
-        onChange={handleInputValue("name")}
-      />
-      <br />
-      <input
-        type="text"
-        placeholder="주소를 입력하세요"
-        onChange={handleInputValue("address")}
-      />
-      <br />
-      <input
-        type="text"
-        placeholder="전화번호를 입력하세요"
-        onChange={handleInputValue("phoneNumber")}
-      />
-      <br />
-      <input
-        type="text"
-        placeholder="영업시간을 입력하세요"
-        onChange={handleInputValue("officeHours")}
-      />
-      <br />
-      <input
-        type="text"
-        placeholder="상세정보를 입력하세요"
-        onChange={handleInputValue("detailInfo")}
-      />
-      <br />
-     <Upload getAddress={getAddress}/>
-      <button onClick={handlePostModal}>포스트 등록</button>
-      {postModal ? <Post handlePostModal={handlePostModal} address={address} /> : ""}
+
+    <WritingMainDiv>
+      <WritingTitle>식당 등록하기</WritingTitle>
+      <WritingDiv>
+        <WritingInput
+          type="text"
+          placeholder="상호명을 입력하세요"
+          onChange={handleInputValue("name")}
+        />
+
+        <WritingInput
+          type="text"
+          placeholder="주소를 입력하세요"
+          onChange={handleInputValue("address")}
+        />
+
+        <WritingInput
+          type="text"
+          placeholder="전화번호를 입력하세요"
+          onChange={handleInputValue("phoneNumber")}
+        />
+
+        <WritingInput
+          type="text"
+          placeholder="영업시간을 입력하세요"
+          onChange={handleInputValue("officeHours")}
+        />
+
+        <WritingInput
+          type="text"
+          placeholder="상세정보를 입력하세요"
+          onChange={handleInputValue("detailInfo")}
+        />
+      </WritingDiv>
+       <Upload getAddress={getAddress}/>
+      <WritingButton onClick={handlePostModal}>포스트 등록</WritingButton>
+   {postModal ? <Post handlePostModal={handlePostModal} address={address} /> : ""}
+
       <Link to="/restaurant">
-        <button>취소</button>
+        <WritingButton>취소</WritingButton>
       </Link>
-    </div>
+    </WritingMainDiv>
   );
 };
 

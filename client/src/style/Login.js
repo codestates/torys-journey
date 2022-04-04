@@ -7,6 +7,7 @@ export const LoginTitle = styled.h2`
 `;
 
 export const LoginModal = styled.div`
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;

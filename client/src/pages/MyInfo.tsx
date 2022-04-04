@@ -114,7 +114,6 @@ const MyInfo = () => {
         />
         <div>{passwordInfo.newPassword.length > 0 ? passwordMessage : ""}</div>
         <h4>새로운 비밀번호 확인</h4>
-
         <MypageInput
           type="password"
           placeholder="새로운 비밀번호를 다시 입력하세요"

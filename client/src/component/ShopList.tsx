@@ -3,7 +3,11 @@ import { Data } from "../pages/Restaurant";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import store from "../redux/Store";
-import { RestaurantImg } from "../style/RestaurantList";
+import {
+  RestaurantImg,
+  RestaurantListDiv,
+  RestaurantLink,
+} from "../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -20,14 +24,14 @@ const ShopList = (data: dummyData): any => {
   //   console.log(shopList); //!useEffect로 작동해보기
 
   return (
-    <div>
+    <RestaurantListDiv>
       <Link to={`/restaurantinfo/${data.data.id}`}>
 
         <RestaurantImg src={data.data.picture[0]} alt="음식점 사진" />
 
         <div>{data.data.name}</div>
       </Link>
-    </div>
+    </RestaurantListDiv>
   );
 };
 
