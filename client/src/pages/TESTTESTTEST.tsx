@@ -181,7 +181,7 @@ const dummyData = [
 
     name: "목로",
 
-    name: "한식집",
+    // name: "한식집",
 
     address: "경기 용인시 수지구 동천로 635",
     officeHours: "09:00 ~ 23:00",
@@ -196,7 +196,7 @@ const dummyData = [
 
     name: "어바웃샤브",
 
-    name: "샤브샤브집",
+    // name: "샤브샤브집",
 
     address: "경기 수원시 영통구 광교중앙로 145",
     officeHours: "09:00 ~ 23:00",
