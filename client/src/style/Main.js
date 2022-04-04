@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 
 export const Menu = styled.ul`
   display: flex;
-  padding: 0;
 `;
 
 export const MainImg = styled.img`
-  width: 97%;
-  height: 85%;
-  padding: 5px;
+  width: 96%;
+  padding: 2%;
+  height: 300px;
 `;
 
 export const MainImgContainer = styled.div`
@@ -28,4 +27,6 @@ export const MainImgTag = styled.div`
 export const MainTag = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
 `;

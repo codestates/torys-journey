@@ -5,7 +5,6 @@ import LogOut from "../component/LogOut";
 import Login from "../modal/Login";
 import { MainImg, MainImgTag, MainImgContainer, MainTag } from "../style/Main";
 
-
 export type RootState = ReturnType<typeof store.getState>; //reducer까지 보려면 typescript에서는 여기에서 사용하여야 한다.
 
 const Main = () => {
@@ -20,7 +19,7 @@ const Main = () => {
 
       <MainImgContainer>
         <Link to="/hotel">
-          <MainImg src="https://t1.daumcdn.net/cfile/blog/2633393554DAE90712" />
+          <MainImg src="https://www.10wallpaper.com/wallpaper/1366x768/1411/puppy_retriever_rest-Animal_Photo_Wallpaper_1366x768.jpg" />
           <MainImgTag>Hotel</MainImgTag>
         </Link>
       </MainImgContainer>
@@ -36,7 +35,7 @@ const Main = () => {
 
       <MainImgContainer>
         <Link to="/park">
-          <MainImg src="https://www.tfmedia.co.kr/data/photos/20200728/art_15942253142942_524c96.png" />
+          <MainImg src="https://image-notepet.akamaized.net/resize/620x-/seimage/20191113%2Ff6f280560384db2d6c6d797a281e52b1.png" />
           <MainImgTag>Park</MainImgTag>
         </Link>
       </MainImgContainer>
