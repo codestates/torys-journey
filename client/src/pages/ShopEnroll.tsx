@@ -3,12 +3,18 @@ import { useDispatch } from "react-redux";
 import store from "../redux/Store";
 import Post from "../modal/Post";
 import { Link } from "react-router-dom";
+import Upload from "../component/Upload";
 
 export type RootState = ReturnType<typeof store.getState>;
 
 const ShopEnroll = () => {
   const dispatch = useDispatch();
-
+  //!!!!!!!!!!!
+  const [address, setAddress] = useState()
+  const getAddress=(selected:any)=>{
+  setAddress(selected)
+  }
+  //!!!!!!!!!!!
   const [restaurantEnrollment, setRestaurantEnrollment] = useState({
     name: "",
     address: "",
@@ -36,6 +42,8 @@ const ShopEnroll = () => {
   }; //redux에 등록
 
   useEffect(shopEnroll);
+//!!!!!!!!!!!!!!!!!!!!!!!!!
+  
 
   return (
     <div>
@@ -69,8 +77,9 @@ const ShopEnroll = () => {
         onChange={handleInputValue("detailInfo")}
       />
       <br />
+     <Upload getAddress={getAddress}/>
       <button onClick={handlePostModal}>포스트 등록</button>
-      {postModal ? <Post handlePostModal={handlePostModal} /> : ""}
+      {postModal ? <Post handlePostModal={handlePostModal} address={address} /> : ""}
       <Link to="/restaurant">
         <button>취소</button>
       </Link>

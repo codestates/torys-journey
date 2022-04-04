@@ -7,13 +7,32 @@ import store from "../redux/Store";
 export type RootState = ReturnType<typeof store.getState>;
 
 const Post = (props: any) => {
+
   const navigate = useNavigate();
   // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
   const post = useSelector((data: RootState) => data.restaurantEnrollment);
-  //   console.log(post.name);
+    // console.log(post.name);
+  //!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+  const uri = props.address;
+  console.log(uri)
+  const uploadPicutre = () => {
+    if (uri) {
+      axios.post(
+        `${process.env.REACT_APP_API_URL}/restaurant/photo`,
+        { uri },
+        {
+          headers: {
+            "Content-Type": `multipart/form-data; `,
+            authorization: `Bearer ${localStorageTokenCheck}`,
+          },
+        }
+      );
+    }
+  };
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   const handlePost = () => {
     if (post.name && post.address) {
       let { name, address, phoneNumber, officeHours, detailInfo } = post;
@@ -36,7 +55,11 @@ const Post = (props: any) => {
           }
         )
         .then(() => alert("등록이 완료되었습니다."))
-        .then(() => navigate("/restaurant"));
+        .then(() => navigate("/restaurant"))
+        // //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        .then(() => uploadPicutre());
+        //35번줄 조건에 사진을 넣어햐하나???
+      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     } else {
       alert("상호명과 주소는 필수입니다.");
     }

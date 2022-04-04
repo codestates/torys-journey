@@ -21,6 +21,7 @@ const Info = () => {
   return (
     <div>
       <span>
+        <br />
         <div onClick={onClick}>식당 상세</div>
         <div onClick={onClick}>리뷰</div>
       </span>

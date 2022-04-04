@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { ReactElement, useState } from "react";
+import React, {useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { useSelector } from "react-redux";
+
 import { useParams } from "react-router-dom";
 import store from "../redux/Store";
 import ReviewList from "./ReviewList";

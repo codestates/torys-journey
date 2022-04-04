@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import store from "../redux/Store";
-import LogOut from "../component/LogOut";
+
 import Login from "../modal/Login";
 import { MainImg, MainImgTag, MainImgContainer, MainTag } from "../style/Main";
 
