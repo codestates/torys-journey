@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import store from "../redux/Store";
+
 import { MainImg, MainImgTag, MainImgContainer, MainTag } from "../style/Main";
 
 export type RootState = ReturnType<typeof store.getState>; //reducer까지 보려면 typescript에서는 여기에서 사용하여야 한다.

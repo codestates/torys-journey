@@ -26,6 +26,7 @@ const ShopList = (data: dummyData): any => {
   return (
     <RestaurantListDiv>
       <Link to={`/restaurantinfo/${data.data.id}`}>
+
         <RestaurantImg src={data.data.picture[0]} alt="음식점 사진" />
 
         <div>{data.data.name}</div>

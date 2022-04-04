@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
+import DetailCarousel from "./DetailCarousel";
 
 const CardImg = styled.img`
   width: 100%;
@@ -28,6 +29,12 @@ const StyledSlider = styled(Slider)`
 
 const Pictures = ({ picture }: any): React.ReactElement => {
   // console.log(picture);
+  const [modal, setModal] = useState(false);
+  const onClick = () => {
+    setModal(!modal);
+    // console.log(modal);
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -72,11 +79,16 @@ const Pictures = ({ picture }: any): React.ReactElement => {
         {picture.map((el: any) => {
           return (
             <div>
-              <CardImg src={el} alt="사진을 업로드해주세요" />
+              <CardImg
+                src={el}
+                alt="사진을 업로드해주세요"
+                onClick={() => {onClick()}}
+              />
+              
             </div>
           );
         })}
-      </StyledSlider>
+      </StyledSlider>{modal === true ? <DetailCarousel /> : ""}
     </div>
   );
 };

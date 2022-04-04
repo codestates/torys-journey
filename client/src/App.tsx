@@ -22,6 +22,7 @@ import MyInfo from "./pages/MyInfo";
 import ShopEnroll from "./pages/ShopEnroll";
 import Header from "./component/Header";
 
+
 export type RootState = ReturnType<typeof store.getState>;
 
 function App(): any {
@@ -57,7 +58,7 @@ function App(): any {
         <Route path="/park" element={<Park />} />
         <Route path="/hospital" element={<Hospital />} />
         <Route path="/writing" element={<Writing />} />
-        {/*모달임. 확인용으로 둔 것. 나중에 삭제*/}
+            
       </Routes>
     </div>
   );
