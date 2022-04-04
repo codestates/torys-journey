@@ -3,11 +3,11 @@ import Search from "../component/Search";
 import dummyData from "./TESTTESTTEST";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { RestaurantDiv } from "../style/RestaurantList";
 import ShopEnroll from "./ShopEnroll";
 import ShopList from "../component/ShopList";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { RestaurantDiv, RestaurantListDiv } from "../style/RestaurantList";
 
 export type Data = {
   id: number;
@@ -26,12 +26,11 @@ const Restaurant = () => {
       <Link to="/shopenroll">
         <button>식당 등록</button>
       </Link>
-        <RestaurantDiv>
-      {dummyData.map((el) => (
-        <ShopList key={el.id} data={el} />
-      ))}
-        </RestaurantDiv>
-
+      <RestaurantDiv>
+        {dummyData.map((el) => (
+          <ShopList key={el.id} data={el} />
+        ))}
+      </RestaurantDiv>
     </div>
   );
 };

@@ -17,6 +17,12 @@ export const MenuItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
+  &:hover {
+    background-color: #87ceeb;
+    cursor: pointer;
+    color: white;
+  }
 `;
 
 export const MenuLink = styled(Link)`

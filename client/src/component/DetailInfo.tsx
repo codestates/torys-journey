@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
 import BookMarkCheck from "./BookMarkCheck";
+import { DetailInfoDiv } from "../style/RestaurantInfo";
 
 const DetailInfo = () => {
   const params = useParams<any>();
@@ -23,17 +24,17 @@ const DetailInfo = () => {
   });
 
   return (
-    <div>
-      <h5>
-        <BookMarkCheck />
-        여기는 식당 정보
-      </h5>
-      업종: {information.name} <br />
-      주소: {information.address} <br />
-      전화번호: {information.number}
-      <br />
-      영업시간: {information.officeHours}
-    </div>
+    <>
+      <BookMarkCheck />
+      <DetailInfoDiv>
+        <h5>여기는 식당 정보</h5>
+        업종: {information.name} <br />
+        주소: {information.address} <br />
+        전화번호: {information.number}
+        <br />
+        영업시간: {information.officeHours}
+      </DetailInfoDiv>
+    </>
   );
 };
 
