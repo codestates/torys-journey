@@ -26,7 +26,14 @@ export const MainImgTag = styled.div`
 
 export const MainTag = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-left: 10%;
   margin-right: 10%;
+`;
+
+export const MainTag2 = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 23%;
+  /* margin-right: 15%; */
 `;

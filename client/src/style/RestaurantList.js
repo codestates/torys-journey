@@ -21,3 +21,8 @@ export const RestaurantDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
+export const RestaurantMainDiv = styled.div`
+  margin-left: 10%;
+  margin-right: 10%;
+`;

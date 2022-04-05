@@ -4,6 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
 import store from "../redux/Store";
 import { useSelector } from "react-redux";
+import { BookMarkDiv } from "../style/RestaurantInfo";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -55,9 +56,13 @@ const BookMarkCheck = () => {
   };
 
   return (
-    <div>
-      <FaStar onClick={() => bookMark()} color={clicked ? "gold" : "gray"} />
-    </div>
+    <BookMarkDiv>
+      <FaStar
+        onClick={() => bookMark()}
+        color={clicked ? "gold" : "gray"}
+        size="25"
+      />
+    </BookMarkDiv>
   );
 };
 

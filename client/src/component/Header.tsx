@@ -46,8 +46,11 @@ const Header = () => {
     <HeaderTag>
       <HeaderTitle>Tory's-journey</HeaderTitle>
       <MypageLink to="/mypage/bookmark">MyPage</MypageLink>
-      <LoginButton onClick={loginRequest}>LogIn</LoginButton>
-      <button onClick={handleLogOut}>LogOut</button>
+      {!localStorageTokenCheck ? (
+        <LoginButton onClick={loginRequest}>LogIn</LoginButton>
+      ) : (
+        <LoginButton onClick={handleLogOut}>LogOut</LoginButton>
+      )}
       {login ? <Login loginRequest={loginRequest} /> : ""}
     </HeaderTag>
   );

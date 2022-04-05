@@ -9,6 +9,12 @@ export const HeaderTag = styled.header`
   padding: 0 1rem;
 `;
 
+export const HeaderDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+`;
+
 export const HeaderTitle = styled.h1`
   display: flex;
   padding: 0;
@@ -24,6 +30,9 @@ export const LoginButton = styled.button`
 `;
 
 export const MypageLink = styled(Link)`
+  position: absolute;
+  top: 2rem;
+  right: 6rem;
   padding: 0;
   text-decoration: none;
 `;

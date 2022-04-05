@@ -180,9 +180,6 @@ const dummyData = [
     ],
 
     name: "목로",
-
-    name: "한식집",
-
     address: "경기 용인시 수지구 동천로 635",
     officeHours: "09:00 ~ 23:00",
     detailInfo: "주차가능",
@@ -195,9 +192,6 @@ const dummyData = [
     ],
 
     name: "어바웃샤브",
-
-    name: "샤브샤브집",
-
     address: "경기 수원시 영통구 광교중앙로 145",
     officeHours: "09:00 ~ 23:00",
     number: "010-1234-1234",
@@ -210,7 +204,6 @@ const dummyData = [
     ],
 
     name: "Just Steak",
-
 
     address: "경기 수원시 영통구 센트럴파크로127번길 159",
     number: "010-1234-1234",
@@ -260,7 +253,6 @@ const dummyData = [
   {
     id: 20,
     picture: [
-
       "https://img.etoday.co.kr/pto_db/2020/02/600/20200224150707_1428043_727_485.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220401_126%2F1648804182796YJBXW_JPEG%2Fupload_51fcd36338658f5edbb6a1bddf42f794.jpeg",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220226_239%2F1645846225766eXEXt_JPEG%2Fupload_9b0a009404afa7e33211ef91d178cc6d.jpg",

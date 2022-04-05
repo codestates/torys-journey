@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import store from "./redux/Store";
 import { useDispatch } from "react-redux";
 import { loginCheck } from "./redux/Reducer";
-
 import Home from "./pages/Home";
 import MyPage from "./pages/MyPage";
 import ProjectInfo from "./pages/ProjectInfo";
@@ -21,7 +20,7 @@ import MyReview from "./pages/MyReview";
 import MyInfo from "./pages/MyInfo";
 import ShopEnroll from "./pages/ShopEnroll";
 import Header from "./component/Header";
-
+import MyLocation from "./component/MyLocation";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -58,7 +57,7 @@ function App(): any {
         <Route path="/park" element={<Park />} />
         <Route path="/hospital" element={<Hospital />} />
         <Route path="/writing" element={<Writing />} />
-            
+        <Route path="/here" element={<MyLocation />} />
       </Routes>
     </div>
   );

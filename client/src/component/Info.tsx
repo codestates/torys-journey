@@ -20,7 +20,6 @@ const Info = () => {
   );
 
   return (
-
     <InfoDiv>
       <TabDiv>
         <RestaurantTab onClick={onClick}>식당 상세</RestaurantTab>

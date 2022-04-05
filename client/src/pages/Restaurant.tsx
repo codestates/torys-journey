@@ -7,7 +7,7 @@ import ShopEnroll from "./ShopEnroll";
 import ShopList from "../component/ShopList";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { RestaurantDiv, RestaurantListDiv } from "../style/RestaurantList";
+import { RestaurantDiv, RestaurantMainDiv } from "../style/RestaurantList";
 
 export type Data = {
   id: number;
@@ -21,7 +21,7 @@ export type Data = {
 
 const Restaurant = () => {
   return (
-    <div>
+    <RestaurantMainDiv>
       <Search />
       <Link to="/shopenroll">
         <button>식당 등록</button>
@@ -31,7 +31,7 @@ const Restaurant = () => {
           <ShopList key={el.id} data={el} />
         ))}
       </RestaurantDiv>
-    </div>
+    </RestaurantMainDiv>
   );
 };
 
