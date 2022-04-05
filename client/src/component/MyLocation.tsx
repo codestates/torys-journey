@@ -4,8 +4,6 @@ import dummyData from "../pages/TESTTESTTEST";
 const { kakao } = window as any;
 
 const MyLocation = () => {
-  const [markerAdd, getMarkerAdd] = useState([]);
-  const [area, setArea] = useState<any>({});
   const geocoder = new kakao.maps.services.Geocoder();
 
   useEffect(() => {
@@ -24,19 +22,47 @@ const MyLocation = () => {
           // 정상적으로 검색이 완료됐으면
           if (status === kakao.maps.services.Status.OK) {
             const coords = new kakao.maps.LatLng(result[0].y, result[0].x); //좌표따는 것
-            setArea(coords);
+
             // 결과값으로 받은 위치를 마커로 표시합니다
             const marker = new kakao.maps.Marker({
               map: map,
               position: coords,
             });
-            // console.log(marker)
+            // 커스텀 오버레이에 표시할 컨텐츠 입니다
+            // 커스텀 오버레이는 아래와 같이 사용자가 자유롭게 컨텐츠를 구성하고 이벤트를 제어할 수 있기 때문에
+            // 별도의 이벤트 메소드를 제공하지 않습니다
+            var content = 
+            `<div>
+              <div>
+                <div>
+                  ${el.name} 
+                </div> 
+                 <div>
+                   <img src=${el.picture[0]} width="73" height="70"/>
+                 </div>
+                  <div>
+                    <div>${el.address}</div>
+                    <div><a href="http://localhost:3000/restaurantinfo/{el.id}"  target="_self">상세정보</a></div>
+                  </div>
+              </div>
+            </div>`;
 
-            // 인포윈도우로 장소에 대한 설명을 표시합니다
-            const infowindow = new kakao.maps.InfoWindow({
-              content: `<div style="width:150px;text-align:center;padding:6px 0;">${el.name}</div>`,
+            // 마커 위에 커스텀오버레이를 표시합니다
+            // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+            var overlay = new kakao.maps.CustomOverlay({
+              content: content,
+              map: map,
+              position: marker.getPosition(),
             });
-            infowindow.open(map, marker);
+
+            // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+            kakao.maps.event.addListener(marker, "click", function () {
+              overlay.setMap(map);
+            });
+            // 마커를 클릭했을 때 커스텀 오버레이 닫기
+            kakao.maps.event.addListener(map, "click", function () {
+              overlay.setMap(null);
+            });
           }
         }
       )
@@ -67,7 +93,6 @@ const MyLocation = () => {
     // 지도에 마커와 인포윈도우를 표시하는 함수입니다
     function displayMarker(locPosition: any, message: any) {
       // 마커를 생성합니다
-
       var marker = new kakao.maps.Marker({
         map: map,
         position: locPosition,
@@ -98,3 +123,26 @@ const MyLocation = () => {
 };
 
 export default MyLocation;
+
+//    // 인포윈도우로 장소에 대한 설명을 표시합니다
+//    const infowindow = new kakao.maps.InfoWindow({
+//      content: `<div class="wrap">
+//          <div class="info">
+//            <div class="title">
+//                ${el.name}
+//               <div class="close" onclick="closeOverlay()" title="닫기"></div>
+//            </div>
+//            <div class="body">
+//                <div class="img">
+//                     <img src="${el.picture[0]}" width="73" height="70">
+//             </div>
+//                <div class="desc">
+//                    <div class="ellipsis">${el.address}</div>
+
+//                   <div><a href="http://localhost:3000/restaurantinfo/${el.id}"  class="link" target="_self">상세정보</a></div>
+//                </div>
+//             </div>
+//         </div>
+//      </div>`,
+//    });
+//    infowindow.open(map, marker);
