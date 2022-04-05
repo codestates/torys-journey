@@ -24,8 +24,8 @@ const DetailCarousel = ({ onClick }: onClickProps) => {
       thumbnail: el, //작은사진
       thumbnailHeight: 100,
     };
-  }); 
 
+  }); 
 
   return (
     <ImgModal>

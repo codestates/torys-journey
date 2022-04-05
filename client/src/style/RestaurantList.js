@@ -26,3 +26,39 @@ export const RestaurantMainDiv = styled.div`
   margin-left: 10%;
   margin-right: 10%;
 `;
+export const ShopEnrollLink = styled(Link)`
+  position: absolute;
+  top: 19.5%;
+  right: 6%;
+  text-decoration: none;
+  background-color: gold;
+  border: 1px solid black;
+  color: black;
+  transition: 0.5s;
+  &:hover {
+    background-color: #87ceeb;
+    cursor: pointer;
+    color: white;
+  }
+`;
+
+export const RestaurantH2 = styled.h2`
+  width: 100%;
+  margin: 10px 0 0;
+`;
+
+export const MapSearch = styled(Link)`
+  position: absolute;
+  top: 19.5%;
+  right: 10%;
+  text-decoration: none;
+  background-color: gold;
+  border: 1px solid black;
+  color: black;
+  transition: 0.5s;
+  &:hover {
+    background-color: #87ceeb;
+    cursor: pointer;
+    color: white;
+  }
+`;

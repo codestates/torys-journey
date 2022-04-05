@@ -13,11 +13,13 @@ const Post = (props: any) => {
   //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
   const post = useSelector((data: RootState) => data.restaurantEnrollment);
+
     // console.log(post.name);
   //!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const uri = props.address;
   console.log(uri)
+
   const uploadPicutre = () => {
     if (uri) {
       axios.post(

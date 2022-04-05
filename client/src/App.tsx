@@ -22,7 +22,6 @@ import ShopEnroll from "./pages/ShopEnroll";
 import Header from "./component/Header";
 import MyLocation from "./component/MyLocation";
 
-
 export type RootState = ReturnType<typeof store.getState>;
 
 function App(): any {
@@ -41,7 +40,7 @@ function App(): any {
 
   return (
     <div>
-      <Home />
+      {/* <Home /> */}
       <Header />
       <Navbar />
       <Routes>
@@ -63,7 +62,6 @@ function App(): any {
         <Route path="/hospital" element={<Hospital />} />
         <Route path="/writing" element={<Writing />} />
         <Route path="/here" element={<MyLocation />} />
-
       </Routes>
     </div>
   );
