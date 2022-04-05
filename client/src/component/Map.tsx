@@ -5,7 +5,7 @@ const { kakao } = window as any;
 
 const Map = ({ address, name }: any) => {
   const [area, setArea] = useState<any>({}); // 좌표 따는 state
-  console.log(address);
+  // console.log(address);
   useEffect(() => {
     const container = document.getElementById("map");
     const options = {
@@ -42,16 +42,8 @@ const Map = ({ address, name }: any) => {
   }, [address, name]); //react에서 쓸 거면 useEffect로 꼭 감싸야함(이유 모름..)
 
   return (
-    <div style={{ width: "36%", margin: " 2px 18px 0" }}>
-      <div
-        id="map"
-        style={{
-          width: "100%",
-          height: "400px",
-          border: "3px solid",
-          // margin: "0 20px 0 0",
-        }}
-      ></div>
+    <div>
+      <div id="map" style={{ width: "500px", height: "400px" }}></div>
       <a
         href={`https://map.kakao.com/link/to/${name},${area.Ma},${area.La}`}
         target="_blank"

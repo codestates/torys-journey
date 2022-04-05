@@ -11,11 +11,12 @@ type onClickProps = {
 };
 
 const DetailCarousel = ({ onClick }: onClickProps) => {
-  const params = useParams<string>();
+
+  const params= useParams<string>()
   const picture = dummyData.map((el: any) => el.picture);
-  console.log(picture[Number(`${params}`)]);
-  console.log(picture[Number(params.id)]);
-  const images = picture[Number(params.id) - 1].map((el: any) => {
+  console.log(picture[Number(`${params}`)])
+  console.log(picture[Number(params.id)])
+  const images =picture[Number(params.id)-1].map((el:any) => {
     return {
       original: el, //큰사진
       originalHeight: 700,
@@ -23,7 +24,8 @@ const DetailCarousel = ({ onClick }: onClickProps) => {
       thumbnail: el, //작은사진
       thumbnailHeight: 100,
     };
-  });
+
+  }); 
 
   return (
     <ImgModal>
