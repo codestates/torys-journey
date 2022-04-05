@@ -8,10 +8,11 @@ export type RootState = ReturnType<typeof store.getState>;
 
 type Props = {
   handlePostModal: () => void;
-  address: [string];
+  address: any
 };
 
 const Post = ({ handlePostModal, address }: Props) => {
+  console.log(address)
   const navigate = useNavigate();
   // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
@@ -21,7 +22,7 @@ const Post = ({ handlePostModal, address }: Props) => {
   //!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   const uri = address;
-  console.log(uri);
+  // console.log(uri);
   const uploadPicutre = () => {
     if (uri) {
       axios.post(

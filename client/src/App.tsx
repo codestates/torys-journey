@@ -21,6 +21,7 @@ import MyReview from "./pages/MyReview";
 import MyInfo from "./pages/MyInfo";
 import ShopEnroll from "./pages/ShopEnroll";
 import Header from "./component/Header";
+import MyLocation from "./component/MyLocation";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -61,6 +62,8 @@ function App(): any {
         <Route path="/park" element={<Park />} />
         <Route path="/hospital" element={<Hospital />} />
         <Route path="/writing" element={<Writing />} />
+        <Route path="/here" element={<MyLocation />} />
+
       </Routes>
     </div>
   );
