@@ -18,11 +18,11 @@ export type RootState = ReturnType<typeof store.getState>;
 
 const ShopEnroll = () => {
   const dispatch = useDispatch();
-
-  const [address, setAddress] = useState([]);
-
-  console.log("1111", address);
-
+  //!!!!!!!!!!!
+  const [address, setAddress] = useState();
+  const getAddress = (selected: any) => {
+    setAddress(selected);
+  };
   //!!!!!!!!!!!
   const [restaurantEnrollment, setRestaurantEnrollment] = useState({
     name: "",
@@ -87,7 +87,7 @@ const ShopEnroll = () => {
           onChange={handleInputValue("detailInfo")}
         />
       </WritingDiv>
-      <Upload setAddress={setAddress} />
+      <Upload getAddress={getAddress} />
       <WritingButton onClick={handlePostModal}>포스트 등록</WritingButton>
       {postModal ? (
         <Post handlePostModal={handlePostModal} address={address} />
