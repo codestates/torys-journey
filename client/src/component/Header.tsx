@@ -34,6 +34,9 @@ const Header = () => {
         }
       )
       .then(() => {
+        alert("로그아웃에 성공하였습니다.");
+      })
+      .then(() => {
         localStorage.clear();
       })
       .then(() => {
@@ -48,7 +51,11 @@ const Header = () => {
       <MypageLink to="/mypage/bookmark">MyPage</MypageLink>
       <LoginButton onClick={loginRequest}>LogIn</LoginButton>
       <button onClick={handleLogOut}>LogOut</button>
-      {login ? <Login loginRequest={loginRequest} /> : ""}
+      {!localStorageTokenCheck && login ? (
+        <Login loginRequest={loginRequest} />
+      ) : (
+        ""
+      )}
     </HeaderTag>
   );
 };

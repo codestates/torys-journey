@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 import { useParams } from "react-router-dom";
@@ -52,7 +52,6 @@ const ReviewMember = () => {
             "Content-Type": `application/json`,
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
-          withCredentials: true,
         }
       )
       .then(getReviews)
