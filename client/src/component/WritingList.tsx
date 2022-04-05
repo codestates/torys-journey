@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WritingChange from "../modal/WritingChange";
+import { WritingDiv } from "../style/Mypage";
 
 type WritingListProps = {
   writingList: {
@@ -25,25 +26,23 @@ const WritingList = ({ writingList }: WritingListProps) => {
   //수정 버튼을 눌렀을 때 하나씩 띄우려면 컴포넌트로 전달해야 함.
 
   return (
-    <div>
-      <div>
-        {writingList.name}
-        {writingList.address}
-        {writingList.detailInfo}
-        {/* {writingList.officeHours} */}
-        <button onClick={writingChangeModal}>수정 / 삭제</button>
+    <WritingDiv>
+      <div>{writingList.name}</div>
+      <div>{writingList.address}</div>
+      <div>{writingList.detailInfo}</div>
+      {/* {writingList.officeHours} */}
+      <button onClick={writingChangeModal}>수정 / 삭제</button>
 
-        {writingChange ? (
-          <WritingChange
-            key={writingList.id}
-            WritingChange={writingList}
-            writingChangeModal={writingChangeModal}
-          />
-        ) : (
-          ""
-        )}
-      </div>
-    </div>
+      {writingChange ? (
+        <WritingChange
+          key={writingList.id}
+          WritingChange={writingList}
+          writingChangeModal={writingChangeModal}
+        />
+      ) : (
+        ""
+      )}
+    </WritingDiv>
   );
 };
 

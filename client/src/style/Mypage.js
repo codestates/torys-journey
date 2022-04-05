@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const MyPageDiv = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const MyPageInfo = styled.div`
@@ -21,4 +22,14 @@ export const MypageInput = styled.input`
   padding: 0px;
   border: 1px solid lightgrey;
   outline: none;
+`;
+
+export const WritingDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  width: 90%;
 `;

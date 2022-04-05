@@ -25,7 +25,7 @@ const DetailInfo = () => {
 
   return (
     <>
-      <BookMarkCheck />
+      {/* <BookMarkCheck /> */}
       <DetailInfoDiv>
         <h5>여기는 식당 정보</h5>
         업종: {information.name} <br />

@@ -88,7 +88,9 @@ const Login = ({ loginRequest }: loginRequestProps) => {
         <SignUp handleModal={handleModal} />
       ) : (
         <InputModal>
-          <FontAwesomeIcon icon={faTimes} />
+          <button>
+            <FontAwesomeIcon onClick={loginRequest} icon={faTimes} />
+          </button>
           <LoginTitle>Log-in</LoginTitle>
           <form onSubmit={(e) => e.preventDefault()}>
             <div>

@@ -6,7 +6,8 @@ import styled from "styled-components";
 import DetailCarousel from "./DetailCarousel";
 
 const CardImg = styled.img`
-  width: 100%;
+  width: 96%;
+  margin: 2%;
   height: 240px;
 `;
 
@@ -19,7 +20,7 @@ const StyledSlider = styled(Slider)`
 
   .slick-prev {
     left: 3%; /*위치*/
-    /* z-index: 999; */
+    z-index: 1;
   }
 
   .slick-next {
@@ -82,13 +83,15 @@ const Pictures = ({ picture }: any): React.ReactElement => {
               <CardImg
                 src={el}
                 alt="사진을 업로드해주세요"
-                onClick={() => {onClick()}}
+                onClick={() => {
+                  onClick();
+                }}
               />
-              
             </div>
           );
         })}
-      </StyledSlider>{modal === true ? <DetailCarousel /> : ""}
+      </StyledSlider>
+      {modal ? <DetailCarousel onClick={onClick} /> : ""}
     </div>
   );
 };

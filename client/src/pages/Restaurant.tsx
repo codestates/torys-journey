@@ -5,7 +5,8 @@ import axios from "axios";
 import ShopList from "../component/ShopList";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { RestaurantDiv } from "../style/RestaurantList";
+import { RestaurantDiv, RestaurantMainDiv } from "../style/RestaurantList";
+
 
 export type Data = {
   id: number;
@@ -30,7 +31,7 @@ const Restaurant = () => {
   // useEffect(callRestaurantInformation, [])
 
   return (
-    <div>
+    <RestaurantMainDiv>
       <Search />
       <Link to="/shopenroll">
         <button>식당 등록</button>
@@ -40,7 +41,7 @@ const Restaurant = () => {
           <ShopList key={el.id} data={el} />
         ))}
       </RestaurantDiv>
-
+    </RestaurantMainDiv>
       {/* <Search />
       <Link to="/shopenroll">
         <button>식당 등록</button>
@@ -51,6 +52,7 @@ const Restaurant = () => {
         ))}
       </RestaurantDiv> */}
     </div>
+
   );
 };
 

@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom"; //params를 확인하는 것
 import Pictures from "../component/Pictures";
 import Info from "../component/Info";
 import Map from "../component/Map";
+import BookMarkCheck from "../component/BookMarkCheck";
 import dummyData from "../pages/TESTTESTTEST";
-import { RestaurantDiv } from "../style/RestaurantInfo";
+import { RestaurantDiv, RestaurantMainDiv } from "../style/RestaurantInfo";
 
 const RestaurantInfo = () => {
   const params = useParams<any>();
@@ -14,7 +15,7 @@ const RestaurantInfo = () => {
   console.log(pictureProps);
 
   return (
-    <div>
+    <RestaurantMainDiv>
       <h1>{pictureProps[0].name}</h1>
       {/* <img
         src={dummyData[Number(params.id) - 1].picture}
@@ -23,6 +24,7 @@ const RestaurantInfo = () => {
       <Pictures key={pictureProps[0].id} picture={pictureProps[0].picture} />
       {/* 같은 id 사진 띄우기. 더미데이터 사진 id 바꿔야함. //! key 수정해야함. */}
       <RestaurantDiv>
+        <BookMarkCheck />
         <Info />
         <Map
           key={pictureProps[0].address}
@@ -30,7 +32,7 @@ const RestaurantInfo = () => {
           name={pictureProps[0].name}
         />
       </RestaurantDiv>
-    </div>
+    </RestaurantMainDiv>
   );
 };
 

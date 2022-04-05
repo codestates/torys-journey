@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import dummyData from "./TESTTESTTEST";
 import WritingList from "../component/WritingList";
+import { MyPageDiv, WritingDiv } from "../style/Mypage";
 
 const WritingManage = () => {
   const navigate = useNavigate();
@@ -31,24 +32,25 @@ const WritingManage = () => {
   // useEffect(callUserWriting, [callUserWriting]); // 정보 불러오기 useEffect
   // console.log("랜더링확인")
   return (
-    <div>
+    <MyPageDiv>
       <MyPageMenu />
-      <div>작성글 리스트</div>
-      {dummyData.map(
-        //writing.map
-        (el: {
-          id: number;
-          name: string;
-          picture: string[]; //photo로 바꾸기
-          address: string;
-          number: string;
-          detailInfo: string;
-          officeHours: string;
-        }) => (
-          <WritingList writingList={el} />
-        )
-      )}
-    </div>
+      <WritingDiv>
+        {dummyData.map(
+          //writing.map
+          (el: {
+            id: number;
+            name: string;
+            picture: string[]; //photo로 바꾸기
+            address: string;
+            number: string;
+            detailInfo: string;
+            officeHours: string;
+          }) => (
+            <WritingList writingList={el} />
+          )
+        )}
+      </WritingDiv>
+    </MyPageDiv>
   );
 };
 

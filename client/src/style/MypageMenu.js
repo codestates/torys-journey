@@ -15,6 +15,7 @@ export const MenuItem = styled.li`
   height: 100px;
   margin: 10px;
   display: flex;
+
   justify-content: center;
   align-items: center;
   transition: 0.5s;
