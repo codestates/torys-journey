@@ -8,6 +8,7 @@ type ReviewChangeProps = {
   //!레스토랑ID가 없음
   ReviewChange: {
     reviewId: number;
+    restaurantId: number;
     name: string;
     rating: number;
     comment: string;
@@ -48,7 +49,7 @@ const ReviewChange = ({
     if (comment) {
       axios
         .patch(
-          `${process.env.REACT_APP_API_URL}/restaurant/${value.restaurantId}/review/${ReviewChange.reviewId}`,
+          `${process.env.REACT_APP_API_URL}/restaurant/${ReviewChange.restaurantId}/review/${ReviewChange.reviewId}`,
           //!레스토랑ID가 없음
           {
             comment: comment,
@@ -76,7 +77,7 @@ const ReviewChange = ({
     axios
       .delete(
         //! 레스토랑Id가 없음
-        `${process.env.REACT_APP_API_URL}/restaurant/${value.restaurantId}/review/${ReviewChange.reviewId}`,
+        `${process.env.REACT_APP_API_URL}/restaurant/${ReviewChange.restaurantId}/review/${ReviewChange.reviewId}`,
         {
           headers: {
             authorization: `Bearer ${localStorageTokenCheck}`,

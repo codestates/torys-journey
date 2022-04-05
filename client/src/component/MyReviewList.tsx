@@ -4,6 +4,7 @@ type ReviewListProps = {
   //!레스토랑ID가 없음
   reviewList: {
     reviewId: number;
+    restaurantId: number;
     name: string;
     rating: number;
     comment: string;
