@@ -22,7 +22,6 @@ import MyInfo from "./pages/MyInfo";
 import ShopEnroll from "./pages/ShopEnroll";
 import Header from "./component/Header";
 
-
 export type RootState = ReturnType<typeof store.getState>;
 
 function App(): any {
@@ -37,7 +36,7 @@ function App(): any {
     if (localStorageTokenCheck) {
       dispatch(loginCheck());
     }
-  }, []);
+  }, [localStorageTokenCheck]);
 
   return (
     <div>
@@ -45,7 +44,11 @@ function App(): any {
       <Header />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Main />} />
+        {localStorageTokenCheck ? (
+          <Route path="/" element={<Main />} />
+        ) : (
+          <Route path="/" element={<ProjectInfo />} />
+        )}
         <Route path="/mypage/writingmanage" element={<WritingManage />} />
         <Route path="/mypage/bookmark" element={<MyPage />} />
         <Route path="/mypage/myreview" element={<MyReview />} />
@@ -58,7 +61,6 @@ function App(): any {
         <Route path="/park" element={<Park />} />
         <Route path="/hospital" element={<Hospital />} />
         <Route path="/writing" element={<Writing />} />
-            
       </Routes>
     </div>
   );

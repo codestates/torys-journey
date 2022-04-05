@@ -34,6 +34,9 @@ const Header = () => {
         }
       )
       .then(() => {
+        alert("로그아웃에 성공하였습니다.");
+      })
+      .then(() => {
         localStorage.clear();
       })
       .then(() => {
