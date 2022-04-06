@@ -23,8 +23,8 @@ const RestaurantInfo = () => {
       /> */}
       <Pictures key={pictureProps[0].id} picture={pictureProps[0].picture} />
       {/* 같은 id 사진 띄우기. 더미데이터 사진 id 바꿔야함. //! key 수정해야함. */}
+      <BookMarkCheck />
       <RestaurantDiv>
-        <BookMarkCheck />
         <Info />
         <Map
           key={pictureProps[0].address}
