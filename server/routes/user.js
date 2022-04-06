@@ -15,10 +15,10 @@ router.patch('/', userController.user.patch)
 
 router.get('/', userController.user.get)
 
-// router.get('/review', userController.review.get)
+router.get('/review', userController.review.get)
 
-// router.get('/restaurant', userController.restaurant.get)
+router.get('/restaurant', userController.restaurant.get)
 
-// router.get('/bookmark', userController.bookmark.get)
+router.get('/bookmark', userController.bookmark.get)
 
 module.exports = router ;

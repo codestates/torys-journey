@@ -1,3 +1,6 @@
 module.exports = {
-    restaurant: require('./restaurant')
+    restaurant: require('./restaurant'),
+    review: require('./review'),
+    bookmark: require('./bookmark'),
+    photo: require('./photo')
   };

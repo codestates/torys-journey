@@ -11,11 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      bookmark.belongsTo(models.user, {
+        foreignKey: "userId",
+        // onDelete: "cascade"
+      });
+      bookmark.belongsTo(models.restaurant, {
+        foreignKey: "restaurantId",
+        // onDelete: "cascade"
+      });
     }
   }
   bookmark.init({
-    userId: DataTypes.STRING,
-    restaurantId: DataTypes.STRING
+    userId: DataTypes.INTEGER,
+    restaurantId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'bookmark',

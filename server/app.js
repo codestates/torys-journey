@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(
     cors({
-      origin: true,
+      origin: '*',
       credentials: true
     })
 )
@@ -27,7 +27,7 @@ passportConfig();
 
 app.get('/', test.get)
 app.use('/user', userRouter)
-app.use('/rest', restaurantRouter)
+app.use('/restaurant', restaurantRouter)
 app.use('/oauth', oauthRouter)
 
 const PORT = process.env.PORT || 4000;

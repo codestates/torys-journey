@@ -11,12 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      photo.belongsTo(models.user, {
+        foreignKey: "userId",
+        // onDelete: "cascade"
+      });
+      photo.belongsTo(models.restaurant, {
+        foreignKey: "restaurantId",
+        // onDelete: "cascade"
+      });
     }
   }
   photo.init({
     userId: DataTypes.INTEGER,
     restaurantId: DataTypes.INTEGER,
-    url: DataTypes.STRING
+    uri: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'photo',

@@ -14,7 +14,7 @@ module.exports = {
       restaurantId: {
         type: Sequelize.INTEGER
       },
-      url: {
+      uri: {
         type: Sequelize.STRING
       },
       createdAt: {

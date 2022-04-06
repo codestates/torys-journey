@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1023)
       },
       oauthId: {
         type: Sequelize.INTEGER

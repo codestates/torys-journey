@@ -3,7 +3,7 @@ module.exports = {
     logout: require('./logout'),
     signup: require('./signup'),
     user: require('./user'),
-    // review: require('./review'),
-    // restaurant: require('./review'),
-    // bookmark: require('./bookmark')
+    review: require('./review'),
+    restaurant: require('./restaurant'),
+    bookmark: require('./bookmark')
   };

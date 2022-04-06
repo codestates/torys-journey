@@ -12,7 +12,7 @@ const { user } = require('../models');
 
 module.exports = () => {
     // Local Strategy
-    passport.use(new LocalStrategy({
+    passport.use('local', new LocalStrategy({
         usernameField: 'email',
         passwordField: 'password'
     },async (email, password, done) => {
@@ -21,11 +21,13 @@ module.exports = () => {
             if( !userInfo ) {
                 done(null, false, { message: '이메일을 잘못 입력하셨습니다.'})
             }
-            const isValidPW = await bcrypt.compare(password, userInfo.dataValues.password)
+            const isValidPW = await bcrypt.compare(password, userInfo.dataValues.password);
+
             if( isValidPW ) {
                 done(null, userInfo);
-            }
+            } else {
             done(null, false, { message: '비밀번호를 잘못 입력하셨습니다.'});
+            }
         } catch(error) {
             console.error(error);
             done(error);

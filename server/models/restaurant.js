@@ -11,6 +11,22 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      restaurant.hasMany(models.bookmark, {
+        foreignKey: "restaurantId",
+        // onDelete: "cascade"
+      });
+      restaurant.hasMany(models.review,{
+        foreignKey: "restaurantId",
+        // onDelete: "cascade"
+      });
+      restaurant.hasMany(models.hashtag_restaurant, {
+        foreignKey: "restaurantId",
+        // onDelete: "cascade"
+      });
+      restaurant.hasMany(models.photo, {
+        foreignKey: "restaurantId",
+        // onDelete: "cascade"
+      });
     }
   }
   restaurant.init({
@@ -20,6 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     phoneNumber: DataTypes.STRING,
     officeHours: DataTypes.STRING,
     detailInfo: DataTypes.STRING,
+    rating: DataTypes.NUMBER,
     caution: DataTypes.BOOLEAN
   }, {
     sequelize,
