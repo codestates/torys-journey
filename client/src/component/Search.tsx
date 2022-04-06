@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { SearchForm, SearchFormInput, SearchDiv } from "../style/Search";
@@ -13,7 +13,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     dispatch({ type: "search", payload: searchTerm });
-  });
+  }); // shoplist에서 사용
 
   return (
     <SearchDiv>
@@ -25,26 +25,9 @@ const SearchBar = () => {
             setSearchTerm(event.target.value);
           }}
         />
-        {/* <SearchFormSubmit type="submit" value="검색" onClick={submitButton} /> */}
-        <MapSearch to="/here">내위치에서 검색</MapSearch>
-        <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
       </SearchForm>
     </SearchDiv>
   );
 };
 
 export default SearchBar;
-
-// import React from "react";
-// import { SearchForm, SearchFormInput, SearchFormSubmit } from "../style/Search";
-
-// const SearchBar = () => {
-//   return (
-//     <SearchForm>
-//       <SearchFormInput type="search" />
-//       <SearchFormSubmit type="submit" value="검색" />
-//     </SearchForm>
-//   );
-// };
-
-// export default SearchBar;

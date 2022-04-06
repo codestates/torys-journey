@@ -18,13 +18,12 @@ export type RootState = ReturnType<typeof store.getState>;
 
 const ShopEnroll = () => {
   const dispatch = useDispatch();
-  //!!!!!!!!!!!
 
-  const [address, setAddress] = useState();
+  const [pictureAddress, setPictureAddress] = useState();
   const getAddress = (selected: any) => {
-    setAddress(selected);
-  };
-  //!!!!!!!!!!!
+    setPictureAddress(selected);
+  }; //사진 imgbb에 업로드해서 주는 url 받아오는 것
+
   const [restaurantEnrollment, setRestaurantEnrollment] = useState({
     name: "",
     address: "",
@@ -52,7 +51,6 @@ const ShopEnroll = () => {
   }; //redux에 등록
 
   useEffect(shopEnroll);
-  //!!!!!!!!!!!!!!!!!!!!!!!!!
 
   return (
     <WritingMainDiv>
@@ -93,7 +91,10 @@ const ShopEnroll = () => {
 
       <WritingButton onClick={handlePostModal}>포스트 등록</WritingButton>
       {postModal ? (
-        <Post handlePostModal={handlePostModal} address={address} />
+        <Post
+          handlePostModal={handlePostModal}
+          pictureAddress={pictureAddress}
+        />
       ) : (
         ""
       )}

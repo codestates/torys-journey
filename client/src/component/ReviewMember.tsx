@@ -62,10 +62,8 @@ const ReviewMember = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/restaurant/${params.id}/review`, {
         headers: {
-          "Content-Type": `application/json`,
           authorization: `Bearer ${localStorageTokenCheck}`,
         },
-        withCredentials: true,
       })
       .then((res) => setGetReview(res.data))
       .catch(() => alert("리뷰 불러오기가 실패하였습니다."));
