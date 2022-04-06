@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { SearchForm, SearchFormInput, SearchDiv } from "../style/Search";
 
+import { ShopEnrollLink, MapSearch } from "../style/RestaurantList";
+
 const SearchBar = () => {
   const dispatch = useDispatch();
 

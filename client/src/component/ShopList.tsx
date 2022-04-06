@@ -11,6 +11,8 @@ import {
   RestaurantListDiv,
   RestaurantLink,
   RestaurantDiv,
+  RestaurantName,
+
 } from "../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -40,6 +42,7 @@ const ShopList = () => {
   //!-------------------------------------------------------------
 
   return (
+
     <RestaurantDiv>
       {search === ""
         ? dummyData.map((el: any, key) => (
