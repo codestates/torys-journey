@@ -36,7 +36,6 @@ const MyPage = () => {
 
   return (
     <div>
-
       <div>
         <MyPageMenu />
       </div>
@@ -58,7 +57,6 @@ const MyPage = () => {
       ) : (
         ""
       )}
-
     </div>
   );
 };

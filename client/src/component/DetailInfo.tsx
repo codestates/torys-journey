@@ -12,9 +12,7 @@ const DetailInfo = () => {
 
   const restaurantInformation = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/restaurant/${params.id}`, {
-        withCredentials: true,
-      })
+      .get(`${process.env.REACT_APP_API_URL}/restaurant/${params.id}`, {})
       .then((res) => setInformation(res.data))
       .catch((ewr) => console.log("ewr"));
   };
@@ -28,9 +26,12 @@ const DetailInfo = () => {
       {/* <BookMarkCheck /> */}
       <DetailInfoDiv>
         <h5>여기는 식당 정보</h5>
-        업종: {information.name} <br />
+        상호명: {information.name} <br />
+        평점: {information.rating} <br />
         주소: {information.address} <br />
         전화번호: {information.number}
+        <br />
+        상세정보: {information.detailInfo}
         <br />
         영업시간: {information.officeHours}
       </DetailInfoDiv>
