@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import dummyData from "../pages/TESTTESTTEST";
+import { Link } from "react-router-dom";
 
 const { kakao } = window as any;
 
@@ -8,12 +9,12 @@ const MyLocation = () => {
 
   useEffect(() => {
     //!!!!!! 지도 만들기
-    var container = document.getElementById("map");
-    var options = {
+    const container = document.getElementById("map");
+    const options = {
       center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
       level: 8, //지도 확대
     };
-    var map = new kakao.maps.Map(container, options);
+    const map = new kakao.maps.Map(container, options);
     //!!!!!!!!!!!!!!!!!!!!!!식당들 위치에 마커표시
     dummyData.map((el) =>
       geocoder.addressSearch(
@@ -31,9 +32,8 @@ const MyLocation = () => {
             // 커스텀 오버레이에 표시할 컨텐츠 입니다
             // 커스텀 오버레이는 아래와 같이 사용자가 자유롭게 컨텐츠를 구성하고 이벤트를 제어할 수 있기 때문에
             // 별도의 이벤트 메소드를 제공하지 않습니다
-            var content = 
-            `<div>
-              <div>
+            const content = `<div>
+              <div style="background:white">
                 <div>
                   ${el.name} 
                 </div> 
@@ -42,14 +42,14 @@ const MyLocation = () => {
                  </div>
                   <div>
                     <div>${el.address}</div>
-                    <div><a href="http://localhost:3000/restaurantinfo/{el.id}"  target="_self">상세정보</a></div>
+                    <div><a href="http://localhost:3000/restaurantinfo/${el.id}" target="_self">상세정보</a></div>
                   </div>
               </div>
             </div>`;
 
             // 마커 위에 커스텀오버레이를 표시합니다
             // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
-            var overlay = new kakao.maps.CustomOverlay({
+            const overlay = new kakao.maps.CustomOverlay({
               content: content,
               map: map,
               position: marker.getPosition(),
@@ -72,10 +72,10 @@ const MyLocation = () => {
     if (navigator.geolocation) {
       // GeoLocation을 이용해서 접속 위치를 얻어옵니다
       navigator.geolocation.getCurrentPosition(function (position) {
-        var lat = position.coords.latitude, // 위도
+        const lat = position.coords.latitude, // 위도
           lon = position.coords.longitude; // 경도
 
-        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+        const locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
           message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
 
         // 마커와 인포윈도우를 표시합니다
@@ -84,7 +84,7 @@ const MyLocation = () => {
     } else {
       // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
 
-      var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
+      const locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
         message = "geolocation을 사용할수 없어요..";
 
       displayMarker(locPosition, message);
@@ -93,16 +93,16 @@ const MyLocation = () => {
     // 지도에 마커와 인포윈도우를 표시하는 함수입니다
     function displayMarker(locPosition: any, message: any) {
       // 마커를 생성합니다
-      var marker = new kakao.maps.Marker({
+      const marker = new kakao.maps.Marker({
         map: map,
         position: locPosition,
       });
 
-      var iwContent = message, // 인포윈도우에 표시할 내용
+      const iwContent = message, // 인포윈도우에 표시할 내용
         iwRemoveable = true;
 
       // 인포윈도우를 생성합니다
-      var infowindow = new kakao.maps.InfoWindow({
+      const infowindow = new kakao.maps.InfoWindow({
         content: iwContent,
         removable: iwRemoveable,
       });
@@ -117,7 +117,7 @@ const MyLocation = () => {
 
   return (
     <div>
-      <div id="map" style={{ width: "500px", height: "400px" }}></div>
+      <div id="map" style={{ width: "1000px", height: "600px" }}></div>
     </div>
   );
 };
