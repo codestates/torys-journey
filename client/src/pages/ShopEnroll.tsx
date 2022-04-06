@@ -14,17 +14,16 @@ import {
   WritingMainDiv,
 } from "../style/ShopEnroll";
 
-
 export type RootState = ReturnType<typeof store.getState>;
 
 const ShopEnroll = () => {
   const dispatch = useDispatch();
   //!!!!!!!!!!!
 
-  const [address, setAddress] = useState()
-  const getAddress=(selected:any)=>{
-  setAddress(selected)
-  }
+  const [address, setAddress] = useState();
+  const getAddress = (selected: any) => {
+    setAddress(selected);
+  };
   //!!!!!!!!!!!
   const [restaurantEnrollment, setRestaurantEnrollment] = useState({
     name: "",
@@ -53,11 +52,9 @@ const ShopEnroll = () => {
   }; //redux에 등록
 
   useEffect(shopEnroll);
-//!!!!!!!!!!!!!!!!!!!!!!!!!
-  
+  //!!!!!!!!!!!!!!!!!!!!!!!!!
 
   return (
-
     <WritingMainDiv>
       <WritingTitle>식당 등록하기</WritingTitle>
       <WritingDiv>
@@ -92,10 +89,14 @@ const ShopEnroll = () => {
         />
       </WritingDiv>
 
-       <Upload getAddress={getAddress}/>
+      <Upload getAddress={getAddress} />
 
       <WritingButton onClick={handlePostModal}>포스트 등록</WritingButton>
-   {postModal ? <Post handlePostModal={handlePostModal} address={address} /> : ""}
+      {postModal ? (
+        <Post handlePostModal={handlePostModal} address={address} />
+      ) : (
+        ""
+      )}
 
       <Link to="/restaurant">
         <WritingButton>취소</WritingButton>
