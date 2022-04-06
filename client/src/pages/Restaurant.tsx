@@ -27,8 +27,8 @@ const Restaurant = () => {
   return (
     <RestaurantMainDiv>
       <Search />
-      <MapSearch to="/here">내위치에서 검색</MapSearch>
-      <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
+      {/* <MapSearch to="/here">내위치에서 검색</MapSearch>
+      <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink> */}
       <RestaurantDiv>
         <RestaurantH2>여기는 어떠신가요??</RestaurantH2>
 

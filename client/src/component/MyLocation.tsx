@@ -37,9 +37,9 @@ const MyLocation = () => {
                 <div>
                   ${el.name} 
                 </div> 
-                 <div>
-                   <img src=${el.picture[0]} width="73" height="70"/>
-                 </div>
+                  <div>
+                    <img src=${el.picture[0]} width="73" height="70"/>
+                  </div>
                   <div>
                     <div>${el.address}</div>
                     <div><a href="http://localhost:3000/restaurantinfo/${el.id}" target="_self">상세정보</a></div>

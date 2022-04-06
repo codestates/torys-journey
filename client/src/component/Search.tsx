@@ -12,6 +12,8 @@ import {
   SearchDiv2,
 } from "../style/Search";
 
+import { ShopEnrollLink, MapSearch } from "../style/RestaurantList";
+
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [button, setButton] = useState(false);
@@ -29,6 +31,8 @@ const SearchBar = () => {
           }}
         />
         {/* <SearchFormSubmit type="submit" value="검색" onClick={submitButton} /> */}
+        <MapSearch to="/here">내위치에서 검색</MapSearch>
+        <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
       </SearchForm>
       <SearchDiv2>
         {dummyData

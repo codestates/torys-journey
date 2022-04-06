@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 export const SearchForm = styled.form`
   display: flex;
   width: 100%;
-  height: 40px;
+  height: 50px;
+  align-items: baseline;
 `;
 
 export const SearchFormInput = styled.input`
-  width: 80%;
-  
+  width: 70%;
+  height: 100%;
   margin-left: 10%;
   border: 1px solid black
   border-radius: 0.3em;

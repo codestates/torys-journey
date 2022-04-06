@@ -5,6 +5,7 @@ import {
   RestaurantImg,
   RestaurantListDiv,
   RestaurantLink,
+  RestaurantName,
 } from "../style/RestaurantList";
 
 // type informationProps = {
@@ -29,7 +30,7 @@ const ShopList = ({ data }: dummyData) => {
       <Link to={`/restaurantinfo/${data.id}`}>
         <RestaurantImg src={data.picture[0]} alt="음식점 사진" />
 
-        <div>{data.name}</div>
+        <RestaurantName>{data.name}</RestaurantName>
       </Link>
     </RestaurantListDiv>
 
