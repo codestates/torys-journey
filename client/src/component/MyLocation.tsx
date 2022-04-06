@@ -12,7 +12,7 @@ const MyLocation = () => {
     const container = document.getElementById("map");
     const options = {
       center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
-      level: 8, //지도 확대
+      level: 5, //지도 확대
     };
     const map = new kakao.maps.Map(container, options);
     //!!!!!!!!!!!!!!!!!!!!!!식당들 위치에 마커표시
@@ -32,27 +32,31 @@ const MyLocation = () => {
             // 커스텀 오버레이에 표시할 컨텐츠 입니다
             // 커스텀 오버레이는 아래와 같이 사용자가 자유롭게 컨텐츠를 구성하고 이벤트를 제어할 수 있기 때문에
             // 별도의 이벤트 메소드를 제공하지 않습니다
-            const content = `<div>
-              <div style="background:white">
-                <div>
-                  ${el.name} 
-                </div> 
-                 <div>
-                   <img src=${el.picture[0]} width="73" height="70"/>
-                 </div>
-                  <div>
-                    <div>${el.address}</div>
-                    <div><a href="http://localhost:3000/restaurantinfo/${el.id}" target="_self">상세정보</a></div>
-                  </div>
-              </div>
-            </div>`;
+            const content =
+              `<div class="wrap" style="background:white">` +
+              `  <div class="info">` +
+              `        <div class="title">` +
+              `            ${el.name}` +
+              `        </div>` +
+              `        <div class="body">` +
+              `            <div class="img">` +
+              `                <img src=${el.picture[0]} width="73" height="70">` +
+              `           </div>` +
+              `            <div class="desc">` +
+              `                <div class="ellipsis">${el.address}</div>` +
+              `                <div><a href="http://localhost:3000/restaurantinfo/${el.id}" target="_self" class="link">홈페이지</a></div>` +
+              `            </div>` +
+              `        </div>` +
+              `    </div>` +
+              `</div>`;
 
             // 마커 위에 커스텀오버레이를 표시합니다
             // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
-            const overlay = new kakao.maps.CustomOverlay({
+            var overlay = new kakao.maps.CustomOverlay({
               content: content,
               map: map,
               position: marker.getPosition(),
+              clickable: true,
             });
 
             // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
