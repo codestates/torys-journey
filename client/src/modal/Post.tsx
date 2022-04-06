@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import store from "../redux/Store";
@@ -7,36 +7,15 @@ import store from "../redux/Store";
 export type RootState = ReturnType<typeof store.getState>;
 
 const Post = (props: any) => {
-
   const navigate = useNavigate();
-  // const localId = useSelector((localId: RootState) => localId.Reducer.id);
-  //서버에서 user id를 redux에 저장한 것을 여기로 꺼내오기.
+
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
   const post = useSelector((data: RootState) => data.restaurantEnrollment);
 
-    // console.log(post.name);
-  //!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  const uri = props.address;
-  console.log(uri)
-
-  const uploadPicutre = () => {
-    if (uri) {
-      axios.post(
-        `${process.env.REACT_APP_API_URL}/restaurant/photo`,
-        { uri },
-        {
-          headers: {
-            "Content-Type": `multipart/form-data; `,
-            authorization: `Bearer ${localStorageTokenCheck}`,
-          },
-        }
-      );
-    }
-  };
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  const uri = props.address; //사진 올린 것 주소 받아오기
+  const [restaurantId, setRestaurantId] = useState<number>();
   const handlePost = () => {
-    if (post.name && post.address) {
+    if (post.name && post.address && uri) {
       let { name, address, phoneNumber, officeHours, detailInfo } = post;
       axios
         .post(
@@ -50,21 +29,30 @@ const Post = (props: any) => {
           },
           {
             headers: {
-              "Content-Type": `application/json`,
               authorization: `Bearer ${localStorageTokenCheck}`,
             },
-            withCredentials: true,
           }
         )
-        .then(() => alert("등록이 완료되었습니다."))
-        .then(() => navigate("/restaurant"))
-        // //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        .then(() => uploadPicutre());
-        //35번줄 조건에 사진을 넣어햐하나???
-      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        .then((res) => setRestaurantId(res.data.id))
+        .then(() => uploadPicture);
     } else {
-      alert("상호명과 주소는 필수입니다.");
+      alert("상호명과 주소와 사진은 필수입니다.");
     }
+  };
+  const uploadPicture = () => {
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/restaurant/${restaurantId}/photo`,
+        { uri: uri },
+        {
+          headers: {
+            authorization: `Bearer ${localStorageTokenCheck}`,
+          },
+        }
+      )
+      .then(() => alert("등록이 완료되었습니다"))
+      .then(() => navigate("/mypage/writingmanage"))
+      .catch(() => alert("등록에 실패하였습니다."));
   };
 
   return (
