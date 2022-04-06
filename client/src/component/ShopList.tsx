@@ -7,6 +7,7 @@ import {
   RestaurantImg,
   RestaurantListDiv,
   RestaurantLink,
+  RestaurantName,
 } from "../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -18,6 +19,7 @@ const ShopList = () => {
   //! 테스트 시 이걸로 바꾸기
   return (
     <RestaurantListDiv>
+
       {search === ""
         ? dummyData.map((el: any, key) => (
             <Link to={`/restaurantinfo/${el.id}`} key={key}>
@@ -52,6 +54,7 @@ const ShopList = () => {
                 </RestaurantListDiv>
               );
             })}
+
     </RestaurantListDiv>
 
     // <RestaurantListDiv>

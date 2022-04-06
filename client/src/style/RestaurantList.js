@@ -27,9 +27,15 @@ export const RestaurantMainDiv = styled.div`
   margin-right: 10%;
 `;
 export const MapSearch = styled(Link)`
-  position: absolute;
+  /* position: absolute;
   top: 19.5%;
-  right: 10%;
+  right: 10%; */
+  margin-left: 1%;
+  width: 110px;
+  height: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   background-color: gold;
   border: 1px solid black;
@@ -42,9 +48,13 @@ export const MapSearch = styled(Link)`
   }
 `;
 export const ShopEnrollLink = styled(Link)`
-  position: absolute;
+  /* position: absolute;
   top: 19.5%;
-  right: 6%;
+  right: 6%; */
+  margin-left: 1%;
+  height: 20px;
+  width: 75px;
+  text-align: center;
   text-decoration: none;
   background-color: gold;
   border: 1px solid black;
@@ -60,4 +70,10 @@ export const ShopEnrollLink = styled(Link)`
 export const RestaurantH2 = styled.h2`
   width: 100%;
   margin: 10px 0 0;
+`;
+
+export const RestaurantName = styled.div`
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-left: 10px;
 `;

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { SearchForm, SearchFormInput, SearchDiv } from "../style/Search";
 
+import { ShopEnrollLink, MapSearch } from "../style/RestaurantList";
+
 const SearchBar = () => {
   const dispatch = useDispatch();
 
@@ -24,6 +26,8 @@ const SearchBar = () => {
           }}
         />
         {/* <SearchFormSubmit type="submit" value="검색" onClick={submitButton} /> */}
+        <MapSearch to="/here">내위치에서 검색</MapSearch>
+        <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
       </SearchForm>
     </SearchDiv>
   );
