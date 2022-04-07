@@ -9,8 +9,11 @@ import store from "../redux/Store";
 import {
   RestaurantImg,
   RestaurantListDiv,
+  RestaurantDiv,
   RestaurantLink,
   RestaurantDiv,
+  RestaurantName,
+  RestaurantMainDiv,
 } from "../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -40,6 +43,7 @@ const ShopList = () => {
     <RestaurantDiv>
       {search === ""
         ? dummyData.map((el: any, key) => (
+
             <RestaurantListDiv key={key}>
               <Link to={`/restaurantinfo/${el.id}`}>
                 <RestaurantImg src={el.photo[0]} alt="음식점 사진" />

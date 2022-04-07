@@ -20,8 +20,8 @@ export const LoginModal = styled.div`
 `;
 
 export const InputModal = styled.div`
-  width: 40vw;
-  height: 60vh;
+  width: 40%;
+  height: 60%;
   padding: 2em;
   border-radius: 1em;
   background: white;
@@ -52,3 +52,15 @@ export const LoginButton = styled.button`
   letter-spacing: 2px;
   margin-top: 10px;
 `;
+
+export const OauthLogo = styled.img`
+  width: 70px;
+  margin: 10px;
+`;
+
+export const CloseButtonDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+`;
+export const CloseButton = styled.button``;
