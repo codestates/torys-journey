@@ -6,13 +6,18 @@ import store from "../redux/Store";
 
 export type RootState = ReturnType<typeof store.getState>;
 
-const Post = (props: any) => {
+type Props = {
+  handlePostModal: () => void;
+  pictureAddress: [] | undefined;
+};
+
+const Post = (props: Props) => {
   const navigate = useNavigate();
 
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
   const post = useSelector((data: RootState) => data.restaurantEnrollment);
 
-  const uri = props.address; //사진 올린 것 주소 받아오기
+  const uri = props.pictureAddress; //사진 올린 것 주소 받아오기
   const [restaurantId, setRestaurantId] = useState<number>();
   const handlePost = () => {
     if (post.name && post.address && uri) {

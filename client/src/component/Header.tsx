@@ -56,7 +56,6 @@ const Header = () => {
         <LoginButton onClick={handleLogOut}>LogOut</LoginButton>
       )}
       {login ? <Login loginRequest={loginRequest} /> : ""}
-
     </HeaderTag>
   );
 };
