@@ -9,10 +9,11 @@ import store from "../redux/Store";
 import {
   RestaurantImg,
   RestaurantListDiv,
+  RestaurantDiv,
   RestaurantLink,
   RestaurantDiv,
   RestaurantName,
-
+  RestaurantMainDiv,
 } from "../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -42,14 +43,13 @@ const ShopList = () => {
   //!-------------------------------------------------------------
 
   return (
-
     <RestaurantDiv>
       {search === ""
         ? dummyData.map((el: any, key) => (
             <RestaurantListDiv>
               <Link to={`/restaurantinfo/${el.id}`} key={key}>
                 <RestaurantImg src={el.picture[0]} alt="음식점 사진" />
-                <div>{el.name}</div>
+                <RestaurantName>{el.name}</RestaurantName>
                 {/* <div>{el.rating}</div> //! 서버 연결되면 풀기 (평점) */}
               </Link>
             </RestaurantListDiv>

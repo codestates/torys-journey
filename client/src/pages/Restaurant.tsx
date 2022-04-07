@@ -50,7 +50,6 @@ const Restaurant = () => {
       <button onClick={handleMyLocation}>내 주변 검색</button>
       <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
       <RestaurantDiv>
-        <RestaurantH2>여기는 어떠신가요??</RestaurantH2>
         <ShopList />
       </RestaurantDiv>
     </RestaurantMainDiv>

@@ -10,13 +10,13 @@ export const MenuItem = styled.li`
   list-style: none;
   background-color: gold;
   width: 20%;
-  transition: 0.5s;
+  /* transition: 0.5s;
   &:hover {
     background-color: #87ceeb;
     cursor: pointer;
     color: white;
     width: 30%;
-  }
+  } */
 `;
 
 export const MenuLink = styled(Link)`

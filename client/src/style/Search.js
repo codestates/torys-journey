@@ -5,7 +5,7 @@ export const SearchForm = styled.form`
   display: flex;
   width: 100%;
   height: 50px;
-  align-items: baseline;
+  /* align-items: baseline; */
 `;
 
 export const SearchFormInput = styled.input`
