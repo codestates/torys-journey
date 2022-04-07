@@ -6,8 +6,10 @@ import store from "../redux/Store";
 import {
   RestaurantImg,
   RestaurantListDiv,
+  RestaurantDiv,
   RestaurantLink,
   RestaurantName,
+  RestaurantMainDiv,
 } from "../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -18,14 +20,15 @@ const ShopList = () => {
   // const dummyData = useSelector((data: RootState) => data.restaurantInformation);
   //! 테스트 시 이걸로 바꾸기
   return (
-    <RestaurantListDiv>
-
+    <RestaurantDiv>
       {search === ""
         ? dummyData.map((el: any, key) => (
-            <Link to={`/restaurantinfo/${el.id}`} key={key}>
-              <RestaurantImg src={el.picture[0]} alt="음식점 사진" />
-              <div>{el.name}</div>
-            </Link>
+            <RestaurantListDiv>
+              <Link to={`/restaurantinfo/${el.id}`} key={key}>
+                <RestaurantImg src={el.picture[0]} alt="음식점 사진" />
+                <RestaurantName>{el.name}</RestaurantName>
+              </Link>
+            </RestaurantListDiv>
           ))
         : dummyData
             .filter((val: any) => {
@@ -54,8 +57,7 @@ const ShopList = () => {
                 </RestaurantListDiv>
               );
             })}
-
-    </RestaurantListDiv>
+    </RestaurantDiv>
 
     // <RestaurantListDiv>
     //     <Link to={`/restaurantinfo/${data.id}`}>
