@@ -13,7 +13,7 @@ const DetailInfo = () => {
   const restaurantInformation = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/restaurant/${params.id}`, {})
-      .then((res) => setInformation(res.data))
+      .then((res) => setInformation(res.data.data))
       .catch((ewr) => console.log("ewr"));
   };
 

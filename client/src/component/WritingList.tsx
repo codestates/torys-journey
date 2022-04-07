@@ -6,7 +6,7 @@ type WritingListProps = {
   writingList: {
     id: number;
     name: string;
-    picture: string[]; //photo로 바꾸기
+    photo: string[]; //photo로 바꾸기
     address: string;
     number: string;
     detailInfo: string;
