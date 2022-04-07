@@ -49,7 +49,6 @@ const ReviewMember = () => {
         },
         {
           headers: {
-            "Content-Type": `application/json`,
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
         }

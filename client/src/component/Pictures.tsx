@@ -77,9 +77,9 @@ const Pictures = ({ picture }: any): React.ReactElement => {
   return (
     <div>
       <StyledSlider {...settings}>
-        {picture.map((el: any) => {
+        {picture.map((el: any, key: React.Key | null | undefined) => {
           return (
-            <div>
+            <div key={key}>
               <CardImg
                 src={el}
                 alt="사진을 업로드해주세요"

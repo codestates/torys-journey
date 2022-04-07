@@ -12,15 +12,17 @@ type Props = {
 };
 
 const Post = (props: Props) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
   const post = useSelector((data: RootState) => data.restaurantEnrollment);
 
   const uri = props.pictureAddress; //사진 올린 것 주소 받아오기
-  const [restaurantId, setRestaurantId] = useState<number>();
+  // const [restaurantId, setRestaurantId] = useState<number>();
+
   const handlePost = () => {
     if (post.name && post.address && uri) {
+      let restaurantId: number;
       let { name, address, phoneNumber, officeHours, detailInfo } = post;
       axios
         .post(
@@ -38,13 +40,20 @@ const Post = (props: Props) => {
             },
           }
         )
-        .then((res) => setRestaurantId(res.data.id))
-        .then(() => uploadPicture);
+        .then((res) => {
+          console.log(res.data.data);
+          restaurantId = res.data.data.id;
+        })
+        .then(() => {
+          uploadPicture(restaurantId);
+        });
     } else {
       alert("상호명과 주소와 사진은 필수입니다.");
     }
   };
-  const uploadPicture = () => {
+  const uploadPicture = (restaurantId: number) => {
+    console.log(uri);
+
     axios
       .post(
         `${process.env.REACT_APP_API_URL}/restaurant/${restaurantId}/photo`,
@@ -56,7 +65,7 @@ const Post = (props: Props) => {
         }
       )
       .then(() => alert("등록이 완료되었습니다"))
-      .then(() => navigate("/mypage/writingmanage"))
+      // .then(() => navigate("/mypage/writingmanage"))
       .catch(() => alert("등록에 실패하였습니다."));
   };
 

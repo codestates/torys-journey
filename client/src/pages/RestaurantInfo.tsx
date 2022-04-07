@@ -5,35 +5,42 @@ import Pictures from "../component/Pictures";
 import Info from "../component/Info";
 import Map from "../component/Map";
 import BookMarkCheck from "../component/BookMarkCheck";
-import dummyData from "./TESTTESTTEST";
 import { RestaurantDiv, RestaurantMainDiv } from "../style/RestaurantInfo";
 
 const RestaurantInfo = () => {
   const params = useParams();
 
-  // const [restaurantInfo, setRestaurantInfo] = useState({}); //! 서버 연결 시 해제
+  const [restaurantInfo, setRestaurantInfo] = useState({
+    id: 0,
+    name: "",
+    photo: [""],
+    rating: 0,
+    address: "",
+    number: "",
+    detailInfo: "",
+    officeHours: "",
+  });
 
-  // const getRestaurantInfo = () => {
-  //   //! 서버 연결 시 해제
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}/restaurant/${params.id}`, {})
-  //     .then((res) => setRestaurantInfo(res))
-  //     .catch(() => alert("불러오기를 실패하였습니다."));
-  // };
+  const getRestaurantInfo = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/restaurant/${params.id}`, {})
+      .then((res) => {
+        console.log(res.data.data);
+        setRestaurantInfo(res.data.data);
+      })
+      .catch(() => alert("불러오기를 실패하였습니다."));
+  };
 
-  // useEffect(getRestaurantInfo, [params.id]);
-
-  const pictureProps = dummyData.filter((el) => el.id === Number(params.id));
-  //! 테스트 때 없애기
+  useEffect(getRestaurantInfo, [params.id]);
 
   return (
     <RestaurantMainDiv>
-      <h1>{pictureProps[0].name}</h1>
-      <Pictures picture={pictureProps[0].picture} />
+      <h1>{restaurantInfo.name}</h1>
+      <Pictures picture={restaurantInfo.photo} />
       <BookMarkCheck />
       <RestaurantDiv>
         <Info />
-        <Map address={pictureProps[0].address} name={pictureProps[0].name} />
+        <Map address={restaurantInfo.address} name={restaurantInfo.name} />
       </RestaurantDiv>
     </RestaurantMainDiv>
   );
