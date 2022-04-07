@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import store from "../redux/Store";
+import { useNavigate } from "react-router-dom";
+
 import { useSelector } from "react-redux";
 
 type handleMadalDeleteBookMarkProps = {
   handleMadalDeleteBookMark: () => void;
-  bookMarkData: any; //!서버 연결되면 수정
+  bookMarkData: {
+    id: string;
+    photo: [string];
+    name: string;
+  }; //!서버 연결되면 수정
 };
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -14,23 +20,27 @@ const DeleteBookMark = ({
   handleMadalDeleteBookMark,
   bookMarkData,
 }: handleMadalDeleteBookMarkProps) => {
+  const navigate = useNavigate();
+
+  const [rendering, setRendering] = useState("");
+
   // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
-
+  console.log("22222", bookMarkData);
   const deleteBookMark = () => {
     axios
       .delete(
         `${process.env.REACT_APP_API_URL}/restaurant/${bookMarkData.id}/bookmark`,
         {
+          //레스토랑ID로 수정
           headers: {
-            "Content-Type": `application/json`,
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
-          withCredentials: true,
         }
       )
       .then(() => alert("북마크 삭제를 성공하였습니다."))
       .then(handleMadalDeleteBookMark)
+      .then(() => window.location.reload()) //! 블로그(리랜더링)
       .catch(() => alert("북마크 삭제를 실패하였습니다."));
   };
 

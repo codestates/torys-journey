@@ -19,7 +19,7 @@ const DetailInfo = () => {
 
   useEffect(() => {
     restaurantInformation();
-  });
+  }, []);
 
   return (
     <>
