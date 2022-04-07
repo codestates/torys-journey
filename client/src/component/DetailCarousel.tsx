@@ -8,14 +8,11 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 type onClickProps = {
   onClick: () => void;
+  photo: [];
 };
 
-const DetailCarousel = ({ onClick }: onClickProps) => {
-  const params = useParams<string>();
-  const picture = dummyData.map((el: any) => el.picture);
-  console.log(picture[Number(`${params}`)]);
-  console.log(picture[Number(params.id)]);
-  const images = picture[Number(params.id) - 1].map((el: any) => {
+const DetailCarousel = ({ onClick, photo }: onClickProps) => {
+  const images = photo.map((el: any) => {
     return {
       original: el, //큰사진
       originalHeight: 700,

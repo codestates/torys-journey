@@ -25,13 +25,15 @@ const RestaurantInfo = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/restaurant/${params.id}`, {})
       .then((res) => {
-        console.log(res.data.data);
+        // console.log(res.data.data);
         setRestaurantInfo(res.data.data);
       })
       .catch(() => alert("불러오기를 실패하였습니다."));
   };
 
-  useEffect(getRestaurantInfo, [params.id]);
+  useEffect(() => {
+    getRestaurantInfo();
+  }, []);
 
   return (
     <RestaurantMainDiv>

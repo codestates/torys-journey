@@ -29,18 +29,16 @@ const StyledSlider = styled(Slider)`
 `;
 
 const Pictures = ({ picture }: any): React.ReactElement => {
-  // console.log(picture);
   const [modal, setModal] = useState(false);
   const onClick = () => {
     setModal(!modal);
-    // console.log(modal);
   };
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: picture.length > 5 ? 5 : picture.length,
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: "0px",
@@ -77,7 +75,7 @@ const Pictures = ({ picture }: any): React.ReactElement => {
   return (
     <div>
       <StyledSlider {...settings}>
-        {picture.map((el: any, key: React.Key | null | undefined) => {
+        {picture.map((el: string, key: React.Key | null | undefined) => {
           return (
             <div key={key}>
               <CardImg
@@ -91,7 +89,7 @@ const Pictures = ({ picture }: any): React.ReactElement => {
           );
         })}
       </StyledSlider>
-      {modal ? <DetailCarousel onClick={onClick} /> : ""}
+      {modal ? <DetailCarousel onClick={onClick} photo={picture} /> : ""}
     </div>
   );
 };

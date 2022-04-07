@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import WritingChangeModalOnModal from "./WritingChangeModalOnModal";
 import WritingDeleteModalOnModal from "./WritingDeleteModalOnModal";
-import { useNavigate } from "react-router-dom";
 
 type WritingChangeProps = {
   WritingChange: {
@@ -21,8 +20,6 @@ const WritingChange = ({
   WritingChange,
   writingChangeModal,
 }: WritingChangeProps) => {
-  const navigate = useNavigate();
-
   const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
   const [modal, setModal] = useState(false); // 포스트 등록 누를 시 나오는 모달 state
   const [modalDelete, setModalDelete] = useState(false); // 포스트 삭제 누를 시 나오는 모달 state
@@ -67,7 +64,6 @@ const WritingChange = ({
           }
         )
         .then(() => alert("수정이 완료되었습니다."))
-        .then(() => navigate("/"))
         .catch((res) => {
           if (res.response.status === 401)
             alert("정보를 수정할 수 있는 권한이 없습니다."); //오류 status에 따른 alert
@@ -89,7 +85,6 @@ const WritingChange = ({
         }
       )
       .then(() => alert("삭제가 완료되었습니다."))
-      .then(() => navigate("/"))
       .catch(() => alert("삭제할 수 있는 권한이 없습니다."));
   };
 

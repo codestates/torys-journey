@@ -20,7 +20,7 @@ const MyReview = () => {
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
         })
-        .then((res) => setReview(res.data)) //get data state에 저장 //!레스토랑ID가 없음
+        .then((res) => setReview(res.data.data)) //get data state에 저장 //!레스토랑ID가 없음
         .catch(() => alert("작성하신 리뷰를 불러오는데 실패하였습니다."));
       // .catch(() => navigate("/"));
     } else {

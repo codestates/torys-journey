@@ -22,16 +22,17 @@ const WritingManage = () => {
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
         })
-        .then((res) => setWriting(res.data)) //get data state에 저장
-        .catch(() => alert("작성하신 글을 불러오는데 실패하였습니다."));
+        .then((res) => setWriting(res.data.data)) //get data state에 저장
+        .catch((err) => err);
     } else {
       alert("로그인 후 이용해주세요");
       navigate("/");
     }
   };
 
-  useEffect(callUserWriting, [callUserWriting]); // 정보 불러오기 useEffect
-  console.log("랜더링확인");
+  useEffect(() => {
+    callUserWriting();
+  }, []); // 정보 불러오기 useEffect
   return (
     <MyPageDiv>
       <MyPageMenu />

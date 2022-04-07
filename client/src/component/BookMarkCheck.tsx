@@ -4,10 +4,13 @@ import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
 import store from "../redux/Store";
 import { BookMarkDiv } from "../style/RestaurantInfo";
+import { useDispatch } from "react-redux";
 
 export type RootState = ReturnType<typeof store.getState>;
 
 const BookMarkCheck = () => {
+  const dispatch = useDispatch();
+
   const [clicked, setClicked] = useState(false);
   const params = useParams();
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
@@ -26,8 +29,13 @@ const BookMarkCheck = () => {
           },
         }
       )
-      .then(() => setClicked(true));
-  }); //회원 북마크 등록 여부에 따라 화면 로딩 시 확인
+      .then(() => setClicked(true))
+      .catch((err) => err);
+  }, []); //회원 북마크 등록 여부에 따라 화면 로딩 시 확인
+  console.log("1");
+  // const dasdfef => {
+
+  // }
 
   const bookMark = () => {
     if (localStorageTokenCheck && clicked === false) {
