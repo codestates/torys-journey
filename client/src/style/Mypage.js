@@ -9,6 +9,7 @@ export const MyPageDiv = styled.div`
 
 export const MyPageMenuDiv = styled.div`
   width: 10%;
+  background-color: orange;
 `;
 export const MyPageInfo = styled.div`
   margin-left: 10%;
@@ -72,16 +73,27 @@ export const BookMarkListDiv = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   box-sizing: border-box;
-  width: 86%;
+  width: 70%;
   margin-left: 3%;
 `;
 
 export const BookMarkItemDiv = styled.div`
-  width: 30%;
-  margin: 1%;
+  box-sizing: border-box;
+  width: 22.2%;
+  padding: 0.5%;
+  margin: 1.4%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  transition: 0.3s;
+  border-radius: 4px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.12);
+  }
 `;
 
-export const RestaurantImg = styled.img`
+export const BookMarkImg = styled.img`
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -121,4 +133,23 @@ export const ReviewContent = styled.div`
   width: 100%;
   border: 1px solid black;
   box-sizing: border-box;
+`;
+
+export const RestaurantAddressDiv = styled.div`
+  display: flex;
+  margin-left: 1%;
+  margin-right: 1%;
+  color: black;
+  font-size: 22px;
+  font-family: "NanumPen";
+`;
+
+export const RestaurantNameDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1%;
+  margin-right: 1%;
+  color: black;
+  font-size: 30px;
+  font-family: "NanumPen";
 `;

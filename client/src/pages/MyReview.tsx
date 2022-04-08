@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MyPageMenu from "../component/MyPageMenu";
 import MyReviewList from "../component/MyReviewList";
-import { MyPageDiv, WritingDiv } from "../style/Mypage";
+import { MyPageDiv, MyPageMenuDiv, WritingDiv } from "../style/Mypage";
 
 const MyReview = () => {
   const navigate = useNavigate();
@@ -41,7 +41,9 @@ const MyReview = () => {
 
   return (
     <MyPageDiv>
-      <MyPageMenu />
+      <MyPageMenuDiv>
+        <MyPageMenu />
+      </MyPageMenuDiv>
       {result.map(
         //!레스토랑ID가 없음
         (

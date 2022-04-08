@@ -12,14 +12,14 @@ export const SearchFormInput = styled.input`
   width: 70%;
   height: 100%;
   margin-left: 15%;
-  border: 1px solid black
+  border: 1px solid black;
   border-radius: 0.3em;
   font-size: 1rem;
 `;
 
 export const SearchFormSubmit = styled.input`
   width: 4em;
-  border 0;
+  border: 0;
   border-radius: 0.3em;
   font-size: 1rem;
   background: gold;
@@ -33,7 +33,6 @@ export const SearchFormSubmit = styled.input`
 
 export const SearchDiv = styled.div`
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
 `;
 

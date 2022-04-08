@@ -31,6 +31,7 @@ export const LoginDiv = styled.div`
     border-bottom: 3px solid yellowgreen;
     cursor: pointer;
     color: black;
+    transform: scale(1.15);
   }
 `;
 
@@ -53,5 +54,6 @@ export const MypageLink = styled(Link)`
     border-bottom: 3px solid yellowgreen;
     cursor: pointer;
     color: black;
+    transform: scale(1.15);
   }
 `;
