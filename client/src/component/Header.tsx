@@ -7,7 +7,8 @@ import {
   HeaderTag,
   HeaderTitle,
   MypageLink,
-  LoginButton,
+  LoginDiv,
+  DivContainer,
 } from "../style/Header";
 
 const Header = () => {
@@ -49,13 +50,15 @@ const Header = () => {
   return (
     <HeaderTag>
       <HeaderTitle>Tory's-journey</HeaderTitle>
-      <MypageLink to="/mypage/bookmark">MyPage</MypageLink>
+      <DivContainer>
+        <MypageLink to="/mypage/bookmark">Mypage</MypageLink>
 
-      {!localStorageTokenCheck ? (
-        <LoginButton onClick={loginRequest}>LogIn</LoginButton>
-      ) : (
-        <LoginButton onClick={handleLogOut}>LogOut</LoginButton>
-      )}
+        {!localStorageTokenCheck ? (
+          <LoginDiv onClick={loginRequest}>Login</LoginDiv>
+        ) : (
+          <LoginDiv onClick={handleLogOut}>Logout</LoginDiv>
+        )}
+      </DivContainer>
       {login ? <Login loginRequest={loginRequest} /> : ""}
     </HeaderTag>
   );

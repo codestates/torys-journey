@@ -20,19 +20,38 @@ export const HeaderTitle = styled.h1`
   padding: 0;
 `;
 
-export const LoginButton = styled.button`
-  background-color: gold;
+export const LoginDiv = styled.div`
+  position: absolute;
+  font-family: "Nanum";
+  right: 0.5rem;
+  background-color: white;
+  width: 80px;
+  text-align: center;
   &:hover {
-    background-color: #87ceeb;
+    border-bottom: 3px solid yellowgreen;
     cursor: pointer;
-    color: white;
+    color: black;
   }
+`;
+
+export const DivContainer = styled.div`
+  position: absolute;
+  top: 4.5rem;
+  right: 2rem;
 `;
 
 export const MypageLink = styled(Link)`
   position: absolute;
-  top: 2rem;
+  font-family: "Nanum";
   right: 6rem;
   padding: 0;
   text-decoration: none;
+  color: black;
+  width: 80px;
+  text-align: center;
+  &:hover {
+    border-bottom: 3px solid yellowgreen;
+    cursor: pointer;
+    color: black;
+  }
 `;

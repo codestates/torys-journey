@@ -54,6 +54,7 @@ const ReviewMember = () => {
         }
       )
       .then(() => alert("리뷰 작성이 완료되었습니다."))
+      .then(() => window.location.reload())
       .then(() => getReviews())
       .catch(() => alert("리뷰 등록이 실패하였습니다."));
   }; //리뷰 등록
@@ -66,6 +67,7 @@ const ReviewMember = () => {
         },
       })
       .then((res) => setGetReview(res.data.data))
+
       .catch(() => alert("리뷰 불러오기가 실패하였습니다."));
   }; //리뷰 등록 후 요청
 

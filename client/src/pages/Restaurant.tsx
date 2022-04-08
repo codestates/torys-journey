@@ -29,16 +29,6 @@ const Restaurant = () => {
         <ShopList />
       </RestaurantDiv>
     </RestaurantMainDiv>
-
-    // <Search />
-    // <Link to="/shopenroll">
-    //   <button>식당 등록</button>
-    // </Link>
-    // <RestaurantDiv>
-    //   {information.map((el) => (
-    //     <ShopList key={el.id} data={el} />
-    //   ))}
-    // </RestaurantDiv>
   );
 };
 
