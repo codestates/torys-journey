@@ -48,6 +48,7 @@ const ShopList = () => {
               >
                 <RestaurantImg src={el.photo[0]} alt="음식점 사진" />
                 <div>{el.name}</div>
+
                 <div>{el.rating}</div>
               </Link>
             </RestaurantListDiv>
