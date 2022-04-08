@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const SearchForm = styled.form`
   display: flex;
+
   width: 100%;
   height: 50px;
   /* align-items: baseline; */

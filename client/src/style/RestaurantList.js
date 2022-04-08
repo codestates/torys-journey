@@ -10,9 +10,10 @@ export const RestaurantImg = styled.img`
 export const RestaurantLink = styled(Link)``;
 
 export const RestaurantListDiv = styled.div`
-  width: 30%;
+  width: 22.2%;
+  box-sizing: border-box;
   padding: 0.5%;
-  margin: 1%;
+  margin: 1.4%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
@@ -54,7 +55,7 @@ export const ShopEnrollLink = styled(Link)`
   /* position: absolute;
   top: 19.5%;
   right: 6%; */
-  margin-left: 1%;
+  margin-left: 3%;
   height: 100%;
   width: 75px;
   font-size: 1.2rem;
@@ -84,4 +85,5 @@ export const RestaurantName = styled.div`
 export const ButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 `;

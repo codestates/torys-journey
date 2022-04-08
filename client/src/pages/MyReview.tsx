@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MyPageMenu from "../component/MyPageMenu";
 import MyReviewList from "../component/MyReviewList";
-import { MyPageDiv, WritingDiv } from "../style/Mypage";
+import { MyPageDiv, ReviewDiv, MyPageMenuDiv } from "../style/Mypage";
 
 const MyReview = () => {
   const navigate = useNavigate();
@@ -41,22 +41,26 @@ const MyReview = () => {
 
   return (
     <MyPageDiv>
-      <MyPageMenu />
-      {result.map(
-        //!레스토랑ID가 없음
-        (
-          el: {
-            reviewId: number;
-            restaurantId: number;
-            name: string;
-            rating: number;
-            comment: string;
-          },
-          key
-        ) => (
-          <MyReviewList reviewList={el} key={key} />
-        )
-      )}
+      <MyPageMenuDiv>
+        <MyPageMenu />
+      </MyPageMenuDiv>
+      <ReviewDiv>
+        {result.map(
+          //!레스토랑ID가 없음
+          (
+            el: {
+              reviewId: number;
+              restaurantId: number;
+              name: string;
+              rating: number;
+              comment: string;
+            },
+            key
+          ) => (
+            <MyReviewList reviewList={el} key={key} />
+          )
+        )}
+      </ReviewDiv>
     </MyPageDiv>
   );
 };

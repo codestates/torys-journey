@@ -33,25 +33,23 @@ const WritingList = ({ writingList }: WritingListProps) => {
   //수정 버튼을 눌렀을 때 하나씩 띄우려면 컴포넌트로 전달해야 함.
 
   return (
-    <WritingDiv>
-      <WritingItemDiv>
-        <WritingName>{writingList.name}</WritingName>
-        <WritingAddress>{writingList.address}</WritingAddress>
-        <WritingButton onClick={writingChangeModal}>수정 / 삭제</WritingButton>
-        <WritingContent>{writingList.detailInfo}</WritingContent>
-        {/* {writingList.officeHours} */}
+    <WritingItemDiv>
+      <WritingName>{writingList.name}</WritingName>
+      <WritingAddress>{writingList.address}</WritingAddress>
+      <WritingButton onClick={writingChangeModal}>수정 / 삭제</WritingButton>
+      <WritingContent>{writingList.detailInfo}</WritingContent>
+      {/* {writingList.officeHours} */}
 
-        {writingChange ? (
-          <WritingChange
-            key={writingList.id}
-            WritingChange={writingList}
-            writingChangeModal={writingChangeModal}
-          />
-        ) : (
-          ""
-        )}
-      </WritingItemDiv>
-    </WritingDiv>
+      {writingChange ? (
+        <WritingChange
+          key={writingList.id}
+          WritingChange={writingList}
+          writingChangeModal={writingChangeModal}
+        />
+      ) : (
+        ""
+      )}
+    </WritingItemDiv>
   );
 };
 
