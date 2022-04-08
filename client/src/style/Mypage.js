@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export const MyPageDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
 `;
 
 export const MyPageMenuDiv = styled.div`
@@ -33,7 +32,7 @@ export const WritingDiv = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  margin-left: 3%;
+  margin: 1%;
   width: 86%;
 `;
 export const WritingItemDiv = styled.div`
@@ -103,7 +102,7 @@ export const ReviewDiv = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  margin-left: 3%;
+  margin: 1%;
   width: 86%;
 `;
 

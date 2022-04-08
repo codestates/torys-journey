@@ -8,8 +8,8 @@ export const RestaurantImg = styled.img`
 `;
 
 export const RestaurantListDiv = styled.div`
-  box-sizing: border-box;
   width: 22.2%;
+  box-sizing: border-box;
   padding: 0.5%;
   margin: 1.4%;
   background-color: white;
@@ -54,6 +54,10 @@ export const MapSearch = styled(Link)`
   }
 `;
 export const ShopEnrollLink = styled(Link)`
+  margin-left: 3%;
+  height: 100%;
+  width: 75px;
+  font-size: 1.2rem;
   text-align: center;
   text-decoration: none;
   color: black;
@@ -80,6 +84,7 @@ export const RestaurantName = styled.div`
 export const ButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 `;
 
 export const RestaurantNameDiv = styled.div`

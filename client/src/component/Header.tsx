@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Login from "../modal/Login";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logo from "../style/OauthButton/logoo.png";
 
 import {
   HeaderTag,
@@ -49,7 +50,7 @@ const Header = () => {
 
   return (
     <HeaderTag>
-      <HeaderTitle>Tory's-journey</HeaderTitle>
+      <HeaderTitle src={logo}></HeaderTitle>
       <DivContainer>
         <MypageLink to="/mypage/bookmark">Mypage</MypageLink>
 

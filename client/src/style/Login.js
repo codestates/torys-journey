@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 export const LoginTitle = styled.h2`
   color: gold;
   font-size: 2em;
+  width: 80%;
+  margin: 0;
 `;
 
 export const LoginModal = styled.div`
@@ -63,4 +65,27 @@ export const CloseButtonDiv = styled.div`
   justify-content: flex-end;
   width: 100%;
 `;
-export const CloseButton = styled.button``;
+export const CloseButton = styled.button`
+  width: 10%;
+  height: 50%;
+`;
+
+export const OauthLoginDiv = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;
+
+export const CloseLoginDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const LoginHeightDiv = styled.div`
+  height: 70%;
+`;
+
+export const EmailDiv = styled.div`
+  height: 20%;
+`;
