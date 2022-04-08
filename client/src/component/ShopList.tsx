@@ -10,8 +10,6 @@ import {
   RestaurantImg,
   RestaurantListDiv,
   RestaurantDiv,
-  RestaurantLink,
-  RestaurantMainDiv,
 } from "../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;

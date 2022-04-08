@@ -29,13 +29,20 @@ const MyReview = () => {
     }
   };
 
-  useEffect(callUserReview, [callUserReview]); // 정보 불러오기 useEffect
+  useEffect(() => {
+    callUserReview();
+  }, []); // 정보 불러오기 useEffect
+
+  const result = review
+    .slice(0)
+    .reverse()
+    .map((num) => num); //기존 것 뒤집는 것
 
   return (
     <div>
       <MyPageMenu />
       <div>리뷰 관리 누르면 나오는 곳</div>
-      {review.map(
+      {result.map(
         //!레스토랑ID가 없음
         (
           el: {
@@ -55,14 +62,3 @@ const MyReview = () => {
 };
 
 export default MyReview;
-
-// {
-//   data: [ //!레스토랑ID가 없음
-//   {
-//       reviewId: 1,
-//       name: "ㅇㅇ맛집",
-//       rating: 5,
-//       comment: "정말 맛있어요!",
-//   }, ...
-//   ]
-// }
