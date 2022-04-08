@@ -10,10 +10,12 @@ export const MenuItem = styled.li`
   list-style: none;
   width: 20%;
   font-family: "Nanum";
+
   &:hover {
     border-bottom: 4px solid yellowgreen;
     cursor: pointer;
     color: black;
+    transform: scale(1.15);
   }
 `;
 

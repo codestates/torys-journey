@@ -5,7 +5,12 @@ import axios from "axios";
 import store from "../redux/Store";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { MyPageDiv, MyPageInfo, MypageInput } from "../style/Mypage";
+import {
+  MyPageDiv,
+  MyPageInfo,
+  MypageInput,
+  MyPageMenuDiv,
+} from "../style/Mypage";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -96,7 +101,9 @@ const MyInfo = () => {
 
   return (
     <MyPageDiv>
-      <MyPageMenu />
+      <MyPageMenuDiv>
+        <MyPageMenu />
+      </MyPageMenuDiv>
       <MyPageInfo>
         <h2>정보수정</h2>
         <h4>현재 비밀번호</h4>

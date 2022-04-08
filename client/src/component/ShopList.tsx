@@ -10,6 +10,8 @@ import {
   RestaurantImg,
   RestaurantListDiv,
   RestaurantDiv,
+  RestaurantNameDiv,
+  RestaurantAddressDiv,
 } from "../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -20,13 +22,11 @@ const ShopList = () => {
   const search = useSelector((data: RootState) => data.search); //검색 필터링
 
   const [dummyData, setDummyData] = useState([]); //서버에서 받은 restaurant 정보 useState
-  console.log("dummy", dummyData);
 
   const callRestaurantInformation = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/restaurant`, {})
       .then((res) => {
-        console.log("res", res.data.data);
         setDummyData(res.data.data);
         dispatch({ type: "information", payload: res.data.data });
       })
@@ -45,9 +45,11 @@ const ShopList = () => {
                 style={{ textDecoration: "none" }}
               >
                 <RestaurantImg src={el.photo[0]} alt="음식점 사진" />
-                <div>{el.name}</div>
-
-                <div>{el.rating}</div>
+                <RestaurantNameDiv>
+                  <div>{el.name}</div>
+                  <div>{el.rating}</div>
+                </RestaurantNameDiv>
+                <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
               </Link>
             </RestaurantListDiv>
           ))
@@ -70,10 +72,16 @@ const ShopList = () => {
             .map((val: any, key) => {
               return (
                 <RestaurantListDiv key={key}>
-                  <Link to={`/restaurantinfo/${val.id}`}>
+                  <Link
+                    to={`/restaurantinfo/${val.id}`}
+                    style={{ textDecoration: "none" }}
+                  >
                     <RestaurantImg src={val.photo[0]} alt="식당" />
-                    <div>{val.name}</div>
-                    <div>{val.address}</div>
+                    <RestaurantNameDiv>
+                      <div>{val.name}</div>
+                      <div>{val.rating}</div>
+                    </RestaurantNameDiv>
+                    <RestaurantAddressDiv>{val.address}</RestaurantAddressDiv>
                   </Link>
                 </RestaurantListDiv>
               );
