@@ -1,0 +1,9 @@
+@font-face {
+  font-family: Nanum;
+  src: url("./style/font/NanumGothic-Regular.woff");
+}
+
+@font-face {
+  font-family: NanumPen;
+  src: url("./style/font/NanumPenScript-Regular.woff");
+}

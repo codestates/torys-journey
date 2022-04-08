@@ -8,14 +8,12 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li`
   list-style: none;
-  background-color: gold;
   width: 20%;
-  transition: 0.5s;
+  font-family: "Nanum";
   &:hover {
-    background-color: #87ceeb;
+    border-bottom: 4px solid yellowgreen;
     cursor: pointer;
-    color: white;
-    width: 30%;
+    color: black;
   }
 `;
 
@@ -27,7 +25,4 @@ export const MenuLink = styled(Link)`
   font-size: 1.2rem;
   font-weight: bold;
   color: #555;
-  &:hover {
-    color: white;
-  }
 `;

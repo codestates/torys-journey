@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import store from "./redux/Store";
 import { useDispatch } from "react-redux";
 import { loginCheck } from "./redux/Reducer";
-import Home from "./pages/Home";
+import "./App.css";
 import MyPage from "./pages/MyPage";
 import ProjectInfo from "./pages/ProjectInfo";
 import Restaurant from "./pages/Restaurant";
@@ -35,7 +35,7 @@ function App(): any {
     if (localStorageTokenCheck) {
       dispatch(loginCheck());
     }
-  }, [localStorageTokenCheck]);
+  }, []);
 
   return (
     <div>
