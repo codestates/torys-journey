@@ -11,7 +11,7 @@ export const SearchForm = styled.form`
 export const SearchFormInput = styled.input`
   width: 70%;
   height: 100%;
-  margin-left: 10%;
+  margin-left: 15%;
   border: 1px solid black
   border-radius: 0.3em;
   font-size: 1rem;

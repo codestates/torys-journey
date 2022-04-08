@@ -12,6 +12,7 @@ import {
   WritingButton,
   WritingTitle,
   WritingMainDiv,
+  WritingTextarea,
 } from "../style/ShopEnroll";
 
 export type RootState = ReturnType<typeof store.getState>;

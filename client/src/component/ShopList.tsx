@@ -11,7 +11,6 @@ import {
   RestaurantListDiv,
   RestaurantDiv,
   RestaurantLink,
-  RestaurantDiv,
   RestaurantName,
   RestaurantMainDiv,
 } from "../style/RestaurantList";
@@ -43,11 +42,12 @@ const ShopList = () => {
     <RestaurantDiv>
       {search === ""
         ? dummyData.map((el: any, key) => (
-
             <RestaurantListDiv key={key}>
-              <Link to={`/restaurantinfo/${el.id}`}>
-                <RestaurantImg src={el.photo[0]} alt="음식점 사진" />
-                <div>{el.name}</div>
+              <Link
+                to={`/restaurantinfo/${el.id}`}
+                style={{ textDecoration: "none" }}>
+                <RestaurantImg src={el.picture[0]} alt="음식점 사진" />
+                <RestaurantName>{el.name}</RestaurantName>
                 <div>{el.rating}</div>
               </Link>
             </RestaurantListDiv>

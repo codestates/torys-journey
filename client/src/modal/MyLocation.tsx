@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import dummyData from "../pages/TESTTESTTEST";
 import { Link } from "react-router-dom";
+import { MainDiv } from "../style/Map";
 
 const { kakao } = window as any;
 
@@ -120,9 +121,9 @@ const MyLocation = () => {
   }, []);
 
   return (
-    <div>
-      <div id="map" style={{ width: "1000px", height: "600px" }}></div>
-    </div>
+    <MainDiv>
+      <div id="map" style={{ width: "800px", height: "500px" }}></div>
+    </MainDiv>
   );
 };
 
