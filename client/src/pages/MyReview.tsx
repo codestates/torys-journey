@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MyPageMenu from "../component/MyPageMenu";
 import MyReviewList from "../component/MyReviewList";
-import { MyPageDiv, ReviewDiv, MyPageMenuDiv } from "../style/Mypage";
+import { MyPageDiv, ReviewDiv, MyPageMenuDiv, WritingDiv  } from "../style/Mypage";
 
 const MyReview = () => {
   const navigate = useNavigate();

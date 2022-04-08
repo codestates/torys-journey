@@ -8,6 +8,7 @@ import {
   RestaurantMainDiv,
   ShopEnrollLink,
   ButtonDiv,
+  MySearchDiv,
 } from "../style/RestaurantList";
 
 const Restaurant = () => {
@@ -22,7 +23,7 @@ const Restaurant = () => {
       <Search />
       {state === true ? <MyLocation /> : ""}
       <ButtonDiv>
-        <button onClick={handleMyLocation}>내 주변 검색</button>
+        <MySearchDiv onClick={handleMyLocation}>내 주변 검색</MySearchDiv>
         <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
       </ButtonDiv>
       <RestaurantDiv>

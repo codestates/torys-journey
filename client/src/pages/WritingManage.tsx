@@ -6,6 +6,7 @@ import dummyData from "./TESTTESTTEST";
 import WritingList from "../component/WritingList";
 import { MyPageDiv, WritingDiv, MyPageMenuDiv } from "../style/Mypage";
 
+
 const WritingManage = () => {
   const navigate = useNavigate();
 
