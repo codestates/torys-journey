@@ -12,7 +12,8 @@ import {
   WritingButton,
   WritingTitle,
   WritingMainDiv,
-  WritingTextarea,
+  ButtonDiv,
+  LinkTag,
 } from "../style/ShopEnroll";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -89,20 +90,19 @@ const ShopEnroll = () => {
       </WritingDiv>
 
       <Upload getAddress={getAddress} />
+      <ButtonDiv>
+        <WritingButton onClick={handlePostModal}>포스트 등록</WritingButton>
+        {postModal ? (
+          <Post
+            handlePostModal={handlePostModal}
+            pictureAddress={pictureAddress}
+          />
+        ) : (
+          ""
+        )}
 
-      <WritingButton onClick={handlePostModal}>포스트 등록</WritingButton>
-      {postModal ? (
-        <Post
-          handlePostModal={handlePostModal}
-          pictureAddress={pictureAddress}
-        />
-      ) : (
-        ""
-      )}
-
-      <Link to="/restaurant">
-        <WritingButton>취소</WritingButton>
-      </Link>
+        <LinkTag to="/restaurant">취소 </LinkTag>
+      </ButtonDiv>
     </WritingMainDiv>
   );
 };

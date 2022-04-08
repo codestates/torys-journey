@@ -32,10 +32,8 @@ const MyReviewList = ({ reviewList }: ReviewListProps) => {
 
   return (
     <ReviewItemDiv>
-      <ReviewName>
-        상호명 : {reviewList.name}
-        평점 : {reviewList.rating}
-      </ReviewName>
+      <ReviewName>상호명 : {reviewList.name}</ReviewName>
+      <ReviewName>평점 : {reviewList.rating}</ReviewName>
       <ReviewButton onClick={reviewChangeModal}>수정 / 삭제</ReviewButton>
       <ReviewContent>내용 : {reviewList.comment}</ReviewContent>
       {reviewChange ? (

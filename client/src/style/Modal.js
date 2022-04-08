@@ -63,7 +63,7 @@ export const Content = styled.div`
 `;
 
 export const Input = styled.input`
-  font-size: 2rem;
+  font-size: 1.2rem;
   width: 60%;
 `;
 export const InputDiv = styled.div`

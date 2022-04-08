@@ -11,7 +11,6 @@ export const MyPageMenuDiv = styled.div`
   margin-top: 1.5%;
 `;
 export const MyPageInfo = styled.div`
-
   display: flex;
   flex-direction: column;
   margin-top: 2%;
@@ -20,7 +19,6 @@ export const MyPageInfo = styled.div`
 `;
 
 export const MypageInput = styled.input`
-
   width: 60%;
   height: 50px;
   border-radius: 8px;
@@ -32,26 +30,29 @@ export const MypageInput = styled.input`
 
 export const WritingDiv = styled.div`
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  margin: 1%;
-  width: 86%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 70%;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 0;
 `;
 export const WritingItemDiv = styled.div`
   width: 96%;
+  height: 10%;
   margin: 2%;
-  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
 `;
 export const WritingName = styled.div`
-  width: 40%;
+  width: 30%;
   border: 1px solid black;
   box-sizing: border-box;
   font-size: 1.5rem;
 `;
 export const WritingAddress = styled.div`
-  width: 40%;
+  width: 50%;
   border: 1px solid black;
   box-sizing: border-box;
   font-size: 1.5rem;
@@ -77,9 +78,6 @@ export const BookMarkListDiv = styled.div`
   width: 70%;
   margin-left: 5%;
   margin-top: 2%;
-
-  
-
 `;
 
 export const BookMarkItemDiv = styled.div`
@@ -106,22 +104,23 @@ export const BookMarkImg = styled.img`
 
 export const ReviewDiv = styled.div`
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  margin: 1%;
-  width: 86%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 70%;
+  margin-left: 5%;
+  margin-top: 2%;
 `;
 
 export const ReviewItemDiv = styled.div`
   width: 96%;
   margin: 2%;
-  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
 `;
 
 export const ReviewName = styled.div`
-  width: 80%;
+  width: 40%;
   border: 1px solid black;
   box-sizing: border-box;
   font-size: 1.5rem;
@@ -159,12 +158,13 @@ export const RestaurantNameDiv = styled.div`
   font-family: "NanumPen";
 `;
 
-export const Title= styled.div`
-display: flex;
-flex-direction: column;
-font-family: "Nanum";
-margin-bottom: 4%;
-width: 100%;
-border-bottom: 3px solid #73B4AC;
-font-size: 25px;
-`
+export const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: "Nanum";
+  height: 30px;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #73b4ac;
+  font-size: 25px;
+`;

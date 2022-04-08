@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import WritingChangeModalOnModal from "./WritingChangeModalOnModal";
 import WritingDeleteModalOnModal from "./WritingDeleteModalOnModal";
+import {
+  ModalBack,
+  ReviewModal,
+  Header,
+  Content,
+  ButtonDiv,
+  Input,
+  InputDiv,
+} from "../style/Modal";
 
 type WritingChangeProps = {
   WritingChange: {
@@ -92,55 +101,63 @@ const WritingChange = ({
   //수정 요청
 
   return (
-    <div>
-      <div>작성글 수정 모달</div>
-      <br />
-      <input type="text" value={value.name} onChange={changeWriting("name")} />
-      <br />
-      <input
-        type="text"
-        value={value.address}
-        onChange={changeWriting("address")}
-      />
-      <br />
-      <input
-        type="text"
-        value={value.number}
-        onChange={changeWriting("number")}
-      />
-      <br />
-      <input
-        type="text"
-        value={value.detailInfo}
-        onChange={changeWriting("detailInfo")}
-      />
-      <br />
-      <input
-        type="text"
-        value={value.officeHours}
-        onChange={changeWriting("officeHours")}
-      />
+    <ModalBack>
+      <ReviewModal>
+        <div>
+          <div>작성글 수정 모달</div>
+          <br />
+          <input
+            type="text"
+            value={value.name}
+            onChange={changeWriting("name")}
+          />
+          <br />
+          <input
+            type="text"
+            value={value.address}
+            onChange={changeWriting("address")}
+          />
+          <br />
+          <input
+            type="text"
+            value={value.number}
+            onChange={changeWriting("number")}
+          />
+          <br />
+          <input
+            type="text"
+            value={value.detailInfo}
+            onChange={changeWriting("detailInfo")}
+          />
+          <br />
+          <input
+            type="text"
+            value={value.officeHours}
+            onChange={changeWriting("officeHours")}
+          />
 
-      <button onClick={modalChange}>포스트 수정</button>
-      <button onClick={modalDeleteChange}>포스트 삭제</button>
-      <button onClick={writingChangeModal}>취소</button>
-      {modal ? (
-        <WritingChangeModalOnModal
-          modalChange={modalChange}
-          patchWriting={patchWriting}
-        />
-      ) : (
-        ""
-      )}
-      {modalDelete ? (
-        <WritingDeleteModalOnModal
-          modalDeleteChange={modalDeleteChange}
-          deleteWriting={deleteWriting}
-        />
-      ) : (
-        ""
-      )}
-    </div>
+          <button onClick={modalChange}>포스트 수정</button>
+          <button onClick={modalDeleteChange}>포스트 삭제</button>
+          <button onClick={writingChangeModal}>취소</button>
+          {modal ? (
+            <WritingChangeModalOnModal
+              modalChange={modalChange}
+              patchWriting={patchWriting}
+            />
+          ) : (
+            ""
+          )}
+          {modalDelete ? (
+            <WritingDeleteModalOnModal
+              modalDeleteChange={modalDeleteChange}
+              deleteWriting={deleteWriting}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+      </ReviewModal>
+    </ModalBack>
   );
 };
 
