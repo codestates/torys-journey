@@ -94,7 +94,7 @@ const ReviewChange = ({
 
   return (
     <div>
-      <div>리뷰 수정</div>;
+      <div>리뷰 수정</div>
       <br />
       <div>{ReviewChange.name}</div>
       <br />
