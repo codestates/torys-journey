@@ -37,14 +37,17 @@ const MyReview = () => {
       <div>리뷰 관리 누르면 나오는 곳</div>
       {review.map(
         //!레스토랑ID가 없음
-        (el: {
-          reviewId: number;
-          restaurantId: number;
-          name: string;
-          rating: number;
-          comment: string;
-        }) => (
-          <MyReviewList reviewList={el} />
+        (
+          el: {
+            reviewId: number;
+            restaurantId: number;
+            name: string;
+            rating: number;
+            comment: string;
+          },
+          key
+        ) => (
+          <MyReviewList reviewList={el} key={key} />
         )
       )}
     </div>
