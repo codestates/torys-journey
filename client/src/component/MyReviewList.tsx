@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import ReviewChange from "../modal/ReviewChange";
+import {
+  ReviewDiv,
+  ReviewItemDiv,
+  ReviewName,
+  ReviewButton,
+  ReviewContent,
+} from "../style/Mypage";
+
 type ReviewListProps = {
   //!레스토랑ID가 없음
   reviewList: {
@@ -23,13 +31,14 @@ const MyReviewList = ({ reviewList }: ReviewListProps) => {
   //수정 버튼을 눌렀을 때 하나씩 띄우려면 컴포넌트로 전달해야 함.
 
   return (
-    <div>
-      <div>
-        {reviewList.name}
-        {reviewList.rating}
-        {reviewList.comment}
-        <button onClick={reviewChangeModal}>수정 / 삭제</button>
-
+    <ReviewDiv>
+      <ReviewItemDiv>
+        <ReviewName>
+          상호명 : {reviewList.name}
+          평점 : {reviewList.rating}
+        </ReviewName>
+        <ReviewButton onClick={reviewChangeModal}>수정 / 삭제</ReviewButton>
+        <ReviewContent>내용 : {reviewList.comment}</ReviewContent>
         {reviewChange ? (
           <ReviewChange
             key={reviewList.reviewId}
@@ -39,8 +48,8 @@ const MyReviewList = ({ reviewList }: ReviewListProps) => {
         ) : (
           ""
         )}
-      </div>
-    </div>
+      </ReviewItemDiv>
+    </ReviewDiv>
   );
 };
 

@@ -14,7 +14,13 @@ import {
   IdInput,
   LoginButton,
   LoginTitle,
+  OauthLogo,
+  CloseButton,
+  CloseButtonDiv,
 } from "../style/Login";
+import google from "../style/OauthButton/google.png";
+import naver from "../style/OauthButton/naver.png";
+import kakao from "../style/OauthButton/kakao.png";
 
 // Client ID: 7IxLOwtePiMM2_x0nQgw
 // Client Secret : OKVYfUlNMF
@@ -88,9 +94,11 @@ const Login = ({ loginRequest }: loginRequestProps) => {
         <SignUp handleModal={handleModal} />
       ) : (
         <InputModal>
-          <button>
-            <FontAwesomeIcon onClick={loginRequest} icon={faTimes} />
-          </button>
+          <CloseButtonDiv>
+            <CloseButton>
+              <FontAwesomeIcon onClick={loginRequest} icon={faTimes} />
+            </CloseButton>
+          </CloseButtonDiv>
           <LoginTitle>Log-in</LoginTitle>
           <form onSubmit={(e) => e.preventDefault()}>
             <div>
@@ -114,8 +122,9 @@ const Login = ({ loginRequest }: loginRequestProps) => {
           </form>
           <div>{errorMessage}</div>
           <div>
-            <NaverOauth />
-            <KakaoOauth />
+            <OauthLogo src={google}></OauthLogo>
+            <OauthLogo src={naver}></OauthLogo>
+            <OauthLogo src={kakao}></OauthLogo>
           </div>
           <button onClick={handleModal}>회원가입</button>
         </InputModal>

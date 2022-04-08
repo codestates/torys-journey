@@ -22,6 +22,15 @@ export const WritingInput = styled.input`
   margin-top: 10px;
   border: 1px solid lightgrey;
   outline: none;
+  word-wrap: break-word;
+`;
+
+export const WritingTextarea = styled.textarea`
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 10px;
+  border: 1px solid lightgrey;
+  outline: none;
 `;
 
 export const WritingButton = styled.button`

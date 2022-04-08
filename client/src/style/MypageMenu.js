@@ -4,18 +4,17 @@ import { Link } from "react-router-dom";
 export const MenuList = styled.div`
   display: flex;
   flex-direction: column;
-  height: 50%;
+  box-sizing: border-box;
 `;
 
 export const MenuItem = styled.li`
   text-decoration: none;
   background-color: gold;
-  font-size: 20px;
-  width: 200px;
-  height: 100px;
+  font-size: 1rem;
+  width: 90%;
   margin: 10px;
   display: flex;
-
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   transition: 0.5s;

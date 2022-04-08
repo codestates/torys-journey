@@ -26,6 +26,7 @@ export const MainImgContainer = styled.div`
 `;
 
 export const MainImgTag = styled.div`
+  text-decoration: none;
   text-align: center;
   padding: 10px;
   padding-top: 0px;
