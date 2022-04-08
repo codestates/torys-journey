@@ -36,9 +36,9 @@ const WritingManage = () => {
   }, []); // 정보 불러오기 useEffect
   return (
     <MyPageDiv>
-      <MyPageMenuDiv>
+      
         <MyPageMenu />
-      </MyPageMenuDiv>
+    
       <WritingDiv>
         {writing.map(
           (el: {

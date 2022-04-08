@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Post = (props: Props) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
   const post = useSelector((data: RootState) => data.restaurantEnrollment);
@@ -46,6 +46,9 @@ const Post = (props: Props) => {
         })
         .then(() => {
           uploadPicture(restaurantId);
+        })
+        .then(()=>{
+          navigate("/restaurant")
         });
     } else {
       alert("상호명과 주소와 사진은 필수입니다.");

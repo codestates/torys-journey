@@ -41,9 +41,9 @@ const MyReview = () => {
 
   return (
     <MyPageDiv>
-      <MyPageMenuDiv>
+      
         <MyPageMenu />
-      </MyPageMenuDiv>
+ 
       <ReviewDiv>
         {result.map(
           //!레스토랑ID가 없음

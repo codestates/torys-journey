@@ -57,7 +57,7 @@ export const ShopEnrollLink = styled(Link)`
   margin-left: 3%;
   height: 100%;
   width: 75px;
-  font-size: 1.2rem;
+  font-size: 14px;
   text-align: center;
   text-decoration: none;
   color: black;
@@ -65,7 +65,7 @@ export const ShopEnrollLink = styled(Link)`
   width: 4%;
   margin-right: 1.5%;
   &:hover {
-    border-bottom: 3px solid yellowgreen;
+    border-bottom: 3px solid #73B4AC;
     cursor: pointer;
     transform: scale(1.15);
   }
@@ -85,6 +85,7 @@ export const ButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+ 
 `;
 
 export const RestaurantNameDiv = styled.div`
@@ -102,8 +103,10 @@ export const MySearchDiv = styled.div`
   font-family: "Nanum";
   text-align: center;
   margin-right: 1%;
+  font-size: 14px;
+  
   &:hover {
-    border-bottom: 3px solid yellowgreen;
+    border-bottom: 3px solid #73B4AC;
     cursor: pointer;
     color: black;
     transform: scale(1.15);

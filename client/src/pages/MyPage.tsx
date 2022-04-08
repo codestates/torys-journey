@@ -11,6 +11,7 @@ import {
   MyPageMenuDiv,
   RestaurantAddressDiv,
   RestaurantNameDiv,
+  Title
 } from "../style/Mypage";
 
 const MyPage = () => {
@@ -50,17 +51,20 @@ const MyPage = () => {
   console.log("11111", bookMarkData);
   return (
     <MyPageDiv>
-      <MyPageMenuDiv>
-        {/* 이거 때문에 북마크만 큼*/}
+   
+
         <MyPageMenu />
-      </MyPageMenuDiv>
+ 
       <BookMarkListDiv>
+        <Title>북마크</Title>
+        
         {bookMarkData.map(
           (
             el: { id: string; photo: [string]; name: string; address: string },
             key: React.Key | null | undefined
           ) => (
             <BookMarkItemDiv key={key}>
+              
               <Link
                 to={`/restaurantinfo/${el.id}`}
                 style={{ textDecoration: "none" }}
