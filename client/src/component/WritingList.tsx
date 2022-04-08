@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import WritingChange from "../modal/WritingChange";
 import {
- 
   WritingItemDiv,
   WritingName,
   WritingAddress,
@@ -34,8 +33,8 @@ const WritingList = ({ writingList }: WritingListProps) => {
 
   return (
     <WritingItemDiv>
-      <WritingName>{writingList.name}</WritingName>
-      <WritingAddress>{writingList.address}</WritingAddress>
+      <WritingName>상호명 : {writingList.name}</WritingName>
+      <WritingAddress>주소 : {writingList.address}</WritingAddress>
       <WritingButton onClick={writingChangeModal}>수정 / 삭제</WritingButton>
       <WritingContent>{writingList.detailInfo}</WritingContent>
       {/* {writingList.officeHours} */}
