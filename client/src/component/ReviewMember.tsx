@@ -69,7 +69,14 @@ const ReviewMember = () => {
       .catch(() => alert("리뷰 불러오기가 실패하였습니다."));
   }; //리뷰 등록 후 요청
 
-  useEffect(getReviews, []);
+  useEffect(() => {
+    getReviews();
+  }, []);
+
+  const result = getReview
+    .slice(0)
+    .reverse()
+    .map((num: any) => num); //기존 것 뒤집는 것
 
   return (
     <div>
@@ -100,7 +107,7 @@ const ReviewMember = () => {
       </div>
       <button onClick={enrollReview}>작성하기</button>
       <div>
-        {getReview.map((el: any) => (
+        {result.map((el: any) => (
           <ReviewList key={el.reviewId} data={el} />
         ))}
       </div>
