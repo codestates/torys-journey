@@ -29,9 +29,10 @@ export const LoginDiv = styled.div`
   width: 80px;
   text-align: center;
   &:hover {
-    border-bottom: 3px solid yellowgreen;
+    border-bottom: 3px solid #73B4AC;
     cursor: pointer;
     color: black;
+    transform: scale(1.15);
   }
 `;
 
@@ -51,8 +52,9 @@ export const MypageLink = styled(Link)`
   width: 80px;
   text-align: center;
   &:hover {
-    border-bottom: 3px solid yellowgreen;
+    border-bottom: 3px solid #73B4AC;
     cursor: pointer;
     color: black;
+    transform: scale(1.15);
   }
 `;

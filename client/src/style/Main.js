@@ -51,6 +51,4 @@ export const LinkTag = styled(Link)`
   color: black;
   font-size: 40px;
   font-family: "NanumPen";
-
-  /* margin-right: 15%; */
 `;

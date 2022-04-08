@@ -7,8 +7,6 @@ export const RestaurantImg = styled.img`
   object-fit: cover;
 `;
 
-export const RestaurantLink = styled(Link)``;
-
 export const RestaurantListDiv = styled.div`
   width: 22.2%;
   box-sizing: border-box;
@@ -17,12 +15,19 @@ export const RestaurantListDiv = styled.div`
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
+  transition: 0.3s;
+  border-radius: 4px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.12);
+  }
 `;
 
 export const RestaurantDiv = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
 `;
 
 export const RestaurantMainDiv = styled.div`
@@ -30,9 +35,6 @@ export const RestaurantMainDiv = styled.div`
   margin-right: 10%;
 `;
 export const MapSearch = styled(Link)`
-  /* position: absolute;
-  top: 19.5%;
-  right: 10%; */
   margin-left: 1%;
   width: 110px;
   height: 100%;
@@ -52,23 +54,20 @@ export const MapSearch = styled(Link)`
   }
 `;
 export const ShopEnrollLink = styled(Link)`
-  /* position: absolute;
-  top: 19.5%;
-  right: 6%; */
   margin-left: 3%;
   height: 100%;
   width: 75px;
-  font-size: 1.2rem;
+  font-size: 14px;
   text-align: center;
   text-decoration: none;
-  background-color: gold;
-  border: 1px solid black;
   color: black;
-  transition: 0.5s;
+  font-family: "Nanum";
+  width: 4%;
+  margin-right: 1.5%;
   &:hover {
-    background-color: #87ceeb;
+    border-bottom: 3px solid #73B4AC;
     cursor: pointer;
-    color: white;
+    transform: scale(1.15);
   }
 `;
 
@@ -86,4 +85,39 @@ export const ButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+ 
+`;
+
+export const RestaurantNameDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1%;
+  margin-right: 1%;
+  color: black;
+  font-size: 30px;
+  font-family: "NanumPen";
+`;
+
+export const MySearchDiv = styled.div`
+  width: 5%;
+  font-family: "Nanum";
+  text-align: center;
+  margin-right: 1%;
+  font-size: 14px;
+  
+  &:hover {
+    border-bottom: 3px solid #73B4AC;
+    cursor: pointer;
+    color: black;
+    transform: scale(1.15);
+  }
+`;
+
+export const RestaurantAddressDiv = styled.div`
+  display: flex;
+  margin-left: 1%;
+  margin-right: 1%;
+  color: black;
+  font-size: 22px;
+  font-family: "NanumPen";
 `;

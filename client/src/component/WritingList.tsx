@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import WritingChange from "../modal/WritingChange";
 import {
-  WritingDiv,
+ 
   WritingItemDiv,
   WritingName,
   WritingAddress,

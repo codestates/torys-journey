@@ -7,7 +7,6 @@ const SearchBar = () => {
   const dispatch = useDispatch();
 
   const [searchTerm, setSearchTerm] = useState("");
-  console.log(searchTerm);
 
   useEffect(() => {
     dispatch({ type: "search", payload: searchTerm });

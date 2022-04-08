@@ -6,7 +6,7 @@ export const MainDiv = styled.div`
 `;
 
 export const DeleteDiv = styled.div`
-  border: 3px solid yellowgreen;
+  border: 3px solid #73B4AC;
 `;
 
 export const ItemDiv = styled.div`

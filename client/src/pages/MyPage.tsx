@@ -7,8 +7,11 @@ import {
   MyPageDiv,
   BookMarkListDiv,
   BookMarkItemDiv,
-  RestaurantImg,
+  BookMarkImg,
   MyPageMenuDiv,
+  RestaurantAddressDiv,
+  RestaurantNameDiv,
+  Title
 } from "../style/Mypage";
 
 const MyPage = () => {
@@ -48,19 +51,29 @@ const MyPage = () => {
   console.log("11111", bookMarkData);
   return (
     <MyPageDiv>
-      <MyPageMenuDiv>
+   
+
         <MyPageMenu />
-      </MyPageMenuDiv>
+ 
       <BookMarkListDiv>
+        <Title>북마크</Title>
+        
         {bookMarkData.map(
           (
-            el: { id: string; photo: [string]; name: string },
+            el: { id: string; photo: [string]; name: string; address: string },
             key: React.Key | null | undefined
           ) => (
             <BookMarkItemDiv key={key}>
-              <Link to={`/restaurantinfo/${el.id}`}>
-                <RestaurantImg src={el.photo[0]} alt="사진을 넣어주세요." />
-                <div>{el.name}</div>
+              
+              <Link
+                to={`/restaurantinfo/${el.id}`}
+                style={{ textDecoration: "none" }}
+              >
+                <BookMarkImg src={el.photo[0]} alt="사진을 넣어주세요." />
+                <RestaurantNameDiv>
+                  <div>{el.name}</div>
+                </RestaurantNameDiv>
+                <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
               </Link>
               <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
               {deleteBookMark ? (
@@ -80,18 +93,3 @@ const MyPage = () => {
 };
 
 export default MyPage;
-
-// data: [
-//   {
-//       id:1,
-//       name: "만두집",
-//       photo: [
-//           "https://picture.com/23r4234e",
-//           "https://picture.com/232we312",
-//           ...
-//           ]
-//       address: "경기 부천시 상동로",
-//       number: "010-2323-1515",
-//       detailInfo: "주차 가능",
-//       officeHours: "11:00 - 21:00"
-//   }, {}, {}, {}
