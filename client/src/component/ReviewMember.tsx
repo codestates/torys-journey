@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
 import { useParams } from "react-router-dom";
@@ -34,7 +34,7 @@ const ReviewMember = () => {
   //! 평점-----------------------------------------------------------------------------
   const [review, setReview] = useState(); //리뷰 작성 state
   const [getReview, setGetReview] = useState<any>([]); //get으로 요청한 전체 review state
-
+  console.log(getReview);
   const handleReview = (e: { target: { value: any } }) => {
     setReview(e.target.value);
   };
@@ -49,12 +49,12 @@ const ReviewMember = () => {
         },
         {
           headers: {
-            "Content-Type": `application/json`,
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
         }
       )
-      .then(getReviews)
+      .then(() => alert("리뷰 작성이 완료되었습니다."))
+      .then(() => getReviews())
       .catch(() => alert("리뷰 등록이 실패하였습니다."));
   }; //리뷰 등록
 
@@ -65,13 +65,15 @@ const ReviewMember = () => {
           authorization: `Bearer ${localStorageTokenCheck}`,
         },
       })
-      .then((res) => setGetReview(res.data))
+      .then((res) => setGetReview(res.data.data))
       .catch(() => alert("리뷰 불러오기가 실패하였습니다."));
   }; //리뷰 등록 후 요청
 
+  useEffect(getReviews, []);
+
   return (
     <div>
-      <h5>여기는 멤버용 리뷰</h5>
+      <div>리뷰 작성</div>
       <input type="text" onChange={handleReview} />
       <div className="Star">
         <FaStar

@@ -1,13 +1,7 @@
 import { useState } from "react";
 import Search from "../component/Search";
 import MyLocation from "../modal/MyLocation";
-import dummyData from "./TESTTESTTEST";
-import axios from "axios";
 import ShopList from "../component/ShopList";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import store from "../redux/Store";
-import { useSelector } from "react-redux";
 
 import {
   RestaurantDiv,
@@ -16,31 +10,12 @@ import {
   ButtonDiv,
 } from "../style/RestaurantList";
 
-// export type RootState = ReturnType<typeof store.getState>;//!서버 연결되서 shopList에서 작동되면 삭제하기
-
 const Restaurant = () => {
-  const dispatch = useDispatch(); //!서버 연결되서 shopList에서 작동되면 삭제하기
-
   const [state, setState] = useState(false); //지도 modal state
 
   const handleMyLocation = () => {
     setState(!state);
   };
-
-  // const callRestaurantInformation = () => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}/restaurant`, {})
-  //     .then((res) => dispatch({ type: "information", payload: res.data }))
-  //     .catch(() => alert("식당 정보를 불러오지 못하였습니다."));
-  // };
-
-  // const dummyData = useSelector(
-  //   (data: RootState) => data.restaurantInformation
-  // );
-
-  // useEffect(callRestaurantInformation, []); //!리덕스 안 되면 수정하기
-
-  dispatch({ type: "dummydata", payload: dummyData }); //!서버 연결되서 shopList에서 작동되면 삭제하기
 
   return (
     <RestaurantMainDiv>

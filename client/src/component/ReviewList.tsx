@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReviewList = (data: any) => {
+const ReviewList = ({ data }: any) => {
   return (
     <div>
       {`${data.userName}: ${data.comment}`}

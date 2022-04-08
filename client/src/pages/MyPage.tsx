@@ -10,7 +10,7 @@ const MyPage = () => {
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
 
   const [bookMarkData, setBookMarkData] = useState<any>([]); //북마크 정보 받아오기
-  const [deleteBookMark, setDeleteBookMark] = useState<boolean>(false); //북마크 정보 받아오기
+  const [deleteBookMark, setDeleteBookMark] = useState<boolean>(false);
 
   const callUserBookMark = () => {
     if (localStorageTokenCheck) {
@@ -20,7 +20,10 @@ const MyPage = () => {
             authorization: `Bearer ${localStorageTokenCheck}`,
           },
         })
-        .then((res) => setBookMarkData(res.data)) //get data state에 저장
+        .then((res) => {
+          // console.log(res);
+          setBookMarkData(res.data.data);
+        }) //get data state에 저장
         .catch(() => alert("북마크 불러오기를 실패하였습니다."));
     } else {
       alert("로그인 후 이용해주세요");
@@ -28,34 +31,41 @@ const MyPage = () => {
     }
   };
 
-  useEffect(callUserBookMark, [callUserBookMark]); // 정보 불러오기 useEffect
+  useEffect(() => {
+    callUserBookMark();
+  }, []); // 정보 불러오기 useEffect
 
   const handleMadalDeleteBookMark = () => {
     setDeleteBookMark(!deleteBookMark);
   };
-
+  console.log("11111", bookMarkData);
   return (
     <div>
       <div>
         <MyPageMenu />
       </div>
       <div>마이페이지 북마크</div>
-      {bookMarkData.map((el: { id: string; photo: [string]; name: string }) => (
-        <Link to={`/restaurantinfo/${el.id}`}>
-          <img src={el.photo[0]} alt="사진을 넣어주세요." />
-          <div>{el.name}</div>
-        </Link>
-      ))}
-      {/* 북마크 사진 넣는 곳 */}
-      <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
-      {/* 모달창 띄우는 버튼 */}
-      {deleteBookMark ? (
-        <DeleteBookMark
-          handleMadalDeleteBookMark={handleMadalDeleteBookMark}
-          bookMarkData={bookMarkData}
-        />
-      ) : (
-        ""
+      {bookMarkData.map(
+        (
+          el: { id: string; photo: [string]; name: string },
+          key: React.Key | null | undefined
+        ) => (
+          <div key={key}>
+            <Link to={`/restaurantinfo/${el.id}`}>
+              <img src={el.photo[0]} alt="사진을 넣어주세요." />
+              <div>{el.name}</div>
+            </Link>
+            <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
+            {deleteBookMark ? (
+              <DeleteBookMark
+                handleMadalDeleteBookMark={handleMadalDeleteBookMark}
+                bookMarkData={el}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        )
       )}
     </div>
   );

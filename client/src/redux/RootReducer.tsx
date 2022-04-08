@@ -4,7 +4,6 @@ import {
   restaurantEnrollment,
   restaurantInformation,
   search,
-  dummyData,
 } from "./Reducer";
 
 // export type RootState = ReturnType<typeof rootReducer>;
@@ -15,7 +14,6 @@ const rootReducer = combineReducers({
   restaurantEnrollment,
   restaurantInformation,
   search,
-  dummyData,
 });
 
 export default rootReducer;

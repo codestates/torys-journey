@@ -42,6 +42,7 @@ const Header = () => {
       .then(() => {
         navigate("/");
       })
+      .then(() => window.location.reload()) //! 블로그(리랜더링)
       .catch(() => alert("로그아웃에 실패하였습니다."));
   };
 
