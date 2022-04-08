@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import dummyData from "./TESTTESTTEST";
 import WritingList from "../component/WritingList";
-import { MyPageDiv, WritingDiv } from "../style/Mypage";
+import { MyPageDiv } from "../style/Mypage";
 
 const WritingManage = () => {
   const navigate = useNavigate();
@@ -36,21 +36,20 @@ const WritingManage = () => {
   return (
     <MyPageDiv>
       <MyPageMenu />
-      <WritingDiv>
-        {writing.map(
-          (el: {
-            id: number;
-            name: string;
-            photo: string[]; //photo로 바꾸기
-            address: string;
-            number: string;
-            detailInfo: string;
-            officeHours: string;
-          }) => (
-            <WritingList key={el.id} writingList={el} />
-          )
-        )}
-      </WritingDiv>
+
+      {writing.map(
+        (el: {
+          id: number;
+          name: string;
+          photo: string[]; //photo로 바꾸기
+          address: string;
+          number: string;
+          detailInfo: string;
+          officeHours: string;
+        }) => (
+          <WritingList key={el.id} writingList={el} />
+        )
+      )}
     </MyPageDiv>
   );
 };

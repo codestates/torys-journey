@@ -3,6 +3,13 @@ import React, { useState, useEffect } from "react";
 import MyPageMenu from "../component/MyPageMenu";
 import { useNavigate, Link } from "react-router-dom";
 import DeleteBookMark from "../modal/DeleteBookMark";
+import {
+  MyPageDiv,
+  BookMarkListDiv,
+  BookMarkItemDiv,
+  RestaurantImg,
+  MyPageMenuDiv,
+} from "../style/Mypage";
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -40,34 +47,35 @@ const MyPage = () => {
   };
   console.log("11111", bookMarkData);
   return (
-    <div>
-      <div>
+    <MyPageDiv>
+      <MyPageMenuDiv>
         <MyPageMenu />
-      </div>
-      <div>마이페이지 북마크</div>
-      {bookMarkData.map(
-        (
-          el: { id: string; photo: [string]; name: string },
-          key: React.Key | null | undefined
-        ) => (
-          <div key={key}>
-            <Link to={`/restaurantinfo/${el.id}`}>
-              <img src={el.photo[0]} alt="사진을 넣어주세요." />
-              <div>{el.name}</div>
-            </Link>
-            <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
-            {deleteBookMark ? (
-              <DeleteBookMark
-                handleMadalDeleteBookMark={handleMadalDeleteBookMark}
-                bookMarkData={el}
-              />
-            ) : (
-              ""
-            )}
-          </div>
-        )
-      )}
-    </div>
+      </MyPageMenuDiv>
+      <BookMarkListDiv>
+        {bookMarkData.map(
+          (
+            el: { id: string; photo: [string]; name: string },
+            key: React.Key | null | undefined
+          ) => (
+            <BookMarkItemDiv key={key}>
+              <Link to={`/restaurantinfo/${el.id}`}>
+                <RestaurantImg src={el.photo[0]} alt="사진을 넣어주세요." />
+                <div>{el.name}</div>
+              </Link>
+              <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
+              {deleteBookMark ? (
+                <DeleteBookMark
+                  handleMadalDeleteBookMark={handleMadalDeleteBookMark}
+                  bookMarkData={el}
+                />
+              ) : (
+                ""
+              )}
+            </BookMarkItemDiv>
+          )
+        )}
+      </BookMarkListDiv>
+    </MyPageDiv>
   );
 };
 
