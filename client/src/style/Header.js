@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const HeaderTag = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 80px;
   padding: 0 1rem;
@@ -15,9 +15,10 @@ export const HeaderDiv = styled.div`
   padding: 0;
 `;
 
-export const HeaderTitle = styled.h1`
-  display: flex;
-  padding: 0;
+export const HeaderTitle = styled.img`
+  width: 400px;
+  height: 100px;
+  margin-top: 30px;
 `;
 
 export const LoginDiv = styled.div`
