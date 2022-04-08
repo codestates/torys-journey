@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MyPageMenu from "../component/MyPageMenu";
 import MyReviewList from "../component/MyReviewList";
+import { MyPageDiv, WritingDiv } from "../style/Mypage";
 
 const MyReview = () => {
   const navigate = useNavigate();
@@ -39,9 +40,8 @@ const MyReview = () => {
     .map((num) => num); //기존 것 뒤집는 것
 
   return (
-    <div>
+    <MyPageDiv>
       <MyPageMenu />
-      <div>리뷰 관리 누르면 나오는 곳</div>
       {result.map(
         //!레스토랑ID가 없음
         (
@@ -57,7 +57,7 @@ const MyReview = () => {
           <MyReviewList reviewList={el} key={key} />
         )
       )}
-    </div>
+    </MyPageDiv>
   );
 };
 

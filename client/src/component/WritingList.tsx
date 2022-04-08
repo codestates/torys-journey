@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import WritingChange from "../modal/WritingChange";
-import { WritingDiv } from "../style/Mypage";
+import {
+  WritingDiv,
+  WritingItemDiv,
+  WritingName,
+  WritingAddress,
+  WritingButton,
+  WritingContent,
+} from "../style/Mypage";
 
 type WritingListProps = {
   writingList: {
@@ -27,21 +34,23 @@ const WritingList = ({ writingList }: WritingListProps) => {
 
   return (
     <WritingDiv>
-      <div>{writingList.name}</div>
-      <div>{writingList.address}</div>
-      <div>{writingList.detailInfo}</div>
-      {/* {writingList.officeHours} */}
-      <button onClick={writingChangeModal}>수정 / 삭제</button>
+      <WritingItemDiv>
+        <WritingName>{writingList.name}</WritingName>
+        <WritingAddress>{writingList.address}</WritingAddress>
+        <WritingButton onClick={writingChangeModal}>수정 / 삭제</WritingButton>
+        <WritingContent>{writingList.detailInfo}</WritingContent>
+        {/* {writingList.officeHours} */}
 
-      {writingChange ? (
-        <WritingChange
-          key={writingList.id}
-          WritingChange={writingList}
-          writingChangeModal={writingChangeModal}
-        />
-      ) : (
-        ""
-      )}
+        {writingChange ? (
+          <WritingChange
+            key={writingList.id}
+            WritingChange={writingList}
+            writingChangeModal={writingChangeModal}
+          />
+        ) : (
+          ""
+        )}
+      </WritingItemDiv>
     </WritingDiv>
   );
 };
