@@ -78,7 +78,10 @@ export const RestaurantH2 = styled.h2`
 
 export const RestaurantName = styled.div`
   font-size: 1.5rem;
-
   color: black;
-  text-decoration: none;
+`;
+
+export const ButtonDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;

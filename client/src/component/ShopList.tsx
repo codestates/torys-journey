@@ -11,7 +11,6 @@ import {
   RestaurantListDiv,
   RestaurantDiv,
   RestaurantLink,
-  RestaurantDiv,
   RestaurantName,
   RestaurantMainDiv,
 } from "../style/RestaurantList";
@@ -47,7 +46,11 @@ const ShopList = () => {
       {search === ""
         ? dummyData.map((el: any, key) => (
             <RestaurantListDiv>
-              <Link to={`/restaurantinfo/${el.id}`} key={key}>
+              <Link
+                to={`/restaurantinfo/${el.id}`}
+                key={key}
+                style={{ textDecoration: "none" }}
+              >
                 <RestaurantImg src={el.picture[0]} alt="음식점 사진" />
                 <RestaurantName>{el.name}</RestaurantName>
                 {/* <div>{el.rating}</div> //! 서버 연결되면 풀기 (평점) */}

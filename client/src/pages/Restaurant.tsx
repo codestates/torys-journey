@@ -13,8 +13,7 @@ import {
   RestaurantDiv,
   RestaurantMainDiv,
   ShopEnrollLink,
-  RestaurantH2,
-  MapSearch,
+  ButtonDiv,
 } from "../style/RestaurantList";
 
 // export type RootState = ReturnType<typeof store.getState>;//!서버 연결되서 shopList에서 작동되면 삭제하기
@@ -47,8 +46,10 @@ const Restaurant = () => {
     <RestaurantMainDiv>
       <Search />
       {state === true ? <MyLocation /> : ""}
-      <button onClick={handleMyLocation}>내 주변 검색</button>
-      <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
+      <ButtonDiv>
+        <button onClick={handleMyLocation}>내 주변 검색</button>
+        <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
+      </ButtonDiv>
       <RestaurantDiv>
         <ShopList />
       </RestaurantDiv>
