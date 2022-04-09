@@ -22,6 +22,7 @@ import {
   LoginDiv,
   LogoDiv,
   LoginLogo,
+  SignUpDiv,
 } from "../style/Login";
 import google from "../style/OauthButton/google1.png";
 import naver from "../style/OauthButton/naver.png";
@@ -137,7 +138,9 @@ const Login = ({ loginRequest }: loginRequestProps) => {
                 <OauthLogo src={naver}></OauthLogo>
                 <OauthLogo src={kakao}></OauthLogo>
               </OauthLoginDiv>
-              <button onClick={handleModal}>회원가입</button>
+              <SignUpDiv>
+                <button onClick={handleModal}>회원가입</button>
+              </SignUpDiv>
             </LoginHeightDiv>
           </LoginDiv>
         </InputModal>
