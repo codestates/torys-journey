@@ -3,6 +3,13 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import store from "../redux/Store";
+import {
+  ModalBack,
+  PostModal,
+  Header,
+  Content,
+  ButtonDiv,
+} from "../style/Modal";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -12,7 +19,7 @@ type Props = {
 };
 
 const Post = (props: Props) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
   const post = useSelector((data: RootState) => data.restaurantEnrollment);
@@ -46,6 +53,9 @@ const Post = (props: Props) => {
         })
         .then(() => {
           uploadPicture(restaurantId);
+        })
+        .then(()=>{
+          navigate("/restaurant")
         });
     } else {
       alert("상호명과 주소와 사진은 필수입니다.");
@@ -70,11 +80,21 @@ const Post = (props: Props) => {
   };
 
   return (
-    <div>
-      <div>포스트를 등록하시겠습니까?</div>
-      <button onClick={handlePost}>예</button>
-      <button onClick={props.handlePostModal}>취소</button>
-    </div>
+    <ModalBack>
+      <PostModal>
+        <Header>
+          <div>Tory's-journey</div>
+          <div onClick={props.handlePostModal}>X</div>
+        </Header>
+        <Content>
+          <div>포스트를 등록하시겠습니까?</div>
+        </Content>
+        <ButtonDiv>
+          <button onClick={handlePost}>예</button>
+          <button onClick={props.handlePostModal}>취소</button>
+        </ButtonDiv>
+      </PostModal>
+    </ModalBack>
   );
 };
 

@@ -8,21 +8,21 @@ export const MyPageDiv = styled.div`
 
 export const MyPageMenuDiv = styled.div`
   width: 10%;
-  background-color: orange;
+  margin-top: 1.5%;
 `;
 export const MyPageInfo = styled.div`
-  margin-left: 10%;
   display: flex;
-  border: 3px solid gold;
   flex-direction: column;
-  width: 50%;
+  margin-top: 2%;
+  width: 70%;
+  margin-left: 5%;
 `;
 
 export const MypageInput = styled.input`
-  width: 100%;
+  width: 60%;
   height: 50px;
-  border-radius: 30px;
-  margin-top: 10px;
+  border-radius: 8px;
+  /* margin-top: 10px; */
   padding: 0px;
   border: 1px solid lightgrey;
   outline: none;
@@ -30,26 +30,29 @@ export const MypageInput = styled.input`
 
 export const WritingDiv = styled.div`
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  margin: 1%;
-  width: 86%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 70%;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 0;
 `;
 export const WritingItemDiv = styled.div`
   width: 96%;
+  height: 10%;
   margin: 2%;
-  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
 `;
 export const WritingName = styled.div`
-  width: 40%;
+  width: 30%;
   border: 1px solid black;
   box-sizing: border-box;
   font-size: 1.5rem;
 `;
 export const WritingAddress = styled.div`
-  width: 40%;
+  width: 50%;
   border: 1px solid black;
   box-sizing: border-box;
   font-size: 1.5rem;
@@ -73,7 +76,8 @@ export const BookMarkListDiv = styled.div`
   flex-wrap: wrap;
   box-sizing: border-box;
   width: 70%;
-  margin-left: 3%;
+  margin-left: 5%;
+  margin-top: 2%;
 `;
 
 export const BookMarkItemDiv = styled.div`
@@ -81,7 +85,7 @@ export const BookMarkItemDiv = styled.div`
   width: 22.2%;
   padding: 0.5%;
   margin: 1.4%;
-  background-color: white;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
   transition: 0.3s;
@@ -94,28 +98,29 @@ export const BookMarkItemDiv = styled.div`
 
 export const BookMarkImg = styled.img`
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
 `;
 
 export const ReviewDiv = styled.div`
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  margin: 1%;
-  width: 86%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 70%;
+  margin-left: 5%;
+  margin-top: 2%;
 `;
 
 export const ReviewItemDiv = styled.div`
   width: 96%;
   margin: 2%;
-  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
 `;
 
 export const ReviewName = styled.div`
-  width: 80%;
+  width: 40%;
   border: 1px solid black;
   box-sizing: border-box;
   font-size: 1.5rem;
@@ -151,4 +156,15 @@ export const RestaurantNameDiv = styled.div`
   color: black;
   font-size: 30px;
   font-family: "NanumPen";
+`;
+
+export const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: "Nanum";
+  height: 30px;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #73b4ac;
+  font-size: 25px;
 `;

@@ -23,10 +23,11 @@ export const LoginModal = styled.div`
 
 export const InputModal = styled.div`
   width: 40%;
-  height: 60%;
+  height: 50%;
   padding: 2em;
   border-radius: 1em;
   background: white;
+  display: flex;
   /* display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,6 +87,18 @@ export const LoginHeightDiv = styled.div`
   height: 70%;
 `;
 
-export const EmailDiv = styled.div`
-  height: 20%;
+export const LoginDiv = styled.div`
+  width: 50%;
+`;
+
+export const LoginLogo = styled.img`
+  width: 70%;
+  margin: 10px;
+`;
+
+export const LogoDiv = styled.div`
+  width: 50%;
+  display: flex;
+  justifiy-content: center;
+  align-items: center;
 `;

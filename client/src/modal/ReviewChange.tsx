@@ -3,6 +3,15 @@ import axios from "axios";
 import ReviewChangeModalOnModal from "./ReviewChangeModalOnModal";
 import ReviewDeleteModalOnModal from "./ReviewDeleteModalOnModal";
 import { useNavigate } from "react-router-dom";
+import {
+  ModalBack,
+  ReviewModal,
+  Header,
+  Content,
+  ButtonDiv,
+  Input,
+  InputDiv,
+} from "../style/Modal";
 
 type ReviewChangeProps = {
   //!레스토랑ID가 없음
@@ -93,40 +102,46 @@ const ReviewChange = ({
   //수정 요청
 
   return (
-    <div>
-      <div>리뷰 수정</div>;
-      <br />
-      <div>{ReviewChange.name}</div>
-      <br />
-      <div>{ReviewChange.rating}</div>
-      {/* 디자인 꾸며야할듯 (별을 넣는 구조로???) */}
-      <br />
-      <input
-        type="text"
-        value={value.comment}
-        onChange={changeReview("comment")}
-      />
-      <br />
-      <button onClick={modalChange}>리뷰 수정</button>
-      <button onClick={modalDeleteChange}>리뷰 삭제</button>
-      <button onClick={ReviewChangeModal}>취소</button>
-      {modal ? (
-        <ReviewChangeModalOnModal
-          modalChange={modalChange}
-          patchReview={patchReview}
-        />
-      ) : (
-        ""
-      )}
-      {modalDelete ? (
-        <ReviewDeleteModalOnModal
-          modalDeleteChange={modalDeleteChange}
-          deleteReview={deleteReview}
-        />
-      ) : (
-        ""
-      )}
-    </div>
+    <ModalBack>
+      <ReviewModal>
+        <Header>
+          <div>Tory's-journey</div>
+          <div onClick={ReviewChangeModal}>X</div>
+        </Header>
+        <Content>
+          <div>리뷰 수정</div>
+        </Content>
+        <InputDiv>
+          <Input
+            type="text"
+            value={value.comment}
+            onChange={changeReview("comment")}
+          />
+        </InputDiv>
+
+        <ButtonDiv>
+          <button onClick={modalChange}>리뷰 수정</button>
+          <button onClick={modalDeleteChange}>리뷰 삭제</button>
+          <button onClick={ReviewChangeModal}>취소</button>
+          {modal ? (
+            <ReviewChangeModalOnModal
+              modalChange={modalChange}
+              patchReview={patchReview}
+            />
+          ) : (
+            ""
+          )}
+          {modalDelete ? (
+            <ReviewDeleteModalOnModal
+              modalDeleteChange={modalDeleteChange}
+              deleteReview={deleteReview}
+            />
+          ) : (
+            ""
+          )}
+        </ButtonDiv>
+      </ReviewModal>
+    </ModalBack>
   );
 };
 

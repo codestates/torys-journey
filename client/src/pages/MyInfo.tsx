@@ -11,7 +11,17 @@ import {
   MypageInput,
   MyPageMenuDiv,
 } from "../style/Mypage";
-
+import {
+  Title,
+  Input,
+  InputTag,
+  Button,
+  MyInfoInput,
+  ButtonContainer,
+  ErrorMessage,
+} from "../style/MyInfo";
+import { ButtonDiv } from "../style/RestaurantList";
+import styled from "styled-components";
 export type RootState = ReturnType<typeof store.getState>;
 
 const MyInfo = () => {
@@ -101,40 +111,47 @@ const MyInfo = () => {
 
   return (
     <MyPageDiv>
-      <MyPageMenuDiv>
-        <MyPageMenu />
-      </MyPageMenuDiv>
-      <MyPageInfo>
-        <h2>정보수정</h2>
-        <h4>현재 비밀번호</h4>
-        <MypageInput
-          type="password"
-          placeholder="현재 비밀번호를 입력하세요"
-          onChange={handleInputValue("oldPassword")}
-        />
-        <h4>새로운 비밀번호</h4>
+      <MyPageMenu />
 
-        <MypageInput
-          type="password"
-          placeholder="새로운 비밀번호를 입력하세요"
-          onChange={handleInputValue("newPassword")}
-        />
-        <div>{passwordInfo.newPassword.length > 0 ? passwordMessage : ""}</div>
-        <h4>새로운 비밀번호 확인</h4>
-        <MypageInput
-          type="password"
-          placeholder="새로운 비밀번호를 다시 입력하세요"
-          onChange={handleInputValue("newPasswordConfirm")}
-        />
-        <div>
-          {passwordInfo.newPasswordConfirm.length > 0
-            ? passwordConfirmMessage
-            : ""}
-        </div>
-        <button onClick={changePassword}>확인</button>
-        <button onClick={signOutRequest}>회원탈퇴</button>
-        {requestSignOut ? <SignOut signOutRequest={signOutRequest} /> : ""}
-        {/*가라임, 수정해야함*/}
+      <MyPageInfo>
+        <Title>정보수정</Title>
+        <InputTag>
+          <Input>
+            <h4>현재 비밀번호</h4>
+            <MyInfoInput
+              type="password"
+              placeholder="현재 비밀번호를 입력하세요"
+              onChange={handleInputValue("oldPassword")}
+            />
+            <h4>새로운 비밀번호</h4>
+
+            <MyInfoInput
+              type="password"
+              placeholder="새로운 비밀번호를 입력하세요"
+              onChange={handleInputValue("newPassword")}
+            />
+            <ErrorMessage>
+              {passwordInfo.newPassword.length > 0 ? passwordMessage : ""}
+            </ErrorMessage>
+            <h4>새로운 비밀번호 확인</h4>
+            <MyInfoInput
+              type="password"
+              placeholder="새로운 비밀번호를 다시 입력하세요"
+              onChange={handleInputValue("newPasswordConfirm")}
+            />
+            <ErrorMessage>
+              {passwordInfo.newPasswordConfirm.length > 0
+                ? passwordConfirmMessage
+                : ""}
+            </ErrorMessage>
+            <ButtonContainer>
+              <Button onClick={changePassword}>확인</Button>
+              <Button onClick={signOutRequest}>탈퇴하기</Button>
+            </ButtonContainer>
+            {requestSignOut ? <SignOut signOutRequest={signOutRequest} /> : ""}
+            {/*가라임, 수정해야함*/}
+          </Input>
+        </InputTag>
       </MyPageInfo>
     </MyPageDiv>
   );

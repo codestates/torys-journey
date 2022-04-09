@@ -12,7 +12,7 @@ export const MenuItem = styled.li`
   font-family: "Nanum";
 
   &:hover {
-    border-bottom: 4px solid yellowgreen;
+    border-bottom: 4px solid #73B4AC;
     cursor: pointer;
     color: black;
     transform: scale(1.15);

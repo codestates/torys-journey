@@ -5,23 +5,27 @@ export const MenuList = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  /* background-color: pink; */
+  margin-left: 7%;
+  
 `;
 
 export const MenuItem = styled.li`
   text-decoration: none;
-  background-color: gold;
+  border-bottom: 1px solid gray;
   font-size: 1rem;
   width: 90%;
-  margin: 10px;
+  margin: 5px;
   display: flex;
   box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  /* align-items: center; */
   transition: 0.5s;
+
   &:hover {
-    background-color: #87ceeb;
+    transform: scale(1.15);
     cursor: pointer;
-    color: white;
+    color: black;
   }
 `;
 
@@ -30,10 +34,12 @@ export const MenuLink = styled(Link)`
   text-align: center;
   display: block;
   padding: 1em;
-  fontsize: 1.2rem;
-  fontweight: bold;
-  color: #555;
+  font-size: 1.2rem;
+  /* font-weight: bold; */
+
+  color: black;
+
   &:hover {
-    color: white;
+    cursor: pointer;
   }
 `;

@@ -15,15 +15,18 @@ import {
   LoginButton,
   LoginTitle,
   OauthLogo,
-  CloseButton,
   CloseButtonDiv,
   OauthLoginDiv,
   CloseLoginDiv,
   LoginHeightDiv,
+  LoginDiv,
+  LogoDiv,
+  LoginLogo,
 } from "../style/Login";
 import google from "../style/OauthButton/google1.png";
 import naver from "../style/OauthButton/naver.png";
 import kakao from "../style/OauthButton/kakao.png";
+import hiLogoo from "../style/OauthButton/hiLogo.jpeg";
 
 // Client ID: 7IxLOwtePiMM2_x0nQgw
 // Client Secret : OKVYfUlNMF
@@ -97,43 +100,46 @@ const Login = ({ loginRequest }: loginRequestProps) => {
         <SignUp handleModal={handleModal} />
       ) : (
         <InputModal>
-          <CloseLoginDiv>
-            <LoginTitle>Log-in</LoginTitle>
-            <CloseButtonDiv>
-              {/* <CloseButton> */}
-              <FontAwesomeIcon onClick={loginRequest} icon={faTimes} />
-              {/* </CloseButton> */}
-            </CloseButtonDiv>
-          </CloseLoginDiv>
-          <LoginHeightDiv>
-            <form onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <h4>E-mail</h4>
-                <IdInput
-                  type="email"
-                  placeholder="E-mail을 입력하세요"
-                  onChange={handleInputValue("email")}
-                />
-              </div>
-              <div>
-                <h4>Password</h4>
-                <IdInput
-                  type="password"
-                  placeholder="password를 입력하세요"
-                  onChange={handleInputValue("password")}
-                />
-              </div>
+          <LogoDiv>
+            <LoginLogo src={hiLogoo} />
+          </LogoDiv>
+          <LoginDiv>
+            <CloseLoginDiv>
+              <LoginTitle>Log-in</LoginTitle>
+              <CloseButtonDiv>
+                {/* <CloseButton> */}
+                <FontAwesomeIcon onClick={loginRequest} icon={faTimes} />
+                {/* </CloseButton> */}
+              </CloseButtonDiv>
+            </CloseLoginDiv>
+            <LoginHeightDiv>
+              <form onSubmit={(e) => e.preventDefault()}>
+                <div>
+                  <IdInput
+                    type="email"
+                    placeholder="E-mail을 입력하세요"
+                    onChange={handleInputValue("email")}
+                  />
+                </div>
+                <div>
+                  <IdInput
+                    type="password"
+                    placeholder="password를 입력하세요"
+                    onChange={handleInputValue("password")}
+                  />
+                </div>
 
-              <LoginButton onClick={handleLogin}>로그인</LoginButton>
-            </form>
-            <div>{errorMessage}</div>
-            <OauthLoginDiv>
-              <OauthLogo src={google}></OauthLogo>
-              <OauthLogo src={naver}></OauthLogo>
-              <OauthLogo src={kakao}></OauthLogo>
-            </OauthLoginDiv>
-            <button onClick={handleModal}>회원가입</button>
-          </LoginHeightDiv>
+                <LoginButton onClick={handleLogin}>로그인</LoginButton>
+              </form>
+              <div>{errorMessage}</div>
+              <OauthLoginDiv>
+                <OauthLogo src={google}></OauthLogo>
+                <OauthLogo src={naver}></OauthLogo>
+                <OauthLogo src={kakao}></OauthLogo>
+              </OauthLoginDiv>
+              <button onClick={handleModal}>회원가입</button>
+            </LoginHeightDiv>
+          </LoginDiv>
         </InputModal>
       )}
       {/* <div>

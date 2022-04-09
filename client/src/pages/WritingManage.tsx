@@ -4,8 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import dummyData from "./TESTTESTTEST";
 import WritingList from "../component/WritingList";
-import { MyPageDiv, WritingDiv, MyPageMenuDiv } from "../style/Mypage";
-
+import { MyPageDiv, WritingDiv, Title } from "../style/Mypage";
 
 const WritingManage = () => {
   const navigate = useNavigate();
@@ -36,10 +35,9 @@ const WritingManage = () => {
   }, []); // 정보 불러오기 useEffect
   return (
     <MyPageDiv>
-      <MyPageMenuDiv>
-        <MyPageMenu />
-      </MyPageMenuDiv>
+      <MyPageMenu />
       <WritingDiv>
+        <Title>작성글 관리</Title>
         {writing.map(
           (el: {
             id: number;
