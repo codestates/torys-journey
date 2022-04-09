@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
-import dummyData from "../pages/TESTTESTTEST";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import { MainDiv } from "../style/Map";
-
+import { useSelector } from "react-redux";
+import store from "../redux/Store";
 const { kakao } = window as any;
 
+export type RootState = ReturnType<typeof store.getState>;
 const MyLocation = () => {
+  
   const geocoder = new kakao.maps.services.Geocoder();
-
+  const dummyData = useSelector(
+    (data: RootState) => data.restaurantInformation
+  );
+//{id: 11, name: '구독 ', photo: Array(4), rating: '5.0', address: ' 경기도 화성시 장지로 60-44', …}
   useEffect(() => {
     //!!!!!! 지도 만들기
     const container = document.getElementById("map");
@@ -17,7 +21,7 @@ const MyLocation = () => {
     };
     const map = new kakao.maps.Map(container, options);
     //!!!!!!!!!!!!!!!!!!!!!!식당들 위치에 마커표시
-    dummyData.map((el) =>
+    dummyData.map((el:any) =>
       geocoder.addressSearch(
         `${el.address}`,
         function (result: any, status: any) {
@@ -41,7 +45,7 @@ const MyLocation = () => {
               `        </div>` +
               `        <div class="body">` +
               `            <div class="img">` +
-              `                <img src=${el.picture[0]} width="73" height="70">` +
+              `                <img src=${el.photo[0]} width="73" height="70">` +
               `           </div>` +
               `            <div class="desc">` +
               `                <div class="ellipsis">${el.address}</div>` +
@@ -71,6 +75,7 @@ const MyLocation = () => {
           }
         }
       )
+
     );
 
     //!!!!!!!!!!!!!!!!내위치
@@ -128,26 +133,3 @@ const MyLocation = () => {
 };
 
 export default MyLocation;
-
-//    // 인포윈도우로 장소에 대한 설명을 표시합니다
-//    const infowindow = new kakao.maps.InfoWindow({
-//      content: `<div class="wrap">
-//          <div class="info">
-//            <div class="title">
-//                ${el.name}
-//               <div class="close" onclick="closeOverlay()" title="닫기"></div>
-//            </div>
-//            <div class="body">
-//                <div class="img">
-//                     <img src="${el.picture[0]}" width="73" height="70">
-//             </div>
-//                <div class="desc">
-//                    <div class="ellipsis">${el.address}</div>
-
-//                   <div><a href="http://localhost:3000/restaurantinfo/${el.id}"  class="link" target="_self">상세정보</a></div>
-//                </div>
-//             </div>
-//         </div>
-//      </div>`,
-//    });
-//    infowindow.open(map, marker);
