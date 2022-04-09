@@ -5,6 +5,13 @@ import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import store from "../redux/Store";
 import ReviewList from "./ReviewList";
+import {
+  ReviewWritingDiv,
+  ReviewWritingTitleDiv,
+  ReviewWritingInput,
+  ReviewWritingStar,
+  ReviewWritingButton,
+} from "../style/RestaurantInfo";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -82,32 +89,41 @@ const ReviewMember = () => {
 
   return (
     <div>
-      <div>리뷰 작성</div>
-      <input type="text" onChange={handleReview} />
-      <div className="Star">
-        <FaStar
-          onClick={(e) => handleStarClick(e, 0)}
-          color={clicked[0] ? "gold" : "gray"}
+      <ReviewWritingDiv>
+        <ReviewWritingTitleDiv>리뷰 작성</ReviewWritingTitleDiv>
+        <ReviewWritingInput
+          type="text"
+          onChange={handleReview}
+          placeholder="리뷰를 작성해주세요."
         />
-        <FaStar
-          onClick={(e) => handleStarClick(e, 1)}
-          color={clicked[1] ? "gold" : "gray"}
-        />
-        <FaStar
-          onClick={(e) => handleStarClick(e, 2)}
-          color={clicked[2] ? "gold" : "gray"}
-        />
-        <FaStar
-          onClick={(e) => handleStarClick(e, 3)}
-          color={clicked[3] ? "gold" : "gray"}
-        />
-        <FaStar
-          onClick={(e) => handleStarClick(e, 4)}
-          color={clicked[4] ? "gold" : "gray"}
-        />
-        평점:{rating}
-      </div>
-      <button onClick={enrollReview}>작성하기</button>
+        <ReviewWritingStar className="Star">
+          <FaStar
+            onClick={(e) => handleStarClick(e, 0)}
+            color={clicked[0] ? "gold" : "gray"}
+          />
+          <FaStar
+            onClick={(e) => handleStarClick(e, 1)}
+            color={clicked[1] ? "gold" : "gray"}
+          />
+          <FaStar
+            onClick={(e) => handleStarClick(e, 2)}
+            color={clicked[2] ? "gold" : "gray"}
+          />
+          <FaStar
+            onClick={(e) => handleStarClick(e, 3)}
+            color={clicked[3] ? "gold" : "gray"}
+          />
+          <FaStar
+            onClick={(e) => handleStarClick(e, 4)}
+            color={clicked[4] ? "gold" : "gray"}
+          />
+          평점:{rating}
+        </ReviewWritingStar>
+
+        <ReviewWritingButton onClick={enrollReview}>
+          작성하기
+        </ReviewWritingButton>
+      </ReviewWritingDiv>
       <div>
         {result.map((el: any) => (
           <ReviewList key={el.reviewId} data={el} />

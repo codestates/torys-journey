@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import store from "../redux/Store";
 import { useNavigate } from "react-router-dom";
-
 import { useSelector } from "react-redux";
+import {
+  ModalBack,
+  ChangeModal,
+  Header,
+  Content,
+  ButtonDiv2,
+} from "../style/Modal";
 
 type handleMadalDeleteBookMarkProps = {
   handleMadalDeleteBookMark: () => void;
@@ -45,11 +51,20 @@ const DeleteBookMark = ({
   };
 
   return (
-    <div>
-      <div>북마크 삭제 모달</div>
-      <button onClick={deleteBookMark}>예</button>
-      <button onClick={handleMadalDeleteBookMark}>아니오</button>
-    </div>
+    <ModalBack>
+      <ChangeModal>
+        <Header>
+          <div>Tory's-journey</div>
+          <div onClick={handleMadalDeleteBookMark}>X</div>
+        </Header>
+
+        <Content>정말 삭제하시겠습니까?</Content>
+        <ButtonDiv2>
+          <button onClick={deleteBookMark}>확인</button>
+          <button onClick={handleMadalDeleteBookMark}>취소</button>
+        </ButtonDiv2>
+      </ChangeModal>
+    </ModalBack>
   );
 };
 
