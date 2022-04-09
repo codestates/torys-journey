@@ -5,11 +5,7 @@ import WritingDeleteModalOnModal from "./WritingDeleteModalOnModal";
 import {
   ModalBack,
   ReviewModal,
-  Header,
-  Content,
-  ButtonDiv,
-  Input,
-  InputDiv,
+ 
 } from "../style/Modal";
 
 type WritingChangeProps = {
@@ -73,6 +69,7 @@ const WritingChange = ({
           }
         )
         .then(() => alert("수정이 완료되었습니다."))
+        .then(() => window.location.reload())
         .catch((res) => {
           if (res.response.status === 401)
             alert("정보를 수정할 수 있는 권한이 없습니다."); //오류 status에 따른 alert
@@ -94,6 +91,7 @@ const WritingChange = ({
         }
       )
       .then(() => alert("삭제가 완료되었습니다."))
+      .then(() => window.location.reload())
       .catch(() => alert("삭제할 수 있는 권한이 없습니다."));
   };
 
