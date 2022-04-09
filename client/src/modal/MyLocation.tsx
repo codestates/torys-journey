@@ -40,16 +40,16 @@ const MyLocation = () => {
             const content =
               `<div class="wrap" style="background:white">` +
               `  <div class="info">` +
-              `        <div class="title">` +
+              `        <div class="title" style="padding-left:7px; background:#abd2cd; color:#494747; font-size: 18px; font-weight: bold; padding-bottom:2px">` +
               `            ${el.name}` +
               `        </div>` +
-              `        <div class="body">` +
-              `            <div class="img">` +
+              `        <div class="body" style="display:flex; flex-direction: row; padding:15px; font-size:15px">` +
+              `            <div class="img" style= "margin-right: 10px">` +
               `                <img src=${el.photo[0]} width="73" height="70">` +
               `           </div>` +
               `            <div class="desc">` +
               `                <div class="ellipsis">${el.address}</div>` +
-              `                <div><a href="http://localhost:3000/restaurantinfo/${el.id}" target="_self" class="link">홈페이지</a></div>` +
+              `                <div style="margin-top:20px;" ><a href="http://localhost:3000/restaurantinfo/${el.id}" target="_self" class="link" style="color:blue; text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/1150/1150592.png" height="20px"/>상세페이지</a></div>` +
               `            </div>` +
               `        </div>` +
               `    </div>` +
