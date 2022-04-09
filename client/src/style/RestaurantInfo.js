@@ -17,7 +17,7 @@ export const RestaurantTab = styled.div`
   font-size: 1.2rem;
   font-weight: bold;
 
-  background-color: gold;
+  background-color: #73b4ac;
   border: 1px solid black;
   transition: 0.5s;
   &:hover {
@@ -35,6 +35,8 @@ export const DetailInfoDiv = styled.div`
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  font-size: 1.3rem;
+  justify-content: space-around;
 `;
 
 export const InfoDiv = styled.div`
@@ -63,4 +65,40 @@ export const BookMarkDiv = styled.div`
   width: 100%;
   position: relative;
   margin-top: 10px;
+`;
+
+export const ReviewWritingDiv = styled.div`
+  display: flex;
+  border: 1px solid black;
+`;
+
+export const ReviewWritingTitleDiv = styled.div`
+  margin: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+
+export const ReviewWritingInput = styled.input`
+  margin: 10px;
+  width: 50%;
+`;
+
+export const ReviewWritingStar = styled.div`
+  margin: 10px;
+  font-size: 1.5rem;
+`;
+
+export const ReviewWritingButton = styled.button`
+  margin: 10px;
+  font-size: 1rem;
+`;
+
+export const ReviewDiv = styled.div`
+  border: 1px solid black;
+  margin: 10px;
+  font-size: 1rem;
+`;
+
+export const InformationDiv = styled.div`
+  margin: 10px;
 `;

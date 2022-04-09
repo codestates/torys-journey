@@ -4,8 +4,15 @@ import WritingChangeModalOnModal from "./WritingChangeModalOnModal";
 import WritingDeleteModalOnModal from "./WritingDeleteModalOnModal";
 import {
   ModalBack,
+
   ReviewModal,
- 
+  WritingModal,
+  Header,
+  Content,
+  InputDiv,
+  Input,
+  ButtonDiv,
+
 } from "../style/Modal";
 
 type WritingChangeProps = {
@@ -100,40 +107,42 @@ const WritingChange = ({
 
   return (
     <ModalBack>
-      <ReviewModal>
-        <div>
-          <div>작성글 수정 모달</div>
-          <br />
-          <input
+      <WritingModal>
+        <Header>
+          <div>Tory's-journey</div>
+          <div onClick={writingChangeModal}>X</div>
+        </Header>
+        <Content>
+          <div>작성글 수정</div>
+        </Content>
+        <InputDiv>
+          <Input
             type="text"
             value={value.name}
             onChange={changeWriting("name")}
           />
-          <br />
-          <input
+          <Input
             type="text"
             value={value.address}
             onChange={changeWriting("address")}
           />
-          <br />
-          <input
+          <Input
             type="text"
             value={value.number}
             onChange={changeWriting("number")}
           />
-          <br />
-          <input
+          <Input
             type="text"
             value={value.detailInfo}
             onChange={changeWriting("detailInfo")}
           />
-          <br />
-          <input
+          <Input
             type="text"
             value={value.officeHours}
             onChange={changeWriting("officeHours")}
           />
-
+        </InputDiv>
+        <ButtonDiv>
           <button onClick={modalChange}>포스트 수정</button>
           <button onClick={modalDeleteChange}>포스트 삭제</button>
           <button onClick={writingChangeModal}>취소</button>
@@ -153,8 +162,8 @@ const WritingChange = ({
           ) : (
             ""
           )}
-        </div>
-      </ReviewModal>
+        </ButtonDiv>
+      </WritingModal>
     </ModalBack>
   );
 };
