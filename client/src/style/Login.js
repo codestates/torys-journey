@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const LoginTitle = styled.h2`
-  color: gold;
+  color: #73b4ac;
   font-size: 2em;
   width: 80%;
   margin: 0;
@@ -22,8 +22,9 @@ export const LoginModal = styled.div`
 `;
 
 export const InputModal = styled.div`
-  width: 40%;
-  height: 50%;
+  min-width: 30%;
+  min-height: 40%;
+
   padding: 2em;
   border-radius: 1em;
   background: white;
@@ -38,7 +39,8 @@ export const IdInput = styled.input`
   width: 100%;
   height: 50px;
   border-radius: 30px;
-  margin-top: 10px;
+
+  margin-bottom: 10%;
   padding: 0px;
   border: 1px solid lightgrey;
   outline: none;
@@ -50,7 +52,7 @@ export const LoginButton = styled.button`
   border: 0;
   outline: none;
   border-radius: 30px;
-  background: gold;
+  background: #73b4ac;
   font-size: 1.2rem;
   letter-spacing: 2px;
   margin-top: 10px;
@@ -75,12 +77,14 @@ export const OauthLoginDiv = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin-top: 10%;
 `;
 
 export const CloseLoginDiv = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 10%;
 `;
 
 export const LoginHeightDiv = styled.div`
@@ -93,12 +97,17 @@ export const LoginDiv = styled.div`
 
 export const LoginLogo = styled.img`
   width: 70%;
-  margin: 10px;
 `;
 
 export const LogoDiv = styled.div`
   width: 50%;
   display: flex;
-  justifiy-content: center;
+  justify-content: center;
   align-items: center;
+`;
+
+export const SignUpDiv = styled.div`
+  margin-top: 10%;
+  display: flex;
+  justify-content: flex-end;
 `;

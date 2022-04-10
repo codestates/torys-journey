@@ -16,30 +16,24 @@ export const PostModal = styled.div`
   min-width: 30%;
   min-height: 20%;
   background: white;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
 `;
 
 export const ReviewModal = styled.div`
   min-width: 30%;
   min-height: 27%;
   background: white;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
 `;
 
 export const ChangeModal = styled.div`
   min-width: 20%;
   min-height: 20%;
   background: white;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+`;
+
+export const WritingModal = styled.div`
+  min-width: 30%;
+  min-height: 50%;
+  background: white;
 `;
 
 export const Header = styled.header`
@@ -64,10 +58,12 @@ export const Content = styled.div`
 
 export const Input = styled.input`
   font-size: 1.2rem;
-  width: 60%;
+  width: 80%;
+  margin: 10px;
 `;
 export const InputDiv = styled.div`
   display: flex;
+  flex-direction: column;
   margin-top: 30px;
   justify-content: center;
   align-items: center;

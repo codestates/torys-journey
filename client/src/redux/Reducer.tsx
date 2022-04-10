@@ -95,8 +95,6 @@ export const restaurantInformation = (
   // console.log(action.payload);
 
   if (action.type === "information") {
-    // console.log(state.accessToken);
-
     return action.payload;
   } else {
     return state;
