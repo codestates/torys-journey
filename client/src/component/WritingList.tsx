@@ -37,8 +37,12 @@ const WritingList = ({ writingList }: WritingListProps) => {
       <WritingName>{writingList.name}</WritingName>
       <WritingButton onClick={writingChangeModal}>수정 / 삭제</WritingButton>
       <PostPicture src={writingList.photo[0]} height="150px" />
-      <WritingAddress>{writingList.address}</WritingAddress>
-      <WritingContent>{writingList.detailInfo}</WritingContent>
+
+      <WritingAddress> 주소 :{writingList.address}</WritingAddress>
+      <WritingAddress>전화번호 :{writingList.number}</WritingAddress>
+      <WritingAddress>영업시간 :{writingList.officeHours}</WritingAddress>
+      <WritingAddress>상세정보 :{writingList.detailInfo}</WritingAddress>
+
       {/* {writingList.officeHours} */}
 
       {writingChange ? (

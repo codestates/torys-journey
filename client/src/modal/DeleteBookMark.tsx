@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import store from "../redux/Store";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   ModalBack,
   ChangeModal,
@@ -55,7 +56,8 @@ const DeleteBookMark = ({
       <ChangeModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={handleMadalDeleteBookMark}>X</div>
+          
+          <FontAwesomeIcon onClick={handleMadalDeleteBookMark} icon={faTimes} />
         </Header>
 
         <Content>정말 삭제하시겠습니까?</Content>

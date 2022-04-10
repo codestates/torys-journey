@@ -2,7 +2,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
 import dummyData from "../pages/TESTTESTTEST";
 import { useParams } from "react-router-dom";
-import { ImgModal } from "../style/RestaurantInfo";
+import { CarouselButton, ImgModal } from "../style/RestaurantInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -24,10 +24,11 @@ const DetailCarousel = ({ onClick, photo }: onClickProps) => {
 
   return (
     <ImgModal>
-      <button>
+    <div>
+      <CarouselButton>
         <FontAwesomeIcon onClick={onClick} icon={faTimes} />
-      </button>
-      <ImageGallery items={images} />;
+      </CarouselButton>
+      <ImageGallery items={images} /></div>
     </ImgModal>
   );
 };

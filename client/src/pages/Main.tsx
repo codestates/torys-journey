@@ -23,7 +23,7 @@ const Main = () => {
             <MainImgTag>
               {new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]}
               <br />
-              Go to Restaurant
+              Restaurant
             </MainImgTag>
           </LinkTag>
         </MainImgContainer>
@@ -34,7 +34,7 @@ const Main = () => {
             <MainImgTag>
               {new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]}
               <br />
-              Go to Hotel
+              Hotel
             </MainImgTag>
           </LinkTag>
         </MainImgContainer>
@@ -44,7 +44,7 @@ const Main = () => {
             <MainImg src="https://images.mypetlife.co.kr/content/uploads/2019/02/09154442/shutterstock_1272088093.jpg" />
             <MainImgTag>
               {new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]}
-              <br /> Go to Hospital
+              <br /> Hospital
             </MainImgTag>
           </LinkTag>
         </MainImgContainer>
@@ -55,7 +55,7 @@ const Main = () => {
             <MainImg src="https://image-notepet.akamaized.net/resize/620x-/seimage/20191113%2Ff6f280560384db2d6c6d797a281e52b1.png" />
             <MainImgTag>
               {new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]}
-              <br /> Go to Park
+              <br /> Park
             </MainImgTag>
           </LinkTag>
         </MainImgContainer>
@@ -66,7 +66,7 @@ const Main = () => {
             <MainImgTag>
               {new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]}
               <br />
-              Go to Info
+              Info
             </MainImgTag>
           </LinkTag>
         </MainImgContainer>

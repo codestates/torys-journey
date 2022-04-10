@@ -41,7 +41,12 @@ type loginInfo = {
 type loginRequestProps = {
   loginRequest: () => void;
 };
-
+const handleKakaoLogin=()=>{
+  axios.get(
+    `${process.env.REACT_APP_API_URL}/oauth/kakao`, {})
+      .then(()=>alert("카카오"))
+  
+}
 const Login = ({ loginRequest }: loginRequestProps) => {
   const dispatch = useDispatch();
 
@@ -101,43 +106,48 @@ const Login = ({ loginRequest }: loginRequestProps) => {
         <SignUp handleModal={handleModal} />
       ) : (
         <InputModal>
-          <CloseLoginDiv>
-            <LoginTitle>Log-in</LoginTitle>
-            <CloseButtonDiv>
-              {/* <CloseButton> */}
-              <FontAwesomeIcon onClick={loginRequest} icon={faTimes} />
-              {/* </CloseButton> */}
-            </CloseButtonDiv>
-          </CloseLoginDiv>
-          <LoginHeightDiv>
-            <form onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <IdInput
-                  type="email"
-                  placeholder="E-mail을 입력하세요"
-                  onChange={handleInputValue("email")}
-                />
-              </div>
-              <div>
-                <IdInput
-                  type="password"
-                  placeholder="password를 입력하세요"
-                  onChange={handleInputValue("password")}
-                />
-              </div>
+          {/* <LogoDiv>
+            <LoginLogo src={hiLogoo} />
+          </LogoDiv> */}
+          <LoginDiv>
+            <CloseLoginDiv>
+              <LoginTitle>Log-in</LoginTitle>
+              <CloseButtonDiv>
+                {/* <CloseButton> */}
+                <FontAwesomeIcon onClick={loginRequest} icon={faTimes} />
+                {/* </CloseButton> */}
+              </CloseButtonDiv>
+            </CloseLoginDiv>
+            <LoginHeightDiv>
+              <form onSubmit={(e) => e.preventDefault()}>
+                <div>
+                  <IdInput
+                    type="email"
+                    placeholder="E-mail을 입력하세요"
+                    onChange={handleInputValue("email")}
+                  />
+                </div>
+                <div>
+                  <IdInput
+                    type="password"
+                    placeholder="password를 입력하세요"
+                    onChange={handleInputValue("password")}
+                  />
+                </div>
 
-              <LoginButton onClick={handleLogin}>로그인</LoginButton>
-            </form>
-            <div>{errorMessage}</div>
-            <OauthLoginDiv>
-              <OauthLogo src={google}></OauthLogo>
-              <OauthLogo src={naver}></OauthLogo>
-              <OauthLogo src={kakao}></OauthLogo>
-            </OauthLoginDiv>
-            <SignUpDiv>
-              <button onClick={handleModal}>회원가입</button>
-            </SignUpDiv>
-          </LoginHeightDiv>
+                <LoginButton onClick={handleLogin}>로그인</LoginButton>
+              </form>
+              <div>{errorMessage}</div>
+              <OauthLoginDiv>
+                <OauthLogo src={google}></OauthLogo>
+                <OauthLogo src={naver}></OauthLogo>
+                <OauthLogo src={kakao} onClick={handleKakaoLogin}></OauthLogo>
+              </OauthLoginDiv>
+              <SignUpDiv>
+                <button onClick={handleModal} >회원가입</button>
+              </SignUpDiv>
+            </LoginHeightDiv>
+          </LoginDiv>
         </InputModal>
       )}
       {/* <div>

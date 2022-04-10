@@ -9,6 +9,10 @@ export const MyPageDiv = styled.div`
 export const DeleteButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
+  margin-top: 30px;
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 export const MyPageMenuDiv = styled.div`
@@ -49,6 +53,7 @@ export const WritingItemDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   font-family: "Nanum";
+  border-radius: 4px;
   background-color: rgba(253, 215, 190, 0.3);
 `;
 export const WritingName = styled.div`
@@ -62,8 +67,8 @@ export const WritingName = styled.div`
 export const WritingAddress = styled.div`
   width: 100%;
   box-sizing: border-box;
-  font-size: 1.3rem;
-  margin-left: 10px;
+  font-size: 1.2rem;
+  margin-left: 20px;
   margin-right: 10px;
   margin-bottom: 5px;
 `;
@@ -71,6 +76,9 @@ export const WritingButton = styled.button`
   width: 15%;
   font-size: 1rem;
   background-color: #fdd7be;
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 export const WritingContent = styled.div`
@@ -129,6 +137,7 @@ export const ReviewItemDiv = styled.div`
   font-family: "Nanum";
   display: flex;
   flex-wrap: wrap;
+  border-radius: 4px;
   background-color: rgba(253, 215, 190, 0.3);
 `;
 
@@ -146,6 +155,9 @@ export const ReviewButton = styled.button`
   width: 17%;
   box-sizing: border-box;
   font-size: 1rem;
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 export const ReviewContent = styled.div`
@@ -162,8 +174,9 @@ export const RestaurantAddressDiv = styled.div`
   margin-left: 1%;
   margin-right: 1%;
   color: black;
-  font-size: 22px;
-  font-family: "NanumPen";
+  font-size: 20px;
+  font-family: "Nanum";
+  margin-top: 10px;
 `;
 
 export const RestaurantNameDiv = styled.div`
@@ -172,8 +185,9 @@ export const RestaurantNameDiv = styled.div`
   margin-left: 1%;
   margin-right: 1%;
   color: black;
-  font-size: 30px;
-  font-family: "NanumPen";
+  font-size: 25px;
+  font-family: "Nanum_bold";
+  margin-top: 10px;
 `;
 
 export const Title = styled.div`
@@ -190,7 +204,7 @@ export const Title = styled.div`
 export const PostPicture = styled.img`
   margin-top: 10px;
   margin-left: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 `;
 
 export const StarDiv = styled.div`
