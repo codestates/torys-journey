@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalBack = styled.div`
-  z-index: 999;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,6 +157,8 @@ export const DelteInput = styled.input`
 `;
 
 export const ButtonDelete = styled.button`
+  background-color: #fdd7be;
+
   &:hover {
     cursor: pointer;
   }

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import MyPageMenu from "../component/MyPageMenu";
 import { useNavigate, Link } from "react-router-dom";
 import DeleteBookMark from "../modal/DeleteBookMark";
+import DeleteMiddleBookMark from "../component/DeleteMiddleBookMark";
 import {
   MyPageDiv,
   BookMarkListDiv,
@@ -21,7 +22,6 @@ const MyPage = () => {
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
 
   const [bookMarkData, setBookMarkData] = useState<any>([]); //북마크 정보 받아오기
-  const [deleteBookMark, setDeleteBookMark] = useState<boolean>(false);
 
   const callUserBookMark = () => {
     if (localStorageTokenCheck) {
@@ -46,14 +46,10 @@ const MyPage = () => {
     callUserBookMark();
   }, []); // 정보 불러오기 useEffect
 
-  const handleMadalDeleteBookMark = () => {
-    setDeleteBookMark(!deleteBookMark);
-  };
   // console.log("11111", bookMarkData);
   return (
     <MyPageDiv>
       <MyPageMenu />
-
       <BookMarkListDiv>
         <Title>북마크</Title>
         {bookMarkData.map(
@@ -61,32 +57,7 @@ const MyPage = () => {
             el: { id: string; photo: [string]; name: string; address: string },
             key: React.Key | null | undefined
           ) => (
-            <BookMarkItemDiv key={key}>
-              <Link
-                to={`/restaurantinfo/${el.id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <BookMarkImg src={el.photo[0]} alt="사진을 넣어주세요." />
-                <RestaurantNameDiv>
-                  <div>{el.name}</div>
-                </RestaurantNameDiv>
-                <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
-              </Link>
-
-              <DeleteButtonDiv>
-                <ButtonDelete onClick={handleMadalDeleteBookMark}>
-                  삭제하기
-                </ButtonDelete>
-              </DeleteButtonDiv>
-              {deleteBookMark ? (
-                <DeleteBookMark
-                  handleMadalDeleteBookMark={handleMadalDeleteBookMark}
-                  bookMarkData={el}
-                />
-              ) : (
-                ""
-              )}
-            </BookMarkItemDiv>
+            <DeleteMiddleBookMark key={key} bookMarkDatas={el} />
           )
         )}
       </BookMarkListDiv>
