@@ -54,7 +54,7 @@ export const MapSearch = styled(Link)`
   }
 `;
 export const ShopEnrollLink = styled(Link)`
-  margin-left: 3%;
+  margin-left: 1%;
   height: 100%;
   width: 75px;
   font-size: 14px;
@@ -101,7 +101,6 @@ export const MySearchDiv = styled.div`
   width: 5%;
   font-family: "Nanum";
   text-align: center;
-  margin-right: 1%;
   font-size: 14px;
 
   &:hover {
