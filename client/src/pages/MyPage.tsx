@@ -72,8 +72,11 @@ const MyPage = () => {
                 </RestaurantNameDiv>
                 <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
               </Link>
+
               <DeleteButtonDiv>
-                <ButtonDelete onClick={handleMadalDeleteBookMark}>삭제하기</ButtonDelete>
+                <ButtonDelete onClick={handleMadalDeleteBookMark}>
+                  삭제하기
+                </ButtonDelete>
               </DeleteButtonDiv>
               {deleteBookMark ? (
                 <DeleteBookMark

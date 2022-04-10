@@ -22,8 +22,11 @@ import {
   LoginDiv,
   LogoDiv,
   LoginLogo,
+  SignUpButton,
+  OauthGoogleLogo,
   SignUpDiv,
 } from "../style/Login";
+import { Error } from "../style/SignUp";
 import google from "../style/OauthButton/google1.png";
 import naver from "../style/OauthButton/naver.png";
 import kakao from "../style/OauthButton/kakao.png";
@@ -41,12 +44,11 @@ type loginInfo = {
 type loginRequestProps = {
   loginRequest: () => void;
 };
-const handleKakaoLogin=()=>{
-  axios.get(
-    `${process.env.REACT_APP_API_URL}/oauth/kakao`, {})
-      .then(()=>alert("카카오"))
-  
-}
+const handleKakaoLogin = () => {
+  axios
+    .get(`${process.env.REACT_APP_API_URL}/oauth/kakao`, {})
+    .then(() => alert("카카오"));
+};
 const Login = ({ loginRequest }: loginRequestProps) => {
   const dispatch = useDispatch();
 
@@ -134,18 +136,15 @@ const Login = ({ loginRequest }: loginRequestProps) => {
                     onChange={handleInputValue("password")}
                   />
                 </div>
-
+                <Error>{errorMessage}</Error>
                 <LoginButton onClick={handleLogin}>로그인</LoginButton>
+                <SignUpButton onClick={handleModal}>회원가입</SignUpButton>
               </form>
-              <div>{errorMessage}</div>
               <OauthLoginDiv>
-                <OauthLogo src={google}></OauthLogo>
+                <OauthGoogleLogo src={google}></OauthGoogleLogo>
                 <OauthLogo src={naver}></OauthLogo>
                 <OauthLogo src={kakao} onClick={handleKakaoLogin}></OauthLogo>
               </OauthLoginDiv>
-              <SignUpDiv>
-                <button onClick={handleModal} >회원가입</button>
-              </SignUpDiv>
             </LoginHeightDiv>
           </LoginDiv>
         </InputModal>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalBack = styled.div`
-  z-index: 2;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,6 @@ export const ChangeModal = styled.div`
   min-height: 20%;
   background: white;
   border-radius: 8px;
-  
 `;
 
 export const WritingModal = styled.div`
@@ -54,7 +53,6 @@ export const Header = styled.header`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   padding-top: 5px;
-
 `;
 
 export const Content = styled.div`
@@ -114,52 +112,52 @@ export const Close = styled.div`
 `;
 
 export const Button = styled.button`
-font-size: 20px;
-width: 18%;
-padding: 2px;
-&:hover{
-  cursor: pointer;
-}`
+  font-size: 20px;
+  width: 18%;
+  padding: 2px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
-export const ButtonDiv3 =styled.div`
-display: flex;
+export const ButtonDiv3 = styled.div`
+  display: flex;
   justify-content: space-around;
 
   margin-right: 100px;
   margin-left: 100px;
   padding-bottom: 30px;
-`
+`;
 
-export const Title= styled.h2`
-display: flex;
-justify-content: center;
-
-`
+export const Title = styled.h2`
+  display: flex;
+  justify-content: center;
+`;
 export const DeleteContent = styled.div`
-display: flex;
-justify-content: center;
-`
+  display: flex;
+  justify-content: center;
+`;
 
 export const DeleteError = styled.div`
-display: flex;
-color: red;
-font-size: 15px;
-justify-content: center;
-margin-top: 10px;
-`
+  display: flex;
+  color: red;
+  font-size: 15px;
+  justify-content: center;
+  margin-top: 10px;
+`;
 export const DelteInput = styled.input`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 70%;
-margin-left: 15%;
-margin-top: 20px;
-height: 30px;
-font-size: 20px;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 20px;
+  height: 30px;
+  font-size: 20px;
+`;
 
 export const ButtonDelete = styled.button`
-&:hover{
-  cursor: pointer;
-}
-`
+  &:hover {
+    cursor: pointer;
+  }
+`;

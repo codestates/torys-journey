@@ -98,7 +98,7 @@ const ReviewMember = () => {
           placeholder="리뷰를 작성해주세요."
         />
         <ReviewWritingStar className="Star">
-        <FaStar
+          <FaStar
             onClick={(e) => handleStarClick(e, 0)}
             color={clicked[0] ? "gold" : "gray"}
           />
@@ -118,7 +118,7 @@ const ReviewMember = () => {
             onClick={(e) => handleStarClick(e, 4)}
             color={clicked[4] ? "gold" : "gray"}
           />
-         <Rating>평점:{rating}</Rating>
+          <Rating>평점:{rating}</Rating>
         </ReviewWritingStar>
 
         <ReviewWritingButton onClick={enrollReview}>
