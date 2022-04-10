@@ -29,7 +29,7 @@ const DeleteBookMark = ({
 }: handleMadalDeleteBookMarkProps) => {
   // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
-  console.log("22222", bookMarkData);
+  console.log("22222", bookMarkData.id);
   const deleteBookMark = () => {
     axios
       .delete(
