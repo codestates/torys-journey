@@ -41,7 +41,12 @@ type loginInfo = {
 type loginRequestProps = {
   loginRequest: () => void;
 };
-
+const handleKakaoLogin=()=>{
+  axios.get(
+    `${process.env.REACT_APP_API_URL}/oauth/kakao`, {})
+      .then(()=>alert("카카오"))
+  
+}
 const Login = ({ loginRequest }: loginRequestProps) => {
   const dispatch = useDispatch();
 
@@ -101,9 +106,9 @@ const Login = ({ loginRequest }: loginRequestProps) => {
         <SignUp handleModal={handleModal} />
       ) : (
         <InputModal>
-          <LogoDiv>
+          {/* <LogoDiv>
             <LoginLogo src={hiLogoo} />
-          </LogoDiv>
+          </LogoDiv> */}
           <LoginDiv>
             <CloseLoginDiv>
               <LoginTitle>Log-in</LoginTitle>
@@ -136,10 +141,10 @@ const Login = ({ loginRequest }: loginRequestProps) => {
               <OauthLoginDiv>
                 <OauthLogo src={google}></OauthLogo>
                 <OauthLogo src={naver}></OauthLogo>
-                <OauthLogo src={kakao}></OauthLogo>
+                <OauthLogo src={kakao} onClick={handleKakaoLogin}></OauthLogo>
               </OauthLoginDiv>
               <SignUpDiv>
-                <button onClick={handleModal}>회원가입</button>
+                <button onClick={handleModal} >회원가입</button>
               </SignUpDiv>
             </LoginHeightDiv>
           </LoginDiv>

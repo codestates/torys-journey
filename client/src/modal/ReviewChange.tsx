@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import ReviewChangeModalOnModal from "./ReviewChangeModalOnModal";
 import ReviewDeleteModalOnModal from "./ReviewDeleteModalOnModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import {
   ModalBack,
@@ -11,6 +13,8 @@ import {
   ButtonDiv,
   Input,
   InputDiv,
+  ButtonHover,
+  Close,
 } from "../style/Modal";
 
 type ReviewChangeProps = {
@@ -106,7 +110,8 @@ const ReviewChange = ({
       <ReviewModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={ReviewChangeModal}>X</div>
+<Close>
+          <FontAwesomeIcon onClick={ReviewChangeModal} icon={faTimes} /></Close>
         </Header>
         <Content>
           <div>리뷰 수정</div>
@@ -120,9 +125,9 @@ const ReviewChange = ({
         </InputDiv>
 
         <ButtonDiv>
-          <button onClick={modalChange}>리뷰 수정</button>
-          <button onClick={modalDeleteChange}>리뷰 삭제</button>
-          <button onClick={ReviewChangeModal}>취소</button>
+          <ButtonHover onClick={modalChange}>리뷰 수정</ButtonHover>
+          <ButtonHover onClick={modalDeleteChange}>리뷰 삭제</ButtonHover>
+          <ButtonHover onClick={ReviewChangeModal}>취소</ButtonHover>
           {modal ? (
             <ReviewChangeModalOnModal
               modalChange={modalChange}

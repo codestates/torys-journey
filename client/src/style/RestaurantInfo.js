@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const RestaurantDiv = styled.div`
   margin-left: 20px;
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
 `;
@@ -17,14 +17,14 @@ export const RestaurantTab = styled.div`
   height: 40px;
   font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 7px;
   background-color: #73b4ac;
   border: 1px solid black;
   transition: 0.5s;
   &:hover {
-    background-color: #87ceeb;
+    background-color:#7fc7bf;
     cursor: pointer;
-    color: white;
+    /* color: white; */
   }
 `;
 
@@ -66,9 +66,13 @@ export const RestaurantMainDiv = styled.div`
 `;
 
 export const BookMarkDiv = styled.div`
-  width: 3%;
+  width: 2%;
   position: relative;
   margin-top: 10px;
+  &:hover{
+    cursor: pointer;
+    
+  }
 `;
 
 export const ReviewWritingDiv = styled.div`
@@ -85,6 +89,7 @@ export const ReviewWritingTitleDiv = styled.div`
 export const ReviewWritingInput = styled.input`
   margin: 10px;
   width: 50%;
+  /* border-radius: 2px; */
 `;
 
 export const ReviewWritingStar = styled.div`
@@ -95,6 +100,12 @@ export const ReviewWritingStar = styled.div`
 export const ReviewWritingButton = styled.button`
   margin: 10px;
   font-size: 1rem;
+  background-color: rgba(127, 199, 191, 0.3);
+  border-radius: 4px;
+  margin-left: 30px;
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 export const ReviewDiv = styled.div`
@@ -122,3 +133,28 @@ export const RestaurantName = styled.h1`
 export const RestaurantNameDiv = styled.div`
   display: flex;
 `;
+
+export const Rating = styled.div`
+font-size: 15px;`
+
+export const Div = styled.div`
+display: flex;
+align-items: baseline;
+`
+
+export const Title= styled.div`
+font-size:17px;
+font-weight: bold;
+margin-right:10px;`
+
+export const CarouselButton = styled.button`
+background-color: white;
+font-size: 20px;
+&:hover{
+  cursor: pointer;
+}
+`
+
+export const Posted = styled.div`
+margin-left: 10px;
+`

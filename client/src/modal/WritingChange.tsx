@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import WritingChangeModalOnModal from "./WritingChangeModalOnModal";
 import WritingDeleteModalOnModal from "./WritingDeleteModalOnModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   ModalBack,
-
+Close,
   ReviewModal,
   WritingModal,
   Header,
@@ -12,6 +14,7 @@ import {
   InputDiv,
   Input,
   ButtonDiv,
+  ButtonHover,
 
 } from "../style/Modal";
 
@@ -110,7 +113,9 @@ const WritingChange = ({
       <WritingModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={writingChangeModal}>X</div>
+  <Close>
+          <FontAwesomeIcon onClick={writingChangeModal} icon={faTimes} /></Close>
+
         </Header>
         <Content>
           <div>작성글 수정</div>
@@ -119,33 +124,42 @@ const WritingChange = ({
           <Input
             type="text"
             value={value.name}
+            placeholder="상호명"
             onChange={changeWriting("name")}
           />
           <Input
             type="text"
+            placeholder="주소"
+
             value={value.address}
             onChange={changeWriting("address")}
           />
           <Input
             type="text"
+            placeholder="전화번호"
+
             value={value.number}
             onChange={changeWriting("number")}
           />
           <Input
             type="text"
+            placeholder="상세정보"
+
             value={value.detailInfo}
             onChange={changeWriting("detailInfo")}
           />
           <Input
             type="text"
+            placeholder="영업시간 "
+
             value={value.officeHours}
             onChange={changeWriting("officeHours")}
           />
         </InputDiv>
         <ButtonDiv>
-          <button onClick={modalChange}>포스트 수정</button>
-          <button onClick={modalDeleteChange}>포스트 삭제</button>
-          <button onClick={writingChangeModal}>취소</button>
+          <ButtonHover onClick={modalChange}>포스트 수정</ButtonHover>
+          <ButtonHover onClick={modalDeleteChange}>포스트 삭제</ButtonHover>
+          <ButtonHover onClick={writingChangeModal}>취소</ButtonHover>
           {modal ? (
             <WritingChangeModalOnModal
               modalChange={modalChange}

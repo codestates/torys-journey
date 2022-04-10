@@ -13,6 +13,7 @@ import {
   RestaurantNameDiv,
   Title,
 } from "../style/Mypage";
+import { ButtonDelete } from "../style/Modal";
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const MyPage = () => {
   const handleMadalDeleteBookMark = () => {
     setDeleteBookMark(!deleteBookMark);
   };
-  console.log("11111", bookMarkData);
+  // console.log("11111", bookMarkData);
   return (
     <MyPageDiv>
       <MyPageMenu />
@@ -72,7 +73,7 @@ const MyPage = () => {
                 <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
               </Link>
               <DeleteButtonDiv>
-                <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
+                <ButtonDelete onClick={handleMadalDeleteBookMark}>삭제하기</ButtonDelete>
               </DeleteButtonDiv>
               {deleteBookMark ? (
                 <DeleteBookMark

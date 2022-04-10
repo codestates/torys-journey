@@ -42,13 +42,14 @@ const Map = ({ address, name }: any) => {
   }, [address, name]); //react에서 쓸 거면 useEffect로 꼭 감싸야함(이유 모름..)
 
   return (
+    
     <div style={{ width: "36%", margin: " 2px 18px 0" }}>
       <div
         id="map"
         style={{
           width: "100%",
           height: "400px",
-          border: "3px solid",
+          border: "1px solid",
           // margin: "0 20px 0 0",
         }}
       ></div>

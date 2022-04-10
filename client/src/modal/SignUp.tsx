@@ -6,7 +6,14 @@ import {
   FormModal,
   SignUpTitle,
   SignUpInput,
+  Button,
+  Container,
+  Error,
+  LastError,
+  CloseButton,
 } from "../style/SignUp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 type handleModalProps = {
   handleModal: () => void;
@@ -83,7 +90,9 @@ const SignUp = ({ handleModal }: handleModalProps) => {
   return (
     <SignUpModal>
       <FormModal onSubmit={(e: any) => e.preventDefault()}>
-        <SignUpTitle>회원가입</SignUpTitle>
+        <SignUpTitle><div>회원가입</div> <CloseButton> <FontAwesomeIcon  icon={faTimes} onClick={handleModal} /></CloseButton></SignUpTitle>
+      
+        <Container>
         <h4>E-mail</h4>
         <SignUpInput
           type="email"
@@ -104,8 +113,8 @@ const SignUp = ({ handleModal }: handleModalProps) => {
           placeholder="비밀번호를 입력하세요"
           onChange={handleInputValue("password")}
         />
-
-        {userinfo.password.length > 0 ? passwordValidError : ""}
+<Error>    {userinfo.password.length > 0 ? passwordValidError : ""}</Error>
+    
         <h4>Confirm Password</h4>
         <SignUpInput
           type="password"
@@ -113,14 +122,14 @@ const SignUp = ({ handleModal }: handleModalProps) => {
           onChange={handleInputPasswordCheckValue("passwordcheck")}
         />
 
-        {userinfo.password.length > 0 && userinfo.passwordcheck.length > 0
+      <Error> {userinfo.password.length > 0 && userinfo.passwordcheck.length > 0
           ? userinfo.password && userinfo.password !== userinfo.passwordcheck
             ? "비밀번호가 일치하지 않습니다."
             : "비밀번호가 일치합니다."
-          : ""}
-
-        <button onClick={handleSignUp}>회원가입하기</button>
-        <div>{error ? "모든 항목을 입력하세요" : ""}</div>
+          : ""}</Error> 
+  <LastError>{error ? "모든 항목을 입력하세요" : ""}</LastError>
+        <Button onClick={handleSignUp}>회원가입하기</Button></Container>
+      
       </FormModal>
     </SignUpModal>
   );

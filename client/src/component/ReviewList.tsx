@@ -1,12 +1,12 @@
 import React from "react";
-import { ReviewDiv } from "../style/RestaurantInfo";
+import { Div, ReviewDiv, Title } from "../style/RestaurantInfo";
 import { FaStar } from "react-icons/fa";
 
 const ReviewList = ({ data }: any) => {
   return (
     <ReviewDiv>
-      <div>{`작성자 : ${data.userName}`}</div>
-      <div>{`내용 : ${data.comment}`}</div>
+      <Div><Title>작성자 :</Title>{data.userName}</Div>
+      <Div><Title>내용 :</Title>{data.comment}</Div>
       <div>
         {" "}
         {data.rating === 1 ? (
