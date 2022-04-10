@@ -6,6 +6,8 @@ import {
   Content,
   ButtonDiv2,
 } from "../style/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 type valueDeleteProps = {
   modalDeleteChange: () => void;
@@ -21,7 +23,8 @@ const WritingDeleteModalOnModal = ({
       <ChangeModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={modalDeleteChange}>X</div>
+         
+          <FontAwesomeIcon onClick={modalDeleteChange} icon={faTimes} />
         </Header>
 
         <Content>정말 삭제하시겠습니까?</Content>

@@ -6,6 +6,8 @@ import {
   FormModal,
   SignUpTitle,
   SignUpInput,
+  SignupButton,
+  Error
 } from "../style/SignUp";
 
 type handleModalProps = {
@@ -119,8 +121,8 @@ const SignUp = ({ handleModal }: handleModalProps) => {
             : "비밀번호가 일치합니다."
           : ""}
 
-        <button onClick={handleSignUp}>회원가입하기</button>
-        <div>{error ? "모든 항목을 입력하세요" : ""}</div>
+        <Error>{error ? "모든 항목을 입력하세요" : ""}</Error>
+        <SignupButton onClick={handleSignUp}>회원가입하기</SignupButton>
       </FormModal>
     </SignUpModal>
   );

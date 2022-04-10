@@ -94,8 +94,9 @@ export const RestaurantNameDiv = styled.div`
   margin-left: 1%;
   margin-right: 1%;
   color: black;
-  font-size: 30px;
-  font-family: "NanumPen";
+  font-size: 19px;
+  font-family: "Nanum";
+  font-weight: bold;
 `;
 
 export const MySearchDiv = styled.div`
@@ -118,6 +119,7 @@ export const RestaurantAddressDiv = styled.div`
   margin-left: 1%;
   margin-right: 1%;
   color: black;
-  font-size: 22px;
-  font-family: "NanumPen";
+  font-size: 15px;
+  font-family: "Nanum";
+  margin-top: 5px;
 `;

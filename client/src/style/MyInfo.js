@@ -9,6 +9,7 @@ export const Title = styled.div`
   padding-bottom: 10px;
   border-bottom: 3px solid #73b4ac;
   font-size: 25px;
+  margin-bottom: 70px;
 `;
 
 export const Input = styled.div`
@@ -56,6 +57,6 @@ export const MyInfoInput = styled.input`
 `;
 
 export const ErrorMessage = styled.div`
-  color: #b02107;
+  color: red;
   font-size: 15px;
 `;

@@ -1,5 +1,6 @@
 /*global kakao*/
 import React, { useEffect, useState } from "react";
+import { Button, MapContainer } from "../style/Map";
 
 const { kakao } = window as any;
 
@@ -42,13 +43,17 @@ const Map = ({ address, name }: any) => {
   }, [address, name]); //react에서 쓸 거면 useEffect로 꼭 감싸야함(이유 모름..)
 
   return (
-    <div style={{ width: "36%", margin: " 2px 18px 0" }}>
+    <MapContainer>
       <div
         id="map"
         style={{
           width: "100%",
           height: "400px",
-          border: "3px solid",
+          border: "1px solid",
+          margin: "10px",
+          marginTop:"30px",
+          
+      
           // margin: "0 20px 0 0",
         }}
       ></div>
@@ -57,10 +62,10 @@ const Map = ({ address, name }: any) => {
         target="_blank"
         rel="noreferrer"
       >
-        <button type="button">길찾기</button>
+        <Button>길찾기</Button>
       </a>
       {/* 길찾기 */}
-    </div>
+    </MapContainer>
   );
 };
 export default Map;

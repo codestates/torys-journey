@@ -32,7 +32,7 @@ export const SearchedName = styled.div`
   margin-right: 1%;
   color: black;
   font-size: 30px;
-  font-family: "NanumPen";
+  font-family: "Nanum";
 `;
 
 
@@ -44,5 +44,5 @@ export const SearchedAddress = styled.div`
   margin-right: 1%;
   color: black;
   font-size: 22px;
-  font-family: "NanumPen";
+  font-family: "Nanum";
 `;

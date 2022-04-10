@@ -19,6 +19,9 @@ export const HeaderTitle = styled.img`
   width: 400px;
   height: 100px;
   margin-top: 30px;
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 export const LoginDiv = styled.div`

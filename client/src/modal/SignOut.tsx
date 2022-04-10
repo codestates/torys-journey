@@ -1,9 +1,23 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+
 import store from "../redux/Store";
 import { useNavigate } from "react-router";
+import {
+  ModalBack,
+  Header,
+  PostModal,
+  CloseDiv,
+  Delete,
+  DeleteComment,
+  DeleteButtonDiv,
+  DeleteError,
+  YesOrNo,
+
+} from "../style/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export type RootState = ReturnType<typeof store.getState>;
 const SignOut: React.FC<any> = ({ signOutRequest }) => {
@@ -39,19 +53,33 @@ const SignOut: React.FC<any> = ({ signOutRequest }) => {
   };
   // localStorage.removeItem()
   return (
-    <div>
-      <h1>정말 탈퇴하시겠습니까?</h1>
-      <div>정말 탈퇴하실 것이라면 '탈퇴하겠습니다.'라고 적어주세요</div>
-      <input
-        type="text"
-        placeholder="탈퇴하겠습니다."
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          setMessage(e.target.value);
-        }}
-      />
-      <button onClick={DeleteAccount}>예</button>
-      <button onClick={signOutRequest}>아니오</button> {error}
-    </div>
+    <ModalBack>
+      <PostModal>
+        <Header>
+          <div>Tory's-journey</div>
+          <CloseDiv>
+            <FontAwesomeIcon onClick={signOutRequest} icon={faTimes} />
+          </CloseDiv>
+        </Header>
+        <Delete>정말 탈퇴하시겠습니까?</Delete>
+        <DeleteComment>
+          정말 탈퇴하실 것이라면 '탈퇴하겠습니다.'라고 적어주세요
+        </DeleteComment>
+        <DeleteButtonDiv>
+          <input
+            type="text"
+            placeholder="탈퇴하겠습니다."
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setMessage(e.target.value);
+            }}
+          />
+ 
+          <YesOrNo onClick={DeleteAccount}>예</YesOrNo>
+          <YesOrNo onClick={signOutRequest}>아니오</YesOrNo>{" "}
+        </DeleteButtonDiv>
+        <DeleteError>{error}</DeleteError>
+      </PostModal>
+    </ModalBack>
   );
 };
 

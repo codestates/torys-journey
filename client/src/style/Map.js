@@ -7,3 +7,14 @@ export const MainDiv = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const Button= styled.button`
+margin:10px;
+font-size: 15px;
+&:hover{cursor: pointer;}
+`
+
+export const MapContainer= styled.div`
+width:36%;
+margin: "2px 19px 0";
+`

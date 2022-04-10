@@ -22,7 +22,8 @@ import {
   LoginDiv,
   LogoDiv,
   LoginLogo,
-  SignUpDiv,
+  ButtonDiv,
+  Error,
 } from "../style/Login";
 import google from "../style/OauthButton/google1.png";
 import naver from "../style/OauthButton/naver.png";
@@ -95,6 +96,26 @@ const Login = ({ loginRequest }: loginRequestProps) => {
     }
   };
 
+const handleGoogleLogin=()=>{
+  axios
+  .get(`${process.env.REACT_APP_API_URL}/oauth/google`,{})
+  .then(()=>alert("구글 로그인 "))
+  
+}
+
+const handleKakaoLogin=()=>{
+  axios
+  .get(`${process.env.REACT_APP_API_URL}/oauth/kakao`,{})
+  .then(()=>alert("카카오 로그인 "))
+  
+}
+const handleNaverLogin=()=>{
+  axios
+  .get(`${process.env.REACT_APP_API_URL}/oauth/naver`,{})
+  .then(()=>alert("네이버 로그인 "))
+  
+}
+
   return (
     <LoginModal>
       {signup === true ? (
@@ -106,7 +127,7 @@ const Login = ({ loginRequest }: loginRequestProps) => {
           </LogoDiv>
           <LoginDiv>
             <CloseLoginDiv>
-              <LoginTitle>Log-in</LoginTitle>
+              <LoginTitle>Login</LoginTitle>
               <CloseButtonDiv>
                 {/* <CloseButton> */}
                 <FontAwesomeIcon onClick={loginRequest} icon={faTimes} />
@@ -129,19 +150,18 @@ const Login = ({ loginRequest }: loginRequestProps) => {
                     onChange={handleInputValue("password")}
                   />
                 </div>
-
-                <LoginButton onClick={handleLogin}>로그인</LoginButton>
               </form>
-              <div>{errorMessage}</div>
+              <Error>{errorMessage}</Error>
+              <ButtonDiv>
+                <LoginButton onClick={handleLogin}>로그인</LoginButton>
+                <LoginButton onClick={handleModal}>회원가입</LoginButton>
+              </ButtonDiv>
               <OauthLoginDiv>
-                <OauthLogo src={google}></OauthLogo>
-                <OauthLogo src={naver}></OauthLogo>
-                <OauthLogo src={kakao}></OauthLogo>
-              </OauthLoginDiv>
-              <SignUpDiv>
-                <button onClick={handleModal}>회원가입</button>
-              </SignUpDiv>
-            </LoginHeightDiv>
+                <OauthLogo src={google} onClick={handleGoogleLogin}></OauthLogo>
+                <OauthLogo src={naver} onClick={handleNaverLogin}></OauthLogo>
+                <OauthLogo src={kakao} onClick={handleKakaoLogin}></OauthLogo>
+              </OauthLoginDiv>{" "}
+            </LoginHeightDiv>{" "}
           </LoginDiv>
         </InputModal>
       )}

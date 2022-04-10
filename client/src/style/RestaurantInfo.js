@@ -5,6 +5,7 @@ export const RestaurantDiv = styled.div`
   margin-left: 20px;
   display: flex;
   justify-content: space-between;
+  margin-top: 70px;
 `;
 
 export const RestaurantTab = styled.div`
@@ -16,19 +17,22 @@ export const RestaurantTab = styled.div`
   height: 40px;
   font-size: 1.2rem;
   font-weight: bold;
-
+  border-radius: 5px;
   background-color: #73b4ac;
   border: 1px solid black;
   transition: 0.5s;
   &:hover {
-    background-color: #87ceeb;
+    background-color: #93d5cd;
     cursor: pointer;
-    color: white;
+    
+   
   }
 `;
 
 export const TabDiv = styled.div`
   display: flex;
+
+ 
 `;
 
 export const DetailInfoDiv = styled.div`
@@ -37,10 +41,15 @@ export const DetailInfoDiv = styled.div`
   border: 1px solid black;
   font-size: 1.3rem;
   justify-content: space-around;
+  border-radius: 5px;
+
 `;
 
 export const InfoDiv = styled.div`
   width: 60%;
+  margin-top: 30px;
+  font-family: "Nanum";
+
 `;
 
 export const ImgModal = styled.div`
@@ -59,6 +68,8 @@ export const ImgModal = styled.div`
 export const RestaurantMainDiv = styled.div`
   margin-left: 10%;
   margin-right: 10%;
+  font-family: "Nanum";
+  margin-top: 50px;
 `;
 
 export const BookMarkDiv = styled.div`
@@ -69,13 +80,15 @@ export const BookMarkDiv = styled.div`
 
 export const ReviewWritingDiv = styled.div`
   display: flex;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  font-family: "Nanum";
 `;
 
 export const ReviewWritingTitleDiv = styled.div`
   margin: 10px;
   font-size: 1.5rem;
   font-weight: bold;
+  font-family: "Nanum";
 `;
 
 export const ReviewWritingInput = styled.input`
@@ -86,19 +99,43 @@ export const ReviewWritingInput = styled.input`
 export const ReviewWritingStar = styled.div`
   margin: 10px;
   font-size: 1.5rem;
+  font-family: "Nanum";
 `;
 
 export const ReviewWritingButton = styled.button`
   margin: 10px;
   font-size: 1rem;
+  margin-left: 30px;
+  &:hover{cursor: pointer;}
 `;
 
 export const ReviewDiv = styled.div`
-  border: 1px solid black;
+
   margin: 10px;
   font-size: 1rem;
 `;
 
 export const InformationDiv = styled.div`
   margin: 10px;
+  padding: 10px 0px 0px 0px;
+  
 `;
+
+export const RestaurantName= styled.h1`
+margin-top: 0px;
+font-family: "Nanum";
+border-bottom: 2px double ;
+`
+
+export const Div= styled.div`
+font-size:20px;
+font-weight: bold;
+padding: 20px 10px 0px 20px;
+
+`
+
+export const InfoContainer= styled.div`
+display: flex;
+flex-direction: row;
+
+`

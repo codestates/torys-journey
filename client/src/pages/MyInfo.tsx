@@ -8,9 +8,9 @@ import { useNavigate } from "react-router";
 import {
   MyPageDiv,
   MyPageInfo,
-  MypageInput,
-  MyPageMenuDiv,
 } from "../style/Mypage";
+
+
 import {
   Title,
   Input,
@@ -22,6 +22,8 @@ import {
 } from "../style/MyInfo";
 import { ButtonDiv } from "../style/RestaurantList";
 import styled from "styled-components";
+
+
 export type RootState = ReturnType<typeof store.getState>;
 
 const MyInfo = () => {

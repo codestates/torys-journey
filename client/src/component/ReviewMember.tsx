@@ -12,6 +12,7 @@ import {
   ReviewWritingStar,
   ReviewWritingButton,
 } from "../style/RestaurantInfo";
+import { Rating } from "../style/Review";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -117,9 +118,8 @@ const ReviewMember = () => {
             onClick={(e) => handleStarClick(e, 4)}
             color={clicked[4] ? "gold" : "gray"}
           />
-          평점:{rating}
         </ReviewWritingStar>
-
+        <Rating>평점:{rating}</Rating>
         <ReviewWritingButton onClick={enrollReview}>
           작성하기
         </ReviewWritingButton>

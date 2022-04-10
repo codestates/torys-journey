@@ -21,6 +21,9 @@ const Header = () => {
   };
   // ! 로그인 모달창
   const navigate = useNavigate();
+  const home=()=>{
+    navigate("/")
+}
   const localStorageTokenCheck: string | null = localStorage.getItem("KEY");
   // console.log(localStorageTokenCheck);
 
@@ -50,7 +53,7 @@ const Header = () => {
 
   return (
     <HeaderTag>
-      <HeaderTitle src={logo}></HeaderTitle>
+      <HeaderTitle src={logo} onClick={home} ></HeaderTitle>
       <DivContainer>
         <MypageLink to="/mypage/bookmark">Mypage</MypageLink>
 

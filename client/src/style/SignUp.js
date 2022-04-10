@@ -19,23 +19,44 @@ export const SignUpModal = styled.div`
 `;
 
 export const FormModal = styled.form`
-  width: 40vw;
-  height: 60vh;
+ min-width: 20%;
+  min-height: 40%;
   padding: 2em;
   border-radius: 1em;
   background: white;
+  display: flex;
   /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; */
+
+
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const SignUpInput = styled.input`
   width: 100%;
   height: 50px;
-  border-radius: 30px;
-  margin-top: 10px;
+  border-radius: 10px;
+
   padding: 0px;
   border: 1px solid lightgrey;
   outline: none;
+`;
+export const SignupButton= styled.div`
+border: 1px solid yellowgreen;
+border-radius: 5px;
+padding: 5px;
+margin-top: 10px;
+&:hover{
+  cursor: pointer;
+  background-color: yellowgreen;
+}
+`
+export const Error = styled.div`
+  color:red;
+  font-size: 15px;
 `;

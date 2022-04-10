@@ -13,7 +13,7 @@ const MyPageMenu = () => {
 
       <MenuItem>
         <MenuLink to="/mypage/writingmanage">
-          <img src= "https://cdn-icons-png.flaticon.com/512/2911/2911228.png" alt="" height="30px"/> 작성글 관리</MenuLink>
+          <img src= "https://cdn-icons-png.flaticon.com/512/2911/2911228.png" alt="" height="30px"/> 등록한 식당 </MenuLink>
       </MenuItem>
 
       <MenuItem>

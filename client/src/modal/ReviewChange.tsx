@@ -12,6 +12,8 @@ import {
   Input,
   InputDiv,
 } from "../style/Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 type ReviewChangeProps = {
   //!레스토랑ID가 없음
@@ -106,7 +108,8 @@ const ReviewChange = ({
       <ReviewModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={ReviewChangeModal}>X</div>
+          {/* <div onClick={ReviewChangeModal}>X</div> */}
+          <FontAwesomeIcon onClick={ReviewChangeModal} icon={faTimes} />
         </Header>
         <Content>
           <div>리뷰 수정</div>

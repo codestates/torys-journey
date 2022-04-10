@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import DetailCarousel from "./DetailCarousel";
+import { Picture } from "../style/Picture";
 
 const CardImg = styled.img`
   width: 96%;
@@ -73,7 +74,7 @@ const Pictures = ({ picture }: any): React.ReactElement => {
   };
 
   return (
-    <div>
+    <Picture>
       <StyledSlider {...settings}>
         {picture.map((el: string, key: React.Key | null | undefined) => {
           return (
@@ -90,7 +91,7 @@ const Pictures = ({ picture }: any): React.ReactElement => {
         })}
       </StyledSlider>
       {modal ? <DetailCarousel onClick={onClick} photo={picture} /> : ""}
-    </div>
+    </Picture>
   );
 };
 

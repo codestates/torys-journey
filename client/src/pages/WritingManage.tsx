@@ -37,7 +37,7 @@ const WritingManage = () => {
     <MyPageDiv>
       <MyPageMenu />
       <WritingDiv>
-        <Title>작성글 관리</Title>
+        <Title>등록한 식당</Title>
         {writing.map(
           (el: {
             id: number;

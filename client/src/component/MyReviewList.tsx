@@ -1,13 +1,15 @@
-import React, { useState } from "react";
 import ReviewChange from "../modal/ReviewChange";
+import React, { useState } from "react";
 import {
-  ReviewDiv,
+
   ReviewItemDiv,
   ReviewName,
   ReviewButton,
   ReviewContent,
+  ReviewContainer,
+  ReviewButton2
 } from "../style/Mypage";
-
+import { FaStar } from "react-icons/fa";
 type ReviewListProps = {
   //!레스토랑ID가 없음
   reviewList: {
@@ -21,6 +23,7 @@ type ReviewListProps = {
 
 const MyReviewList = ({ reviewList }: ReviewListProps) => {
   //!레스토랑ID가 없음
+
   const [reviewChange, setReviewChange] = useState(false);
 
   const reviewChangeModal = () => {
@@ -32,10 +35,43 @@ const MyReviewList = ({ reviewList }: ReviewListProps) => {
 
   return (
     <ReviewItemDiv>
-      <ReviewName>상호명 : {reviewList.name}</ReviewName>
-      <ReviewName>평점 : {reviewList.rating}</ReviewName>
-      <ReviewButton onClick={reviewChangeModal}>수정 / 삭제</ReviewButton>
-      <ReviewContent>내용 : {reviewList.comment}</ReviewContent>
+    
+      <ReviewName><div>{reviewList.name}</div>
+      <div>
+          {reviewList.rating === 1 ? (
+            <FaStar color="gold" />
+          ) : reviewList.rating === 2 ? (
+            <div>
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+            </div>
+          ) : reviewList.rating === 3 ? (
+            <div>
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+            </div>
+          ) : reviewList.rating === 4 ? (
+            <div>
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+            </div>
+          ) : reviewList.rating === 5 ? (
+            <div>
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+              <FaStar color="gold" />
+            </div>
+          ) : (
+            ""
+          )}
+        </div></ReviewName>
+    
+      <ReviewButton2><ReviewContent>{reviewList.comment}</ReviewContent>
       {reviewChange ? (
         <ReviewChange
           key={reviewList.reviewId}
@@ -44,7 +80,7 @@ const MyReviewList = ({ reviewList }: ReviewListProps) => {
         />
       ) : (
         ""
-      )}
+      )} <ReviewButton onClick={reviewChangeModal}>수정/삭제</ReviewButton></ReviewButton2>
     </ReviewItemDiv>
   );
 };

@@ -12,6 +12,8 @@ import {
   RestaurantAddressDiv,
   RestaurantNameDiv,
   Title,
+  DeleteButton,
+
 } from "../style/Mypage";
 
 const MyPage = () => {
@@ -48,18 +50,20 @@ const MyPage = () => {
   const handleMadalDeleteBookMark = () => {
     setDeleteBookMark(!deleteBookMark);
   };
-  console.log("11111", bookMarkData);
+  // console.log("11111", bookMarkData);
   return (
     <MyPageDiv>
       <MyPageMenu />
 
       <BookMarkListDiv>
         <Title>북마크</Title>
+
         {bookMarkData.map(
           (
             el: { id: string; photo: [string]; name: string; address: string },
             key: React.Key | null | undefined
           ) => (
+          
             <BookMarkItemDiv key={key}>
               <Link
                 to={`/restaurantinfo/${el.id}`}
@@ -71,7 +75,7 @@ const MyPage = () => {
                 </RestaurantNameDiv>
                 <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
               </Link>
-              <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
+              <DeleteButton onClick={handleMadalDeleteBookMark}>삭제</DeleteButton>
               {deleteBookMark ? (
                 <DeleteBookMark
                   handleMadalDeleteBookMark={handleMadalDeleteBookMark}

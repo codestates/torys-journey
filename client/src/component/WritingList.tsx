@@ -6,6 +6,9 @@ import {
   WritingAddress,
   WritingButton,
   WritingContent,
+  ContentContainer,
+  NameContainer,
+  PostPicture,
 } from "../style/Mypage";
 
 type WritingListProps = {
@@ -33,12 +36,16 @@ const WritingList = ({ writingList }: WritingListProps) => {
 
   return (
     <WritingItemDiv>
-      <WritingName>상호명 : {writingList.name}</WritingName>
-      <WritingAddress>주소 : {writingList.address}</WritingAddress>
-      <WritingButton onClick={writingChangeModal}>수정 / 삭제</WritingButton>
-      <WritingContent>{writingList.detailInfo}</WritingContent>
+      <ContentContainer>
+        <NameContainer>
+      <WritingName>{writingList.name}</WritingName>{" "}
+      <WritingButton onClick={writingChangeModal}>수정/삭제</WritingButton></NameContainer>
+      <PostPicture src={writingList.photo[0]} height= "150px"/>
+      <WritingAddress>{writingList.address}</WritingAddress>
+      <WritingAddress>{writingList.number}</WritingAddress>
+      <WritingAddress>{writingList.officeHours}</WritingAddress>
+      <WritingContent>{writingList.detailInfo}</WritingContent></ContentContainer>
       {/* {writingList.officeHours} */}
-
       {writingChange ? (
         <WritingChange
           key={writingList.id}

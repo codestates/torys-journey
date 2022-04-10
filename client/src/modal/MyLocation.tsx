@@ -11,7 +11,7 @@ const MyLocation = () => {
   const dummyData = useSelector(
     (data: RootState) => data.restaurantInformation
   );
-//{id: 11, name: '구독 ', photo: Array(4), rating: '5.0', address: ' 경기도 화성시 장지로 60-44', …}
+
   useEffect(() => {
     //!!!!!! 지도 만들기
     const container = document.getElementById("map");

@@ -5,7 +5,9 @@ export const LoginTitle = styled.h2`
   color: #73b4ac;
   font-size: 2em;
   width: 80%;
-  margin: 0;
+
+  font-family: "Nanum_bold";
+  margin-top: 20px;
 `;
 
 export const LoginModal = styled.div`
@@ -19,12 +21,12 @@ export const LoginModal = styled.div`
   top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
+
 `;
 
 export const InputModal = styled.div`
-  min-width: 30%;
+  min-width: 20%;
   min-height: 40%;
-
   padding: 2em;
   border-radius: 1em;
   background: white;
@@ -37,35 +39,41 @@ export const InputModal = styled.div`
 
 export const IdInput = styled.input`
   width: 100%;
-  height: 50px;
-  border-radius: 30px;
-
+  height: 40px;
+  border-radius: 12px;
   margin-bottom: 10%;
-  padding: 0px;
   border: 1px solid lightgrey;
   outline: none;
+  
 `;
 
 export const LoginButton = styled.button`
-  width: 100%;
+  width: 18%;
   height: 50px;
   border: 0;
   outline: none;
-  border-radius: 30px;
-  background: #73b4ac;
-  font-size: 1.2rem;
+  border-radius: 6px;
+
+  font-size: 15px;
   letter-spacing: 2px;
-  margin-top: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const OauthLogo = styled.img`
-  width: 70px;
+  width: 50px;
   margin: 10px;
+  &:hover{}
+  cursor: pointer;
 `;
 
 export const CloseButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
+
+  padding-right: 20px;
   width: 100%;
 `;
 export const CloseButton = styled.button`
@@ -76,19 +84,26 @@ export const CloseButton = styled.button`
 export const OauthLoginDiv = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  margin-top: 10%;
+  width: 70%;
 `;
 
 export const CloseLoginDiv = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 10%;
+
+  margin-left: 20px;
+  font-family: "Nanum";
 `;
 
 export const LoginHeightDiv = styled.div`
-  height: 70%;
+  height: 80%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 `;
 
 export const LoginDiv = styled.div`
@@ -107,7 +122,16 @@ export const LogoDiv = styled.div`
 `;
 
 export const SignUpDiv = styled.div`
-  margin-top: 10%;
   display: flex;
   justify-content: flex-end;
+`;
+export const ButtonDiv = styled.div`
+  width: 70%;
+  justify-content: space-around;
+  display: flex;
+  margin-bottom: 10px;
+`;
+export const Error = styled.div`
+  color: red;
+  font-size: 15px;
 `;
