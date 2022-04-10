@@ -26,6 +26,10 @@ export const RestaurantTab = styled.div`
     cursor: pointer;
     /* color: white; */
   }
+
+  &:visited{
+    background-color: yellowgreen;
+  }
 `;
 
 export const TabDiv = styled.div`

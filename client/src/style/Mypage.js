@@ -105,6 +105,7 @@ export const BookMarkListDiv = styled.div`
   width: 70%;
   margin-left: 5%;
   margin-top: 2%;
+ 
 `;
 
 export const BookMarkItemDiv = styled.div`
@@ -116,6 +117,7 @@ export const BookMarkItemDiv = styled.div`
   margin-bottom: 25px;
   transition: 0.3s;
   border-radius: 4px;
+  background-color: aliceblue;
   &:hover {
     cursor: pointer;
     transform: scale(1.12);
@@ -221,3 +223,33 @@ export const StarDiv = styled.div`
   width: 100%;
   font-size: 1.2rem;
 `;
+
+export const BookmarkDiv = styled.div`
+  width: 250px;
+  /* margin: 1%; */
+  /* margin-top: 100px; */
+  padding: 0.5%;
+  height: 350px;
+  font-family: "Nanum";
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.3s;
+  border-radius: 4px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(253, 215, 190, 0.3);
+ 
+   &:hover {
+    cursor: pointer;
+    transform: scale(1.12);
+  }
+`
+
+// box-sizing: border-box;
+//   width: 17%;
+//   padding: 0.5%;
+//   margin: 1%;
+//   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+//   margin-bottom: 25px;
+
+// 
