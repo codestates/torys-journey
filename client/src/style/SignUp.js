@@ -19,8 +19,8 @@ export const SignUpModal = styled.div`
 `;
 
 export const FormModal = styled.form`
-  width: 40vw;
-  height: 60vh;
+  min-width: 20%;
+  min-height: 60%;
   padding: 2em;
   border-radius: 1em;
   background: white;

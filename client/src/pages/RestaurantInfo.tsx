@@ -5,7 +5,12 @@ import Pictures from "../component/Pictures";
 import Info from "../component/Info";
 import Map from "../component/Map";
 import BookMarkCheck from "../component/BookMarkCheck";
-import { RestaurantDiv, RestaurantMainDiv } from "../style/RestaurantInfo";
+import {
+  RestaurantDiv,
+  RestaurantMainDiv,
+  RestaurantName,
+  RestaurantNameDiv,
+} from "../style/RestaurantInfo";
 
 const RestaurantInfo = () => {
   const params = useParams();
@@ -37,9 +42,11 @@ const RestaurantInfo = () => {
 
   return (
     <RestaurantMainDiv>
-      <h1>{restaurantInfo.name}</h1>
+      <RestaurantNameDiv>
+        <BookMarkCheck />
+        <RestaurantName>{restaurantInfo.name}</RestaurantName>
+      </RestaurantNameDiv>
       <Pictures picture={restaurantInfo.photo} />
-      <BookMarkCheck />
       <RestaurantDiv>
         <Info />
         <Map address={restaurantInfo.address} name={restaurantInfo.name} />

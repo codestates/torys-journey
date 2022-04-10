@@ -7,7 +7,6 @@ export const MenuList = styled.div`
   box-sizing: border-box;
   /* background-color: pink; */
   margin-left: 7%;
-  
 `;
 
 export const MenuItem = styled.li`
@@ -34,7 +33,7 @@ export const MenuLink = styled(Link)`
   text-align: center;
   display: block;
   padding: 1em;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   /* font-weight: bold; */
 
   color: black;

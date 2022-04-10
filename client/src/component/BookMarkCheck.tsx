@@ -77,7 +77,7 @@ const BookMarkCheck = () => {
       <FaStar
         onClick={() => bookMark()}
         color={clicked ? "gold" : "gray"}
-        size="25"
+        size="30"
       />
     </BookMarkDiv>
   );

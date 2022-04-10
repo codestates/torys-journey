@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
 import BookMarkCheck from "./BookMarkCheck";
-import { DetailInfoDiv, InformationDiv } from "../style/RestaurantInfo";
+import {
+  DetailInfoDiv,
+  InformationDiv,
+  NameDiv,
+} from "../style/RestaurantInfo";
 
 const DetailInfo = () => {
   const params = useParams<any>();
@@ -25,12 +29,25 @@ const DetailInfo = () => {
     <>
       {/* <BookMarkCheck /> */}
       <DetailInfoDiv>
-        <InformationDiv>상호명 : {information.name}</InformationDiv>
-        <InformationDiv>평점 : {information.rating} </InformationDiv>
-        <InformationDiv>주소 : {information.address}</InformationDiv>
-        <InformationDiv>전화번호 : {information.number}</InformationDiv>
-        <InformationDiv>상세정보 : {information.detailInfo}</InformationDiv>
-        <InformationDiv>영업시간 : {information.officeHours}</InformationDiv>
+        <InformationDiv>
+          <NameDiv>상호명 : </NameDiv>
+          {information.name}
+        </InformationDiv>
+        <InformationDiv>
+          <NameDiv>평점 : </NameDiv> {information.rating}{" "}
+        </InformationDiv>
+        <InformationDiv>
+          <NameDiv>주소 : </NameDiv> {information.address}
+        </InformationDiv>
+        <InformationDiv>
+          <NameDiv>전화번호 : </NameDiv> {information.number}
+        </InformationDiv>
+        <InformationDiv>
+          <NameDiv>상세정보 : </NameDiv> {information.detailInfo}
+        </InformationDiv>
+        <InformationDiv>
+          <NameDiv>영업시간 : </NameDiv> {information.officeHours}
+        </InformationDiv>
       </DetailInfoDiv>
     </>
   );

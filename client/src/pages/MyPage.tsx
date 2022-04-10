@@ -8,7 +8,7 @@ import {
   BookMarkListDiv,
   BookMarkItemDiv,
   BookMarkImg,
-  MyPageMenuDiv,
+  DeleteButtonDiv,
   RestaurantAddressDiv,
   RestaurantNameDiv,
   Title,
@@ -71,7 +71,9 @@ const MyPage = () => {
                 </RestaurantNameDiv>
                 <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
               </Link>
-              <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
+              <DeleteButtonDiv>
+                <button onClick={handleMadalDeleteBookMark}>삭제하기</button>
+              </DeleteButtonDiv>
               {deleteBookMark ? (
                 <DeleteBookMark
                   handleMadalDeleteBookMark={handleMadalDeleteBookMark}

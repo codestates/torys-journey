@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const RestaurantDiv = styled.div`
   margin-left: 20px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
 `;
@@ -16,7 +17,7 @@ export const RestaurantTab = styled.div`
   height: 40px;
   font-size: 1.2rem;
   font-weight: bold;
-
+  border-radius: 10px;
   background-color: #73b4ac;
   border: 1px solid black;
   transition: 0.5s;
@@ -33,6 +34,8 @@ export const TabDiv = styled.div`
 
 export const DetailInfoDiv = styled.div`
   display: flex;
+  width: 98%;
+  margin: 1%;
   flex-direction: column;
   border: 1px solid black;
   font-size: 1.3rem;
@@ -59,17 +62,18 @@ export const ImgModal = styled.div`
 export const RestaurantMainDiv = styled.div`
   margin-left: 10%;
   margin-right: 10%;
+  font-family: "Nanum";
 `;
 
 export const BookMarkDiv = styled.div`
-  width: 100%;
+  width: 3%;
   position: relative;
   margin-top: 10px;
 `;
 
 export const ReviewWritingDiv = styled.div`
   display: flex;
-  border: 1px solid black;
+  border-bottom: 3px solid #73b4ac;
 `;
 
 export const ReviewWritingTitleDiv = styled.div`
@@ -94,11 +98,27 @@ export const ReviewWritingButton = styled.button`
 `;
 
 export const ReviewDiv = styled.div`
-  border: 1px solid black;
+  border-bottom: 3px solid #73b4ac;
   margin: 10px;
   font-size: 1rem;
 `;
 
 export const InformationDiv = styled.div`
   margin: 10px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+`;
+export const NameDiv = styled.div`
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-right: 5px;
+`;
+
+export const RestaurantName = styled.h1`
+  width: 90%;
+`;
+
+export const RestaurantNameDiv = styled.div`
+  display: flex;
 `;
