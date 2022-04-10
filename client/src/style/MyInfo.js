@@ -16,6 +16,7 @@ export const Input = styled.div`
   width: 35%;
   font-size: 17px;
   font-family: "Nanum";
+  margin-top: 5%;
 `;
 
 export const InputTag = styled.div`

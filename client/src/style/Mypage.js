@@ -39,7 +39,7 @@ export const WritingDiv = styled.div`
   margin-bottom: 0;
 `;
 export const WritingItemDiv = styled.div`
-  width: 96%;
+  width: 46%;
   height: 10%;
   margin: 2%;
   display: flex;
