@@ -57,17 +57,18 @@ module.exports = () => {
         callbackURL: '/oauth/kakao/callback'
     }, async (accessToken, refreshToken, profile, done) => {
         console.log('kakao profile', profile)
+        console.log( typeof profile.id)
         try {
             const exUser = await user.findOne({
-                where: { oauthId: profile.id, provider: 'kakao' }
+                where: { kakaoId: profile.id, provider: 'kakao' }
             });
             if(exUser) {
                 done(null, exUser);
             } else {
                 const newUser = await user.create({
-                    email: profile._json && profile._json.kakao_account_email,
+                    email: profile._json && profile._json.kakao_account.email,
                     name: profile.displayName,
-                    oauthId: profile.id,
+                    kakaoId: profile.id,
                     provider: 'kakao'
                 });
                 done(null, newUser);
@@ -88,7 +89,7 @@ module.exports = () => {
         console.log('naver profile', profile)
         try {
             const exUser = await user.findOne({
-                where: { oauthId: profile.id, provider: 'naver' }
+                where: { naverId: profile.id, provider: 'naver' }
             });
             if(exUser) {
                 done(null, exUser);
@@ -96,7 +97,7 @@ module.exports = () => {
                 const newUser = await user.create({
                     email: profile.email,
                     name: profile.name,
-                    oauthId: profile.id,
+                    naverId: profile.id,
                     provider: 'naver'
                 });
                 done(null, newUser);
@@ -117,15 +118,16 @@ module.exports = () => {
         console.log('google profile', profile)
         try {
             const exUser = await user.findOne({
-                where: { oauthId: profile.id, provider: 'google' }
+                where: { googleId: profile.id, provider: 'google' }
             });
             if(exUser) {
                 done(null, exUser);
             } else {
+                // const googleId = Number(profile.id)
                 const newUser = await user.create({
-                    email: profile?.email[0].value,
+                    email: profile.emails[0].value,
                     name: profile.displayName,
-                    oauthId: profile.id,
+                    googleId: profile.id,
                     provider: 'google'
                 });
                 done(null, newUser);

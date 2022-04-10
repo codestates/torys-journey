@@ -19,8 +19,14 @@ module.exports = {
       password: {
         type: Sequelize.STRING(1023)
       },
-      oauthId: {
-        type: Sequelize.INTEGER
+      kakaoId: {
+        type: Sequelize.BIGINT(32)
+      },
+      naverId: {
+        type: Sequelize.STRING
+      },
+      googleId: {
+        type: Sequelize.STRING
       },
       provider: {
         type: Sequelize.STRING

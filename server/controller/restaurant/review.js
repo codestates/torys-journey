@@ -97,6 +97,21 @@ module.exports = {
                             id: req.params.reviewId
                         }
                     })
+                    const allReview = await review.findAll({
+                        where: {
+                            restaurantId: req.params.restaurantId
+                        }
+                    })
+                    let sum = allReview.reduce((sum, el)=>{
+                        return sum + el.rating
+                    },0)
+                    await restaurant.update({
+                        rating: sum/allReview.length
+                    },{
+                        where: {
+                            id: req.params.restaurantId
+                        }
+                    })
                     res.status(200).json({ message: '리뷰를 성공적으로 수정하였습니다.'})
                 } catch {
                     res.status(500).send('Internel Server Error')
@@ -118,6 +133,21 @@ module.exports = {
                 await review.destroy({
                     where: {
                         id: req.params.reviewId
+                    }
+                })
+                const allReview = await review.findAll({
+                    where: {
+                        restaurantId: req.params.restaurantId
+                    }
+                })
+                let sum = allReview.reduce((sum, el)=>{
+                    return sum + el.rating
+                },0)
+                await restaurant.update({
+                    rating: sum/allReview.length
+                },{
+                    where: {
+                        id: req.params.restaurantId
                     }
                 })
                 res.status(200).json({ message:'성공적으로 삭제 되었습니다.' })

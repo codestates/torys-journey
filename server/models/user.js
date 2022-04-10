@@ -33,7 +33,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING(1023),
-    oauthId: DataTypes.INTEGER,
+    kakaoId: DataTypes.NUMBER,
+    naverId: DataTypes.STRING,
+    googleId: DataTypes.STRING,
     provider: DataTypes.STRING
   }, {
     sequelize,

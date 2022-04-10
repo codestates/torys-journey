@@ -12,15 +12,24 @@ module.exports = {
             } else {
                 try{
                     const { uri }  = req.body
-                    await uri.forEach(el=>{
-                        photo.findOrCreate({
+                    for( const el of uri){
+                        await photo.findOrCreate({
                             where: {
                                 userId: auth.id,
                                 restaurantId: req.params.id,
                                 uri: el
                             }
                         })
-                    })
+                    }
+                    // await uri.forEach(el=>{
+                    //     photo.findOrCreate({
+                    //         where: {
+                    //             userId: auth.id,
+                    //             restaurantId: req.params.id,
+                    //             uri: el
+                    //         }
+                    //     })
+                    // })
                     res.status(201).json({ message: '성공적으로 사진이 등록되었습니다.' })
                 } catch {
                     res.status(500).send('Internel Server Error')

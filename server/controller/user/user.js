@@ -1,5 +1,6 @@
 const { user } = require("../../models")
 const { isAuthorized } = require('../tokenFunction');
+const bcrypt = require('bcrypt')
 
 module.exports = {
     get: async (req,res) => {
@@ -24,13 +25,24 @@ module.exports = {
         }
     },
     patch: async (req,res) => {
+        if(!req.body.oldPassword || !req.body.newPassword){
+            res.status(400).json({ message:'모든 칸을 채워주세요.' })
+        }
         const auth = await isAuthorized(req)
         if(auth){
-            if(!req.body.password){
+            const userInfo  = await user.findOne({
+                where: {
+                    id: auth.id
+                }
+            })
+            const isValidPW = await bcrypt.compare(req.body.oldPassword, userInfo.password)
+
+            if(!isValidPW){
                 res.status(400).json({message:"회원 정보를 잘못 입력하셨습니다."})
             } else {
+                const hashed = await bcrypt.hash(req.body.newPassword, 10)
                 await user.update({
-                    password: req.body.password,
+                    password: hashed,
                 },{
                     where: {
                         id: auth.id
