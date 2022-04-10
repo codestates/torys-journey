@@ -85,6 +85,7 @@ export const ButtonDiv = styled.div`
   margin-top: 30px;
   margin-right: 160px;
   margin-left: 160px;
+  margin-bottom: 20px;
 `;
 export const ButtonHover = styled.button`
   padding: 10px;
@@ -112,8 +113,8 @@ export const Close = styled.div`
 `;
 
 export const Button = styled.button`
-  font-size: 20px;
-  width: 18%;
+  font-size: 15px;
+  width: 20%;
   padding: 2px;
   &:hover {
     cursor: pointer;

@@ -74,7 +74,7 @@ const ReviewChange = ({
           }
         )
         .then(() => alert("수정이 완료되었습니다."))
-        .then(() => navigate("/"))
+        .then(() => window.location.reload()) //! 블로그(리랜더링)
         .catch((res) => {
           if (res.response.status === 401)
             alert("리뷰를 수정할 수 있는 권한이 없습니다."); //오류 status에 따른 alert
@@ -98,7 +98,7 @@ const ReviewChange = ({
         }
       )
       .then(() => alert("삭제가 완료되었습니다."))
-      .then(() => navigate("/"))
+      .then(() => window.location.reload()) //! 블로그(리랜더링)
       .catch(() => alert("삭제할 수 있는 권한이 없습니다."));
   };
 

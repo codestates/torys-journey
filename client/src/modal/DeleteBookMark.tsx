@@ -27,12 +27,9 @@ const DeleteBookMark = ({
   handleMadalDeleteBookMark,
   bookMarkData,
 }: handleMadalDeleteBookMarkProps) => {
-  const navigate = useNavigate();
-  const [rendering, setRendering] = useState("");
-
   // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
-  console.log("22222", bookMarkData);
+  console.log("22222", bookMarkData.id);
   const deleteBookMark = () => {
     axios
       .delete(
@@ -65,6 +62,7 @@ const DeleteBookMark = ({
 
         <Content>정말 삭제하시겠습니까?</Content>
         <ButtonDiv2>
+
           <button onClick={deleteBookMark}>확인</button>
           <button onClick={handleMadalDeleteBookMark}>취소</button>
         </ButtonDiv2>

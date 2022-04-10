@@ -15,6 +15,7 @@ import {
 } from "../style/Mypage";
 import { ButtonDelete } from "../style/Modal";
 
+
 const MyPage = () => {
   const navigate = useNavigate();
 
@@ -61,23 +62,29 @@ const MyPage = () => {
             el: { id: string; photo: [string]; name: string; address: string },
             key: React.Key | null | undefined
           ) => (
-            <BookMarkItemDiv key={key}>
-              <Link
-                to={`/restaurantinfo/${el.id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <BookMarkImg src={el.photo[0]} alt="사진을 넣어주세요." />
-                <RestaurantNameDiv>
-                  <div>{el.name}</div>
-                </RestaurantNameDiv>
-                <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
-              </Link>
-              <DeleteButtonDiv>
-                <ButtonDelete onClick={handleMadalDeleteBookMark}>
-                  삭제하기
-                </ButtonDelete>
-              </DeleteButtonDiv>
-              {deleteBookMark ? (
+            <div>
+            <div>
+              <BookmarkDiv>
+                <Link
+                  to={`/restaurantinfo/${el.id}`}
+
+                  style={{ textDecoration: "none" }}
+                >
+                  <BookMarkImg src={el.photo[0]} alt="사진을 넣어주세요." />
+                  <RestaurantNameDiv>
+                    <div>{el.name}</div>
+                  </RestaurantNameDiv>
+                  <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
+                </Link>
+        
+                <DeleteButtonDiv>
+                  <ButtonDelete onClick={handleMadalDeleteBookMark}>
+                    삭제하기
+                  </ButtonDelete>
+                </DeleteButtonDiv>
+              </BookmarkDiv>
+              
+            </div>{deleteBookMark ? (
                 <DeleteBookMark
                   handleMadalDeleteBookMark={handleMadalDeleteBookMark}
                   bookMarkData={el}
@@ -85,8 +92,7 @@ const MyPage = () => {
               ) : (
                 ""
               )}
-            </BookMarkItemDiv>
-          )
+          </div>)
         )}
       </BookMarkListDiv>
     </MyPageDiv>
