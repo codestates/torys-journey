@@ -92,7 +92,7 @@ export const LoginHeightDiv = styled.div`
 `;
 
 export const LoginDiv = styled.div`
-  width: 50%;
+  width: 100%;
 `;
 
 export const LoginLogo = styled.img`

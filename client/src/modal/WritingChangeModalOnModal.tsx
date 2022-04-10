@@ -6,7 +6,8 @@ import {
   Content,
   ButtonDiv2,
 } from "../style/Modal";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 type valueProps = {
   modalChange: () => void;
   patchWriting: () => void;
@@ -21,7 +22,7 @@ const WritingChangeModalOnModal = ({
       <ChangeModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={modalChange}>X</div>
+          <FontAwesomeIcon onClick={modalChange} icon={faTimes} />
         </Header>
 
         <Content>정말 수정하시겠습니까?</Content>

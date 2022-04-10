@@ -57,6 +57,6 @@ export const MyInfoInput = styled.input`
 `;
 
 export const ErrorMessage = styled.div`
-  color: #b02107;
+  color: red;
   font-size: 15px;
 `;
