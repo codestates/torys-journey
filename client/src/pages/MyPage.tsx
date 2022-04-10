@@ -6,12 +6,12 @@ import DeleteBookMark from "../modal/DeleteBookMark";
 import {
   MyPageDiv,
   BookMarkListDiv,
-  BookMarkItemDiv,
   BookMarkImg,
   DeleteButtonDiv,
   RestaurantAddressDiv,
   RestaurantNameDiv,
   Title,
+  BookMarkItemDiv,
 } from "../style/Mypage";
 import { ButtonDelete } from "../style/Modal";
 
@@ -72,7 +72,6 @@ const MyPage = () => {
                 </RestaurantNameDiv>
                 <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
               </Link>
-
               <DeleteButtonDiv>
                 <ButtonDelete onClick={handleMadalDeleteBookMark}>
                   삭제하기

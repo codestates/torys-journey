@@ -51,6 +51,10 @@ const DeleteBookMark = ({
   };
 
   return (
+    // <div>
+    //   <button onClick={deleteBookMark}>확인</button>
+    //   <button onClick={handleMadalDeleteBookMark}>취소</button>
+    // </div>
     <ModalBack>
       <ChangeModal>
         <Header>

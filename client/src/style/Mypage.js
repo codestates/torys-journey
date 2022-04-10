@@ -8,8 +8,7 @@ export const MyPageDiv = styled.div`
 
 export const DeleteButtonDiv = styled.div`
   display: flex;
-  justify-content: flex-end;
-  margin-top: 30px;
+  margin-top: auto;
 
   &:hover {
     cursor: pointer;
@@ -118,8 +117,16 @@ export const BookMarkItemDiv = styled.div`
   border-radius: 4px;
   &:hover {
     cursor: pointer;
-    transform: scale(1.12);
   }
+`;
+
+export const NewBookMarkItemDiv = styled.div`
+  width: 17%;
+  padding: 0.5%;
+  margin: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  border-radius: 4px;
 `;
 
 export const BookMarkImg = styled.img`
