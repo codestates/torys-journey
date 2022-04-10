@@ -9,7 +9,7 @@ export const MyPageDiv = styled.div`
 export const DeleteButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: auto;
+  margin-bottom: 10px;
   &:hover {
     cursor: pointer;
   }
