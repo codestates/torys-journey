@@ -7,14 +7,15 @@ import DeleteMiddleBookMark from "../component/DeleteMiddleBookMark";
 import {
   MyPageDiv,
   BookMarkListDiv,
-  BookMarkItemDiv,
   BookMarkImg,
   DeleteButtonDiv,
   RestaurantAddressDiv,
   RestaurantNameDiv,
   Title,
+  BookMarkItemDiv,
 } from "../style/Mypage";
 import { ButtonDelete } from "../style/Modal";
+
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ const MyPage = () => {
             el: { id: string; photo: [string]; name: string; address: string },
             key: React.Key | null | undefined
           ) => (
+
             <DeleteMiddleBookMark key={key} bookMarkDatas={el} />
           )
         )}
