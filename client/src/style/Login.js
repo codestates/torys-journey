@@ -22,13 +22,13 @@ export const LoginModal = styled.div`
 `;
 
 export const InputModal = styled.div`
-  min-width: 30%;
-  min-height: 40%;
-
+  min-width: 20%;
+  min-height: 60%;
   padding: 2em;
   border-radius: 1em;
   background: white;
   display: flex;
+  flex-direction: column;
   /* display: flex;
   flex-direction: column;
   align-items: center;
