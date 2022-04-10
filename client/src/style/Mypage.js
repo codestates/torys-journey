@@ -228,20 +228,20 @@ export const BookmarkDiv = styled.div`
   width: 250px;
   /* margin: 1%; */
   /* margin-top: 100px; */
-  padding: 0.5%;
+  padding: 3%;
   height: 350px;
   font-family: "Nanum";
   display: flex;
   flex-wrap: wrap;
   transition: 0.3s;
   border-radius: 4px;
-  margin: 10px;
+  margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(253, 215, 190, 0.3);
  
    &:hover {
     cursor: pointer;
-    transform: scale(1.12);
+
   }
 `
 
