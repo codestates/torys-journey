@@ -9,7 +9,7 @@ export const MyPageDiv = styled.div`
 export const DeleteButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 10px;
+  margin-top: auto;
   &:hover {
     cursor: pointer;
   }
@@ -104,19 +104,19 @@ export const BookMarkListDiv = styled.div`
   width: 70%;
   margin-left: 5%;
   margin-top: 2%;
- 
 `;
 
 export const BookMarkItemDiv = styled.div`
+  box-sizing: border-box;
   width: 17%;
   padding: 0.5%;
   margin: 1%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
+  transition: 0.3s;
   border-radius: 4px;
-  background-color: aliceblue;
+  background-color: rgba(253, 215, 190, 0.3);
   &:hover {
-    /* transform: scale(1.12); */
     cursor: pointer;
   }
 `;
@@ -147,18 +147,13 @@ export const ReviewDiv = styled.div`
 `;
 
 export const ReviewItemDiv = styled.div`
-  box-sizing: border-box;
-  width: 17%;
-  padding: 0.5%;
-  margin: 1%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-  transition: 0.3s;
+  width: 46%;
+  margin: 2%;
+  font-family: "Nanum";
+  display: flex;
+  flex-wrap: wrap;
   border-radius: 4px;
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.12);
-  }
+  background-color: rgba(253, 215, 190, 0.3);
 `;
 
 export const ReviewName = styled.div`
@@ -174,6 +169,7 @@ export const ReviewName = styled.div`
 export const ReviewButton = styled.button`
   width: 17%;
   box-sizing: border-box;
+  background-color: #fdd7be;
   font-size: 1rem;
   &:hover {
     cursor: pointer;
@@ -249,18 +245,8 @@ export const BookmarkDiv = styled.div`
   margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(253, 215, 190, 0.3);
- 
-   &:hover {
+
+  &:hover {
     cursor: pointer;
-
   }
-`
-
-// box-sizing: border-box;
-//   width: 17%;
-//   padding: 0.5%;
-//   margin: 1%;
-//   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-//   margin-bottom: 25px;
-
-// 
+`;
