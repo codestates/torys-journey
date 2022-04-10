@@ -158,6 +158,8 @@ export const DelteInput = styled.input`
 `;
 
 export const ButtonDelete = styled.button`
+  display: flex;
+  margin-top: auto;
   &:hover {
     cursor: pointer;
   }

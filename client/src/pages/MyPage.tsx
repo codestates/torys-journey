@@ -6,12 +6,12 @@ import DeleteBookMark from "../modal/DeleteBookMark";
 import {
   MyPageDiv,
   BookMarkListDiv,
-  BookMarkItemDiv,
   BookMarkImg,
   DeleteButtonDiv,
   RestaurantAddressDiv,
   RestaurantNameDiv,
-  Title,BookmarkDiv
+  Title,
+  BookMarkItemDiv,
 } from "../style/Mypage";
 import { ButtonDelete } from "../style/Modal";
 

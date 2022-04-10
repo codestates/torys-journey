@@ -10,6 +10,7 @@ import {
   RestaurantMainDiv,
   RestaurantName,
   RestaurantNameDiv,
+  BookmarkNotice,
 } from "../style/RestaurantInfo";
 
 const RestaurantInfo = () => {
@@ -44,6 +45,7 @@ const RestaurantInfo = () => {
     <RestaurantMainDiv>
       <RestaurantNameDiv>
         <BookMarkCheck />
+        <BookmarkNotice>북마크 버튼</BookmarkNotice>
         <RestaurantName>{restaurantInfo.name}</RestaurantName>
       </RestaurantNameDiv>
       <Pictures picture={restaurantInfo.photo} />
