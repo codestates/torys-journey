@@ -24,11 +24,12 @@ const DetailCarousel = ({ onClick, photo }: onClickProps) => {
 
   return (
     <ImgModal>
-    <div>
-      <CarouselButton>
-        <FontAwesomeIcon onClick={onClick} icon={faTimes} />
-      </CarouselButton>
-      <ImageGallery items={images} /></div>
+      <div>
+        <CarouselButton>
+          <FontAwesomeIcon onClick={onClick} icon={faTimes} />
+        </CarouselButton>
+        <ImageGallery items={images} />
+      </div>
     </ImgModal>
   );
 };

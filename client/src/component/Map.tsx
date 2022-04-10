@@ -1,5 +1,6 @@
 /*global kakao*/
 import React, { useEffect, useState } from "react";
+import { MapButton } from "../style/SignUp";
 
 const { kakao } = window as any;
 
@@ -42,8 +43,15 @@ const Map = ({ address, name }: any) => {
   }, [address, name]); //react에서 쓸 거면 useEffect로 꼭 감싸야함(이유 모름..)
 
   return (
-    
     <div style={{ width: "36%", margin: " 2px 18px 0" }}>
+      <a
+        href={`https://map.kakao.com/link/to/${name},${area.Ma},${area.La}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <MapButton type="button">길찾기</MapButton>
+      </a>
+      {/* 길찾기 */}
       <div
         id="map"
         style={{
@@ -53,14 +61,6 @@ const Map = ({ address, name }: any) => {
           // margin: "0 20px 0 0",
         }}
       ></div>
-      <a
-        href={`https://map.kakao.com/link/to/${name},${area.Ma},${area.La}`}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <button type="button">길찾기</button>
-      </a>
-      {/* 길찾기 */}
     </div>
   );
 };

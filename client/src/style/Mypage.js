@@ -10,7 +10,8 @@ export const DeleteButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 30px;
-  &:hover{
+
+  &:hover {
     cursor: pointer;
   }
 `;
@@ -19,6 +20,12 @@ export const MyPageMenuDiv = styled.div`
   width: 10%;
   margin-top: 1.5%;
 `;
+
+export const MyPageDeleteDiv = styled.div`
+  width: 10%;
+  margin-top: 1.5%;
+`;
+
 export const MyPageInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -76,7 +83,7 @@ export const WritingButton = styled.button`
   width: 15%;
   font-size: 1rem;
   background-color: #fdd7be;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
@@ -155,7 +162,7 @@ export const ReviewButton = styled.button`
   width: 17%;
   box-sizing: border-box;
   font-size: 1rem;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;

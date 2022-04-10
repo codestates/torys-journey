@@ -22,7 +22,7 @@ export const RestaurantTab = styled.div`
   border: 1px solid black;
   transition: 0.5s;
   &:hover {
-    background-color:#7fc7bf;
+    background-color: #7fc7bf;
     cursor: pointer;
     /* color: white; */
   }
@@ -69,9 +69,8 @@ export const BookMarkDiv = styled.div`
   width: 2%;
   position: relative;
   margin-top: 10px;
-  &:hover{
+  &:hover {
     cursor: pointer;
-    
   }
 `;
 
@@ -84,6 +83,7 @@ export const ReviewWritingTitleDiv = styled.div`
   margin: 10px;
   font-size: 1.5rem;
   font-weight: bold;
+  margin-top: 18px;
 `;
 
 export const ReviewWritingInput = styled.input`
@@ -103,7 +103,7 @@ export const ReviewWritingButton = styled.button`
   background-color: rgba(127, 199, 191, 0.3);
   border-radius: 4px;
   margin-left: 30px;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
@@ -135,26 +135,31 @@ export const RestaurantNameDiv = styled.div`
 `;
 
 export const Rating = styled.div`
-font-size: 15px;`
+  font-size: 15px;
+`;
 
 export const Div = styled.div`
-display: flex;
-align-items: baseline;
-`
+  display: flex;
+  align-items: baseline;
+`;
 
-export const Title= styled.div`
-font-size:17px;
-font-weight: bold;
-margin-right:10px;`
+export const Title = styled.div`
+  font-size: 17px;
+  font-weight: bold;
+  margin-right: 10px;
+`;
 
-export const CarouselButton = styled.button`
-background-color: white;
-font-size: 20px;
-&:hover{
-  cursor: pointer;
-}
-`
+export const CarouselButton = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 50px;
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 export const Posted = styled.div`
-margin-left: 10px;
-`
+  margin-left: 10px;
+`;

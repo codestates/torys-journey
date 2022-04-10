@@ -28,7 +28,6 @@ const DeleteBookMark = ({
   bookMarkData,
 }: handleMadalDeleteBookMarkProps) => {
   const navigate = useNavigate();
-
   const [rendering, setRendering] = useState("");
 
   // const localId = useSelector((localId: RootState) => localId.Reducer.id);
@@ -56,7 +55,7 @@ const DeleteBookMark = ({
       <ChangeModal>
         <Header>
           <div>Tory's-journey</div>
-          
+
           <FontAwesomeIcon onClick={handleMadalDeleteBookMark} icon={faTimes} />
         </Header>
 

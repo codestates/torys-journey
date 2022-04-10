@@ -38,7 +38,7 @@ export const InputModal = styled.div`
 export const IdInput = styled.input`
   width: 100%;
   height: 50px;
-  border-radius: 30px;
+  border-radius: 15px;
 
   margin-bottom: 10%;
   padding: 0px;
@@ -51,22 +51,55 @@ export const LoginButton = styled.button`
   height: 50px;
   border: 0;
   outline: none;
-  border-radius: 30px;
+  border-radius: 15px;
   background: #73b4ac;
   font-size: 1.2rem;
   letter-spacing: 2px;
   margin-top: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const SignUpButton = styled.button`
+  width: 100%;
+  height: 30px;
+  border: 0;
+  outline: none;
+  border-radius: 8px;
+  background-color: white;
+  border: 2px solid #73b4ac;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const OauthLogo = styled.img`
   width: 70px;
   margin: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const OauthGoogleLogo = styled.img`
+  width: 70px;
+  margin: 10px;
+  border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const CloseButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 export const CloseButton = styled.button`
   width: 10%;
