@@ -16,6 +16,7 @@ export const Input = styled.div`
   width: 35%;
   font-size: 17px;
   font-family: "Nanum";
+  margin-top: 5%;
 `;
 
 export const InputTag = styled.div`
@@ -34,7 +35,7 @@ export const Button = styled.div`
   border-radius: 3px;
   font-family: "Nanum";
   font-size: 17px;
-  border: 2px solid #fab74d;
+  border: 2px solid #73b4ac;
   padding: 7px;
   border-radius: 4px;
 
@@ -56,6 +57,6 @@ export const MyInfoInput = styled.input`
 `;
 
 export const ErrorMessage = styled.div`
-  color: #b02107;
+  color: red;
   font-size: 15px;
 `;

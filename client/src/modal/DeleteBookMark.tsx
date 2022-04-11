@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import store from "../redux/Store";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   ModalBack,
   ChangeModal,
@@ -12,7 +13,7 @@ import {
 } from "../style/Modal";
 
 type handleMadalDeleteBookMarkProps = {
-  handleMadalDeleteBookMark: () => void;
+  handleModalDeleteBookMark: () => void;
   bookMarkData: {
     id: string;
     photo: [string];
@@ -23,16 +24,12 @@ type handleMadalDeleteBookMarkProps = {
 export type RootState = ReturnType<typeof store.getState>;
 
 const DeleteBookMark = ({
-  handleMadalDeleteBookMark,
+  handleModalDeleteBookMark,
   bookMarkData,
 }: handleMadalDeleteBookMarkProps) => {
-  const navigate = useNavigate();
-
-  const [rendering, setRendering] = useState("");
-
   // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
-  console.log("22222", bookMarkData);
+  console.log("22222", bookMarkData.id);
   const deleteBookMark = () => {
     axios
       .delete(
@@ -45,23 +42,29 @@ const DeleteBookMark = ({
         }
       )
       .then(() => alert("북마크 삭제를 성공하였습니다."))
-      .then(handleMadalDeleteBookMark)
+      .then(handleModalDeleteBookMark)
       .then(() => window.location.reload()) //! 블로그(리랜더링)
       .catch(() => alert("북마크 삭제를 실패하였습니다."));
   };
 
   return (
+    // <div>
+    //   <button onClick={deleteBookMark}>확인</button>
+    //   <button onClick={handleMadalDeleteBookMark}>취소</button>
+    // </div>
     <ModalBack>
       <ChangeModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={handleMadalDeleteBookMark}>X</div>
+
+          <FontAwesomeIcon onClick={handleModalDeleteBookMark} icon={faTimes} />
         </Header>
 
         <Content>정말 삭제하시겠습니까?</Content>
         <ButtonDiv2>
+
           <button onClick={deleteBookMark}>확인</button>
-          <button onClick={handleMadalDeleteBookMark}>취소</button>
+          <button onClick={handleModalDeleteBookMark}>취소</button>
         </ButtonDiv2>
       </ChangeModal>
     </ModalBack>
@@ -69,3 +72,19 @@ const DeleteBookMark = ({
 };
 
 export default DeleteBookMark;
+
+// <ModalBack>
+//       <ChangeModal>
+//         <Header>
+//           <div>Tory's-journey</div>
+
+//           <FontAwesomeIcon onClick={handleModalDeleteBookMark} icon={faTimes} />
+//         </Header>
+
+//         <Content>정말 삭제하시겠습니까?</Content>
+//         <ButtonDiv2>
+//           <button onClick={deleteBookMark}>확인</button>
+//           <button onClick={handleModalDeleteBookMark}>취소</button>
+//         </ButtonDiv2>
+//       </ChangeModal>
+//     </ModalBack>

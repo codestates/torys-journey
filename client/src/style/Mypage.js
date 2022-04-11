@@ -6,10 +6,25 @@ export const MyPageDiv = styled.div`
   flex-wrap: wrap;
 `;
 
+export const DeleteButtonDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export const MyPageMenuDiv = styled.div`
   width: 10%;
   margin-top: 1.5%;
 `;
+
+export const MyPageDeleteDiv = styled.div`
+  width: 10%;
+  margin-top: 1.5%;
+`;
+
 export const MyPageInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,35 +54,46 @@ export const WritingDiv = styled.div`
   margin-bottom: 0;
 `;
 export const WritingItemDiv = styled.div`
-  width: 96%;
-  height: 10%;
+  width: 46%;
   margin: 2%;
   display: flex;
   flex-wrap: wrap;
+  font-family: "Nanum";
+  border-radius: 4px;
+  background-color: rgba(253, 215, 190, 0.3);
 `;
 export const WritingName = styled.div`
-  width: 30%;
-  border: 1px solid black;
+  width: 85%;
+  border-bottom: 2px solid black;
   box-sizing: border-box;
+  font-weight: bold;
   font-size: 1.5rem;
+  margin-top: 10px;
 `;
 export const WritingAddress = styled.div`
-  width: 50%;
-  border: 1px solid black;
+  width: 100%;
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 5px;
 `;
 export const WritingButton = styled.button`
-  width: 20%;
-  box-sizing: border-box;
-  border: 1px solid black;
-  font-size: 1.5rem;
+  width: 15%;
+  font-size: 1rem;
+  background-color: #fdd7be;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const WritingContent = styled.div`
   width: 100%;
-  border: 1px solid black;
   box-sizing: border-box;
+  font-size: 1rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 `;
 
 export const BookMarkListDiv = styled.div`
@@ -82,18 +108,26 @@ export const BookMarkListDiv = styled.div`
 
 export const BookMarkItemDiv = styled.div`
   box-sizing: border-box;
-  width: 22.2%;
+  width: 17%;
   padding: 0.5%;
-  margin: 1.4%;
-
+  margin: 1%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
   transition: 0.3s;
   border-radius: 4px;
+  background-color: rgba(253, 215, 190, 0.3);
   &:hover {
     cursor: pointer;
-    transform: scale(1.12);
   }
+`;
+
+export const NewBookMarkItemDiv = styled.div`
+  width: 17%;
+  padding: 0.5%;
+  margin: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  border-radius: 4px;
 `;
 
 export const BookMarkImg = styled.img`
@@ -113,30 +147,42 @@ export const ReviewDiv = styled.div`
 `;
 
 export const ReviewItemDiv = styled.div`
-  width: 96%;
+  width: 46%;
   margin: 2%;
+  font-family: "Nanum";
   display: flex;
   flex-wrap: wrap;
+  border-radius: 4px;
+  background-color: rgba(253, 215, 190, 0.3);
 `;
 
 export const ReviewName = styled.div`
-  width: 40%;
-  border: 1px solid black;
+  width: 83%;
+  display: flex;
+  margin-top: 10px;
+  font-weight: bold;
+  border-bottom: 2px double gray;
   box-sizing: border-box;
   font-size: 1.5rem;
 `;
 
 export const ReviewButton = styled.button`
-  width: 20%;
+  width: 17%;
   box-sizing: border-box;
-  border: 1px solid black;
-  font-size: 1.5rem;
+  background-color: #fdd7be;
+  font-size: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const ReviewContent = styled.div`
   width: 100%;
-  border: 1px solid black;
   box-sizing: border-box;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 `;
 
 export const RestaurantAddressDiv = styled.div`
@@ -144,8 +190,9 @@ export const RestaurantAddressDiv = styled.div`
   margin-left: 1%;
   margin-right: 1%;
   color: black;
-  font-size: 22px;
-  font-family: "NanumPen";
+  font-size: 20px;
+  font-family: "Nanum";
+  margin-top: 10px;
 `;
 
 export const RestaurantNameDiv = styled.div`
@@ -154,8 +201,9 @@ export const RestaurantNameDiv = styled.div`
   margin-left: 1%;
   margin-right: 1%;
   color: black;
-  font-size: 30px;
-  font-family: "NanumPen";
+  font-size: 25px;
+  font-family: "Nanum_bold";
+  margin-top: 10px;
 `;
 
 export const Title = styled.div`
@@ -167,4 +215,38 @@ export const Title = styled.div`
   padding-bottom: 10px;
   border-bottom: 3px solid #73b4ac;
   font-size: 25px;
+`;
+
+export const PostPicture = styled.img`
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+`;
+
+export const StarDiv = styled.div`
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 100%;
+  font-size: 1.2rem;
+`;
+
+export const BookmarkDiv = styled.div`
+  width: 250px;
+  /* margin: 1%; */
+  /* margin-top: 100px; */
+  padding: 3%;
+  height: 350px;
+  font-family: "Nanum";
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.3s;
+  border-radius: 4px;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(253, 215, 190, 0.3);
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

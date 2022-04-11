@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import ReviewChangeModalOnModal from "./ReviewChangeModalOnModal";
 import ReviewDeleteModalOnModal from "./ReviewDeleteModalOnModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import {
   ModalBack,
@@ -11,6 +13,8 @@ import {
   ButtonDiv,
   Input,
   InputDiv,
+  ButtonHover,
+  Close,
 } from "../style/Modal";
 
 type ReviewChangeProps = {
@@ -70,7 +74,7 @@ const ReviewChange = ({
           }
         )
         .then(() => alert("수정이 완료되었습니다."))
-        .then(() => navigate("/"))
+        .then(() => window.location.reload()) //! 블로그(리랜더링)
         .catch((res) => {
           if (res.response.status === 401)
             alert("리뷰를 수정할 수 있는 권한이 없습니다."); //오류 status에 따른 alert
@@ -94,7 +98,7 @@ const ReviewChange = ({
         }
       )
       .then(() => alert("삭제가 완료되었습니다."))
-      .then(() => navigate("/"))
+      .then(() => window.location.reload()) //! 블로그(리랜더링)
       .catch(() => alert("삭제할 수 있는 권한이 없습니다."));
   };
 
@@ -106,7 +110,9 @@ const ReviewChange = ({
       <ReviewModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={ReviewChangeModal}>X</div>
+          <Close>
+            <FontAwesomeIcon onClick={ReviewChangeModal} icon={faTimes} />
+          </Close>
         </Header>
         <Content>
           <div>리뷰 수정</div>
@@ -114,15 +120,15 @@ const ReviewChange = ({
         <InputDiv>
           <Input
             type="text"
-            value={value.comment}
+            // value={value.comment}
             onChange={changeReview("comment")}
           />
         </InputDiv>
 
         <ButtonDiv>
-          <button onClick={modalChange}>리뷰 수정</button>
-          <button onClick={modalDeleteChange}>리뷰 삭제</button>
-          <button onClick={ReviewChangeModal}>취소</button>
+          <ButtonHover onClick={modalChange}>리뷰 수정</ButtonHover>
+          <ButtonHover onClick={modalDeleteChange}>리뷰 삭제</ButtonHover>
+          <ButtonHover onClick={ReviewChangeModal}>취소</ButtonHover>
           {modal ? (
             <ReviewChangeModalOnModal
               modalChange={modalChange}

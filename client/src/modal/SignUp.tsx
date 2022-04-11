@@ -6,7 +6,15 @@ import {
   FormModal,
   SignUpTitle,
   SignUpInput,
+  Button,
+  Container,
+  Error,
+  LastError,
+  CloseButton,
+  SignUpDiv,
 } from "../style/SignUp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 type handleModalProps = {
   handleModal: () => void;
@@ -34,7 +42,7 @@ const SignUp = ({ handleModal }: handleModalProps) => {
       let password: string = e.target.value;
       if (!passwordRegex.test(password)) {
         setPasswordValidError(
-          `숫자+영문자+특수문자 조합으로 8자리 이상 입력해주세요! 사용 가능한 특수문자는 !@#$%^*+=- 입니다.`
+          `숫자+영문자+특수문자 조합으로 8자리 이상 입력해주세요.`
         );
         setPasswordCorrect(false);
       } else {
@@ -73,6 +81,7 @@ const SignUp = ({ handleModal }: handleModalProps) => {
           password: userinfo.password,
           name: userinfo.name,
         })
+        .then(() => alert("회원가입이 완료되었습니다."))
         .then(handleModal) // test
         .then(() => setPasswordCorrect(false))
         .catch(() => alert("비밀번호가 맞지 않습니다."));
@@ -83,44 +92,61 @@ const SignUp = ({ handleModal }: handleModalProps) => {
   return (
     <SignUpModal>
       <FormModal onSubmit={(e: any) => e.preventDefault()}>
-        <SignUpTitle>회원가입</SignUpTitle>
-        <h4>E-mail</h4>
-        <SignUpInput
-          type="email"
-          placeholder="이메일을 입력하세요"
-          onChange={handleInputValue("email")}
-        />
+        <SignUpTitle>
+          <div>회원가입</div>{" "}
+          <CloseButton>
+            {" "}
+            <FontAwesomeIcon icon={faTimes} onClick={handleModal} />
+          </CloseButton>
+        </SignUpTitle>
 
-        <h4>Name</h4>
-        <SignUpInput
-          type="name"
-          placeholder="이름을 입력하세요"
-          onChange={handleInputValue("name")}
-        />
+        <Container>
+          <h4>E-mail</h4>
+          <SignUpInput
+            type="email"
+            placeholder="이메일을 입력하세요"
+            onChange={handleInputValue("email")}
+          />
 
-        <h4>Password</h4>
-        <SignUpInput
-          type="password"
-          placeholder="비밀번호를 입력하세요"
-          onChange={handleInputValue("password")}
-        />
+          <h4>Name</h4>
+          <SignUpInput
+            type="name"
+            placeholder="이름을 입력하세요"
+            onChange={handleInputValue("name")}
+          />
 
-        {userinfo.password.length > 0 ? passwordValidError : ""}
-        <h4>Confirm Password</h4>
-        <SignUpInput
-          type="password"
-          placeholder="비밀번호를 다시 한번 입력하세요"
-          onChange={handleInputPasswordCheckValue("passwordcheck")}
-        />
+          <h4>Password</h4>
+          <SignUpInput
+            type="password"
+            placeholder="비밀번호를 입력하세요"
+            onChange={handleInputValue("password")}
+          />
+          <Error>
+            {" "}
+            {userinfo.password.length > 0 ? passwordValidError : ""}
+          </Error>
 
-        {userinfo.password.length > 0 && userinfo.passwordcheck.length > 0
-          ? userinfo.password && userinfo.password !== userinfo.passwordcheck
-            ? "비밀번호가 일치하지 않습니다."
-            : "비밀번호가 일치합니다."
-          : ""}
+          <h4>Confirm Password</h4>
+          <SignUpInput
+            type="password"
+            placeholder="비밀번호를 다시 한번 입력하세요"
+            onChange={handleInputPasswordCheckValue("passwordcheck")}
+          />
 
-        <button onClick={handleSignUp}>회원가입하기</button>
-        <div>{error ? "모든 항목을 입력하세요" : ""}</div>
+          <Error>
+            {" "}
+            {userinfo.password.length > 0 && userinfo.passwordcheck.length > 0
+              ? userinfo.password &&
+                userinfo.password !== userinfo.passwordcheck
+                ? "비밀번호가 일치하지 않습니다."
+                : "비밀번호가 일치합니다."
+              : ""}
+          </Error>
+          <LastError>{error ? "모든 항목을 입력하세요" : ""}</LastError>
+          <SignUpDiv>
+            <Button onClick={handleSignUp}>회원가입하기</Button>
+          </SignUpDiv>
+        </Container>
       </FormModal>
     </SignUpModal>
   );

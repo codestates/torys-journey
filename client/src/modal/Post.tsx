@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import store from "../redux/Store";
 import {
   ModalBack,
@@ -84,7 +86,8 @@ const Post = (props: Props) => {
       <PostModal>
         <Header>
           <div>Tory's-journey</div>
-          <div onClick={props.handlePostModal}>X</div>
+
+          <FontAwesomeIcon onClick={props.handlePostModal} icon={faTimes} />
         </Header>
         <Content>
           <div>포스트를 등록하시겠습니까?</div>
