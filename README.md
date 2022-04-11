@@ -65,7 +65,6 @@ Stack :
 <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/>
 <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
 <img src="https://user-images.githubusercontent.com/91522505/158719376-e0dd4fc5-2e17-49e9-98d8-3b9171dccea2.png" width="200" height="200"/>  
 
