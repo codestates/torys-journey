@@ -35,7 +35,7 @@ export const Button = styled.div`
   border-radius: 3px;
   font-family: "Nanum";
   font-size: 17px;
-  border: 2px solid #fab74d;
+  border: 2px solid #73b4ac;
   padding: 7px;
   border-radius: 4px;
 

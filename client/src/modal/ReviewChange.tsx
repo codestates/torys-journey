@@ -110,8 +110,9 @@ const ReviewChange = ({
       <ReviewModal>
         <Header>
           <div>Tory's-journey</div>
-<Close>
-          <FontAwesomeIcon onClick={ReviewChangeModal} icon={faTimes} /></Close>
+          <Close>
+            <FontAwesomeIcon onClick={ReviewChangeModal} icon={faTimes} />
+          </Close>
         </Header>
         <Content>
           <div>리뷰 수정</div>
@@ -119,7 +120,7 @@ const ReviewChange = ({
         <InputDiv>
           <Input
             type="text"
-            value={value.comment}
+            // value={value.comment}
             onChange={changeReview("comment")}
           />
         </InputDiv>

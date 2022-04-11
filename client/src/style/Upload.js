@@ -8,6 +8,9 @@ export const MainDiv = styled.div`
 
 export const DeleteDiv = styled.div`
   border: 3px solid #73b4ac;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const ItemDiv = styled.div`

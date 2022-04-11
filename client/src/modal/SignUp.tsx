@@ -42,7 +42,7 @@ const SignUp = ({ handleModal }: handleModalProps) => {
       let password: string = e.target.value;
       if (!passwordRegex.test(password)) {
         setPasswordValidError(
-          `숫자+영문자+특수문자 조합으로 8자리 이상 입력해주세요! 사용 가능한 특수문자는 !@#$%^*+=- 입니다.`
+          `숫자+영문자+특수문자 조합으로 8자리 이상 입력해주세요.`
         );
         setPasswordCorrect(false);
       } else {
@@ -81,6 +81,7 @@ const SignUp = ({ handleModal }: handleModalProps) => {
           password: userinfo.password,
           name: userinfo.name,
         })
+        .then(() => alert("회원가입이 완료되었습니다."))
         .then(handleModal) // test
         .then(() => setPasswordCorrect(false))
         .catch(() => alert("비밀번호가 맞지 않습니다."));
