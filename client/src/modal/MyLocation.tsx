@@ -49,14 +49,14 @@ const MyLocation = () => {
               `           </div>` +
               `            <div class="desc">` +
               `                <div class="ellipsis">${el.address}</div>` +
-              `                <div style="margin-top:20px;" ><a href="http://torysjourney.site/restaurantinfo/${el.id}" target="_self" class="link" style="color:blue; text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/1150/1150592.png" height="20px"/>상세페이지</a></div>` +
+              `                <div style="margin-top:20px;" ><a href="https://torysjourney.site/restaurantinfo/${el.id}" target="_self" class="link" style="color:blue; text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/1150/1150592.png" height="20px"/>상세페이지</a></div>` +
               `            </div>` +
               `        </div>` +
               `    </div>` +
               `</div>`;
 
             // 마커 위에 커스텀오버레이를 표시합니다
-            // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+            // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니
             var overlay = new kakao.maps.CustomOverlay({
               content: content,
               map: map,
