@@ -49,7 +49,7 @@ const MyLocation = () => {
               `           </div>` +
               `            <div class="desc">` +
               `                <div class="ellipsis">${el.address}</div>` +
-              `                <div style="margin-top:20px;" ><a href="http://localhost:3000/restaurantinfo/${el.id}" target="_self" class="link" style="color:blue; text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/1150/1150592.png" height="20px"/>상세페이지</a></div>` +
+              `                <div style="margin-top:20px;" ><a href="http://torysjourney.site/restaurantinfo/${el.id}" target="_self" class="link" style="color:blue; text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/1150/1150592.png" height="20px"/>상세페이지</a></div>` +
               `            </div>` +
               `        </div>` +
               `    </div>` +
