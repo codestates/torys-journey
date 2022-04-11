@@ -14,16 +14,24 @@
 * 가보고 싶으신 곳이 있는데, 다시 찾기 귀찮으시다면 북마크를 해보세요! 마이페이지에서 언제든지 확인이 가능합니다.
 * 가게 이름이나 주소만 알고 계셔도 검색하여 찾으실 수 있습니다.
 <br/>
-## [👍 Tory's journey 사용해보기](https://server.torysjourney.site/)
+
+[👍 Tory's journey 사용해보기](https://server.torysjourney.site/)
+
 <br/>
 <br/>
 
 # 🛠 Skill Stack
 ![undefined](https://user-images.githubusercontent.com/91522505/160031517-ae387f7a-2cbb-4310-a79c-1e0833b14ec4.png)
 
+<br/>
+<br/>
+
 # 📈 Flowchart
 ### [Flowchart 링크](https://miro.com/app/board/uXjVOCwNMR0=/?invite_link_id=101762382061)
 <img width="1800" alt="스크린샷 2022-03-24 오후 6 14 44" src="https://user-images.githubusercontent.com/91598778/159883069-42c17847-cab8-4400-9668-28ffcbfe3600.png">
+
+<br/>
+<br/>
 
 # 👯 Team Members
 
@@ -90,6 +98,7 @@ Stack :
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
+<br/>
 <br/>
 
 # 📖 More Info
