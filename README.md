@@ -15,7 +15,7 @@
 * 가게 이름이나 주소만 알고 계셔도 검색하여 찾으실 수 있습니다.
 <br/>
 
-##[👍 Tory's journey 사용해보기](https://server.torysjourney.site/)
+## [👍 Tory's journey 사용해보기](https://server.torysjourney.site/)
 
 <br/>
 <br/>
