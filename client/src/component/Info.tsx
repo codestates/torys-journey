@@ -10,77 +10,38 @@ import {
   TabDiv,
   InfoDiv,
   RestaurantTab2,
+  TabMenu,
+  TabLi,
 } from "../style/RestaurantInfo";
-import styled from "styled-components";
 
 export type RootState = ReturnType<typeof store.getState>;
 
 const Info = () => {
-  const [selected, setSelected] = useState<string>();
-  const [colored, setColored] = useState<boolean>(true);
-
-  const onClick = (e: any) => {
-    setSelected(e.target.textContent);
-  }; //식당상세 or 리뷰 글씨 누르면 바뀌는 함수
-  const colorChange = () => {
-    setColored(!colored);
-  };
   const isLogin = useSelector(
     (isLogin: RootState) => isLogin.changeLoginStatus.isLogin
   );
+  const [currentTab, setCurrentTab] = useState(0);
+  const tabMenu = [{ name: "식당 상세" }, { name: "리뷰" }];
+  const selectMenuHandler = (index: React.SetStateAction<number>) => {
+    setCurrentTab(index);
+  };
 
   return (
     <InfoDiv>
-      <TabDiv>
-        {colored ? (
-          <RestaurantTab2
-            onClick={(e) => {
-              onClick(e);
-              colorChange();
+      <TabMenu>
+        {tabMenu.map((menu, idx) => (
+          <TabLi
+            key={idx}
+            className={idx === currentTab ? "submenu focused" : "submenu"}
+            onClick={() => {
+              selectMenuHandler(idx);
             }}
           >
-            식당 상세
-          </RestaurantTab2>
-        ) : (
-          <RestaurantTab
-            onClick={(e) => {
-              onClick(e);
-              colorChange();
-            }}
-          >
-            식당 상세
-          </RestaurantTab>
-        )}
-        {!colored ? (
-          <RestaurantTab2
-            onClick={(e) => {
-              onClick(e);
-              colorChange();
-            }}
-          >
-            리뷰
-          </RestaurantTab2>
-        ) : (
-          <RestaurantTab
-            onClick={(e) => {
-              onClick(e);
-              colorChange();
-            }}
-          >
-            리뷰
-          </RestaurantTab>
-        )}
-        {/* <RestaurantTab
-          onClick={(e) => {
-            onClick(e);
-            colorChange();
-          }}
-        >
-          식당 상세
-        </RestaurantTab> */}
-      </TabDiv>
-
-      {selected === "리뷰" ? (
+            {menu.name}
+          </TabLi>
+        ))}
+      </TabMenu>
+      {currentTab === 1 ? (
         isLogin === true ? (
           <ReviewMember />
         ) : (
@@ -89,9 +50,6 @@ const Info = () => {
       ) : (
         <DetailInfo />
       )}
-      {/*로그인했으면 reviewmember 로그인안된 상태면 reviewnonmember
- isLogin? <ReviewMember/>: <ReviewNonMember/>
- */}
     </InfoDiv>
   );
 };

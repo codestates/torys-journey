@@ -40,6 +40,8 @@ export const SignUpInput = styled.input`
   width: 100%;
   height: 50px;
   border-radius: 10px;
+  padding-left: 15px;
+
   padding: 0px;
   border: 1px solid lightgrey;
   outline: none;

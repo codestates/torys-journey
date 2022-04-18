@@ -70,6 +70,7 @@ export const Input = styled.input`
   margin: 10px;
   height: 30px;
   border-radius: 3px;
+  padding-left: 15px;
 `;
 export const InputDiv = styled.div`
   display: flex;
@@ -153,13 +154,17 @@ export const DelteInput = styled.input`
   width: 70%;
   margin-left: 15%;
   margin-top: 20px;
+  padding-left: 15px;
+
   height: 30px;
   font-size: 20px;
 `;
 
 export const ButtonDelete = styled.button`
-  background-color: #fdd7be;
+  background-color: white;
+  border: 3px solid #73b4ac;
   &:hover {
+    transform: scale(1.1);
     cursor: pointer;
   }
 `;
