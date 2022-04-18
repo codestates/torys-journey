@@ -45,7 +45,7 @@ const RestaurantInfo = () => {
     <RestaurantMainDiv>
       <RestaurantNameDiv>
         <BookMarkCheck />
-        <BookmarkNotice>북마크 버튼</BookmarkNotice>
+        <BookmarkNotice>북마크 등록</BookmarkNotice>
         <RestaurantName>{restaurantInfo.name}</RestaurantName>
       </RestaurantNameDiv>
       <Pictures picture={restaurantInfo.photo} />
