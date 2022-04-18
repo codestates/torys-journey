@@ -36,6 +36,8 @@ export const WritingInput = styled.input`
   border: 1px solid lightgrey;
   outline: none;
   word-wrap: break-word;
+  padding-left: 15px;
+  font-size: 1.1rem;
 `;
 
 export const WritingTextarea = styled.textarea`

@@ -50,8 +50,8 @@ export const MyInfoInput = styled.input`
   width: 100%;
   height: 50px;
   border-radius: 8px;
-
-  padding: 0px;
+  padding-left: 15px;
+  font-size: 1.1rem;
   border: 1px solid lightgrey;
   outline: none;
 `;
