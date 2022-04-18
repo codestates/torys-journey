@@ -21,11 +21,11 @@ const Restaurant = () => {
   return (
     <RestaurantMainDiv>
       <Search />
-      {state === true ? <MyLocation /> : ""}
       <ButtonDiv>
         <MySearchDiv onClick={handleMyLocation}>내 주변 검색</MySearchDiv>
         <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
       </ButtonDiv>
+      {state === true ? <MyLocation /> : ""}
       <RestaurantDiv>
         <ShopList />
       </RestaurantDiv>

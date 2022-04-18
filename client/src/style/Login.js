@@ -39,6 +39,7 @@ export const IdInput = styled.input`
   width: 100%;
   height: 50px;
   border-radius: 15px;
+  padding-left: 15px;
 
   margin-bottom: 10%;
   padding: 0px;
