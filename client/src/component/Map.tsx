@@ -40,7 +40,7 @@ const Map = ({ address, name }: any) => {
         map.setCenter(coords);
       }
     });
-  }, [address, name]); //react에서 쓸 거면 useEffect로 꼭 감싸야함(이유 모름..)
+  }, [address, name]); //react에서 쓸 거면 useEffect로 꼭 감싸야함
 
   return (
     <div style={{ width: "36%", margin: " 2px 18px 0" }}>

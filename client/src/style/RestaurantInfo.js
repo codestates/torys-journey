@@ -96,6 +96,7 @@ export const BookMarkDiv = styled.div`
 
 export const BookmarkNotice = styled.span`
   visibility: hidden;
+  left: 11.5%;
   width: 120px;
   background-color: black;
   color: #fff;
