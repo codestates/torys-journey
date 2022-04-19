@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  BookMarkItemDiv,
   BookMarkImg,
   DeleteButtonDiv,
   RestaurantAddressDiv,
@@ -9,7 +8,7 @@ import {
 } from "../style/Mypage";
 import { ButtonDelete } from "../style/Modal";
 import { Link } from "react-router-dom";
-import DeleteBookMark from "../modal/DeleteBookMark";
+import DeleteBookMark from "../modal/BookMark/DeleteBookMark";
 
 type ElProps = {
   el: { id: string; photo: [string]; name: string; address: string };

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import MyPageMenu from "../component/MyPageMenu";
+import MyPageMenu from "../../component/MyPageMenu";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import dummyData from "./TESTTESTTEST";
-import WritingList from "../component/WritingList";
-import { MyPageDiv, WritingDiv, Title } from "../style/Mypage";
+import WritingList from "../../component/MyPage/WritingList";
+import { MyPageDiv, WritingDiv, Title } from "../../style/Mypage";
 
 const WritingManage = () => {
   const navigate = useNavigate();
@@ -57,18 +56,3 @@ const WritingManage = () => {
 };
 
 export default WritingManage;
-
-// data: [
-//   {
-//       id:1,
-//       name: "만두집",
-//       photo: [
-//           "https://picture.com/23r4234e",
-//           "https://picture.com/232we312",
-//           ...
-//           ]
-//       address: "경기 부천시 상동로",
-//       number: "010-2323-1515",
-//       detailInfo: "주차 가능",
-//       officeHours: "11:00 - 21:00"
-//   }, {}, {}, {}

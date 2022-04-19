@@ -1,7 +1,6 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import store from "../redux/Store";
 import { useNavigate } from "react-router";
 import {
@@ -9,8 +8,6 @@ import {
   PostModal,
   Header,
   Close,
-  ButtonDiv,
-  ButtonDiv2,
   Button,
   ButtonDiv3,
   Title,
@@ -20,7 +17,7 @@ import {
 } from "../style/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { Error } from "../style/SignUp";
+
 export type RootState = ReturnType<typeof store.getState>;
 const SignOut: React.FC<any> = ({ signOutRequest }) => {
   //가라임, 수정해야함(type)

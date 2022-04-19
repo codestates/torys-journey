@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
 import { useParams } from "react-router-dom";
-import store from "../redux/Store";
+import store from "../../redux/Store";
 import ReviewList from "./ReviewList";
 import {
   ReviewWritingDiv,
@@ -12,7 +12,7 @@ import {
   ReviewWritingStar,
   ReviewWritingButton,
   Rating,
-} from "../style/RestaurantInfo";
+} from "../../style/RestaurantInfo";
 
 export type RootState = ReturnType<typeof store.getState>;
 

@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import {
-  MyPageDiv,
-  BookMarkListDiv,
   BookMarkItemDiv,
   BookMarkImg,
   DeleteButtonDiv,
   RestaurantAddressDiv,
   RestaurantNameDiv,
-  Title,
-} from "../style/Mypage";
-import { ButtonDelete } from "../style/Modal";
+} from "../../style/Mypage";
+import { ButtonDelete } from "../../style/Modal";
 
-import DeleteBookMark from "../modal/DeleteBookMark";
+import DeleteBookMark from "../../modal/BookMark/DeleteBookMark";
 
 type BookMarkDataProps = {
   bookMarkDatas: { id: string; photo: [string]; name: string; address: string };
