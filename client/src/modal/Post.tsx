@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -56,8 +56,8 @@ const Post = (props: Props) => {
         .then(() => {
           uploadPicture(restaurantId);
         })
-        .then(()=>{
-          navigate("/restaurant")
+        .then(() => {
+          navigate("/restaurant");
         });
     } else {
       alert("상호명과 주소와 사진은 필수입니다.");

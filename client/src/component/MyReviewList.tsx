@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import ReviewChange from "../modal/ReviewChange";
+import ReviewChange from "../modal/Review/ReviewChange";
 import {
-  ReviewDiv,
   ReviewItemDiv,
   ReviewName,
   ReviewButton,

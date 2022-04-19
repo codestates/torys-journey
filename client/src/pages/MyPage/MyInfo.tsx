@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import MyPageMenu from "../component/MyPageMenu";
-import SignOut from "../modal/SignOut";
+import MyPageMenu from "../../component/MyPageMenu";
+import SignOut from "../../modal/SignOut";
 import axios from "axios";
-import store from "../redux/Store";
-import { useSelector } from "react-redux";
+import store from "../../redux/Store";
 import { useNavigate } from "react-router";
-import {
-  MyPageDiv,
-  MyPageInfo,
-  MypageInput,
-  MyPageMenuDiv,
-} from "../style/Mypage";
+import { MyPageDiv, MyPageInfo } from "../../style/Mypage";
 import {
   Title,
   Input,
@@ -19,9 +13,8 @@ import {
   MyInfoInput,
   ButtonContainer,
   ErrorMessage,
-} from "../style/MyInfo";
-import { ButtonDiv } from "../style/RestaurantList";
-import styled from "styled-components";
+} from "../../style/MyInfo";
+
 export type RootState = ReturnType<typeof store.getState>;
 
 const MyInfo = () => {

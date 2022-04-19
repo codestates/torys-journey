@@ -5,34 +5,39 @@ import {
   ChangeModal,
   Content,
   ButtonDiv2,
-} from "../style/Modal";
+  Close,
+  Button,
+} from "../../style/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-type valueProps = {
+
+type modalChangeProps = {
   modalChange: () => void;
-  patchWriting: () => void;
+  patchReview: () => void;
 };
 
-const WritingChangeModalOnModal = ({
+const ReviewChangeModalOnModal = ({
   modalChange,
-  patchWriting,
-}: valueProps) => {
+  patchReview,
+}: modalChangeProps) => {
   return (
     <ModalBack>
       <ChangeModal>
         <Header>
           <div>Tory's-journey</div>
-          <FontAwesomeIcon onClick={modalChange} icon={faTimes} />
+          <Close>
+            <FontAwesomeIcon onClick={modalChange} icon={faTimes} />
+          </Close>
         </Header>
 
         <Content>정말 수정하시겠습니까?</Content>
         <ButtonDiv2>
-          <button onClick={patchWriting}>확인</button>
-          <button onClick={modalChange}>취소</button>
+          <Button onClick={patchReview}>확인</Button>
+          <Button onClick={modalChange}>취소</Button>
         </ButtonDiv2>
       </ChangeModal>
     </ModalBack>
   );
 };
 
-export default WritingChangeModalOnModal;
+export default ReviewChangeModalOnModal;

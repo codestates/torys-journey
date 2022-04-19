@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WritingChange from "../modal/WritingChange";
+import WritingChange from "../../modal/WritingManage/WritingChange";
 import {
   WritingItemDiv,
   WritingName,
@@ -7,7 +7,7 @@ import {
   WritingButton,
   WritingContent,
   PostPicture,
-} from "../style/Mypage";
+} from "../../style/Mypage";
 
 type WritingListProps = {
   writingList: {

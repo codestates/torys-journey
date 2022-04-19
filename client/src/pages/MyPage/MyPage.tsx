@@ -1,21 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import MyPageMenu from "../component/MyPageMenu";
-import { useNavigate, Link } from "react-router-dom";
-import DeleteBookMark from "../modal/DeleteBookMark";
-import DeleteMiddleBookMark from "../component/DeleteMiddleBookMark";
-import {
-  MyPageDiv,
-  BookMarkListDiv,
-  BookMarkImg,
-  DeleteButtonDiv,
-  RestaurantAddressDiv,
-  RestaurantNameDiv,
-  Title,
-  BookMarkItemDiv,
-} from "../style/Mypage";
-import { ButtonDelete } from "../style/Modal";
-
+import MyPageMenu from "../../component/MyPageMenu";
+import { useNavigate } from "react-router-dom";
+import DeleteMiddleBookMark from "../../component/MyPage/DeleteMiddleBookMark";
+import { MyPageDiv, BookMarkListDiv, Title } from "../../style/Mypage";
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -58,7 +46,6 @@ const MyPage = () => {
             el: { id: string; photo: [string]; name: string; address: string },
             key: React.Key | null | undefined
           ) => (
-
             <DeleteMiddleBookMark key={key} bookMarkDatas={el} />
           )
         )}

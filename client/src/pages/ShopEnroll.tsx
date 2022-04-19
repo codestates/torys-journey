@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import store from "../redux/Store";
 import Post from "../modal/Post";
-import { Link } from "react-router-dom";
 
 import Upload from "../component/Upload";
 

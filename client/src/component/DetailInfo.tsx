@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
-import BookMarkCheck from "./BookMarkCheck";
 import {
   DetailInfoDiv,
   InformationDiv,

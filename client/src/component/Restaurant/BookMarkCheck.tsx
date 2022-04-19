@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
-import store from "../redux/Store";
-import { BookMarkDiv } from "../style/RestaurantInfo";
-import { useDispatch } from "react-redux";
+import store from "../../redux/Store";
+import { BookMarkDiv } from "../../style/RestaurantInfo";
 
 export type RootState = ReturnType<typeof store.getState>;
 
 const BookMarkCheck = () => {
-  const dispatch = useDispatch();
-
   const [clicked, setClicked] = useState(false);
   const params = useParams();
   const localStorageTokenCheck: any = localStorage.getItem("KEY");

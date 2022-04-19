@@ -15,7 +15,7 @@ import {
   InputDiv,
   ButtonHover,
   Close,
-} from "../style/Modal";
+} from "../../style/Modal";
 
 type ReviewChangeProps = {
   //!레스토랑ID가 없음

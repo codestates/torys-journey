@@ -6,8 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   ModalBack,
-Close,
-  ReviewModal,
+  Close,
   WritingModal,
   Header,
   Content,
@@ -15,8 +14,7 @@ Close,
   Input,
   ButtonDiv,
   ButtonHover,
-
-} from "../style/Modal";
+} from "../../style/Modal";
 
 type WritingChangeProps = {
   WritingChange: {
@@ -113,9 +111,9 @@ const WritingChange = ({
       <WritingModal>
         <Header>
           <div>Tory's-journey</div>
-  <Close>
-          <FontAwesomeIcon onClick={writingChangeModal} icon={faTimes} /></Close>
-
+          <Close>
+            <FontAwesomeIcon onClick={writingChangeModal} icon={faTimes} />
+          </Close>
         </Header>
         <Content>
           <div>작성글 수정</div>
@@ -130,28 +128,24 @@ const WritingChange = ({
           <Input
             type="text"
             placeholder="주소"
-
             value={value.address}
             onChange={changeWriting("address")}
           />
           <Input
             type="text"
             placeholder="전화번호"
-
             value={value.number}
             onChange={changeWriting("number")}
           />
           <Input
             type="text"
             placeholder="상세정보"
-
             value={value.detailInfo}
             onChange={changeWriting("detailInfo")}
           />
           <Input
             type="text"
             placeholder="영업시간 "
-
             value={value.officeHours}
             onChange={changeWriting("officeHours")}
           />

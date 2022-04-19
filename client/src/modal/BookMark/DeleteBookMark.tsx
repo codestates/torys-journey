@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import store from "../redux/Store";
-import { useNavigate } from "react-router-dom";
+import store from "../../redux/Store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -10,7 +9,7 @@ import {
   Header,
   Content,
   ButtonDiv2,
-} from "../style/Modal";
+} from "../../style/Modal";
 
 type handleMadalDeleteBookMarkProps = {
   handleModalDeleteBookMark: () => void;
@@ -29,7 +28,7 @@ const DeleteBookMark = ({
 }: handleMadalDeleteBookMarkProps) => {
   // const localId = useSelector((localId: RootState) => localId.Reducer.id);
   const localStorageTokenCheck: any = localStorage.getItem("KEY");
-  console.log("22222", bookMarkData.id);
+  console.log("22222", bookMarkData);
   const deleteBookMark = () => {
     axios
       .delete(
@@ -48,10 +47,6 @@ const DeleteBookMark = ({
   };
 
   return (
-    // <div>
-    //   <button onClick={deleteBookMark}>확인</button>
-    //   <button onClick={handleMadalDeleteBookMark}>취소</button>
-    // </div>
     <ModalBack>
       <ChangeModal>
         <Header>
@@ -62,7 +57,6 @@ const DeleteBookMark = ({
 
         <Content>정말 삭제하시겠습니까?</Content>
         <ButtonDiv2>
-
           <button onClick={deleteBookMark}>확인</button>
           <button onClick={handleModalDeleteBookMark}>취소</button>
         </ButtonDiv2>
@@ -72,19 +66,3 @@ const DeleteBookMark = ({
 };
 
 export default DeleteBookMark;
-
-// <ModalBack>
-//       <ChangeModal>
-//         <Header>
-//           <div>Tory's-journey</div>
-
-//           <FontAwesomeIcon onClick={handleModalDeleteBookMark} icon={faTimes} />
-//         </Header>
-
-//         <Content>정말 삭제하시겠습니까?</Content>
-//         <ButtonDiv2>
-//           <button onClick={deleteBookMark}>확인</button>
-//           <button onClick={handleModalDeleteBookMark}>취소</button>
-//         </ButtonDiv2>
-//       </ChangeModal>
-//     </ModalBack>

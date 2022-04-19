@@ -5,31 +5,33 @@ import {
   Header,
   Content,
   ButtonDiv2,
-  ButtonDelete,
-} from "../style/Modal";
+  Close,
+} from "../../style/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-type valueDeleteProps = {
+
+type modalDeleteChange = {
   modalDeleteChange: () => void;
-  deleteWriting: () => void;
+  deleteReview: () => void;
 };
 
-const WritingDeleteModalOnModal = ({
+const ReviewDeleteModalOnModal = ({
   modalDeleteChange,
-  deleteWriting,
-}: valueDeleteProps) => {
+  deleteReview,
+}: modalDeleteChange) => {
   return (
     <ModalBack>
       <ChangeModal>
         <Header>
           <div>Tory's-journey</div>
-
-          <FontAwesomeIcon onClick={modalDeleteChange} icon={faTimes} />
+          <Close>
+            <FontAwesomeIcon onClick={modalDeleteChange} icon={faTimes} />
+          </Close>
         </Header>
 
         <Content>정말 삭제하시겠습니까?</Content>
         <ButtonDiv2>
-          <button onClick={deleteWriting}>확인</button>
+          <button onClick={deleteReview}>확인</button>
           <button onClick={modalDeleteChange}>취소</button>
         </ButtonDiv2>
       </ChangeModal>
@@ -37,4 +39,4 @@ const WritingDeleteModalOnModal = ({
   );
 };
 
-export default WritingDeleteModalOnModal;
+export default ReviewDeleteModalOnModal;

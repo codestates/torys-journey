@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
 import axios from "axios";
-import Pictures from "../component/Pictures";
-import Info from "../component/Info";
-import Map from "../component/Map";
-import BookMarkCheck from "../component/BookMarkCheck";
+import Pictures from "../../component/Pictures";
+import Info from "../../component/Restaurant/Info";
+import Map from "../../component/Map";
+import BookMarkCheck from "../../component/Restaurant/BookMarkCheck";
 import {
   RestaurantDiv,
   RestaurantMainDiv,
   RestaurantName,
   RestaurantNameDiv,
   BookmarkNotice,
-} from "../style/RestaurantInfo";
+} from "../../style/RestaurantInfo";
 
 const RestaurantInfo = () => {
   const params = useParams();

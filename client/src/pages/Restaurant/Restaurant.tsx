@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Search from "../component/Search";
-import MyLocation from "../modal/MyLocation";
-import ShopList from "../component/ShopList";
+import Search from "../../component/Search";
+import MyLocation from "../../modal/MyLocation";
+import ShopList from "../../component/Restaurant/ShopList";
 
 import {
   RestaurantDiv,
@@ -9,7 +9,7 @@ import {
   ShopEnrollLink,
   ButtonDiv,
   MySearchDiv,
-} from "../style/RestaurantList";
+} from "../../style/RestaurantList";
 
 const Restaurant = () => {
   const [state, setState] = useState(false); //지도 modal state
