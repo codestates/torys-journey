@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, ReviewDiv, Title } from "../../style/RestaurantInfo";
+import { Div, ReviewDiv, Title } from "../../../style/RestaurantInfo";
 import { FaStar } from "react-icons/fa";
 
 const ReviewList = ({ data }: any) => {

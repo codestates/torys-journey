@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import ReviewChange from "../modal/Review/ReviewChange";
+import ReviewChange from "../../modal/Review/ReviewChange";
 import {
   ReviewItemDiv,
   ReviewName,
   ReviewButton,
   ReviewContent,
   StarDiv,
-} from "../style/Mypage";
+} from "../../style/Mypage";
 import { FaStar } from "react-icons/fa";
 
 type ReviewListProps = {

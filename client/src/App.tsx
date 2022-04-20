@@ -17,7 +17,7 @@ import Navbar from "./component/Navbar";
 import WritingManage from "./pages/MyPage/WritingManage";
 import MyReview from "./pages/MyPage/MyReview";
 import MyInfo from "./pages/MyPage/MyInfo";
-import ShopEnroll from "./pages/ShopEnroll";
+import ShopEnroll from "./pages/Restaurant/ShopEnroll";
 import Header from "./component/Header";
 
 export type RootState = ReturnType<typeof store.getState>;

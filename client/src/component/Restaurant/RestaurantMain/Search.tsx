@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { SearchForm, SearchFormInput, SearchDiv } from "../style/Search";
+import { SearchForm, SearchFormInput, SearchDiv } from "../../../style/Search";
 
 const SearchBar = () => {
   const dispatch = useDispatch();

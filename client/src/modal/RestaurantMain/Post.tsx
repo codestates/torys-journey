@@ -4,14 +4,14 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import store from "../redux/Store";
+import store from "../../redux/Store";
 import {
   ModalBack,
   PostModal,
   Header,
   Content,
   ButtonDiv,
-} from "../style/Modal";
+} from "../../style/Modal";
 
 export type RootState = ReturnType<typeof store.getState>;
 

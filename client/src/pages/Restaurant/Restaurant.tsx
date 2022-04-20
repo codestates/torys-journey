@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Search from "../../component/Search";
-import MyLocation from "../../modal/MyLocation";
-import ShopList from "../../component/Restaurant/ShopList";
+import Search from "../../component/Restaurant/RestaurantMain/Search";
+import MyLocation from "../../modal/RestaurantMain/MyLocation";
+import ShopList from "../../component/Restaurant/RestaurantMain/ShopList";
 
 import {
   RestaurantDiv,

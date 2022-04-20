@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import MyPageMenu from "../../component/MyPageMenu";
+import MyPageMenu from "../../component/MyPage/MyPageMenu";
 import { useNavigate } from "react-router-dom";
-import DeleteMiddleBookMark from "../../component/MyPage/DeleteMiddleBookMark";
+import DeleteMiddleBookMark from "../../component/MyPage/MyBookMark";
 import { MyPageDiv, BookMarkListDiv, Title } from "../../style/Mypage";
 
 const MyPage = () => {

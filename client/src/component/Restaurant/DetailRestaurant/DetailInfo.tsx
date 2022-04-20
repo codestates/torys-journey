@@ -5,7 +5,7 @@ import {
   DetailInfoDiv,
   InformationDiv,
   NameDiv,
-} from "../style/RestaurantInfo";
+} from "../../../style/RestaurantInfo";
 
 const DetailInfo = () => {
   const params = useParams<any>();

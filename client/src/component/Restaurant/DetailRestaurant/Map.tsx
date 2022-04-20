@@ -1,6 +1,6 @@
 /*global kakao*/
 import React, { useEffect, useState } from "react";
-import { MapButton } from "../style/SignUp";
+import { MapButton } from "../../../style/SignUp";
 
 const { kakao } = window as any;
 

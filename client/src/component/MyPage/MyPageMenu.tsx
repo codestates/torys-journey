@@ -1,6 +1,6 @@
 import React from "react";
-import { MenuList, MenuItem, MenuLink } from "../style/MypageMenu";
-import { MyPageMenuDiv } from "../style/Mypage";
+import { MenuList, MenuItem, MenuLink } from "../../style/MypageMenu";
+import { MyPageMenuDiv } from "../../style/Mypage";
 const MyPageMenu = () => {
   return (
     <MyPageMenuDiv>
