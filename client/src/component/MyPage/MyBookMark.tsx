@@ -59,12 +59,3 @@ BookMarkDataProps) => {
 };
 
 export default DeleteMiddleBookMark;
-
-// {deleteBookMark ? (
-//     <DeleteBookMark
-//       handleModalDeleteBookMark={handleModalDeleteBookMark}
-//       bookMarkData={el}
-//     />
-//   ) : (
-//     ""
-//   )}

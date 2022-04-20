@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import store from "../redux/Store";
-import Post from "../modal/Post";
+import store from "../../redux/Store";
+import Post from "../../modal/RestaurantMain/Post";
 
-import Upload from "../component/Upload";
+import Upload from "../../component/Restaurant/RestaurantMain/Upload";
 
 import {
   WritingDiv,
@@ -13,7 +13,7 @@ import {
   WritingMainDiv,
   ButtonDiv,
   LinkTag,
-} from "../style/ShopEnroll";
+} from "../../style/ShopEnroll";
 
 export type RootState = ReturnType<typeof store.getState>;
 

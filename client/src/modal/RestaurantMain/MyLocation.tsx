@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
-import { MainDiv } from "../style/Map";
+import { MainDiv } from "../../style/Map";
 import { useSelector } from "react-redux";
-import store from "../redux/Store";
+import store from "../../redux/Store";
 const { kakao } = window as any;
 
 export type RootState = ReturnType<typeof store.getState>;
 const MyLocation = () => {
-  
   const geocoder = new kakao.maps.services.Geocoder();
   const dummyData = useSelector(
     (data: RootState) => data.restaurantInformation
   );
-//{id: 11, name: '구독 ', photo: Array(4), rating: '5.0', address: ' 경기도 화성시 장지로 60-44', …}
+  //{id: 11, name: '구독 ', photo: Array(4), rating: '5.0', address: ' 경기도 화성시 장지로 60-44', …}
   useEffect(() => {
     //!!!!!! 지도 만들기
     const container = document.getElementById("map");
@@ -21,7 +20,7 @@ const MyLocation = () => {
     };
     const map = new kakao.maps.Map(container, options);
     //!!!!!!!!!!!!!!!!!!!!!!식당들 위치에 마커표시
-    dummyData.map((el:any) =>
+    dummyData.map((el: any) =>
       geocoder.addressSearch(
         `${el.address}`,
         function (result: any, status: any) {
@@ -75,7 +74,6 @@ const MyLocation = () => {
           }
         }
       )
-
     );
 
     //!!!!!!!!!!!!!!!!내위치

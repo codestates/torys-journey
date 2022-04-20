@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MyPageMenu from "../../component/MyPageMenu";
+import MyPageMenu from "../../component/MyPage/MyPageMenu";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import WritingList from "../../component/MyPage/WritingList";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MyPageMenu from "../../component/MyPageMenu";
+import MyPageMenu from "../../component/MyPage/MyPageMenu";
 import SignOut from "../../modal/SignOut";
 import axios from "axios";
 import store from "../../redux/Store";
