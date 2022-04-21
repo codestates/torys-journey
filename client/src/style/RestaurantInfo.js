@@ -96,6 +96,7 @@ export const BookMarkDiv = styled.div`
 
 export const BookmarkNotice = styled.span`
   visibility: hidden;
+  left: 11.5%;
   width: 120px;
   background-color: black;
   color: #fff;
@@ -121,6 +122,9 @@ export const ReviewWritingTitleDiv = styled.div`
 export const ReviewWritingInput = styled.input`
   margin: 10px;
   width: 50%;
+  padding-left: 10px;
+  font-size: 1.1rem;
+
   /* border-radius: 2px; */
 `;
 
@@ -197,4 +201,48 @@ export const CarouselButton = styled.div`
 
 export const Posted = styled.div`
   margin-left: 10px;
+`;
+
+export const TabMenu = styled.div`
+  color: black;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  list-style: none;
+
+  .submenu {
+    ${"" /* 기본 Tabmenu 에 대한 CSS를 구현합니다. */}
+
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .focused {
+    ${"" /* 선택된 Tabmenu 에만 적용되는 CSS를 구현합니다.  */}
+    padding: 17px;
+    background-color: white;
+    border: 3px solid #73b4ac;
+  }
+
+  & div.desc {
+    text-align: center;
+  }
+`;
+
+export const TabLi = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 7px;
+  background-color: #73b4ac;
+  margin-left: 0;
+  box-sizing: content-box;
 `;

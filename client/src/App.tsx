@@ -5,20 +5,19 @@ import store from "./redux/Store";
 import { useDispatch } from "react-redux";
 import { loginCheck } from "./redux/Reducer";
 import "./App.css";
-import MyPage from "./pages/MyPage";
+import MyPage from "./pages/MyPage/MyPage";
 import ProjectInfo from "./pages/ProjectInfo";
-import Restaurant from "./pages/Restaurant";
-import RestaurantInfo from "./pages/RestaurantInfo";
-import Writing from "./pages/Writing";
+import Restaurant from "./pages/Restaurant/Restaurant";
+import RestaurantInfo from "./pages/Restaurant/RestaurantInfo";
 import Main from "./pages/Main";
-import Hotel from "./pages/Hotel";
+import Hotel from "./pages/Hotel/Hotel";
 import Park from "./pages/Park";
 import Hospital from "./pages/Hospital";
 import Navbar from "./component/Navbar";
-import WritingManage from "./pages/WritingManage";
-import MyReview from "./pages/MyReview";
-import MyInfo from "./pages/MyInfo";
-import ShopEnroll from "./pages/ShopEnroll";
+import WritingManage from "./pages/MyPage/WritingManage";
+import MyReview from "./pages/MyPage/MyReview";
+import MyInfo from "./pages/MyPage/MyInfo";
+import ShopEnroll from "./pages/Restaurant/ShopEnroll";
 import Header from "./component/Header";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -59,7 +58,6 @@ function App(): any {
         <Route path="/hotel" element={<Hotel />} />
         <Route path="/park" element={<Park />} />
         <Route path="/hospital" element={<Hospital />} />
-        <Route path="/writing" element={<Writing />} />
       </Routes>
     </div>
   );

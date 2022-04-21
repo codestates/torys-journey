@@ -50,7 +50,9 @@ const Header = () => {
 
   return (
     <HeaderTag>
-      <Link to="/"><HeaderTitle src={logo}></HeaderTitle></Link>
+      <Link to="/">
+        <HeaderTitle src={logo}></HeaderTitle>
+      </Link>
       <DivContainer>
         <MypageLink to="/mypage/bookmark">Mypage</MypageLink>
 

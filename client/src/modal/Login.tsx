@@ -4,8 +4,6 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import store from "../redux/Store";
 import { loginCheck } from "../redux/Reducer";
-import NaverOauth from "../Oauth/NaverOauth";
-import KakaoOauth from "../Oauth/KakaoOauth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -20,18 +18,13 @@ import {
   CloseLoginDiv,
   LoginHeightDiv,
   LoginDiv,
-  LogoDiv,
-  LoginLogo,
   SignUpButton,
   OauthGoogleLogo,
-  SignUpDiv,
 } from "../style/Login";
 import { Error } from "../style/SignUp";
 import google from "../style/OauthButton/google1.png";
 import naver from "../style/OauthButton/naver.png";
 import kakao from "../style/OauthButton/kakao.png";
-import hiLogoo from "../style/OauthButton/hiLogo.jpeg";
-
 // Client ID: 7IxLOwtePiMM2_x0nQgw
 // Client Secret : OKVYfUlNMF
 

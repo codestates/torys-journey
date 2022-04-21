@@ -60,11 +60,12 @@ export const WritingItemDiv = styled.div`
   flex-wrap: wrap;
   font-family: "Nanum";
   border-radius: 4px;
-  background-color: rgba(253, 215, 190, 0.3);
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 export const WritingName = styled.div`
   width: 85%;
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid #73b4ac;
   box-sizing: border-box;
   font-weight: bold;
   font-size: 1.5rem;
@@ -81,8 +82,10 @@ export const WritingAddress = styled.div`
 export const WritingButton = styled.button`
   width: 15%;
   font-size: 1rem;
-  background-color: #fdd7be;
+  background-color: white;
+  border: 3px solid #73b4ac;
   &:hover {
+    transform: scale(1.1);
     cursor: pointer;
   }
 `;
@@ -115,7 +118,7 @@ export const BookMarkItemDiv = styled.div`
   margin-bottom: 25px;
   transition: 0.3s;
   border-radius: 4px;
-  background-color: rgba(253, 215, 190, 0.3);
+  background-color: white;
   &:hover {
     cursor: pointer;
   }
@@ -153,7 +156,8 @@ export const ReviewItemDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   border-radius: 4px;
-  background-color: rgba(253, 215, 190, 0.3);
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 export const ReviewName = styled.div`
@@ -161,7 +165,7 @@ export const ReviewName = styled.div`
   display: flex;
   margin-top: 10px;
   font-weight: bold;
-  border-bottom: 2px double gray;
+  border-bottom: 3px solid #73b4ac;
   box-sizing: border-box;
   font-size: 1.5rem;
 `;
@@ -169,7 +173,8 @@ export const ReviewName = styled.div`
 export const ReviewButton = styled.button`
   width: 17%;
   box-sizing: border-box;
-  background-color: #fdd7be;
+  background-color: white;
+  border: 3px solid #73b4ac;
   font-size: 1rem;
   &:hover {
     cursor: pointer;

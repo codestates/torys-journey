@@ -1,13 +1,23 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import store from "../redux/Store";
 import { useNavigate } from "react-router";
-import { ModalBack, PostModal, Header, Close, ButtonDiv, ButtonDiv2, Button, ButtonDiv3, Title, DeleteContent, DeleteError, DelteInput } from "../style/Modal";
+import {
+  ModalBack,
+  PostModal,
+  Header,
+  Close,
+  Button,
+  ButtonDiv3,
+  Title,
+  DeleteContent,
+  DeleteError,
+  DelteInput,
+} from "../style/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { Error } from "../style/SignUp";
+
 export type RootState = ReturnType<typeof store.getState>;
 const SignOut: React.FC<any> = ({ signOutRequest }) => {
   //가라임, 수정해야함(type)
@@ -51,18 +61,20 @@ const SignOut: React.FC<any> = ({ signOutRequest }) => {
           </Close>
         </Header>
         <Title>정말 탈퇴하시겠습니까?</Title>
-        <DeleteContent>정말 탈퇴하실 것이라면 '탈퇴하겠습니다.'라고 적어주세요</DeleteContent>
+        <DeleteContent>
+          정말 탈퇴하실 것이라면 '탈퇴하겠습니다.'라고 적어주세요
+        </DeleteContent>
         <DelteInput
           type="text"
           placeholder="탈퇴하겠습니다."
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setMessage(e.target.value);
           }}
-        /> <DeleteError>{error}</DeleteError>
+        />{" "}
+        <DeleteError>{error}</DeleteError>
         <ButtonDiv3>
           <Button onClick={DeleteAccount}>예</Button>
           <Button onClick={signOutRequest}>아니오</Button>
-         
         </ButtonDiv3>
       </PostModal>
     </ModalBack>
