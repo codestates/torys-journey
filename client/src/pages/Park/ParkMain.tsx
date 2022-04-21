@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchBar from "../../component/Restaurant/RestaurantMain/Search";
+import SearchBar from "../../component/Search";
 import MyLocation from "../../modal/RestaurantMain/MyLocation";
 import { ButtonDiv, ParkMainDiv } from "../../style/Park";
 import ParkList from "./ParkList";
