@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import SearchBar from "../../component/Restaurant/RestaurantMain/Search";
 import MyLocation from "../../modal/RestaurantMain/MyLocation";
 import { ButtonDiv, ParkMainDiv } from "../../style/Park";
-import HotelList from "./HotelList";
+import HotelList from "./HospitalList";
 
-const HotelMain = () => {
+const HospitalMain = () => {
   const [clicked, setClicked] = useState(false);
   const handleMap = () => {
     setClicked(!clicked);
@@ -24,4 +24,4 @@ const HotelMain = () => {
   );
 };
 
-export default HotelMain;
+export default HospitalMain;

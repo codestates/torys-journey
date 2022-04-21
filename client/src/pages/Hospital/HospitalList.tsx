@@ -6,7 +6,7 @@ import store from "../../redux/Store";
 
 export type RootState = ReturnType<typeof store.getState>;
 
-const HotelList = () => {
+const HospitalList = () => {
     const dispatch = useDispatch();
   const search = useSelector((data: RootState) => data.search);
   const [dummyData, setDummyData] = useState([]);
@@ -78,4 +78,4 @@ const HotelList = () => {
     );
 };
 
-export default HotelList;
+export default HospitalList
