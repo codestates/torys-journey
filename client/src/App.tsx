@@ -10,7 +10,7 @@ import ProjectInfo from "./pages/ProjectInfo";
 import Restaurant from "./pages/Restaurant/Restaurant";
 import RestaurantInfo from "./pages/Restaurant/RestaurantInfo";
 import Main from "./pages/Main";
-import Hotel from "./pages/Hotel";
+import Hotel from "./pages/Hotel/Hotel";
 import Park from "./pages/Park";
 import Hospital from "./pages/Hospital";
 import Navbar from "./component/Navbar";
