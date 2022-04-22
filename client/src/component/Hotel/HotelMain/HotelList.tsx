@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-
 import store from "../../../redux/Store";
-
 import {
   RestaurantImg,
   RestaurantListDiv,
@@ -15,24 +13,21 @@ import {
 
 export type RootState = ReturnType<typeof store.getState>;
 
-const ShopList = () => {
+const HotelList = () => {
   const dispatch = useDispatch();
-
+  const [dummyData, setDummyData] = useState([]);
   const search = useSelector((data: RootState) => data.search); //검색 필터링
-
-  const [dummyData, setDummyData] = useState([]); //서버에서 받은 restaurant 정보 useState
-
-  const callRestaurantInformation = () => {
+  const callHotelInformation = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/restaurant`, {})
+      //호텔로바꿔
       .then((res) => {
         setDummyData(res.data.data);
         dispatch({ type: "information", payload: res.data.data });
       })
-      .catch(() => alert("식당 정보를 불러오지 못하였습니다."));
+      .catch(() => alert("호텔 정보를 불러오지 못하였습니다."));
   };
-
-  useEffect(callRestaurantInformation, []);
+  useEffect(callHotelInformation, []);
 
   return (
     <RestaurantDiv>
@@ -126,4 +121,4 @@ const ShopList = () => {
   );
 };
 
-export default ShopList;
+export default HotelList;
