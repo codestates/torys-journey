@@ -33,59 +33,98 @@ const ShopList = () => {
       .catch(() => alert("식당 정보를 불러오지 못하였습니다."));
   };
 
-  useEffect(callRestaurantInformation, [dispatch]);
+  useEffect(callRestaurantInformation, []);
 
   return (
     <RestaurantDiv>
       {search === ""
-        ? dummyData.map((el: any, key) => (
-            <RestaurantListDiv key={key}>
-              <Link
-                to={`/restaurantinfo/${el.id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <RestaurantImg src={el.photo[0]} alt="음식점 사진" />
-                <RestaurantNameDiv>
-                  <div>{el.name}</div>
-                  <div>{el.rating}</div>
-                </RestaurantNameDiv>
-                <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
-              </Link>
-            </RestaurantListDiv>
-          ))
+        ? dummyData.map(
+            (
+              el: {
+                id: number;
+                name: string;
+                photo: [string];
+                rating: number;
+                address: string;
+                number: string;
+                detailInfo: string;
+                officeHours: string;
+              },
+              key
+            ) => (
+              <RestaurantListDiv key={key}>
+                <Link
+                  to={`/restaurantinfo/${el.id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <RestaurantImg src={el.photo[0]} alt="음식점 사진" />
+                  <RestaurantNameDiv>
+                    <div>{el.name}</div>
+                    <div>{el.rating}</div>
+                  </RestaurantNameDiv>
+                  <RestaurantAddressDiv>{el.address}</RestaurantAddressDiv>
+                </Link>
+              </RestaurantListDiv>
+            )
+          )
         : dummyData
-            .filter((val: any) => {
-              if (search === "") {
-                return undefined;
-              } else if (
-                // button === true &&
-                val.name.toLowerCase().includes(search.toLowerCase())
-              ) {
-                return val;
-              } else if (
-                // button === true &&
-                val.address.toLowerCase().includes(search.toLowerCase())
-              ) {
-                return val;
+            .filter(
+              (val: {
+                id: number;
+                name: string;
+                photo: [string];
+                rating: number;
+                address: string;
+                number: string;
+                detailInfo: string;
+                officeHours: string;
+              }) => {
+                if (search === "") {
+                  return undefined;
+                } else if (
+                  // button === true &&
+                  val.name.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return val;
+                } else if (
+                  // button === true &&
+                  val.address.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return val;
+                }
               }
-            })
-            .map((val: any, key) => {
-              return (
-                <RestaurantListDiv key={key}>
-                  <Link
-                    to={`/restaurantinfo/${val.id}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <RestaurantImg src={val.photo[0]} alt="식당" />
-                    <RestaurantNameDiv>
-                      <div>{val.name}</div>
-                      <div>{val.rating}</div>
-                    </RestaurantNameDiv>
-                    <RestaurantAddressDiv>{val.address}</RestaurantAddressDiv>
-                  </Link>
-                </RestaurantListDiv>
-              );
-            })}
+            )
+            .map(
+              (
+                val: {
+                  id: number;
+                  name: string;
+                  photo: [string];
+                  rating: number;
+                  address: string;
+                  number: string;
+                  detailInfo: string;
+                  officeHours: string;
+                },
+                key
+              ) => {
+                return (
+                  <RestaurantListDiv key={key}>
+                    <Link
+                      to={`/restaurantinfo/${val.id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <RestaurantImg src={val.photo[0]} alt="식당" />
+                      <RestaurantNameDiv>
+                        <div>{val.name}</div>
+                        <div>{val.rating}</div>
+                      </RestaurantNameDiv>
+                      <RestaurantAddressDiv>{val.address}</RestaurantAddressDiv>
+                    </Link>
+                  </RestaurantListDiv>
+                );
+              }
+            )}
     </RestaurantDiv>
   );
 };

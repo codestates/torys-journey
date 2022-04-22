@@ -9,6 +9,7 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    console.log("1");
     dispatch({ type: "search", payload: searchTerm });
   }); // shoplist에서 사용
 
