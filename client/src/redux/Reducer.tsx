@@ -56,7 +56,7 @@ export const restaurantEnrollment = (
   action: EnrollmentAction
 ) => {
   if (action.type === "enrollment") {
-    // console.log(state.accessToken);
+    //console.log(state, "@@@@@@@@@@@@@@@@@");
     return {
       ...state,
       name: action.payload.name,
@@ -129,7 +129,7 @@ export const restaurantInformation = (
 //     return state;
 //   }
 // };
-// //!호텔 메인 페이지 정보 등록
+//!호텔 메인 페이지 정보 등록
 
 const initialSearch = "";
 

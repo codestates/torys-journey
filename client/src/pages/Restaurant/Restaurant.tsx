@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Search from "../../component/Search";
-import MyLocation from "../../modal/RestaurantMain/MyLocation";
+import MyLocation from "../../component/MyLocation";
 import ShopList from "../../component/Restaurant/RestaurantMain/ShopList";
 
 import {
@@ -12,10 +12,9 @@ import {
 } from "../../style/RestaurantList";
 
 const Restaurant = () => {
-  const [state, setState] = useState(false); //지도 modal state
-
+  const [mapOpen, setMapOpen] = useState(false);
   const handleMyLocation = () => {
-    setState(!state);
+    setMapOpen(!mapOpen);
   };
 
   return (
@@ -25,7 +24,7 @@ const Restaurant = () => {
         <MySearchDiv onClick={handleMyLocation}>내 주변 검색</MySearchDiv>
         <ShopEnrollLink to="/shopenroll">식당 등록</ShopEnrollLink>
       </ButtonDiv>
-      {state === true ? <MyLocation /> : ""}
+      {mapOpen === true ? <MyLocation /> : ""}
       <RestaurantDiv>
         <ShopList />
       </RestaurantDiv>

@@ -22,11 +22,6 @@ import {
   OauthGoogleLogo,
 } from "../style/Login";
 import { Error } from "../style/SignUp";
-import google from "../style/OauthButton/google1.png";
-import naver from "../style/OauthButton/naver.png";
-import kakao from "../style/OauthButton/kakao.png";
-// Client ID: 7IxLOwtePiMM2_x0nQgw
-// Client Secret : OKVYfUlNMF
 
 export type RootState = ReturnType<typeof store.getState>; //reducer까지 보려면 typescript에서는 여기에서 사용하여야 한다.
 type loginInfo = {
@@ -89,6 +84,7 @@ const Login = ({ loginRequest }: loginRequestProps) => {
         })
         // 서버로부터 토큰 받는 부분
         .then(loginRequest) //로그인 모달창 띄우는 state 변경 함수
+        .then(() => window.location.reload())
         .catch(() => alert("비밀번호가 일치하지 않습니다.")); //비밀번호 틀렸을 때 구현해야함
     } else {
       setErrorMessage("이메일과 비밀번호를 입력하세요");
@@ -133,11 +129,11 @@ const Login = ({ loginRequest }: loginRequestProps) => {
                 <LoginButton onClick={handleLogin}>로그인</LoginButton>
                 <SignUpButton onClick={handleModal}>회원가입</SignUpButton>
               </form>
-              <OauthLoginDiv>
+              {/* <OauthLoginDiv>
                 <OauthGoogleLogo src={google}></OauthGoogleLogo>
                 <OauthLogo src={naver}></OauthLogo>
                 <OauthLogo src={kakao} onClick={handleKakaoLogin}></OauthLogo>
-              </OauthLoginDiv>
+              </OauthLoginDiv> */}
             </LoginHeightDiv>
           </LoginDiv>
         </InputModal>
@@ -151,11 +147,3 @@ const Login = ({ loginRequest }: loginRequestProps) => {
 };
 
 export default Login;
-
-// const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-//   const 김소라 = e.target.value;
-//   dispatch({ type: "accessToken", payload: 김소라 });
-// };
-// const 홍왕열 = useSelector((김김: RootState) =>
-//   console.log(김김.Reducer.accessToken, "1111111")
-// );

@@ -31,7 +31,8 @@ const ShopEnroll = () => {
     phoneNumber: "",
     officeHours: "",
     detailInfo: "",
-  }); //input value 넣는 useState
+  });
+  //input value 넣는 useState
 
   const [postModal, setPostModal] = useState(false); // post modal창 띄워주는 useState
 
@@ -51,7 +52,7 @@ const ShopEnroll = () => {
     dispatch({ type: "enrollment", payload: restaurantEnrollment });
   }; //redux에 등록
 
-  useEffect(shopEnroll);
+  useEffect(shopEnroll, [restaurantEnrollment]);
 
   return (
     <WritingMainDiv>
