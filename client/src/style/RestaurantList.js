@@ -56,13 +56,12 @@ export const MapSearch = styled(Link)`
 export const ShopEnrollLink = styled(Link)`
   margin-left: 1%;
   height: 100%;
-  width: 75px;
+  width: 70px;
   font-size: 14px;
   text-align: center;
   text-decoration: none;
   color: black;
   font-family: "Nanum";
-  width: 4%;
   margin-right: 1.5%;
   &:hover {
     border-bottom: 3px solid #73b4ac;
@@ -93,12 +92,14 @@ export const RestaurantNameDiv = styled.div`
   margin-left: 1%;
   margin-right: 1%;
   color: black;
-  font-size: 30px;
-  font-family: "NanumPen";
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Nanum";
+  //font-family: "NanumPen";
 `;
 
 export const MySearchDiv = styled.div`
-  width: 5%;
+  width: 80px;
   font-family: "Nanum";
   text-align: center;
   font-size: 14px;
@@ -113,9 +114,11 @@ export const MySearchDiv = styled.div`
 
 export const RestaurantAddressDiv = styled.div`
   display: flex;
+  margin-top: 10px;
   margin-left: 1%;
   margin-right: 1%;
   color: black;
-  font-size: 22px;
-  font-family: "NanumPen";
+  font-size: 1rem;
+  font-family: "Nanum";
+  //font-family: "NanumPen";
 `;

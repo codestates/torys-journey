@@ -13,9 +13,10 @@ export const SearchFormInput = styled.input`
   width: 70%;
   height: 100%;
   margin-left: 15%;
+  padding-left: 15px;
   border: 1px solid black;
   border-radius: 0.3em;
-  font-size: 1rem;
+  font-size: 1.1rem;
 `;
 
 export const SearchFormSubmit = styled.input`

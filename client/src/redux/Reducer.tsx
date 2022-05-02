@@ -56,7 +56,7 @@ export const restaurantEnrollment = (
   action: EnrollmentAction
 ) => {
   if (action.type === "enrollment") {
-    // console.log(state.accessToken);
+    //console.log(state, "@@@@@@@@@@@@@@@@@");
     return {
       ...state,
       name: action.payload.name,
@@ -92,7 +92,7 @@ export const restaurantInformation = (
   state = initialInformation,
   action: InformationAction
 ) => {
-  // console.log(action.payload);
+  //console.log(action.payload);
 
   if (action.type === "information") {
     return action.payload;
@@ -101,6 +101,35 @@ export const restaurantInformation = (
   }
 };
 //!레스토랑 메인 페이지 정보 등록
+
+// type HotelInformationAction = {
+//   type: "hotelinformation";
+//   payload: [
+//     {
+//       id: 0;
+//       name: "";
+//       photo: [""];
+//       rating: 0;
+//       address: "";
+//       number: "";
+//       detailInfo: "";
+//       officeHours: "";
+//     }
+//   ];
+// };
+// export const hotelInformation = (
+//   state = initialInformation,
+//   action: HotelInformationAction
+// ) => {
+//   //console.log(action.payload);
+
+//   if (action.type === "hotelinformation") {
+//     return action.payload;
+//   } else {
+//     return state;
+//   }
+// };
+//!호텔 메인 페이지 정보 등록
 
 const initialSearch = "";
 

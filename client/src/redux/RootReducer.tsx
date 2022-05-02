@@ -3,6 +3,7 @@ import {
   changeLoginStatus,
   restaurantEnrollment,
   restaurantInformation,
+  //hotelInformation,
   search,
 } from "./Reducer";
 
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   changeLoginStatus,
   restaurantEnrollment,
   restaurantInformation,
+  // hotelInformation,
   search,
 });
 
