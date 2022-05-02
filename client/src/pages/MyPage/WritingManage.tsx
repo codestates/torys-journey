@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import MyPageMenu from "../../component/MyPage/MyPageMenu";
+import MyPageMenu from "./component/MyPageMenu";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import WritingList from "../../component/MyPage/WritingList";
+import WritingList from "./component/WritingList";
 import { MyPageDiv, WritingDiv, Title } from "../../style/Mypage";
 
 const WritingManage = () => {

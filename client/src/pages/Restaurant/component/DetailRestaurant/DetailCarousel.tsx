@@ -1,6 +1,6 @@
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
-import { CarouselButton, ImgModal } from "../../../style/RestaurantInfo";
+import { CarouselButton, ImgModal } from "../../../../style/RestaurantInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 

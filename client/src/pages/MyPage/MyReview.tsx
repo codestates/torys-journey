@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import MyPageMenu from "../../component/MyPage/MyPageMenu";
-import MyReviewList from "../../component/MyPage/MyReviewList";
+import MyPageMenu from "./component/MyPageMenu";
+import MyReviewList from "./component/MyReviewList";
 import { MyPageDiv, ReviewDiv, Title } from "../../style/Mypage";
 
 const MyReview = () => {

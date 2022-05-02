@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { MainDiv } from "../../style/Map";
+import { MainDiv } from "../style/Map";
 import { useSelector } from "react-redux";
-import store from "../../redux/Store";
+import store from "../redux/Store";
 const { kakao } = window as any;
 
 export type RootState = ReturnType<typeof store.getState>;

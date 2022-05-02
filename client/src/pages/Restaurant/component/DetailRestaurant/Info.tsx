@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import DetailInfo from "./DetailInfo";
-import ReviewMember from "../Review/ReviewMember";
-import ReviewNonMember from "../Review/ReviewNonMember";
+import ReviewMember from "../../Review/ReviewMember";
+import ReviewNonMember from "../../Review/ReviewNonMember";
 import { useSelector } from "react-redux";
-import store from "../../../redux/Store";
-import { InfoDiv, TabMenu, TabLi } from "../../../style/RestaurantInfo";
+import store from "../../../../redux/Store";
+import { InfoDiv, TabMenu, TabLi } from "../../../../style/RestaurantInfo";
 
 export type RootState = ReturnType<typeof store.getState>;
 

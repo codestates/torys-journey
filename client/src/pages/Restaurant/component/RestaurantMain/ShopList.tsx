@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 
 
-import store from "../../../redux/Store";
+import store from "../../../../redux/Store";
 
 import {
   RestaurantImg,
@@ -12,7 +12,7 @@ import {
   RestaurantDiv,
   RestaurantNameDiv,
   RestaurantAddressDiv,
-} from "../../../style/RestaurantList";
+} from "../../../../style/RestaurantList";
 
 export type RootState = ReturnType<typeof store.getState>;
 

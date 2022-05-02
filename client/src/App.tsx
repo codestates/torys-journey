@@ -10,17 +10,18 @@ import ProjectInfo from "./pages/ProjectInfo";
 import Restaurant from "./pages/Restaurant/Restaurant";
 import RestaurantInfo from "./pages/Restaurant/RestaurantInfo";
 import Main from "./pages/Main";
-import Hotel from "./pages/Hotel/Hotel";
+import HotelMain from "./pages/Hotel/HotelMain";
 import ParkMain from "./pages/Park/ParkMain";
-import Hospital from "./pages/Hospital";
 import Navbar from "./component/Navbar";
 import WritingManage from "./pages/MyPage/WritingManage";
 import MyReview from "./pages/MyPage/MyReview";
 import MyInfo from "./pages/MyPage/MyInfo";
 import ShopEnroll from "./pages/Restaurant/ShopEnroll";
 import Header from "./component/Header";
-import ParkList from "./pages/Park/ParkList";
+import ParkList from "./pages/Park/Component/ParkList";
 import HospitalMain from "./pages/Hospital/HospitalMain";
+import AddPark from "./pages/Park/AddPark";
+import AddHospital from "./pages/Hospital/AddHospital";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -57,10 +58,13 @@ function App(): any {
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/shopenroll" element={<ShopEnroll />} />
         <Route path="/restaurantinfo/:id" element={<RestaurantInfo />} />
-        <Route path="/hotel" element={<Hotel />} />
+        <Route path="/hotel" element={<HotelMain />} />
         <Route path="/park" element={<ParkMain />} />
+        <Route path="/park/add" element={<AddPark />} />
         <Route path="/park/:id" element={<ParkList />} />
         <Route path="/hospital" element={<HospitalMain />} />
+        <Route path="/hospital/add" element={<AddHospital />} />
+        
       </Routes>
     </div>
   );

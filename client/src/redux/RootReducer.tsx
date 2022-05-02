@@ -3,7 +3,12 @@ import {
   changeLoginStatus,
   restaurantEnrollment,
   restaurantInformation,
+hospitalEnrollment,
+ parkEnrollment,
   //hotelInformation,
+  //parkInformation,
+  // hospitalInformation,
+
   search,
 } from "./Reducer";
 
@@ -15,7 +20,12 @@ const rootReducer = combineReducers({
   restaurantEnrollment,
   restaurantInformation,
   // hotelInformation,
+   //parkInformation,
+  // hospitalInformation,
+
   search,
+  hospitalEnrollment,
+  parkEnrollment
 });
 
 export default rootReducer;

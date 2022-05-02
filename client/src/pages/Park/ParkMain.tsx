@@ -1,24 +1,27 @@
-import React, { useState } from "react";
-import SearchBar from "../../component/Search";
-import MyLocation from "../../modal/RestaurantMain/MyLocation";
-import { ButtonDiv, ParkMainDiv } from "../../style/Park";
-import ParkList from "./ParkList";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import SearchBar from '../../component/Search';
+import MyLocation from '../../modal/MyLocation';
+import { ButtonDiv, Header, ParkMainDiv } from '../../style/Park';
+import ParkList from './Component/ParkList';
 
 const ParkMain = () => {
-  const [clicked, setClicked] = useState(false);
-  const handleMap = () => {
-    setClicked(!clicked);
-  };
+  const [clicked, setClicked]= useState(false)
+  const handleMap=()=>{
+    setClicked(!clicked)
+  }
   return (
-    <div>
-      <ParkMainDiv>
-      <SearchBar />
-      <ButtonDiv>
-      <div onClick={handleMap}>내 주변 검색</div>
-      <div> 식당등록 </div></ButtonDiv></ParkMainDiv>
+    <ParkMainDiv>
+      <div>
+        <SearchBar />
+        <div>
+          <div onClick={handleMap}>내 주변 검색</div>
+          <Link to="add"><div> 공원등록 </div></Link>
+          
+      </div></div>
       {clicked ? <MyLocation /> : ""}
       <ParkList/>
-    </div>
+    </ParkMainDiv>
   );
 };
 

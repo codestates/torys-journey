@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
 import axios from "axios";
-import Pictures from "../../component/Restaurant/DetailRestaurant/Pictures";
-import Info from "../../component/Restaurant/DetailRestaurant/Info";
-import Map from "../../component/Restaurant/DetailRestaurant/Map";
-import BookMarkCheck from "../../component/Restaurant/RestaurantMain/BookMarkCheck";
+import Pictures from "./component/DetailRestaurant/Pictures";
+import Info from "./component/DetailRestaurant/Info";
+import Map from "./component/DetailRestaurant/Map";
+import BookMarkCheck from "./component/RestaurantMain/BookMarkCheck";
 import {
   RestaurantDiv,
   RestaurantMainDiv,

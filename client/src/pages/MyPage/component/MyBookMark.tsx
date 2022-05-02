@@ -7,10 +7,10 @@ import {
   DeleteButtonDiv,
   RestaurantAddressDiv,
   RestaurantNameDiv,
-} from "../../style/Mypage";
-import { ButtonDelete } from "../../style/Modal";
+} from "../../../style/Mypage";
+import { ButtonDelete } from "../../../style/Modal";
 
-import DeleteBookMark from "../../modal/BookMark/DeleteBookMark";
+import DeleteBookMark from "../../../modal/BookMark/DeleteBookMark";
 
 type BookMarkDataProps = {
   bookMarkDatas: { id: string; photo: [string]; name: string; address: string };

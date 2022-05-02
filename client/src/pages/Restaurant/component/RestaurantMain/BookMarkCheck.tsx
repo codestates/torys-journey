@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom"; //params를 확인하는 것
-import store from "../../../redux/Store";
-import { BookMarkDiv } from "../../../style/RestaurantInfo";
+import store from "../../../../redux/Store";
+import { BookMarkDiv } from "../../../../style/RestaurantInfo";
 
 export type RootState = ReturnType<typeof store.getState>;
 

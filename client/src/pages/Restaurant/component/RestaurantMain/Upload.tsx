@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { MainDiv, PreviewDiv, ItemDiv, DeleteDiv } from "../../../style/Upload";
+import { MainDiv, PreviewDiv, ItemDiv, DeleteDiv } from "../../../../style/Upload";
 
 const Upload = ({ getAddress }: any) => {
   const [selected, setSelected] = useState([]); //선택한 사진 담는 빈배열

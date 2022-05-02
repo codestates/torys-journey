@@ -31,6 +31,43 @@ export const changeLoginStatus = (
 };
 
 //!아이디 유지하는 isLogin 관리
+const initialHospitalState = {
+  name: "",
+  address: "",
+  phoneNumber: "",
+  officeHours: "",
+  detailInfo: "",
+};
+
+type AddHospitalAction = {
+  type: "enrollment";
+  payload: {
+    name: "";
+    address: "";
+    phoneNumber: "";
+    officeHours: "";
+    detailInfo: "";
+  };
+};
+
+export const hospitalEnrollment = (
+  state = initialHospitalState,
+  action: AddHospitalAction
+) => {
+  if (action.type === "enrollment") {
+    // console.log(state.accessToken);
+    return {
+      ...state,
+      name: action.payload.name,
+      address: action.payload.address,
+      phoneNumber: action.payload.phoneNumber,
+      officeHours: action.payload.officeHours,
+      detailInfo: action.payload.detailInfo,
+    };
+  } else {
+    return state;
+  }
+}; //! 병원 등록 페이지 넘겨주기
 
 const initialEnrollmentState = {
   name: "",
@@ -55,6 +92,41 @@ export const restaurantEnrollment = (
   state = initialEnrollmentState,
   action: EnrollmentAction
 ) => {
+  if (action.type === "enrollment") {
+    // console.log(state.accessToken);
+    return {
+      ...state,
+      name: action.payload.name,
+      address: action.payload.address,
+      phoneNumber: action.payload.phoneNumber,
+      officeHours: action.payload.officeHours,
+      detailInfo: action.payload.detailInfo,
+    };
+  } else {
+    return state;
+  }
+}; //! 식당 등록 페이지 넘겨주기
+
+const initialPark = {
+  name: "",
+  address: "",
+  phoneNumber: "",
+  officeHours: "",
+  detailInfo: "",
+};
+
+type AddAction = {
+  type: "enrollment";
+  payload: {
+    name: "";
+    address: "";
+    phoneNumber: "";
+    officeHours: "";
+    detailInfo: "";
+  };
+};
+
+export const parkEnrollment = (state = initialPark, action: AddAction) => {
   if (action.type === "enrollment") {
     // console.log(state.accessToken);
     return {
@@ -119,7 +191,7 @@ export const restaurantInformation = (
 // };
 // export const hotelInformation = (
 //   state = initialInformation,
-//   action: HotelInformationAction
+//   action: Hotel
 // ) => {
 //   //console.log(action.payload);
 
@@ -130,6 +202,64 @@ export const restaurantInformation = (
 //   }
 // };
 // //!호텔 메인 페이지 정보 등록
+
+// type ParkInformationAction = {
+//   type: "parkinformation";
+//   payload: [
+//     {
+//       id: 0;
+//       name: "";
+//       photo: [""];
+//       rating: 0;
+//       address: "";
+//       number: "";
+//       detailInfo: "";
+//       officeHours: "";
+//     }
+//   ];
+// };
+// export const parkInformation = (
+//   state = initialInformation,
+//   action: ParkInformationAction
+// ) => {
+//   //console.log(action.payload);
+
+//   if (action.type === "parkinformation") {
+//     return action.payload;
+//   } else {
+//     return state;
+//   }
+// };
+//!공원 메인 페이지 정보 등록
+
+// type HospitalInformationAction = {
+//   type: "hospitalinformation";
+//   payload: [
+//     {
+//       id: 0;
+//       name: "";
+//       photo: [""];
+//       rating: 0;
+//       address: "";
+//       number: "";
+//       detailInfo: "";
+//       officeHours: "";
+//     }
+//   ];
+// };
+// export const hospitalInformation = (
+//   state = initialInformation,
+//   action: HospitalInformationAction
+// ) => {
+//   //console.log(action.payload);
+
+//   if (action.type === "hospitalinformation") {
+//     return action.payload;
+//   } else {
+//     return state;
+//   }
+// };
+//!병원 메인 페이지 정보 등록
 
 const initialSearch = "";
 
